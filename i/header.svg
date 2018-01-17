@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2560px" height="465px" viewBox="0 0 2560 465" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,14 L2560,14 C2560,-38.5208333 2560,62.8125 2560,318 C1636.15625,488.5 902.773438,483.523438 0,318 C0,142.114583 0,40.78125 0,14 Z" id="path-1"></path>
+        <filter x="-1.9%" y="-9.6%" width="103.7%" height="121.4%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.25 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Главная" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-12" transform="translate(-13.000000, -22.000000)">
+            <g id="Хэдер" transform="translate(13.000000, 0.000000)">
+                <g id="Group-2-Copy" transform="translate(0.000000, 8.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Rectangle-3">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                        <use fill="#65697A" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <image id="Bitmap" mask="url(#mask-2)" x="0" y="14" width="2560" height="430" xlink:href="back.jpg"></image>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
