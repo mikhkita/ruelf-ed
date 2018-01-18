@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="css/reset.css" type="text/css">
 	<link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css">
 	<link rel="stylesheet" href="css/KitAnimate.css" type="text/css">
+	<link rel="stylesheet" href="css/slick.css" type="text/css">
+	<link rel="stylesheet" href="css/slick-theme.css" type="text/css">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
 
 	<link rel="stylesheet" media="screen and (min-width: 240px) and (max-width: 768px)" href="css/layout-mobile.css">
@@ -19,62 +21,224 @@
 	<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
 </head>
 <body>
-	<ul class="ps-lines">
-		<li class="v" style="margin-left:-501px"></li>
-		<li class="v" style="margin-left:500px"></li>
-		<li class="v" ></li>
-	</ul>
-	<div class="b b-1">
+
+	<div class="b b-header">
 		<div class="b-block">
-			<div class="b-logo-cont left">
-				<div class="b-logo-text left blue">ФРАНШИЗА "ELECTROFROG"<br/>ОТ КРУПНЕЙШЕГО ЗАВОДА ЗАО "ЛИТМАШДЕТАЛЬ"</div>
+			<div class="b-top clearfix">
+				<a href="index.html" class="b-logo"></a>
+				<ul class="b-menu">
+					<li>
+						<a href="about.html">О магазине</a>
+						<ul class="b-submenu">
+							<li><a href="payment.html">Оплата</a></li>
+							<li><a href="delivery.html">Доставка</a></li>
+							<li><a href="order.html">Как заказать?</a></li>
+							<li><a href="about-company.html">О компании</a></li>
+						</ul>
+					</li>
+					<li><a href="question.html">Вопрос-ответ</a></li>
+					<li><a href="contacts.html">Контакты</a></li>
+				</ul>
+				<div class="b-top-right">
+					<div class="b-top-phone">
+						<a href="tel:+79994995000" class="icon-phone">+7 (999) 499-50-00</a>
+					</div>
+					<a href="#" class="icon-favorites"></a>
+					<a href="#" class="b-basket">
+						<div class="icon-basket"></div>
+						<div class="b-basket-price icon-ruble">6 920</div>
+					</a>
+				</div>
 			</div>
-			<div class="b-date-cont right">
-				<h2 class="blue">8 (800) 555 15 24</h2>
-				<p class="right"><a href="#b-popup-1" class="b-get-callback b-orange-butt fancy goal-click" data-goal="CALLBACK_B">Заказать звонок</a></p>
+
+			<div class="b-header-title">
+				<h1 class="b-title">Доставка цветов в Томске</h1>
+				<ul class="b-header-title-list">
+					<li class="b-header-title-item">
+						<img src="i/bouquet.svg">
+						<p>Всегда только<br>свежие букеты</p>
+					</li>
+					<li class="b-header-title-item">
+						<img src="i/delivery.svg">
+						<p>Бесплатная<br>доставка</p>
+					</li>
+					<li class="b-header-title-item">
+						<img src="i/calendar.svg">
+						<p>Ежедневная<br>продажа цветов</p>
+					</li>
+				</ul>
+			</div>
+			<ul class="b-catalog-list clearfix">
+				<li><a href="#">Классика</a></li>
+				<li><a href="#">По случаю</a></li>
+				<li><a href="#">Авторские букеты</a></li>
+				<li><a href="#">Цветы в коробке</a></li>
+				<li><a href="#">Корзины цветов</a></li>
+				<li><a href="#">Мужские букеты</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="b-filter">
+		<div class="b-block">
+			<div class="b-filter-price">
+				<p>Цена:</p>
+				<div class="select-wrapper icon-arrow-down">
+					<select>
+						<option>Любая цена</option>
+						<option>до 2000</option>
+						<option>до 4000</option>
+						<option>до 6000</option>
+					</select>
+				</div>
+			</div>
+			<div class="b-filter-flowers">
+				<p>Цветы:</p>
+				<div class="select-wrapper icon-arrow-down">
+					<select>
+						<option>Любые цветы</option>
+						<option>Розы</option>
+						<option>Тюльпаны</option>
+					</select>
+				</div>
+			</div>
+			<div class="b-filter-colors">
+				<a href="#" class="color-item color-red"></a>
+				<a href="#" class="color-item color-pink"></a>
+				<a href="#" class="color-item color-beige"></a>
+				<a href="#" class="color-item color-yellow"></a>
+				<a href="#" class="color-item color-orange"></a>
+				<a href="#" class="color-item color-blue"></a>
+				<a href="#" class="color-item color-purple"></a>
+				<a href="#" class="color-item color-black"></a>
+				<a href="#" class="color-item color-white"></a>
+				<a href="#" class="color-item color-all"></a>
+				<a href="#" class="color-reset icon-update">
+					<div class="b-tip">Сбросить</div>
+				</a>
 			</div>
 		</div>
 	</div>
-	<div class="b b-2">
+
+	<div class="b-catalog">
 		<div class="b-block">
-			
+			<h2 class="b-title">Классические букеты</h2>
+			<div class="b-catalog-list clearfix">
+				<div class="b-catalog-item">
+					<div class="flowers-img-cont">
+						<div class="flowers-img" style="background-image: url(i/catalog-1.jpg);"></div>
+						<div class="b-catalog-item-hover">
+							<span class="size-width">45 см</span>
+							<span class="size-height">30 см</span>
+							<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+						</div>
+					</div>
+					<h4>Красно-белый букет из роз</h4>
+					<p class="b-catalog-item-price icon-ruble">4 500</p>
+					<a href="#" class="b-bth-buy">Купить</a>
+				</div>
+				<div class="b-catalog-item">
+					<div class="flowers-img-cont">
+						<div class="flowers-img" style="background-image: url(i/catalog-2.jpg);"></div>
+						<div class="b-catalog-item-hover">
+							<span class="size-width">45 см</span>
+							<span class="size-height">30 см</span>
+							<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+						</div>
+					</div>
+					<h4>Букет пионовых роз</h4>
+					<p class="b-catalog-item-price icon-ruble">3 760</p>
+					<a href="#" class="b-bth-buy">Купить</a>
+				</div>
+				<div class="b-catalog-item">
+					<div class="flowers-img-cont">
+						<div class="flowers-img" style="background-image: url(i/catalog-3.jpg);"></div>
+						<div class="b-catalog-item-hover">
+							<span class="size-width">45 см</span>
+							<span class="size-height">30 см</span>
+							<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+						</div>
+					</div>
+					<h4>Букет «Розовое вино»</h4>
+					<p class="b-catalog-item-price icon-ruble">5 400</p>
+					<a href="#" class="b-bth-buy">Купить</a>
+				</div>
+				<div class="b-catalog-item">
+					<div class="flowers-img-cont">
+						<div class="flowers-img" style="background-image: url(i/catalog-4.jpg);"></div>
+						<div class="b-catalog-item-hover">
+							<span class="size-width">45 см</span>
+							<span class="size-height">30 см</span>
+							<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+						</div>
+					</div>
+					<h4>«Солнечный букет»</h4>
+					<p class="b-catalog-item-price icon-ruble">6 350</p>
+					<a href="#" class="b-bth-buy">Купить</a>
+				</div>
+				<div class="b-catalog-item">
+					<div class="flowers-img-cont">
+						<div class="flowers-img" style="background-image: url(i/catalog-5.jpg);"></div>
+						<div class="b-catalog-item-hover">
+							<span class="size-width">45 см</span>
+							<span class="size-height">30 см</span>
+							<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+						</div>
+					</div>
+					<h4>Большой букет пионовых роз</h4>
+					<p class="b-catalog-item-price icon-ruble">8 230</p>
+					<a href="#" class="b-bth-buy">Купить</a>
+				</div>
+				<div class="b-catalog-item">
+					<div class="flowers-img-cont">
+						<div class="flowers-img" style="background-image: url(i/catalog-6.jpg);"></div>
+						<div class="b-catalog-item-hover">
+							<span class="size-width">45 см</span>
+							<span class="size-height">30 см</span>
+							<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+						</div>
+					</div>
+					<h4>Букет белых роз «51 роза»</h4>
+					<p class="b-catalog-item-price icon-ruble">6 300</p>
+					<a href="#" class="b-bth-buy">Купить</a>
+				</div>
+
+				<div class="b-review-slider">
+					<div class="b-review-item">
+						<h3>Отзывы наших клиентов</h3>
+						<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери. Привезли прекрасные 9 розовых роз - свежих  и красивых!! Связались сразу после заказа, еще и оплатить не успели) Все уточнили и сделали на высшем уровне!!</p>
+						<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
+					</div>
+					<div class="b-review-item">
+						<h3>Отзывы наших клиентов2</h3>
+						<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери. Привезли прекрасные 9 розовых роз - свежих  и красивых!! Связались сразу после заказа, еще и оплатить не успели) Все уточнили и сделали на высшем уровне!!</p>
+						<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
+					</div>
+					<div class="b-review-item">
+						<h3>Отзывы наших клиентов3</h3>
+						<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери. Привезли прекрасные 9 розовых роз - свежих  и красивых!! Связались сразу после заказа, еще и оплатить не успели) Все уточнили и сделали на высшем уровне!!</p>
+						<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
+					</div>
+					<div class="b-review-item">
+						<h3>Отзывы наших клиентов4</h3>
+						<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери. Привезли прекрасные 9 розовых роз - свежих  и красивых!! Связались сразу после заказа, еще и оплатить не успели) Все уточнили и сделали на высшем уровне!!</p>
+						<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
+					</div>
+					<div class="b-review-item">
+						<h3>Отзывы наших клиентов5</h3>
+						<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери. Привезли прекрасные 9 розовых роз - свежих  и красивых!! Связались сразу после заказа, еще и оплатить не успели) Все уточнили и сделали на высшем уровне!!</p>
+						<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="b-center">
+				<a href="#" class="b-btn b-center">Показать больше</a>
+			</div>
+
 		</div>
 	</div>
-	<div class="b b-3">
-		<div class="b-block">
-			
-		</div>
-	</div>
-	<div class="b b-4">
-		<div class="b-block">
-			
-		</div>
-	</div>
-	<div class="b b-5">
-		<div class="b-block">
-			
-		</div>
-	</div>
-	<div class="b b-6">
-		<div class="b-block">
-			
-		</div>
-	</div>
-	<div class="b b-7">
-		<div class="b-block">
-			
-		</div>
-	</div>
-	<div class="b b-8">
-		<div class="b-block">
-			
-		</div>
-	</div>
-	<div class="b b-9">
-		<div class="b-block">
-			
-		</div>
-	</div>
+
 	<div style="display:none;">
 		<a href="#b-popup-error" class="b-error-link fancy" style="display:none;"></a>
 		<div class="b-popup" id="b-popup-1">
@@ -106,6 +270,7 @@
 			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
 		</div>
 	</div>
+
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
 	<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false&key=AIzaSyD6Sy5r7sWQAelSn-4mu2JtVptFkEQ03YI"></script>
@@ -114,6 +279,7 @@
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="js/KitAnimate.js"></script>
 	<script type="text/javascript" src="js/KitSend.js"></script>
+	<script type="text/javascript" src="js/slick.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

@@ -40,6 +40,14 @@ $(document).ready(function(){
         }
     }
     $.fn.placeholder();
+
+    $('.b-review-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        infinite: true,
+        arrows: false
+    });
     
 	// var myPlace = new google.maps.LatLng(55.754407, 37.625151);
  //    var myOptions = {
