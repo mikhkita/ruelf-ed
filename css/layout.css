@@ -538,14 +538,15 @@ select {
 		.b-tip{
 			visibility: hidden;
 		    opacity: 0;
-			z-index: 5;
+			z-index: 2;
 		    position: absolute;
-		    left: -40px;
+		    left: -58px;
 		    top: -58px;
 		    background-color: #f8f8f8;
 		    padding: 12px 24px;
 		    white-space: nowrap;
 		    text-align: center;
+		    border-radius: 3px;
 		    font-family: 'Geometria-Regular';
 		    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 		    -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -564,17 +565,18 @@ select {
 		}
 
 		.b-tip:before {
-		    z-index: 5;
+	        z-index: 3;
 		    position: absolute;
 		    content: "s";
 		    font-size: 0px;
 		    width: 0px;
 		    height: 0px;
-		    left: 0;
-		    top: 30px;
-
-		    border: 16px solid transparent;
-		    border-top: 16px solid #f8f8f8;
+		    left: 59px;
+		    top: 47px;
+		    border-top: 11px solid #f8f8f8;
+		    border-right: 11px solid transparent;
+		    border-bottom: 0px solid transparent;
+		    border-left: 11px solid transparent;
 		}
 
 		.color-reset:hover .b-tip{
@@ -675,8 +677,6 @@ select {
 	width: calc(50% - 13px);
 	min-height: 270px;
 	color: #FFF;
-	width: 100%;
-	padding: 26px 32px;
 	background-position: 50% 50%;
     background-repeat: no-repeat;
     background-image: url(../i/review-back.jpg);
@@ -684,13 +684,8 @@ select {
 }
 
 	.b-review-item{
-		
-		/*background-position: 50% 50%;
-	    background-repeat: no-repeat;
-	    background-image: url(../i/logo.svg);
-	    background-size: 280px;
-	    width: 280px;
-	    height: 47px;*/
+		width: 100%;
+		padding: 26px 32px;
 	}
 		.b-review-slider h3{
 
@@ -702,6 +697,31 @@ select {
 			font-family: 'Geometria-Medium';
 			float: right;
 		}
+
+/*-------slick-------*/
+
+.slick-dots {
+    bottom: -45px;
+}
+
+.slick-dots li button:before,
+.slick-dots li button:before{
+    font-size: 14px;
+    color: #f0f0f0;
+    opacity: 1;
+}
+
+.slick-dots li:hover button:before,
+.slick-dots li:hover button:before{
+    color: #6e58ac;
+    opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before,
+.slick-dots li.slick-active button:before {
+    color: #6e58ac;
+    opacity: 1;
+}
 
 /*--------------------*/
 
