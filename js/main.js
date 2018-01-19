@@ -1,4 +1,7 @@
-$(document).ready(function(){	
+$(document).ready(function(){
+
+    var isRetina = retina();
+
     function resize(){
        if( typeof( window.innerWidth ) == 'number' ) {
             myWidth = window.innerWidth;
@@ -12,6 +15,19 @@ $(document).ready(function(){
             myHeight = document.body.clientHeight;
         }
     }
+
+    function retina(){
+        var mediaQuery = "(-webkit-min-device-pixel-ratio: 1.5),\
+            (min--moz-device-pixel-ratio: 1.5),\
+            (-o-min-device-pixel-ratio: 3/2),\
+            (min-resolution: 1.5dppx)";
+        if (window.devicePixelRatio > 1)
+            return true;
+        if (window.matchMedia && window.matchMedia(mediaQuery).matches)
+            return true;
+        return false;
+    }
+
     $(window).resize(resize);
     resize();
 
@@ -41,6 +57,19 @@ $(document).ready(function(){
     }
     $.fn.placeholder();
 
+    if(isRetina){
+        $("*[data-retina]").each(function(){
+            var $this = $(this),
+                img = new Image(),
+                src = $this.attr("data-retina");
+
+            img.onload = function(){
+                $this.attr("src", $this.attr("data-retina"));
+            };
+            img.src = src;
+        });
+    }
+
     $('.b-review-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -65,7 +94,25 @@ $(document).ready(function(){
             scrollTop: 0
         }, 800);
         return false;
-    });
+    }); 
+
+    function offset(a) {
+        for (var b = 0; a;) b += parseInt(a.offsetTop), a = a.offsetParent;
+        return b;
+    }
+
+    var a = document.querySelector(".arrow-up"),
+        b = offset(a),
+        f = window.getComputedStyle ? getComputedStyle(a, "") : a.currentStyle,
+        d = a.offsetHeight + parseInt(f.marginTop) || 0,
+        e = offset(document.querySelector(".b-footer"));
+    var s = !0;
+    window.onscroll = function () {
+         var c = window.pageYOffset || document.documentElement.scrollTop,
+             c = e - (c + d + b);
+             console.log(c);
+         s != 0 < c && ((s = 0 < c) ? (a.style.top = b + "px", a.style.position = "fixed") : (a.style.top = e - d - 44 + "px", a.style.position = "absolute"));
+    }
     
 	// var myPlace = new google.maps.LatLng(55.754407, 37.625151);
  //    var myOptions = {
