@@ -46,7 +46,25 @@ $(document).ready(function(){
         slidesToScroll: 1,
         dots: true,
         infinite: true,
-        arrows: false
+        arrows: false,
+        speed: 600,
+        autoplay: true,
+        autoplaySpeed: 3000,
+    });
+
+    $(window).scroll(function (){
+        if ($(this).scrollTop() > 550){
+            $('.arrow-up').removeClass("hide-opacity");
+        } else{
+            $('.arrow-up').addClass("hide-opacity");
+        }
+    });
+
+    $('.arrow-up').on('click', function(){
+        $("body,html").animate({
+            scrollTop: 0
+        }, 800);
+        return false;
     });
     
 	// var myPlace = new google.maps.LatLng(55.754407, 37.625151);
