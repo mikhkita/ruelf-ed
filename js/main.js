@@ -70,6 +70,16 @@ $(document).ready(function(){
         });
     }
 
+    $("*[data-back]").each(function(){
+        var $this = $(this),
+            img = new Image(),
+            src = $this.attr("data-back");
+        img.onload = function(){
+            $this.css("background-image", 'url(' + $this.attr("data-back") + ')');
+        };
+        img.src = src;
+    });
+
     $('.b-review-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -111,7 +121,7 @@ $(document).ready(function(){
          var c = window.pageYOffset || document.documentElement.scrollTop,
              c = e - (c + d + b);
              console.log(c);
-         s != 0 < c && ((s = 0 < c) ? (a.style.top = b + "px", a.style.position = "fixed") : (a.style.top = e - d - 44 + "px", a.style.position = "absolute"));
+         s != 0 < c && ((s = 0 < c) ? (a.style.top = b + "px", a.style.position = "fixed") : (a.style.top = e - d - 24 + "px", a.style.position = "absolute"));
     }
     
 	// var myPlace = new google.maps.LatLng(55.754407, 37.625151);

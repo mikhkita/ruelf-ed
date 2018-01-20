@@ -296,6 +296,18 @@ h4{
     line-height: 28px;
 }
 
+.icon-close:before{
+	content: "\e90d";
+    font-size: 14px;
+   	color: #434343;
+    line-height: 28px;
+    opacity: 0.4;
+}
+	
+	.icon-close:hover:before{
+		opacity: 1;
+	}
+
 /*----Инпуты/селекты----*/
 
 .select-wrapper{
@@ -399,9 +411,9 @@ input{
 		.b-submenu {
 		    position: absolute;
 		    left: 0px;
-		    top: 50px;
+		    top: 54px;
 		    background-color: #FFF;
-		    padding: 17px 22px;
+		    padding: 16px 22px 20px;
 		    border-radius: 3px;
 		    -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 		    -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -426,23 +438,26 @@ input{
 		    font-size: 0px;
 		    width: 0px;
 		    height: 0px;
-		    left: 50px;
-		    top: -14px;
-		    border-top: 7px solid transparent;
-		    border-right: 8px solid transparent;
-		    border-bottom: 7px solid #FFF;
-		    border-left: 8px solid transparent;
+		    left: 52px;
+		    top: -18px;
+		    border-top: 9px solid transparent;
+		    border-right: 10px solid transparent;
+		    border-bottom: 9px solid #FFF;
+		    border-left: 10px solid transparent;
 		}
-
-			.b-submenu li a {
-			    white-space: nowrap;
-			    display: inline-block;
-			    padding: 8px 0px;
-			    font-size: 14px;
-			    line-height: 14px;
-			    color: #434343;
-			    font-family: "Geometria-Bold";
+			.b-submenu li{
+				margin-right: 0;
 			}
+				.b-submenu li a {
+				    white-space: nowrap;
+				    display: inline-block;
+				    margin-bottom: 2px;
+				    font-size: 16px;
+				    padding: 0;
+				    line-height: 24px;
+				    color: #434343;
+				    font-family: "Geometria-Bold";
+				}
 
 			.b-menu li:hover .b-submenu {
 			    visibility: visible;
@@ -476,20 +491,157 @@ input{
 		    padding-top: 6px;
 		}
 
-		.b-basket{
+		.b-basket-btn-cont{
+			position: relative;
 			display: inline-block;
-			padding: 5px 16px 2px;
-			border: 1px solid #FFF;
-			border-radius: 20px;
 		}
-			.icon-basket{
-				display: inline-block;
-				vertical-align: top;
-				padding-top: 2px;
+
+			.b-basket-btn{
+				display: block;
+				padding: 5px 16px 2px;
+				border: 1px solid #FFF;
+				border-radius: 20px;
 			}
-			.b-basket-price{
-				display: inline-block;
+				.icon-basket{
+					display: inline-block;
+					vertical-align: top;
+					padding-top: 2px;
+				}
+				.b-basket-btn-total{
+					display: inline-block;
+				}
+
+				.b-basket {
+				    position: absolute;
+				    left: -222px;
+				    top: 56px;
+				    min-width: 345px;
+				    background-color: #FFF;
+				    padding: 17px 22px;
+				    border-radius: 3px;
+				    -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+				    -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+				    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+				    opacity: 0;
+				    visibility: hidden;
+				    -webkit-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+				    -moz-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+				    -ms-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+				    -o-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+				    transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+				    -webkit-transform: translateY(20px);
+				    -moz-transform: translateY(20px);
+				    -ms-transform: translateY(20px);
+				    -o-transform: translateY(20px);
+				    transform: translateY(20px);
+				}
+
+				.b-basket:before {
+				    position: absolute;
+				    content: "s";
+				    font-size: 0px;
+				    width: 0px;
+				    height: 0px;
+				    left: 275px;
+				    top: -18px;
+				    border-top: 9px solid transparent;
+				    border-right: 10px solid transparent;
+				    border-bottom: 9px solid #FFF;
+				    border-left: 10px solid transparent;
+				}
+
+				.b-basket-btn-cont:hover .b-basket{
+					visibility: visible;
+				    opacity: 1;
+				    -webkit-transform: translateY(0px);
+				    -moz-transform: translateY(0px);
+				    -ms-transform: translateY(0px);
+				    -o-transform: translateY(0px);
+				    transform: translateY(0px);
+				}
+
+					.b-basket{
+						padding: 16px;
+					}
+
+					.b-basket .icon-ruble:after{
+						color: #434343;
+					}
+						.b-basket ul li{
+							position: relative;
+							padding: 16px 0;
+							border-bottom: 2px solid #eaeaea;
+						}
+						.b-basket ul li:first-child{
+							padding-top: 0;
+						}
+						.b-basket ul li:first-child a.icon-close:before{
+							top: -5px;
+						}
+
+							.b-basket ul li a.icon-close:before{
+								display: inline-block;
+								width: 28px;
+								text-align: center;
+								position: absolute;
+								top: 10px;
+								right: -8px;
+							}
+							.b-basket img{
+								display: inline-block;
+								border-radius: 3px;
+								margin-right: 12px;
+								vertical-align: top;
+							}
+							.b-basket-item-text{
+								display: inline-block;
+								vertical-align: top;
+								margin-top: 6px;
+							}
+								.b-basket-item-text h4{
+
+								}
+									.b-basket .b-basket-item-text p{
+										display: inline-block;
+										font-family: 'Geometria-Medium';
+									}
+								.b-basket .b-basket-item-price{
+									color: #434343;
+								}
+								.b-basket .b-basket-item-count{
+									color: #c4c4c4;
+									margin-left: 8px;
+								}
+
+			.b-basket-down{
+				padding-top: 16px;
 			}
+				.b-basket-down h3{
+					display: inline-block;
+					vertical-align: top;
+					padding-top: 8px;
+					color: #434343;
+					font-size: 26px;
+					line-height: 26px;
+					margin-bottom: 0;
+				}
+
+				.b-basket-down h3.icon-ruble:after{
+					font-size: 19px;
+					margin-left: 8px;
+				}
+
+				.b-btn.b-btn-order{
+					float: right;
+					color: #f43d84;
+					font-family: 'Geometria-Medium';
+					padding: 7px 30px;
+					border: 2px solid #f43d84;
+					font-size: 16px;
+					line-height: 24px;
+					min-width: 0;
+				}
+									
 
 	.b-header-title-list{
 
@@ -849,7 +1001,7 @@ input{
 				    transform: translateY(18px);
 				}
 
-				.b-bth-buy{
+				.b-btn-buy{
 					float: right;
 					color: #f43d84;
 					font-family: 'Geometria-Medium';
@@ -868,7 +1020,7 @@ input{
 				    transition: opacity 300ms ease-out, visibility 300ms ease-out;
 				}
 
-				.b-catalog-item:hover .b-bth-buy{
+				.b-catalog-item:hover .b-btn-buy{
 					opacity: 1;
 					visibility: visible;
 				}
