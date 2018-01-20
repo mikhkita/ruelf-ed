@@ -517,7 +517,7 @@ input{
 				    top: 56px;
 				    min-width: 345px;
 				    background-color: #FFF;
-				    padding: 17px 22px;
+				    padding: 16px;
 				    border-radius: 3px;
 				    -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 				    -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -559,10 +559,6 @@ input{
 				    -o-transform: translateY(0px);
 				    transform: translateY(0px);
 				}
-
-					.b-basket{
-						padding: 16px;
-					}
 
 					.b-basket .icon-ruble:after{
 						color: #434343;
@@ -835,12 +831,12 @@ input{
 
 	}
 		.b-catalog-item{
-			min-height: 375px;
+			height: 380px;
 			position: relative;
 			width: calc(100%/4 - 18px);
 			float: left;
 			margin-right: 24px;
-			margin-bottom: 9px;
+			margin-bottom: 4px;
 		}
 		.b-catalog-item:nth-child(4n){
 			margin-right: 0;
@@ -859,11 +855,12 @@ input{
 			    transition: transform 300ms ease-out, box-shadow 300ms ease-out;
 			}
 			.b-catalog-item:hover .b-catalog-item-back{
-				-webkit-transform: scale(1.12,1.05);
-				   -moz-transform: scale(1.12,1.05);
-				    -ms-transform: scale(1.12,1.05);
-				   	 -o-transform: scale(1.12,1.05);
-						transform: scale(1.12,1.05);
+				z-index: 2;
+				-webkit-transform: scale(1.12,1.09);
+				   -moz-transform: scale(1.12,1.09);
+				    -ms-transform: scale(1.12,1.09);
+				   	 -o-transform: scale(1.12,1.09);
+						transform: scale(1.12,1.09);
 				-webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 			    -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 			    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
@@ -871,8 +868,17 @@ input{
 			.b-catalog-item-content{
 				position: absolute;
 			}
+			.b-catalog-item:hover .b-catalog-item-content{
+				z-index: 2;
+			}
 				.b-catalog-item-content h4{
 					font-family: 'Geometria-Medium';
+				}
+				.b-catalog-favorites{
+					position: absolute;
+					top: 24px;
+    				right: 4px;
+    				padding-top: 0;
 				}
 				.flowers-img-cont{
 					position: relative;
@@ -930,7 +936,7 @@ input{
 						}
 							.b-catalog-hover-size{
 								position: absolute;
-	    						top: 16px;
+	    						top: 20px;
 								color: #FFF;
 								font-family: 'Geometria-Regular';
 								font-size: 16px;
@@ -955,7 +961,7 @@ input{
 									font-family: 'Geometria-Regular';
 									font-size: 16px;
 									line-height: 24px;
-									padding-bottom: 48px;
+									padding-bottom: 50px;
 									-webkit-transform: rotate(-90deg);
 									   -moz-transform: rotate(-90deg);
 									    -ms-transform: rotate(-90deg);

@@ -68,17 +68,16 @@ $(document).ready(function(){
             };
             img.src = src;
         });
+        $("*[data-back]").each(function(){
+            var $this = $(this),
+                img = new Image(),
+                src = $this.attr("data-back");
+            img.onload = function(){
+                $this.css("background-image", 'url(' + $this.attr("data-back") + ')');
+            };
+            img.src = src;
+        });
     }
-
-    $("*[data-back]").each(function(){
-        var $this = $(this),
-            img = new Image(),
-            src = $this.attr("data-back");
-        img.onload = function(){
-            $this.css("background-image", 'url(' + $this.attr("data-back") + ')');
-        };
-        img.src = src;
-    });
 
     $('.b-review-slider').slick({
         slidesToShow: 1,
