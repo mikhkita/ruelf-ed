@@ -103,7 +103,11 @@ $(document).ready(function(){
             scrollTop: 0
         }, 800);
         return false;
-    }); 
+    });
+    
+    $('.b-catalog-item .b-btn-buy').on('click', function(){
+        alert("Добавлено в корзину");
+    });
 
     function offset(a) {
         for (var b = 0; a;) b += parseInt(a.offsetTop), a = a.offsetParent;

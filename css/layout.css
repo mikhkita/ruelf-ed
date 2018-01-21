@@ -738,12 +738,12 @@ input{
 		}
 
 		ul.b-catalog-list li:active,
-		ul.b-catalog-list li:active{
+		ul.b-catalog-list li.active{
 			border-bottom: 2px solid #6e58ac;
 		}
 
 			ul.b-catalog-list li:active a,
-			ul.b-catalog-list li:active a{
+			ul.b-catalog-list li.active a{
 				color: #6e58ac;
 			}
 
@@ -934,6 +934,7 @@ input{
 
 	}
 		.b-catalog-item{
+			display: inline-block;
 			height: 380px;
 			position: relative;
 			width: calc(100%/4 - 18px);
@@ -970,10 +971,19 @@ input{
 			}
 			.b-catalog-item-content{
 				position: absolute;
+				width: 100%;
+				height: 100%;
 			}
 			.b-catalog-item:hover .b-catalog-item-content{
 				z-index: 2;
 			}
+
+				.b-catalog-item-link{
+					position: absolute;
+					width: 100%;
+	    			height: 100%;
+					z-index: 3;
+				}
 				.b-catalog-item-content h4{
 					font-family: 'Geometria-Medium';
 				}
@@ -1131,6 +1141,10 @@ input{
 				}
 
 				.b-catalog-item .b-btn-buy{
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					z-index: 5;
 					margin-top: 10px;
 					opacity: 0;
 					visibility: hidden;
@@ -1421,6 +1435,38 @@ input{
 	.arrow-up:active{
 		background-color: #EEE;
 	}
+
+/*------Каталог------*/
+
+.b-header-title{
+
+}
+	ul.b-breadcrumbs{
+		display: inline-block;
+	}
+		ul.b-breadcrumbs li{
+			float: left;
+		}
+		ul.b-breadcrumbs li:after {
+		    position: relative;
+		    content: "/";
+		    font-size: 12px;
+		    padding: 3px 0px;
+		    display: block;
+		    float: left;
+		    line-height: 16px;
+		    font-family: "Geometria-Regular";
+		    color: #00D4D7;
+		    margin-left: 8px;
+		    margin-right: 8px;
+		}
+			ul.b-breadcrumbs li a{
+				border-bottom: 1px solid #FFF;
+			}
+
+			ul.b-breadcrumbs li span{
+
+			}
 
 /*-------slick-------*/
 
