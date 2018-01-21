@@ -447,6 +447,8 @@ input{
     background-color: transparent;
 }
 
+/*--------------------*/
+
 .b-content{
 	padding-top: 36px;
 	padding-bottom: 70px;
@@ -541,11 +543,11 @@ input{
 		    -ms-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
 		    -o-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
 		    transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-		    -webkit-transform: translateY(20px);
-		    -moz-transform: translateY(20px);
-		    -ms-transform: translateY(20px);
-		    -o-transform: translateY(20px);
-		    transform: translateY(20px);
+		    -webkit-transform: translateY(10px);
+		    -moz-transform: translateY(10px);
+		    -ms-transform: translateY(10px);
+		    -o-transform: translateY(10px);
+		    transform: translateY(10px);
 		}
 
 		.b-submenu:before {
@@ -583,7 +585,7 @@ input{
 			}
 				.b-submenu li:active a,
 				.b-submenu li.active a{
-					border-bottom: 1px solid transparent;
+					border-bottom: 1px solid #6e58ac;
 					color: #6e58ac;
 				}
 				.b-submenu li a {
@@ -594,7 +596,7 @@ input{
 				    padding: 0;
 				    line-height: 16px;
 				    color: #434343;
-				    font-family: "Geometria-Bold";
+				    font-family: "Geometria-Medium";
 				    border-radius: 0;
 				}
 
@@ -708,6 +710,7 @@ input{
 
 				.b-basket {
 				    position: absolute;
+				    z-index: 2;
 				    left: -222px;
 				    top: 56px;
 				    min-width: 345px;
@@ -724,11 +727,11 @@ input{
 				    -ms-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
 				    -o-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
 				    transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-				    -webkit-transform: translateY(20px);
-				    -moz-transform: translateY(20px);
-				    -ms-transform: translateY(20px);
-				    -o-transform: translateY(20px);
-				    transform: translateY(20px);
+				    -webkit-transform: translateY(10px);
+				    -moz-transform: translateY(10px);
+				    -ms-transform: translateY(10px);
+				    -o-transform: translateY(10px);
+				    transform: translateY(10px);
 				}
 
 				.b-basket:before {
@@ -904,11 +907,11 @@ input{
 				}
 
 		.b-catalog-menu .b-line{
-			-webkit-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out, background-color 200ms ease-out;
-			-moz-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out, background-color 200ms ease-out;
-			-ms-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out, background-color 200ms ease-out;
-			-o-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out, background-color 200ms ease-out;
-			transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out, background-color 200ms ease-out;
+			-webkit-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
+			-moz-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
+			-ms-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
+			-o-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
+			transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
 			width: 100px;
 			height: 2px;
 			background-color: #434343;
@@ -916,20 +919,20 @@ input{
 			left: 0px;
 			top: 24px;
 			visibility: hidden;
-			-webkit-transform: scale(0);
-			-moz-transform: scale(0);
-			-ms-transform: scale(0);
-			-o-transform: scale(0);
-			transform: scale(0);
+			-webkit-transform: scaleX(0);
+			-moz-transform: scaleX(0);
+			-ms-transform: scaleX(0);
+			-o-transform: scaleX(0);
+			transform: scaleX(0);
 		}
 
 		.b-catalog-menu .b-line.show{
 			visibility: visible;
-			-webkit-transform: scale(1);
-			   -moz-transform: scale(1);
-			    -ms-transform: scale(1);
-			   	 -o-transform: scale(1);
-					transform: scale(1);
+			-webkit-transform: scaleX(1);
+			   -moz-transform: scaleX(1);
+			    -ms-transform: scaleX(1);
+			   	 -o-transform: scaleX(1);
+					transform: scaleX(1);
 		}
 
 		.b-line.b-line-color{
@@ -979,11 +982,11 @@ input{
 		margin-right: 20px;
 		vertical-align: top;
 		border: 0px solid transparent;
-		-webkit-transition: border 100ms ease-out, box-shadow 100ms ease-out;
-	    -moz-transition: border 100ms ease-out, box-shadow 100ms ease-out;
-	    -ms-transition: border 100ms ease-out, box-shadow 100ms ease-out;
-	    -o-transition: border 100ms ease-out, box-shadow 100ms ease-out;
-	    transition: border 100ms ease-out, box-shadow 100ms ease-out;			    
+		-webkit-transition: border 100ms ease-out, box-shadow 250ms ease-out;
+	    -moz-transition: border 100ms ease-out, box-shadow 250ms ease-out;
+	    -ms-transition: border 100ms ease-out, box-shadow 250ms ease-out;
+	    -o-transition: border 100ms ease-out, box-shadow 250ms ease-out;
+	    transition: border 100ms ease-out, box-shadow 250ms ease-out;			    
 	}
 
 		.color-item:hover{
@@ -1133,11 +1136,11 @@ input{
 			    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 			    -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 			    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-			    -webkit-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-			    -moz-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-			    -ms-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-			    -o-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-			    transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+			    -webkit-transition: transform 200ms ease-out, opacity 200ms ease-out, visibility 200ms ease-out;
+			    -moz-transition: transform 200ms ease-out, opacity 200ms ease-out, visibility 200ms ease-out;
+			    -ms-transition: transform 200ms ease-out, opacity 200ms ease-out, visibility 200ms ease-out;
+			    -o-transition: transform 200ms ease-out, opacity 200ms ease-out, visibility 200ms ease-out;
+			    transition: transform 200ms ease-out, opacity 200ms ease-out, visibility 200ms ease-out;
 			    -webkit-transform: translateY(10px);
 			    -moz-transform: translateY(10px);
 			    -ms-transform: translateY(10px);

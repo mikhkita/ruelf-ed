@@ -117,11 +117,15 @@ $(document).ready(function(){
     });
 
     $('.color-item').on('click', function(){
-        $('.color-item').removeClass("active");
-        $(this).addClass("active");
+        if($(this).hasClass("color-all")){
+            $('.color-item').removeClass("active");
+            $(this).addClass("active");
+        }else{
+            $(this).toggleClass("active");
+            $('.color-all').removeClass("active")
+        }
         return false;
     });
-
     $('.color-reset').on('click', function(){
         $('.color-item').removeClass("active");
         return false;
@@ -139,7 +143,7 @@ $(document).ready(function(){
 
     function checkMenu(){
         if( $(".b-catalog-menu ul > li.active > a").length ){
-            moveLine($(".b-catalog-list > li.active"));
+            moveLine($(".b-catalog-menu ul > li.active"));
             $(".b-catalog-menu .b-line").addClass("b-line-color");
         }else{
             $(".b-catalog-menu .b-line").removeClass("show");
@@ -152,6 +156,13 @@ $(document).ready(function(){
             "width" : $el.children().width()
         });
     }
+
+    $('.b-catalog-menu ul > li').mousedown(function(eventObject){
+        $(".b-catalog-menu .b-line").addClass("b-line-color");
+    });
+    $('.b-catalog-menu ul > li').mouseup(function(eventObject){
+        $(".b-catalog-menu .b-line").removeClass("b-line-color");
+    });
 
     checkMenu();
 
