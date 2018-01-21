@@ -192,7 +192,7 @@ h4{
 	position: relative;
 }
 	.b-btn-more:hover{
-		padding: 13px 33px;
+		padding: 13px 31px;
 		background-color: rgba(107, 77, 191, 0.15);
 	}
 
@@ -201,16 +201,15 @@ h4{
 		background-color: #6e58ac;
 	}
 
-	.b-btn-more .icon-arrow-right{
+	.b-btn-more .icon-arrow-right-bold{
 		display: none;
 		margin-left: 16px;
 	}
-	.b-btn-more .icon-arrow-right:before{
+	.b-btn-more .icon-arrow-right-bold:before{
 		color: #6e58ac;
 		font-size: 12px;
-		font-weight: 700;
 	}
-	.b-btn-more:hover .icon-arrow-right{
+	.b-btn-more:hover .icon-arrow-right-bold{
 		display: inline-block;
 	}
 
@@ -219,7 +218,7 @@ h4{
 		background-color: #6e58ac;
 	}
 
-	.b-btn-more:active .icon-arrow-right:before{
+	.b-btn-more:active .icon-arrow-right-bold:before{
 		color: #FFF;
 	}
 
@@ -246,7 +245,7 @@ h4{
 }
 
 .icon-favorites:before{
-	content: "\e904";
+	content: "\e90e";
   	font-size: 23px;
   	color: #FFF;
 }
@@ -285,6 +284,12 @@ h4{
 
 .icon-arrow-right:before{
 	content: "\e901";
+  	font-size: 23px;
+  	color: #FFF;
+}
+
+.icon-arrow-right-bold:before{
+	content: "\e90f";
   	font-size: 23px;
   	color: #FFF;
 }
