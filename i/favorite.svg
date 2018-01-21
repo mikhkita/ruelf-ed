@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Избранное</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Главная" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1684.000000, -43.000000)">
+        <g id="Group-12" transform="translate(-13.000000, -22.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Хэдер" transform="translate(13.000000, 0.000000)">
+                <g id="Шапка" transform="translate(704.000000, 48.000000)">
+                    <g id="Избранное" transform="translate(980.000000, 17.000000)">
+                        <path d="M11.5,22.6384 L9.89,20.9584 C3.91,15.4384 0,11.7184 0,7.1584 C0,3.4384 2.76,0.5584 6.325,0.5584 C8.28,0.5584 10.235,1.5184 11.5,3.0784 C12.765,1.5184 14.72,0.5584 16.675,0.5584 C20.24,0.5584 23,3.4384 23,7.1584 C23,11.7184 19.09,15.4384 13.11,20.9584 L11.5,22.6384 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -14,6 +14,8 @@ $(document).ready(function(){
             myWidth = document.body.clientWidth;
             myHeight = document.body.clientHeight;
         }
+
+        $(window).scroll();
     }
 
     function retina(){
@@ -104,10 +106,54 @@ $(document).ready(function(){
         }, 800);
         return false;
     });
-    
+
     $('.b-catalog-item .b-btn-buy').on('click', function(){
         alert("Добавлено в корзину");
     });
+
+    $('.b-favorites').on('click', function(){
+        $(this).toggleClass("active");
+        return false;
+    });
+
+    $('.color-item').on('click', function(){
+        $('.color-item').removeClass("active");
+        $(this).addClass("active");
+        return false;
+    });
+
+    $('.color-reset').on('click', function(){
+        $('.color-item').removeClass("active");
+        return false;
+    });
+
+    var menuTimer = null;
+    $(".b-catalog-menu ul > li > a").hover(function(){
+        $(".b-catalog-menu .b-line").removeClass("b-line-color");
+        clearTimeout(menuTimer);
+        moveLine($(this).parent());
+    }, function(){
+        clearTimeout(menuTimer);
+        menuTimer = setTimeout(checkMenu, 300);
+    });
+
+    function checkMenu(){
+        if( $(".b-catalog-menu ul > li.active > a").length ){
+            moveLine($(".b-catalog-list > li.active"));
+            $(".b-catalog-menu .b-line").addClass("b-line-color");
+        }else{
+            $(".b-catalog-menu .b-line").removeClass("show");
+        }
+    }
+
+    function moveLine($el){
+        $(".b-catalog-menu .b-line").addClass("show").css({
+            "left" : $el.position().left + parseInt($el.css("padding-left").replace(/\D+/g,"")),
+            "width" : $el.children().width()
+        });
+    }
+
+    checkMenu();
 
     function offset(a) {
         for (var b = 0; a;) b += parseInt(a.offsetTop), a = a.offsetParent;
