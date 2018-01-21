@@ -1142,10 +1142,9 @@ input{
 
 				.b-catalog-item .b-btn-buy{
 					position: absolute;
-					bottom: 0;
+					bottom: 6px;
 					right: 0;
 					z-index: 5;
-					margin-top: 10px;
 					opacity: 0;
 					visibility: hidden;
 					-webkit-transition: opacity 300ms ease-out, visibility 300ms ease-out;
