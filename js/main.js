@@ -25,6 +25,8 @@ $(document).ready(function(){
             $('.b-catalog-item-back').css("-o-transform", "scale("+scaleX+","+scaleY+")");
             $('.b-catalog-item-back').css("transform", "scale("+scaleX+","+scaleY+")");
         }
+
+        $(window).scroll();
     }
 
     function retina(){
