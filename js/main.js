@@ -126,18 +126,14 @@ $(document).ready(function(){
         return false;
     });
 
-    $('.color-item').on('click', function(){
-        if($(this).hasClass("color-all")){
-            $('.color-item').removeClass("active");
-            $(this).addClass("active");
-        }else{
-            $(this).toggleClass("active");
-            $('.color-all').removeClass("active")
-        }
+    /*$('.color-item').on('click', function(){
+        $(this).toggleClass("active");
+        $('.color-all').removeClass("active");
         return false;
-    });
+    });*/
     $('.color-reset').on('click', function(){
-        $('.color-item').removeClass("active");
+        //$('.color-item').removeClass("active");
+        $('.b-colors-form input[type="checkbox"]').prop("checked", false);
         return false;
     });
 
