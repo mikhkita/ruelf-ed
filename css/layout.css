@@ -882,16 +882,20 @@ input{
 	}
 
 		ul.b-catalog-list{
-			display: table;
-    		width: 100%;
+			text-align: justify;
 			font-family: 'Geometria-Medium';
 			padding-bottom: 43px;
 		}
+		ul.b-catalog-list:after {
+			content: '';
+		    display: inline-block;
+		    width: 100%;
+		    vertical-align: top;
+		}
 
 			ul.b-catalog-list li{
-				display: table-cell;
+				display: inline-block;
 				font-size: 20px;
-				margin-right: 54px;
 				border-bottom: 2px solid transparent;
 			}
 
