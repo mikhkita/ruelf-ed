@@ -555,11 +555,11 @@ input{
 		    -ms-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
 		    -o-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
 		    transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-		    -webkit-transform: translateY(10px);
-		    -moz-transform: translateY(10px);
-		    -ms-transform: translateY(10px);
-		    -o-transform: translateY(10px);
-		    transform: translateY(10px);
+		    -webkit-transform: translateY(-10px);
+		    -moz-transform: translateY(-10px);
+		    -ms-transform: translateY(-10px);
+		    -o-transform: translateY(-10px);
+		    transform: translateY(-10px);
 		}
 
 		.b-submenu:before {
@@ -737,11 +737,11 @@ input{
 				    -ms-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
 				    -o-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
 				    transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-				    -webkit-transform: translateY(10px);
-				    -moz-transform: translateY(10px);
-				    -ms-transform: translateY(10px);
-				    -o-transform: translateY(10px);
-				    transform: translateY(10px);
+				    -webkit-transform: translateY(-10px);
+				    -moz-transform: translateY(-10px);
+				    -ms-transform: translateY(-10px);
+				    -o-transform: translateY(-10px);
+				    transform: translateY(-10px);
 				}
 
 				.b-basket:before {
@@ -981,6 +981,8 @@ input{
 
 		.b-filter .select-wrapper{
 			display: inline-block;
+			vertical-align: top;
+			padding-top: 1px;
 		}
 
 	.color-item{
@@ -1193,6 +1195,7 @@ input{
 			display: inline-block;
 			height: 380px;
 			position: relative;
+			z-index: 1;
 			width: calc(100%/4 - 18px);
 			float: left;
 			margin-right: 24px;
@@ -1208,11 +1211,11 @@ input{
 				position: absolute;
 				border-radius: 6px;
 				background-color: #FFF;
-				-webkit-transition: transform 300ms ease-out, box-shadow 300ms ease-out;
-			    -moz-transition: transform 300ms ease-out, box-shadow 300ms ease-out;
-			    -ms-transition: transform 300ms ease-out, box-shadow 300ms ease-out;
-			    -o-transition: transform 300ms ease-out, box-shadow 300ms ease-out;
-			    transition: transform 300ms ease-out, box-shadow 300ms ease-out;
+				-webkit-transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+			    -moz-transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+			    -ms-transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+			    -o-transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+			    transition: transform 200ms ease-out, box-shadow 200ms ease-out;
 			}
 			.b-catalog-item:hover .b-catalog-item-back{
 				z-index: 2;
