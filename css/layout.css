@@ -334,11 +334,11 @@ h4{
 	    transform: translateX(-14px);
 	}
 	.b-btn-add-basket.icon-basket:hover .b-btn-more-text{
-		-webkit-transform: translateX(-20px);
-	    -moz-transform: translateX(-20px);
-	    -ms-transform: translateX(-20px);
-	    -o-transform: translateX(-20px);
-	    transform: translateX(-20px);
+		-webkit-transform: translateX(-22px);
+	    -moz-transform: translateX(-22px);
+	    -ms-transform: translateX(-22px);
+	    -o-transform: translateX(-22px);
+	    transform: translateX(-22px);
 	}
 
 .b-center{
@@ -1801,11 +1801,11 @@ input{
 
 .b-header-inner{
 	color: #FFF;
-    background-color: #f8f8f8;
-    background-position: 47% -59px;
+	background-color: #f8f8f8;
+	background-position: 50% 0;
     background-repeat: no-repeat;
     background-image: url(../i/header-inner.svg);
-    background-size: 3059px;
+    background-size: 2560px;
 }
 
 .b-header-title-inner{
