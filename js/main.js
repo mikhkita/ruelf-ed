@@ -15,7 +15,16 @@ $(document).ready(function(){
             myHeight = document.body.clientHeight;
         }
 
-        $(window).scroll();
+        if($('.b-catalog').length){
+            var scaleX = 1, scaleY = 1;
+            scaleX = ($('.b-catalog-item').innerWidth() - 32) / $('.b-catalog-item').innerWidth();
+            scaleY = ($('.b-catalog-item').innerHeight() - 32) / $('.b-catalog-item').innerHeight();
+            $('.b-catalog-item-back').css("-webkit-transform", "scale("+scaleX+","+scaleY+")");
+            $('.b-catalog-item-back').css("-moz-transform", "scale("+scaleX+","+scaleY+")");
+            $('.b-catalog-item-back').css("-ms-transform", "scale("+scaleX+","+scaleY+")");
+            $('.b-catalog-item-back').css("-o-transform", "scale("+scaleX+","+scaleY+")");
+            $('.b-catalog-item-back').css("transform", "scale("+scaleX+","+scaleY+")");
+        }
     }
 
     function retina(){
@@ -126,13 +135,7 @@ $(document).ready(function(){
         return false;
     });
 
-    /*$('.color-item').on('click', function(){
-        $(this).toggleClass("active");
-        $('.color-all').removeClass("active");
-        return false;
-    });*/
     $('.color-reset').on('click', function(){
-        //$('.color-item').removeClass("active");
         $('.b-colors-form input[type="checkbox"]').prop("checked", false);
         return false;
     });
