@@ -184,7 +184,20 @@ h4{
 	position: relative;
 	color: #FFF;
 	border: 2px solid #FFF;
+	-webkit-transition: background-color 150ms ease-out;
+    -moz-transition: background-color 150ms ease-out;
+    -ms-transition: background-color 150ms ease-out;
+    -o-transition: background-color 150ms ease-out;
+    transition: background-color 150ms ease-out;
 }
+
+	.b-btn-white:hover{
+		background-color: rgba(255, 255, 255, 0.15);
+	}
+	.b-btn-white:active{
+		color: #434343;
+		background-color: #FFF;
+	}
 
 .b-btn-more{
 	min-width: 250px;
@@ -246,13 +259,12 @@ h4{
 		visibility: visible;
 	}
 
-	.b-btn-more:active{
-		color: #FFF;
-		background-color: #6e58ac;
-	}
-
 	.b-btn-more.icon-arrow-right-bold:active:before{
 		color: #FFF;
+	}
+
+	.b-btn-white.icon-phone:active:before{
+		color: #434343;
 	}
 
 	.b-btn-more-text{
@@ -573,19 +585,16 @@ input{
 		    height: 21px;
 		}
 			.b-submenu li{
-				border-bottom: 1px solid transparent;
 				margin-right: 0;
 			}
 			.b-submenu li:hover a{
-				border-bottom: 1px solid #434343;
+				text-decoration: underline;
 			}
 			.b-submenu li:active,
 			.b-submenu li.active{
-				border-bottom: 1px solid transparent;
 			}
 				.b-submenu li:active a,
 				.b-submenu li.active a{
-					border-bottom: 1px solid #6e58ac;
 					color: #6e58ac;
 				}
 				.b-submenu li a {
@@ -664,7 +673,7 @@ input{
 				.b-favorites:active .icon-favorites-back:before{
 					color: rgba(255, 255, 255, 0.4);
 				}
-				.b-favorites.active .icon-favorites-back:before{
+				.b-catalog .b-favorites.active .icon-favorites-back:before{
 					background-image: linear-gradient(180deg, #e34752 0%, #c4121e 100%);
 					-webkit-background-clip: text;
 					-moz-background-clip: text;
@@ -674,7 +683,7 @@ input{
 					text-fill-color: transparent;
 					color: #c4121e;
 				}
-				.b-favorites.active .icon-favorites{
+				.b-catalog .b-favorites.active .icon-favorites{
 					display: none;
 				}
 
@@ -803,11 +812,10 @@ input{
 								margin-top: 8px;
 							}
 									.b-basket-item-text h4{
-										border-bottom: 1px solid transparent;
 										line-height: 22px;
 									}
 									.b-basket-item-name:hover h4{
-										border-bottom: 1px solid #434343;
+										text-decoration: underline;
 									}
 									.b-basket .b-basket-item-text p{
 										display: inline-block;
@@ -1427,6 +1435,7 @@ input{
 	width: calc(50% - 13px);
 	min-height: 270px;
 	color: #FFF;
+	border-radius: 3px;
 	background-position: 50% 50%;
     background-repeat: no-repeat;
     background-image: url(../i/review-back.jpg);
