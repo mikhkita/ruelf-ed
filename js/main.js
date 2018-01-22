@@ -92,11 +92,21 @@ $(document).ready(function(){
         autoplaySpeed: 3000,
     });
 
+    var arrowOffset = 0,
+        footerOffset = 0;
     $(window).scroll(function (){
         if ($(this).scrollTop() > 550){
             $('.arrow-up').removeClass("hide-opacity");
         } else{
             $('.arrow-up').addClass("hide-opacity");
+        }
+        arrowOffset = $('.arrow-hide').offset().top;
+        footerOffset = $('.b-footer').offset().top;
+        //если стрелка над футером
+        if(arrowOffset + 84 > footerOffset){
+            $('.arrow-up').css("position", "absolute");
+        }else{
+            $('.arrow-up').css("position", "fixed");
         }
     });
 
@@ -157,32 +167,14 @@ $(document).ready(function(){
         });
     }
 
+    checkMenu();
+
     $('.b-catalog-menu ul > li').mousedown(function(eventObject){
         $(".b-catalog-menu .b-line").addClass("b-line-color");
     });
     $('.b-catalog-menu ul > li').mouseup(function(eventObject){
         $(".b-catalog-menu .b-line").removeClass("b-line-color");
     });
-
-    checkMenu();
-
-    function offset(a) {
-        for (var b = 0; a;) b += parseInt(a.offsetTop), a = a.offsetParent;
-        return b;
-    }
-
-    var a = document.querySelector(".arrow-up"),
-        b = offset(a),
-        f = window.getComputedStyle ? getComputedStyle(a, "") : a.currentStyle,
-        d = a.offsetHeight + parseInt(f.marginTop) || 0,
-        e = offset(document.querySelector(".b-footer"));
-    var s = !0;
-    window.onscroll = function () {
-         var c = window.pageYOffset || document.documentElement.scrollTop,
-             c = e - (c + d + b);
-             console.log(c);
-         s != 0 < c && ((s = 0 < c) ? (a.style.top = b + "px", a.style.position = "fixed") : (a.style.top = e - d - 24 + "px", a.style.position = "absolute"));
-    }
     
 	// var myPlace = new google.maps.LatLng(55.754407, 37.625151);
  //    var myOptions = {

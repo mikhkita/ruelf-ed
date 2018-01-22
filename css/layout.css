@@ -501,7 +501,6 @@ input{
 			border-radius: 20px;
 			margin-bottom: 6px;
 			margin-right: 14px;
-			border: 1px solid transparent;
 			-webkit-transition: background-color 100ms ease-out, border 100ms ease-out;
 		    -moz-transition: background-color 100ms ease-out, border 100ms ease-out;
 		    -ms-transition: background-color 100ms ease-out, border 100ms ease-out;
@@ -517,12 +516,13 @@ input{
 			    display: block;
 			    padding: 4px 16px;
 			    border-radius: 20px;
+			    border: 1px solid transparent;
 			}
 			.b-menu li:hover{
 				background-color: rgba(255, 255, 255, 0.2);
 			}
-			.b-menu li:active,
-			.b-menu li.active{
+			.b-menu > li a:active,
+			.b-menu > li a.active{
 				border: 1px solid #FFF;
 			}
 
@@ -672,6 +672,7 @@ input{
 					-webkit-text-fill-color: transparent;
 					-moz-text-fill-color: transparent;
 					text-fill-color: transparent;
+					color: #c4121e;
 				}
 				.b-favorites.active .icon-favorites{
 					display: none;
@@ -1698,6 +1699,16 @@ input{
 		background-color: #EEE;
 	}
 
+.arrow-hide{
+	opacity: 0;
+	visibility: hidden;
+	position: fixed;
+	bottom: 24px;
+	left: calc(50% + 600px);
+	width: 80px;
+	height: 60px;
+}
+
 /*------Каталог------*/
 
 .b-header-inner{
@@ -1776,7 +1787,7 @@ input{
 }
 
 @media screen and (max-width: 1366px){
-	.arrow-up{
+	.arrow-up, .arrow-hide{
 		left: calc(50% + 496px);
 	}
 }
