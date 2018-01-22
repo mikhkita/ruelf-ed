@@ -884,7 +884,7 @@ input{
 		ul.b-catalog-list{
 			text-align: justify;
 			font-family: 'Geometria-Medium';
-			padding-bottom: 43px;
+			padding-bottom: 19px;
 		}
 		ul.b-catalog-list:after {
 			content: '';
