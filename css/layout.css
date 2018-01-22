@@ -284,7 +284,7 @@ h4{
 	}
 
 	.b-btn-add-basket.icon-basket:before{
-		color: #FFF;
+		color: #f43d84;
 		font-size: 24px;
 		top: 34%;
 		right: 18%;
@@ -1617,11 +1617,13 @@ input{
 	background-color: #f8f8f8;
 }
 	.b-footer-top{
-		padding: 40px 0 34px;
+		display: table;
+		width: 100%;
+		padding: 40px 0 30px;
 	}
 
 	.b-footer-logo{
-		display: inline-block;
+		display: block;
 		margin-top: 5px;
 	    width: 280px;
 	    height: 47px;
@@ -1629,17 +1631,18 @@ input{
 		background-color: #434343;
 	    -webkit-mask: url(../i/logo.svg) no-repeat 50% 50%;
 	    mask: url(../i/logo.svg) no-repeat 50% 50%;
-		margin-bottom: 26px;
+		margin-bottom: 33px;
 	}
 		.b-footer-column{
-			float: left;
-			margin-right: 100px;
+			display: table-cell;
+			vertical-align: top;
+			padding: 0 25px;
 		}
 		.b-footer-column:first-child{
-			
+			padding: 0;
 		}
-		.b-footer-column:nth-last-child(2){
-			margin-right: 0;
+		.b-footer-column:last-child{
+			padding: 0;
 		}
 		.b-footer-column.b-footer-contacts{
 			text-align: right;
@@ -1692,10 +1695,11 @@ input{
 				color: #434343;
 			}
 				ul.b-social{
-					text-align: center;
+					margin-left: 35px;
 				}
 					ul.b-social li{
 						width: 32px;
+						text-align: center;
 						display: inline-block;
 						vertical-align: top;
 						margin-right: 24px;
@@ -1746,7 +1750,7 @@ input{
 			    width: 80px;
 			    height: 14px;
 			    background-size: 80px;
-			    margin-left: 10px;
+			    margin-left: 7px;
 			}
 
 .arrow-up{
