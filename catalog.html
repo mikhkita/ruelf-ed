@@ -138,22 +138,56 @@
 					</div>
 				</div>
 				<div class="b-filter-colors">
-					<a href="#" class="color-item color-red"></a>
-					<a href="#" class="color-item color-pink"></a>
-					<a href="#" class="color-item color-beige"></a>
-					<a href="#" class="color-item color-yellow"></a>
-					<a href="#" class="color-item color-orange"></a>
-					<a href="#" class="color-item color-blue"></a>
-					<a href="#" class="color-item color-purple"></a>
-					<a href="#" class="color-item color-black"></a>
-					<a href="#" class="color-item color-white"></a>
-					<a href="#" class="color-item color-all">
-						<div class="color-all-img"></div>
-					</a>
-					<div class="b-tip-cont">
-						<a href="#" class="color-reset icon-update"></a>
-						<div class="b-tip">Сбросить</div>
-					</div>
+					<form id="b-colors-form" class="b-colors-form" method="post" action="action.php">
+						<ul>
+							<li>
+								<input id="label-red" type="checkbox" name="red">
+								<label for="label-red" class="color-item color-red"></label>
+							</li>
+							<li>
+								<input id="label-pink" type="checkbox" name="pink">
+								<label for="label-pink" class="color-item color-pink"></label>
+							</li>
+							<li>
+								<input id="label-beige" type="checkbox" name="beige">
+								<label for="label-beige" class="color-item color-beige"></label>
+							</li>
+							<li>
+								<input id="label-yellow" type="checkbox" name="yellow">
+								<label for="label-yellow" class="color-item color-yellow"></label>
+							</li>
+							<li>
+								<input id="label-orange" type="checkbox" name="orange">
+								<label for="label-orange" class="color-item color-orange"></label>
+							</li>
+							<li>
+								<input id="label-blue" type="checkbox" name="blue">
+								<label for="label-blue" class="color-item color-blue"></label>
+							</li>
+							<li>
+								<input id="label-purple" type="checkbox" name="purple">
+								<label for="label-purple" class="color-item color-purple"></label>
+							</li>
+							<li>
+								<input id="label-black" type="checkbox" name="black">
+								<label for="label-black" class="color-item color-black"></label>
+							</li>
+							<li>
+								<input id="label-white" type="checkbox" name="white">
+								<label for="label-white" class="color-item color-white"></label>
+							</li>
+							<li>
+								<input id="label-all" type="checkbox" name="all">
+								<label for="label-all" class="color-item color-all">
+									<div class="color-all-img"></div>
+								</label>
+							</li>
+							<li class="b-tip-cont">
+								<a href="#" class="color-reset icon-update"></a>
+								<div class="b-tip">Сбросить</div>
+							</li>
+						</ul>
+					</form>
 				</div>
 			</div>
 		</div>

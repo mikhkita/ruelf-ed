@@ -141,7 +141,7 @@ $(document).ready(function(){
     $(".b-catalog-menu ul > li > a").hover(function(){
         $(".b-catalog-menu .b-line").removeClass("b-line-color");
         clearTimeout(menuTimer);
-        moveLine($(this).parent());
+        moveLine($(this));
     }, function(){
         clearTimeout(menuTimer);
         menuTimer = setTimeout(checkMenu, 300);
@@ -149,7 +149,7 @@ $(document).ready(function(){
 
     function checkMenu(){
         if( $(".b-catalog-menu ul > li.active > a").length ){
-            moveLine($(".b-catalog-menu ul > li.active"));
+            moveLine($(".b-catalog-menu ul > li.active > a"));
             $(".b-catalog-menu .b-line").addClass("b-line-color");
         }else{
             $(".b-catalog-menu .b-line").removeClass("show");
@@ -159,7 +159,7 @@ $(document).ready(function(){
     function moveLine($el){
         $(".b-catalog-menu .b-line").addClass("show").css({
             "left" : $el.position().left + parseInt($el.css("padding-left").replace(/\D+/g,"")),
-            "width" : $el.children().width()
+            "width" : $el.width()
         });
     }
 
