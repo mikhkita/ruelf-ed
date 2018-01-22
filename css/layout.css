@@ -1256,14 +1256,14 @@ input{
 					position: absolute;
 					width: 100%;
 	    			height: 100%;
-					/*z-index: 3;*/
+					z-index: 100;
 				}
 				.b-catalog-item-content h4{
 					font-family: 'Geometria-Medium';
 				}
 				.b-catalog-favorites{
 					position: absolute;
-					/*z-index: 5;*/
+					z-index: 100;
 					top: 24px;
     				right: 4px;
     				padding-top: 0;
@@ -1433,7 +1433,7 @@ input{
 					position: absolute;
 					bottom: 6px;
 					right: 0;
-					z-index: 5;
+					z-index: 101;
 					opacity: 0;
 					visibility: hidden;
 					-webkit-transition: opacity 300ms ease-out, visibility 300ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
@@ -1779,6 +1779,10 @@ input{
 			ul.b-breadcrumbs li span{
 
 			}
+
+.b-catalog-margin{
+	margin-top: 64px;
+}
 
 /*-------slick-------*/
 
