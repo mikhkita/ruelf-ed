@@ -144,7 +144,10 @@ $(document).ready(function(){
 
     var menuTimer = null;
     $(".b-catalog-menu ul > li > a").hover(function(){
-        $(".b-catalog-menu .b-line").removeClass("b-line-color");
+        if($(this).parent().hasClass("active")){
+            $(".b-catalog-menu .b-line").addClass("b-line-color");
+        }else
+            $(".b-catalog-menu .b-line").removeClass("b-line-color");
         clearTimeout(menuTimer);
         moveLine($(this));
     }, function(){
