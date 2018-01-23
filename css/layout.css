@@ -519,8 +519,16 @@ input{
 /*--------------------*/
 
 .b-content{
-	padding-top: 36px;
+	padding-top: 50px;
 	padding-bottom: 70px;
+}
+
+.b-content.b-content-no-margin{
+	padding-top: 0;
+}
+
+.b-content.b-content-detail{
+	padding-bottom: 24px;
 }
 
 /*------Главная------*/
@@ -1003,6 +1011,7 @@ input{
 		}
 
 .b-filter{
+	padding-top: 36px;
 	font-size: 18px;
 	font-family: 'Geometria-Medium';
 }
@@ -1898,20 +1907,56 @@ input{
 				margin-top: 27px;
 				margin-bottom: 29px;
 			}
-				.b-payment span{
+				.b-payment p{
 					display: inline-block;
 				    vertical-align: top;
 				    line-height: 20px;
 					margin-right: 12px;
 				}
-				.b-payment a{
+				.b-payment > a{
 					vertical-align: top;
 					display: inline-block;
 					margin-right: 11px;
 				}
-				.b-payment a:last-child{
+				.b-payment > a:last-child{
 					margin-right: 0;
 				}
+					.b-payment a span{
+						display: inline-block;
+						background-position: 50% 50%;
+					    background-repeat: no-repeat;
+					    background-size: cover;
+					}
+					.payment-visa{
+						background-image: url(../i/visa.png);
+						width: 34px;
+						height: 20px;
+					}
+					.payment-masterCard{
+						background-image: url(../i/masterCard.png);
+						width: 32px;
+						height: 20px;
+					}
+					.payment-qiwi{
+						background-image: url(../i/qiwi.png);
+						width: 19px;
+						height: 20px;
+					}
+					.payment-webmoney{
+						background-image: url(../i/webmoney.png);
+						width: 20px;
+						height: 20px;
+					}
+					.payment-yaDengi{
+						background-image: url(../i/yaDengi.png);
+						width: 18px;
+						height: 20px;
+					}
+					.payment-mir{
+						background-image: url(../i/mir.png);
+						width: 36px;
+						height: 11px;
+					}
 
 			.b-detail-right .b-advantage-list{
 				margin-bottom: 32px;
@@ -1919,7 +1964,6 @@ input{
 				.b-detail-right .b-advantage-item img{
 				    /*-webkit-mask: url(../i/logo.svg) no-repeat 50% 50%;
 					mask: url(../i/logo.svg) no-repeat 50% 50%;*/
-					color: #434343;
 				}
 
 			.b-detail-right h4{
@@ -1959,6 +2003,24 @@ input{
 	/*.b-redder-logo {
 	    background-image: url(../i/redder@2x.png);
 	}*/
+	.payment-visa{
+		background-image: url(../i/visa@2x.png);
+	}
+	.payment-masterCard{
+		background-image: url(../i/masterCard@2x.png);
+	}
+	.payment-qiwi{
+		background-image: url(../i/qiwi@2x.png);
+	}
+	.payment-webmoney{
+		background-image: url(../i/webmoney@2x.png);
+	}
+	.payment-yaDengi{
+		background-image: url(../i/yaDengi@2x.png);
+	}
+	.payment-mir{
+		background-image: url(../i/mir@2x.png);
+	}
 }
 
 @media screen and (max-width: 1366px){
