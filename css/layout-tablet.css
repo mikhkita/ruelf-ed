@@ -1,0 +1,7 @@
+body {
+	min-width: 750px;
+}
+
+.b-block{
+	width: calc(100% - 48px);
+}

@@ -49,6 +49,7 @@
 
 html,
 body {
+	height: 100%;
 	position: relative;
 }
 body {
@@ -1968,6 +1969,37 @@ input{
 				line-height: 24px;
 				margin-bottom: 16px;
 			}
+
+/*------Загрушка------*/
+
+.b-header-temp{
+	display: table;
+	width: 100%;
+	height: 100%;
+	background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url(../i/back-temp.jpg);
+    background-size: cover;
+}
+
+	.b-header-temp .b-block{
+		height: 100%;
+	}
+
+		.b-header-temp .b-logo{
+			position: absolute;
+			top: 59px;
+		}
+
+		h1.b-title-temp{
+			font-size: 64px;
+			line-height: 80px;
+		}
+
+		.b-header-temp h1{
+			display: table-cell;
+			vertical-align: middle;
+		}
 
 /*-------slick-------*/
 

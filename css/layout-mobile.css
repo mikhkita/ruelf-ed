@@ -1,0 +1,21 @@
+body {
+	min-width: 320px;
+}
+
+.b-block{
+	width: calc(100% - 48px);
+}
+
+h1.b-title-temp{
+	font-size: 42px;
+	line-height: 50px;
+}
+
+@media screen and (max-width: 450px){
+
+	h1.b-title-temp{
+		font-size: 36px;
+		line-height: 40px;
+	}
+
+}

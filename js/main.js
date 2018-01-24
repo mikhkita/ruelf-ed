@@ -111,13 +111,15 @@ $(document).ready(function(){
         } else{
             $('.arrow-up').addClass("hide-opacity");
         }
-        arrowOffset = $('.arrow-hide').offset().top;
-        footerOffset = $('.b-footer').offset().top;
-        //если стрелка над футером
-        if(arrowOffset + 84 > footerOffset){
-            $('.arrow-up').css("position", "absolute");
-        }else{
-            $('.arrow-up').css("position", "fixed");
+        if($('.arrow-hide').length){
+            arrowOffset = $('.arrow-hide').offset().top;
+            footerOffset = $('.b-footer').offset().top;
+            //если стрелка над футером
+            if(arrowOffset + 84 > footerOffset){
+                $('.arrow-up').css("position", "absolute");
+            }else{
+                $('.arrow-up').css("position", "fixed");
+            }
         }
     });
 
