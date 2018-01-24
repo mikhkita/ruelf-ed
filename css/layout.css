@@ -1576,6 +1576,7 @@ input{
 	}
 		.b-questions-item{
 			width: calc(100%/4 - 18px);
+			height: 270px;
 			min-height: 270px;
 			float: left;
 			padding: 0 26px;
