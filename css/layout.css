@@ -722,9 +722,6 @@ input{
 
 			}
 				.icon-favorites-back:before{
-					/*color: transparent;*/
-					/*-webkit-mask-image: url(../i/favorite.svg);
-					mask-image: url(../i/favorite.svg);*/
 					color: transparent;
 					-webkit-transition: color 100ms ease-out;
 				    -moz-transition: color 100ms ease-out;
@@ -1637,9 +1634,9 @@ input{
 	    width: 280px;
 	    height: 47px;
 	    background-size: 280px;
-		background-color: #434343;
-	    -webkit-mask: url(../i/logo.svg) no-repeat 50% 50%;
-	    mask: url(../i/logo.svg) no-repeat 50% 50%;
+		background-image: url(../i/logo-black.svg);
+		background-position: 50% 50%;
+	    background-repeat: no-repeat;
 		margin-bottom: 33px;
 	}
 		.b-footer-column{
@@ -1962,8 +1959,7 @@ input{
 				margin-bottom: 32px;
 			}
 				.b-detail-right .b-advantage-item img{
-				    /*-webkit-mask: url(../i/logo.svg) no-repeat 50% 50%;
-					mask: url(../i/logo.svg) no-repeat 50% 50%;*/
+
 				}
 
 			.b-detail-right h4{
