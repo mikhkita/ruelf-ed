@@ -11,11 +11,72 @@ h1.b-title-temp{
 	line-height: 50px;
 }
 
+/*---------------------*/
+
+.b-catalog-item{
+	width: calc(100%/2 - 13px);
+	height: 60vw;
+}
+.b-catalog-item:nth-child(3n){
+	margin-right: 24px;
+}
+.b-catalog-item:nth-child(2n){
+	margin-right: 0;
+}
+	.flowers-img-cont{
+		height: calc(100% - 110px);
+	}
+		.flowers-img{
+			background-position: 50% 0%;
+		}
+
+.b-main-info .b-block{
+	width: calc(100% - 48px);
+}
+
+.arrow-up, .arrow-hide{
+	left: auto;
+	right: 24px;
+}
+
+.b-questions{
+}
+	.b-questions-list{
+
+	}
+		.b-questions-item{
+			width: calc(100%/2 - 12px);
+			margin-bottom: 24px;
+		}
+		.b-questions-item:nth-child(2n){
+			margin-right: 0;
+		}
+
+@media screen and (max-width: 570px){
+
+	.b-questions-item{
+		min-height: 200px;
+		height: 200px;
+		width: 100%;
+		margin-right: 0;
+	}
+
+}
+
 @media screen and (max-width: 450px){
 
 	h1.b-title-temp{
 		font-size: 36px;
 		line-height: 40px;
+	}
+
+	.b-catalog-item{
+		width: 100%;
+		height: 110vw;
+		margin-right: 0;
+	}
+	.b-catalog-item:nth-child(2n){
+		margin-right: 0;
 	}
 
 }

@@ -5,3 +5,71 @@ body {
 .b-block{
 	width: calc(100% - 48px);
 }
+
+/*---------------------*/
+
+.b-catalog{
+
+}
+	.b-catalog-list{
+
+	}
+		.b-catalog-item{
+			width: calc(100%/3 - 17px);
+			height: 40vw;
+		}
+		.b-catalog-item:nth-child(4n){
+			margin-right: 24px;
+		}
+		.b-catalog-item:nth-child(3n){
+			margin-right: 0;
+		}
+			.flowers-img-cont{
+				height: calc(100% - 110px);
+			}
+				.flowers-img{
+					background-position: 50% 0%;
+				}
+
+.b-main-info .b-block{
+	width: calc(100% - 48px);
+}
+
+.arrow-up, .arrow-hide{
+	left: auto;
+	right: 24px;
+}
+
+@media screen and (max-width: 1024px){
+
+	.b-questions{
+	}
+		.b-questions-list{
+
+		}
+			.b-questions-item{
+				width: calc(100%/2 - 12px);
+				margin-bottom: 24px;
+			}
+			.b-questions-item:nth-child(2n){
+				margin-right: 0;
+			}
+
+}
+
+@media screen and (max-width: 850px){
+
+	.b-catalog-item{
+		width: calc(100%/2 - 13px);
+		height: 55vw;
+	}
+	.b-catalog-item:nth-child(3n){
+		margin-right: 24px;
+	}
+	.b-catalog-item:nth-child(2n){
+		margin-right: 0;
+	}
+		.flowers-img-cont{
+
+		}
+}
