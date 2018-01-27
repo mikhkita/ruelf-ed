@@ -1247,7 +1247,7 @@ input{
 				    border-left: 11px solid transparent;
 				}
 
-				.color-reset:hover + .b-tip{
+				a.b-tip-ref:hover + .b-tip{
 					visibility: visible;
 				    opacity: 1;
 				    -webkit-transform: translateY(0px);
@@ -2003,6 +2003,111 @@ input{
 			display: table-cell;
 			vertical-align: middle;
 		}
+
+/*------Корзина------*/
+
+.b-basket-table{
+	width: 100%;
+}
+	.b-basket-table h4{
+		margin-bottom: 0;
+	}
+	.table-header{
+
+	}
+		.table-header th{
+			color: #c4c4c4;
+			font-family: 'Geometria-Bold';
+			font-size: 14px;
+			line-height: 24px;
+			text-transform: uppercase;
+			padding-bottom: 12px;
+		}
+
+	.b-basket-table tr{
+		border-bottom: 1px solid #eaeaea;
+	}
+		.b-basket-table td{
+			padding: 16px 0;
+			vertical-align: middle;
+		}
+
+	.b-basket-name{
+
+	}
+		.b-basket-name a{
+			display: inline-block;
+			vertical-align: middle;
+		}
+			.b-basket-name a img{
+				display: block;
+			}
+			.b-basket-name a h4{
+				margin-left: 20px;
+			}
+
+	.b-basket-count .input-cont{
+		display: inline-block;
+		margin-right: 11px;
+	}
+
+	.b-basket-count input{
+		text-align: center;
+		padding: 4px 9px 4px 14px;
+		border: none;
+	    width: 70px;
+	    color: #434343;
+		font-family: 'Geometria-Bold';
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 18px;
+	    background-color: transparent;
+	    font-size: 18px;
+	    border-bottom: 1px solid #e4e4e4;
+	    border-radius: 0;
+	}
+
+		.count-minus{
+			position: absolute;
+			top: 2px;
+			left: 0;
+			color: #e4e4e4;
+		}
+
+		.count-plus{
+			position: absolute;
+			top: 3px;
+			right: 0;
+			color: #e4e4e4;
+		}
+
+	.b-basket-sum .icon-ruble:after,
+	.b-basket-price .icon-ruble:after{
+		font-size: 14px;
+		color: #434343;
+	}
+
+	.b-basket-table .b-tip-cont{
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.b-basket-table .icon-close:before{
+		opacity: 0.4;
+		color: #f43d84;
+	}
+
+	.b-basket-table .icon-close:hover:before{
+		opacity: 1;
+	}
+
+	.b-basket-table .b-tip{
+		left: -50px;
+	}
+
+	.b-basket-table .b-tip:before{
+	    left: 46px;
+	}
 
 /*-------slick-------*/
 
