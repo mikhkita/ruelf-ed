@@ -2035,6 +2035,10 @@ input{
 	.b-basket-name{
 
 	}
+
+		.b-basket-name h4:hover{
+			text-decoration: underline;
+		}
 		.b-basket-name a{
 			display: inline-block;
 			vertical-align: middle;
