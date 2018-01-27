@@ -2033,7 +2033,7 @@ input{
 		}
 
 	.b-basket-name{
-
+		width: 50%;
 	}
 
 		.b-basket-name h4:hover{
@@ -2045,10 +2045,20 @@ input{
 		}
 			.b-basket-name a img{
 				display: block;
+				width: 98px;
+				height: 98px;
 			}
 			.b-basket-name a h4{
 				margin-left: 20px;
 			}
+
+	.b-basket-count{
+		width: 20%;
+	}
+
+	.b-basket-price{
+		width: 15%;
+	}
 
 	.b-basket-count .input-cont{
 		display: inline-block;
