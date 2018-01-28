@@ -187,7 +187,7 @@
 		</div>
 
 
-		<div class="b-data-order b-block-gray">
+		<div class="b-data-order b-block-gray b-padding">
 			<div class="b-block">
 				<div class="b-data-order-top clearfix">
 					<h2 class="b-title">Данные к заказу</h2>
@@ -227,6 +227,22 @@
 							<input type="text" id="" name="">
 							<label for="">Телефон получателя</label>
 						</div>
+					</div>
+					<div class="b-input-row clearfix">
+						<div class="b-radio b-payment-method">
+							<p>Способ оплаты:</p>
+							<input id="card" type="radio" name="payment-method" required>
+							<label for="card">Онлайн-оплата картой</label>
+							<input id="cash" type="radio" name="payment-method" required>
+							<label for="cash">Наличными курьеру</label>
+						</div>
+						<div class="b-total-price">
+							<p>Итого с доставкой:</p>
+							<p class="total-price icon-ruble">14 700</p>
+						</div>
+					</div>
+					<div class="b-center">
+						<a href="#" class="b-btn b-btn-buy ajax" onclick="$('#b-data-order-form').submit(); return false;">Оформить заказ</a>
 					</div>
 				</form>
 			</div>

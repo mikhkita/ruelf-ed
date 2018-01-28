@@ -520,6 +520,65 @@ input{
     background-color: transparent;
 }
 
+/*------type=radio------*/
+
+input[type="radio"]{
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+	margin-bottom: 0;
+}
+
+input[type="radio"] + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+input[type="radio"] + label:hover:after{
+    top: 5px;
+    left: 5px;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background-color: #e4e4e4;
+}
+
+input[type="radio"] + label:before {
+    top: 0;
+    left: 0;
+    width: 20px;
+	height: 20px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.07);
+	border-radius: 13px;
+	border: 1px solid #e4e4e4;
+	background-color: #ffffff;
+}
+
+input[type="radio"]:checked + label:after {
+   background-color: #6e58ac;
+}
+
+input[type="radio"]:checked + label{
+
+}
+
+input[type="radio"] + label:after {
+    top: 5px;
+    left: 5px;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+}
+
+input[type="radio"] + label:before,
+input[type="radio"] + label:after {
+    content: ' ';
+    border-radius: 50%;
+    position: absolute;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 /*--------------------*/
 
 .b-content{
@@ -533,6 +592,10 @@ input{
 
 .b-content.b-content-detail{
 	padding-bottom: 24px;
+}
+
+.b-padding{
+	padding-bottom: 50px;
 }
 
 /*------Главная------*/
@@ -1470,7 +1533,6 @@ input{
 				}
 
 				.b-btn-buy{
-					float: right;
 					color: #f43d84;
 					font-family: 'Geometria-Medium';
 					font-size: 16px;
@@ -2237,6 +2299,44 @@ input{
 				display: inline-block;
 				font-size: 16px;
 			}
+	.b-payment-method{
+		float: left;
+	}	
+		.b-payment-method p{
+			display: inline-block;
+			margin-right: 30px;
+		}
+		.b-radio label{
+			margin-right: 30px;
+		}
+		.b-radio label:last-child{
+			margin-right: 0;
+		}
+
+	.b-total-price{
+		float: right;
+	}
+		.b-total-price p{
+			display: inline-block;
+		}
+
+		.total-price{
+			font-family: 'Geometria-Bold';
+			font-size: 24px;
+			line-height: 28px;
+			margin-left: 16px;
+		}
+
+		.total-price.icon-ruble:after{
+			color: #434343;
+			font-size: 18px;
+		}
+
+	.b-data-order .b-btn-buy{
+		padding: 13px 50px;
+		font-size: 18px;
+    	line-height: 26px;
+	}
 
 /*-------slick-------*/
 
