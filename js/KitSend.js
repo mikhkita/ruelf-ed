@@ -52,14 +52,28 @@ $(document).ready(function(){
 
 	$(".ajax").parents("form").each(function(){
 		$(this).validate({
+			onkeyup: true,
 			rules: {
 				email: 'email',
 				phone: 'customPhone'
+			},
+			highlight: function(element, errorClass) {
+			    $(element).addClass("error").parents(".b-input").addClass("error");
+			},
+			unhighlight: function(element) {
+			    $(element).removeClass("error").parents(".b-input").removeClass("error");
 			}
 		});
 		if( $(this).find("input[name=phone]").length ){
 			$(this).find("input[name=phone]").mask(tePhone,{placeholder:" "});
 		}
+		$(this).find("input[type='text'], input[type='email'], textarea, select").blur(function(){
+		   $(this).valid();
+		});
+
+		$(this).find("input[type='text'], input[type='email'], textarea, select").keyup(function(){
+		   $(this).valid();
+		});
 	});
 
 	function whenScroll(){

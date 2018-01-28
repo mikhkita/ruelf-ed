@@ -76,11 +76,11 @@ label.error{
 	display: none !important;
 }
 input.error,textarea.error{
-	border: 1px solid #F00 !important;
+	border: 1px solid #F00;
 	box-shadow: 0 0px 0px 1px #F00;
 }
 .b-sub-form input.error{
-	border: 1px solid #F00 !important;
+	border: 1px solid #F00;
 	border-right: 0;
 }
 .fancybox-inner{
@@ -1537,7 +1537,7 @@ input[type="radio"] + label:after {
 					font-family: 'Geometria-Medium';
 					font-size: 16px;
 					line-height: 24px;
-					padding: 8px 34px 8px;
+					padding: 8px 34px 9px;
 					border-radius: 100px;
 					border: 2px solid #f43d84;
 					-webkit-transition: background-color 150ms ease-out;
@@ -2337,6 +2337,52 @@ input[type="radio"] + label:after {
 		font-size: 18px;
     	line-height: 26px;
 	}
+
+.b-addition{
+
+}
+	.b-addition-list{
+
+	}
+		.b-addition-item{
+			display: inline-block;
+			vertical-align: top;
+			width: calc(100%/3 - 20px);
+			margin-right: 24px;
+			margin-bottom: 32px;
+		}
+		.b-addition-item:nth-child(3n){
+			margin-right: 0;
+		}
+			.b-addition-item img{
+				display: inline-block;
+				vertical-align: top;
+				width: 136px;
+				height: 136px;
+				border-radius: 3px;
+			}
+			.b-addition-item-content{
+				padding-top: 7px;
+				width: calc(100% - 158px);
+				margin-left: 16px;
+				display: inline-block;
+				vertical-align: top;
+			}
+				.b-addition-item-content .b-addition-item-name{
+					margin-bottom: 10px;
+					font-family: 'Geometria-Bold';
+				}
+				.b-addition-item-content h3{
+					color: #434343;
+					line-height: 24px;
+				}
+				.b-addition-item-content h3.icon-ruble:after{
+					font-size: 21px;
+					color: #434343;
+				}
+				.b-addition-item-content a{
+
+				}
 
 /*-------slick-------*/
 
