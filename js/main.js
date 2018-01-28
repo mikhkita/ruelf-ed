@@ -181,6 +181,29 @@ $(document).ready(function(){
     $('.b-catalog-menu ul > li').mouseup(function(eventObject){
         $(".b-catalog-menu .b-line").removeClass("b-line-color");
     });
+
+    /*if( isIE ){
+        $("body").on('mousedown click', ".b-input input, .b-input textarea", function(e) {
+            $(this).parents(".b-input").addClass("focus");
+        });
+
+        $("body").on("mousedown click", "div.TVBigInput input, div.TVOrderRequestBlock textarea", function(){
+            $(this).parents(".TVBigInput").addClass("focus");
+        });
+    }*/
+
+    $("body").on("focusin", ".b-input input, .b-input textarea", function(){
+        $(this).parents(".b-input").addClass("focus");
+    });
+
+    $("body").on("focusout", ".b-input input, .b-input textarea", function(){
+        $(this).parents(".b-input").removeClass("focus");
+        if( $(this).val() != "" && $(this).val() != "+7 (   )    -  -  " ){
+            $(this).parents(".b-input").addClass("not-empty");
+        }else{
+            $(this).parents(".b-input").removeClass("not-empty");
+        }
+    });
     
 	// var myPlace = new google.maps.LatLng(55.754407, 37.625151);
  //    var myOptions = {

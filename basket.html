@@ -138,11 +138,10 @@
 					<td class="b-basket-count">
 						<form id="b-basket-form" class="b-basket-form" method="post" action="action.php">
 							<div class="b input-cont">
-								<a href="#" onclick="return false;" class="count-minus">—</a>
-								<a href="#" onclick="return false;" class="count-plus">+</a>
+								<a href="#" onclick="return false;" class="icon-minus"></a>
+								<a href="#" onclick="return false;" class="icon-plus"></a>
 								<input name="count" type="text" maxlength="3" oninput="this.value = this.value.replace(/\D/g, '')" value="1">
 							</div>
-							<span>шт.</span>
 						</form>
 					</td>
 					<td class="b-basket-sum">
@@ -168,11 +167,10 @@
 					<td class="b-basket-count">
 						<form id="b-basket-form" class="b-basket-form" method="post" action="action.php">
 							<div class="b input-cont">
-								<a href="#" onclick="return false;" class="count-minus">—</a>
-								<a href="#" onclick="return false;" class="count-plus">+</a>
+								<a href="#" onclick="return false;" class="icon-minus"></a>
+								<a href="#" onclick="return false;" class="icon-plus"></a>
 								<input name="count" type="text" maxlength="3" oninput="this.value = this.value.replace(/\D/g, '')" value="2">
 							</div>
-							<span>шт.</span>
 						</form>
 					</td>
 					<td class="b-basket-sum">
@@ -186,7 +184,52 @@
 					</td>
 				</tr>
 			</table>
-			<h2 class="b-title">Оформление заказа</h2>
+		</div>
+
+
+		<div class="b-data-order b-block-gray">
+			<div class="b-block">
+				<div class="b-data-order-top clearfix">
+					<h2 class="b-title">Данные к заказу</h2>
+					<div class="b-addressee">
+						
+					</div>
+				</div>
+				<form id="b-data-order-form" class="b-data-order-form" method="post" action="kitsend.php">
+					<div class="b-input-row clearfix">
+						<div class="b-input">
+							<input type="text" id="name" name="name" required>
+							<label for="name">Ваше имя <span class="required">*</span></label>
+						</div>
+						<div class="b-input">
+							<input type="text" id="phone" name="phone" required>
+							<label for="phone">Ваш телефон <span class="required">*</span></label>
+						</div>
+						<div class="b-address">
+							<p>Адрес доставки: <span class="required">*</span></p>
+							<a href="#" class="fancy b-btn-dashed choose-address">указать адрес</a>
+						</div>
+					</div>
+					<div class="b-input-row clearfix">
+						<div class="b-input">
+							<input type="text" id="" name="">
+							<label for="">Дата доставки</label>
+						</div>
+						<div class="b-input">
+							<input type="text" id="" name="">
+							<label for="">Время доставки</label>
+						</div>
+						<div class="b-input">
+							<input type="text" id="" name="">
+							<label for="">Имя получателя</label>
+						</div>
+						<div class="b-input">
+							<input type="text" id="" name="">
+							<label for="">Телефон получателя</label>
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
 
 	</div>
@@ -230,7 +273,7 @@
 			</div>
 			<div class="b-footer-down clearfix">
 				<div class="b-footer-copyright">© 2018 ООО «Мадам&nbsp;де&nbsp;Флёр»</div>
-				<a href="#" class="politics">Политика конфиденциальности</a>
+				<a href="#" class="b-btn-dashed">Политика конфиденциальности</a>
 				<div class="b-redder">
 					<span>Разработка сайта:</span>
 					<a href="http://redder.pro/" class="b-redder-logo" target="_blank"></a>
