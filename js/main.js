@@ -214,26 +214,58 @@ $(document).ready(function(){
         return false;
     });
 
-    $.datepicker.regional['ru'] = {
-        closeText: 'Готово', // set a close button text
-        currentText: 'Сегодня', // set today text
-        monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'], // set month names
-        monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'], // set short month names
-        dayNames: ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'], // set days names
-        dayNamesShort: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // set short day names
-        dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // set more short days names
-        dateFormat: 'dd.mm.yy' // set format date
-    };        
-    $.datepicker.setDefaults($.datepicker.regional["ru"]);
+    if($('#date').length){
+        $.datepicker.regional['ru'] = {
+            closeText: 'Готово', // set a close button text
+            currentText: 'Сегодня', // set today text
+            monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'], // set month names
+            monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'], // set short month names
+            dayNames: ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'], // set days names
+            dayNamesShort: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // set short day names
+            dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // set more short days names
+            dateFormat: 'dd.mm.yy' // set format date
+        };        
+        $.datepicker.setDefaults($.datepicker.regional["ru"]);
 
-    $(function(){
-        $("#date").datepicker({
-            changeMonth: true,
-            minDate: 0
-        }).on("change", function(){
-            $(this).parents(".b-input").addClass("not-empty");
+        $(function(){
+            $("#date").datepicker({
+                changeMonth: true,
+                minDate: 0
+            }).on("change", function(){
+                $(this).parents(".b-input").addClass("not-empty");
+            });
         });
+    }
+
+    $('.b-filter-price-select').on('click', function(){
+        $('.b-filter-price-select.icon-arrow-down').toggleClass("arrow-rotate");
+        $('.b-filter-price-list').toggleClass("show");
+        return false;
     });
+    $('.b-filter-flowers-select').on('click', function(){
+        $('.b-filter-flowers-select.icon-arrow-down').toggleClass("arrow-rotate");
+        $('.b-filter-flowers-list').toggleClass("show");
+        return false;
+    });
+
+    $('.b-filter-price-list input:radio').change(function(){
+        $('.b-filter-price-select').text($(this).siblings("label").text());
+        $('.b-filter-price-list').removeClass("show");
+        $('.b-filter-price-select.icon-arrow-down').removeClass("arrow-rotate");
+    });
+
+    $('.b-filter-flowers-list input').change(function(){
+        var count = $('input[name="flowers-list"]:checked').length;
+        if(count > 0)
+            $('.b-filter-flowers-select').text("Выбрано " + count + " шт.");
+        else
+            $('.b-filter-flowers-select').text($('.b-filter-flowers-select').attr("data-default"));
+    });
+
+    /*if( typeof autosize == "function" )
+        autosize(document.querySelectorAll('textarea'));*/
+
+
     
 	// var myPlace = new google.maps.LatLng(55.754407, 37.625151);
  //    var myOptions = {
