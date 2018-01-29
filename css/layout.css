@@ -398,14 +398,14 @@ h4{
     display: block;
     position: absolute;
     right: 0;
-    top: 12px;
+    top: 11px;
     font-size: 9px;
     color: #d2d2d2;
     cursor: pointer;
     pointer-events: none;
 }
 	.icon-arrow-down.arrow-rotate:after{
-		top: 10px;
+		top: 9px;
 		-webkit-transform: rotate(180deg);
 		   -moz-transform: rotate(180deg);
 		    -ms-transform: rotate(180deg);
@@ -1190,7 +1190,7 @@ input[type="radio"] + label:after {
 
 	.b-filter-price{
 		min-width: 230px;
-		margin-right: 55px;
+		margin-right: 45px;
 		padding-top: 2px;
 	}
 
