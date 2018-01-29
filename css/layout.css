@@ -612,7 +612,7 @@ input[type="radio"] + label:after {
 	font-family: 'Geometria-Regular';
 	font-size: 16px;
 	line-height: 22px;
-	margin-bottom: 16px;
+	margin-bottom: 17px;
 }
 .b-checkbox input[type="checkbox"] + span + label:before,
 .b-checkbox input[type="checkbox"] + label:before{
@@ -1189,8 +1189,8 @@ input[type="radio"] + label:after {
 	}
 
 	.b-filter-price{
-		min-width: 230px;
-		margin-right: 45px;
+		min-width: 238px;
+		margin-right: 50px;
 		padding-top: 2px;
 	}
 
@@ -1221,7 +1221,7 @@ input[type="radio"] + label:after {
 		ul.b-filter-price-list{
 		    z-index: 101;
 		    min-width: 232px;
-		    padding: 26px 26px 30px;
+		    padding: 22px 24px 30px;
 		    position: absolute;
 		    left: 0px;
 		    top: 40px;
@@ -1283,10 +1283,10 @@ input[type="radio"] + label:after {
 		.b-filter-flowers-list{
 			width: 860px;
 		    z-index: 101;
-		    padding: 26px 26px 30px;
+		    padding: 26px 18px 30px 26px;
 		    position: absolute;
 		    left: 0px;
-		    top: 41px;
+		    top: 40px;
 		    background-color: #FFF;
 		    border-radius: 3px;
 		    -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -1329,7 +1329,7 @@ input[type="radio"] + label:after {
 		    transform: translateY(0px);
 		}
 			.b-filter-flowers-list ul{
-				width: 190px;
+				width: 200px;
 				display: inline-block;
 				vertical-align: top;
 			}
@@ -1347,13 +1347,13 @@ input[type="radio"] + label:after {
 		margin-right: 8px;
 	}
 
-	.b-colors-form{
+	.b-filter-colors{
 
 	}
-		.b-colors-form ul{
+		.b-filter-colors ul{
 
 		}
-			.b-colors-form ul li{
+			.b-filter-colors ul li{
 				display: inline-block;
 			}
 

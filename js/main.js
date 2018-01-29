@@ -262,6 +262,24 @@ $(document).ready(function(){
             $('.b-filter-flowers-select').text($('.b-filter-flowers-select').attr("data-default"));
     });
 
+    $(function(){
+      $(document).click(function(event) {
+        if ($(event.target).closest(".b-filter-price-list").length) 
+            return;
+        else{
+            $('.b-filter-price-list').removeClass("show");
+            $('.b-filter-price-select.icon-arrow-down').removeClass("arrow-rotate");
+        }
+        if ($(event.target).closest(".b-filter-flowers-list").length) 
+            return;
+        else{
+            $('.b-filter-flowers-list').removeClass("show");
+            $('.b-filter-flowers-select.icon-arrow-down').removeClass("arrow-rotate");
+        }
+        event.stopPropagation();
+      });
+    });
+
     /*if( typeof autosize == "function" )
         autosize(document.querySelectorAll('textarea'));*/
 
