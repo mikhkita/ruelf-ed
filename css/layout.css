@@ -398,14 +398,14 @@ h4{
     display: block;
     position: absolute;
     right: 0;
-    top: 13px;
+    top: 12px;
     font-size: 9px;
     color: #d2d2d2;
     cursor: pointer;
     pointer-events: none;
 }
 	.icon-arrow-down.arrow-rotate:after{
-		top: 11px;
+		top: 10px;
 		-webkit-transform: rotate(180deg);
 		   -moz-transform: rotate(180deg);
 		    -ms-transform: rotate(180deg);
@@ -1189,7 +1189,8 @@ input[type="radio"] + label:after {
 	}
 
 	.b-filter-price{
-		margin-right: 60px;
+		min-width: 230px;
+		margin-right: 55px;
 		padding-top: 2px;
 	}
 
@@ -1200,6 +1201,7 @@ input[type="radio"] + label:after {
 
 			.b-filter-price-select,
 			.b-filter-flowers-select{
+				position: relative;
 				color: #c4c4c4;
 				font-size: 18px;
 				line-height: 28px;
