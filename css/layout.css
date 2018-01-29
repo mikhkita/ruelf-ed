@@ -2249,6 +2249,7 @@ input[type="radio"] + label:after {
 				left: 0;
 				z-index: 1;
 				padding: 13px 32px 15px;
+				border-radius: 30px;
 				font-size: 18px;
 				line-height: 26px;
 				font-family: 'Geometria-Medium';
@@ -2262,6 +2263,7 @@ input[type="radio"] + label:after {
 				right: 0;
 				z-index: 1;
 				padding: 13px 65px 15px 53px;
+				border-radius: 30px;
 				font-size: 18px;
 				line-height: 26px;
 				font-family: 'Geometria-Medium';
