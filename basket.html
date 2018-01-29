@@ -14,6 +14,8 @@
 	<link rel="stylesheet" href="css/KitAnimate.css" type="text/css">
 	<link rel="stylesheet" href="css/slick.css" type="text/css">
 	<link rel="stylesheet" href="css/slick-theme.css" type="text/css">
+	<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+	<link rel="stylesheet" href="css/jquery-ui.theme.min.css" type="text/css">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
 
 	<link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 1199px)" href="css/layout-tablet.css">
@@ -95,10 +97,9 @@
 			<div class="b-header-title-inner">
 				<ul class="b-breadcrumbs">
 					<li><a href="index.html">Главная</a></li>
-					<li><a href="catalog.html">Каталог</a></li>
-					<li><span>Классика</span></li>
+					<li><span>Оформление заказа</span></li>
 				</ul>
-				<h1 class="b-title">Классические букеты</h1>
+				<h1 class="b-title">Оформление заказа</h1>
 			</div>
 			<div class="b-catalog-menu">
 				<div class="b-line"></div>
@@ -191,8 +192,13 @@
 			<div class="b-block">
 				<div class="b-data-order-top clearfix">
 					<h2 class="b-title">Данные к заказу</h2>
-					<div class="b-addressee">
-						
+					<div class="b b-addressee">
+						<a href="#" class="b-addressee-switch">
+
+						</a>
+						<div class="b-btn-switch b-addressee-left active">Доставить получателю</div>
+						<div class="b-btn-switch b-addressee-right">Доставить мне</div>
+						<div class="b-btn-addressee"></div>
 					</div>
 				</div>
 				<form id="b-data-order-form" class="b-data-order-form" method="post" action="kitsend.php">
@@ -212,26 +218,28 @@
 					</div>
 					<div class="b-input-row clearfix">
 						<div class="b-input">
-							<input type="text" id="" name="">
-							<label for="">Дата доставки</label>
+							<input type="text" id="date" name="date">
+							<label for="date">Дата доставки</label>
+							<div class="icon-calendar"></div>
 						</div>
 						<div class="b-input">
-							<input type="text" id="" name="">
-							<label for="">Время доставки</label>
+							<input type="text" id="time" name="time">
+							<label for="time">Время доставки</label>
+							<div class="icon-clock"></div>
 						</div>
 						<div class="b-input">
-							<input type="text" id="" name="">
-							<label for="">Имя получателя</label>
+							<input type="text" id="addressee-name" name="addressee-name">
+							<label for="addressee-name">Имя получателя</label>
 						</div>
 						<div class="b-input">
-							<input type="text" id="" name="">
-							<label for="">Телефон получателя</label>
+							<input type="text" id="addressee-phone" name="addressee-phone">
+							<label for="addressee-phone">Телефон получателя</label>
 						</div>
 					</div>
 					<div class="b-input-row clearfix">
 						<div class="b-radio b-payment-method">
 							<p>Способ оплаты:</p>
-							<input id="card" type="radio" name="payment-method" required>
+							<input id="card" type="radio" name="payment-method" checked required>
 							<label for="card">Онлайн-оплата картой</label>
 							<input id="cash" type="radio" name="payment-method" required>
 							<label for="cash">Наличными курьеру</label>
@@ -253,49 +261,49 @@
 				<h2 class="b-title">Приятные дополнения</h2>
 				<div class="b-addition-list clearfix">
 					<div class="b-addition-item">
-						<img src="i/addition-1.jpg">
+						<a href="detail.html"><img src="i/addition-1.jpg"></a>
 						<div class="b-addition-item-content">
-							<p class="b-addition-item-name"><b>Подарочная корзина со сладостями</b></p>
+							<a href="detail.html"><p class="b-addition-item-name"><b>Подарочная корзина со сладостями</b></p></a>
 							<h3 class="icon-ruble">3 550</h3>
 							<a href="#" class="b-btn-buy">Добавить</a>
 						</div>
 					</div>
 					<div class="b-addition-item">
-						<img src="i/addition-2.jpg">
+						<a href="detail.html"><img src="i/addition-2.jpg"></a>
 						<div class="b-addition-item-content">
-							<p class="b-addition-item-name"><b>Подарок из Raffaello</b></p>
+							<a href="detail.html"><p class="b-addition-item-name"><b>Подарок из Raffaello</b></p></a>
 							<h3 class="icon-ruble">2 500</h3>
 							<a href="#" class="b-btn-buy">Добавить</a>
 						</div>
 					</div>
 					<div class="b-addition-item">
-						<img src="i/addition-3.jpg">
+						<a href="detail.html"><img src="i/addition-3.jpg"></a>
 						<div class="b-addition-item-content">
-							<p class="b-addition-item-name"><b>Белый плюшевый мишка</b></p>
+							<a href="detail.html"><p class="b-addition-item-name"><b>Белый плюшевый мишка</b></p></a>
 							<h3 class="icon-ruble">6 900</h3>
 							<a href="#" class="b-btn-buy">Добавить</a>
 						</div>
 					</div>
 					<div class="b-addition-item">
-						<img src="i/addition-4.jpg">
+						<a href="detail.html"><img src="i/addition-4.jpg"></a>
 						<div class="b-addition-item-content">
-							<p class="b-addition-item-name"><b>Плюшевый мишка Томас</b></p>
+							<a href="detail.html"><p class="b-addition-item-name"><b>Плюшевый мишка Томас</b></p></a>
 							<h3 class="icon-ruble">5 200</h3>
 							<a href="#" class="b-btn-buy">Добавить</a>
 						</div>
 					</div>
 					<div class="b-addition-item">
-						<img src="i/addition-5.jpg">
+						<a href="detail.html"><img src="i/addition-5.jpg"></a>
 						<div class="b-addition-item-content">
-							<p class="b-addition-item-name"><b>Корзина из киндеров</b></p>
+							<a href="detail.html"><p class="b-addition-item-name"><b>Корзина из киндеров</b></p></a>
 							<h3 class="icon-ruble">1 900</h3>
 							<a href="#" class="b-btn-buy">Добавить</a>
 						</div>
 					</div>
 					<div class="b-addition-item">
-						<img src="i/addition-6.jpg">
+						<a href="detail.html"><img src="i/addition-6.jpg"></a>
 						<div class="b-addition-item-content">
-							<p class="b-addition-item-name"><b>Воздушные шарики</b></p>
+							<a href="detail.html"><p class="b-addition-item-name"><b>Воздушные шарики</b></p></a>
 							<h3 class="icon-ruble">650</h3>
 							<a href="#" class="b-btn-buy">Добавить</a>
 						</div>
@@ -395,6 +403,7 @@
 	<script type="text/javascript" src="js/KitAnimate.js"></script>
 	<script type="text/javascript" src="js/KitSend.js"></script>
 	<script type="text/javascript" src="js/slick.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

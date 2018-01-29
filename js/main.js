@@ -186,10 +186,6 @@ $(document).ready(function(){
         $("body").on('mousedown click', ".b-input input, .b-input textarea", function(e) {
             $(this).parents(".b-input").addClass("focus");
         });
-
-        $("body").on("mousedown click", "div.TVBigInput input, div.TVOrderRequestBlock textarea", function(){
-            $(this).parents(".TVBigInput").addClass("focus");
-        });
     }*/
 
     $("body").on("focusin", ".b-input input, .b-input textarea", function(){
@@ -203,6 +199,40 @@ $(document).ready(function(){
         }else{
             $(this).parents(".b-input").removeClass("not-empty");
         }
+    });
+
+    $('.b-addressee-switch').on('click', function(){
+        if($('.b-addressee-left').hasClass("active")){
+            $('.b-addressee-left').removeClass("active");
+            $('.b-addressee-right').addClass("active");
+            $('#addressee-name, #addressee-phone').parent().addClass("hide");
+        }else{
+            $('.b-addressee-right').removeClass("active");
+            $('.b-addressee-left').addClass("active");
+            $('#addressee-name, #addressee-phone').parent().removeClass("hide");
+        }
+        return false;
+    });
+
+    $.datepicker.regional['ru'] = {
+        closeText: 'Готово', // set a close button text
+        currentText: 'Сегодня', // set today text
+        monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'], // set month names
+        monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'], // set short month names
+        dayNames: ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'], // set days names
+        dayNamesShort: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // set short day names
+        dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // set more short days names
+        dateFormat: 'dd.mm.yy' // set format date
+    };        
+    $.datepicker.setDefaults($.datepicker.regional["ru"]);
+
+    $(function(){
+        $("#date").datepicker({
+            changeMonth: true,
+            minDate: 0
+        }).on("change", function(){
+            $(this).parents(".b-input").addClass("not-empty");
+        });
     });
     
 	// var myPlace = new google.maps.LatLng(55.754407, 37.625151);

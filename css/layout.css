@@ -2100,7 +2100,7 @@ input[type="radio"] + label:after {
 		}
 
 	.b-basket-name{
-		width: 50%;
+		width: 49%;
 	}
 
 		.b-basket-name h4:hover{
@@ -2121,11 +2121,11 @@ input[type="radio"] + label:after {
 			}
 
 	.b-basket-count{
-		width: 20%;
+		width: 19%;
 	}
 
 	.b-basket-price{
-		width: 15%;
+		width: 17%;
 	}
 
 	.b-basket-count .input-cont{
@@ -2207,13 +2207,90 @@ input[type="radio"] + label:after {
 .b-data-order{
 
 }
+
+	.b-data-order-top{
+		padding-top: 56px;
+    	margin-bottom: 50px;
+	}
 	.b-data-order h2{
 		float: left;
+		padding-top: 7px;
+		margin-bottom: 0; 
 	}
 
 	.required{
 		color: #f43d84;
 	}
+
+	.b-addressee{
+		float: right;
+		width: 529px;
+		height: 56px;
+		border-radius: 30px;
+		border: 2px solid #e4e4e4;
+	}
+		.b-addressee-switch{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			z-index: 3;
+			border-radius: 30px;
+			-webkit-transition: background-color 150ms ease-out, color 150ms ease-out;
+		    -moz-transition: background-color 150ms ease-out, color 150ms ease-out;
+		    -ms-transition: background-color 150ms ease-out, color 150ms ease-out;
+		    -o-transition: background-color 150ms ease-out, color 150ms ease-out;
+		    transition: background-color 150ms ease-out, color 150ms ease-out;
+		}
+		.b-addressee-switch:hover{
+			background-color: rgba(107, 77, 191, 0.15);
+		}
+			.b-addressee-left{
+				position: absolute;
+				left: 0;
+				z-index: 1;
+				padding: 13px 32px 15px;
+				font-size: 18px;
+				line-height: 26px;
+				font-family: 'Geometria-Medium';
+			}
+				.b-addressee-left.active{
+					color: #FFF;
+					z-index: 5;
+				}
+			.b-addressee-right{
+				position: absolute;
+				right: 0;
+				z-index: 1;
+				padding: 13px 65px 15px 53px;
+				font-size: 18px;
+				line-height: 26px;
+				font-family: 'Geometria-Medium';
+			}
+				.b-addressee-right.active{
+					color: #FFF;
+					z-index: 5;
+				}
+		.b-btn-addressee{
+			position: absolute;
+			top: -2px;
+			left: -2px;
+			width: 275px;
+			height: 56px;
+			border-radius: 30px;
+			border: 2px solid #6e58ac;
+			background-color: #6e58ac;
+			z-index: 2;
+			-webkit-transition: left 150ms ease-out, width 150ms ease-out;
+		    -moz-transition: left 150ms ease-out, width 150ms ease-out;
+		    -ms-transition: left 150ms ease-out, width 150ms ease-out;
+		    -o-transition: left 150ms ease-out, width 150ms ease-out;
+		    transition: left 150ms ease-out, width 150ms ease-out;
+		}
+
+		.b-addressee-right.active + .b-btn-addressee{
+			left: 268px;
+			width: 258px;
+		}
 
 	.b-input-row{
 		margin-bottom: 40px;
@@ -2323,7 +2400,7 @@ input[type="radio"] + label:after {
 		.total-price{
 			font-family: 'Geometria-Bold';
 			font-size: 24px;
-			line-height: 28px;
+			line-height: 22px;
 			margin-left: 16px;
 		}
 
@@ -2338,6 +2415,28 @@ input[type="radio"] + label:after {
     	line-height: 26px;
 	}
 
+	.icon-calendar{
+		position: absolute;
+		top: 17px;
+		right: 18px;
+	}
+	.icon-calendar:before{
+		content: "\e90b";
+	  	font-size: 14px;
+	  	color: #c4c4c4;
+	}
+
+	.icon-clock{
+		position: absolute;
+		top: 17px;
+		right: 18px;
+	}
+	.icon-clock:before{
+		content: "\e90b";
+	  	font-size: 14px;
+	  	color: #c4c4c4;
+	}
+
 .b-addition{
 
 }
@@ -2349,7 +2448,7 @@ input[type="radio"] + label:after {
 			vertical-align: top;
 			width: calc(100%/3 - 20px);
 			margin-right: 24px;
-			margin-bottom: 32px;
+			margin-bottom: 34px;
 		}
 		.b-addition-item:nth-child(3n){
 			margin-right: 0;
@@ -2362,7 +2461,7 @@ input[type="radio"] + label:after {
 				border-radius: 3px;
 			}
 			.b-addition-item-content{
-				padding-top: 7px;
+				padding-top: 10px;
 				width: calc(100% - 158px);
 				margin-left: 16px;
 				display: inline-block;
@@ -2371,6 +2470,9 @@ input[type="radio"] + label:after {
 				.b-addition-item-content .b-addition-item-name{
 					margin-bottom: 10px;
 					font-family: 'Geometria-Bold';
+				}
+				.b-addition-item-name:hover{
+					text-decoration: underline;
 				}
 				.b-addition-item-content h3{
 					color: #434343;
@@ -2383,6 +2485,17 @@ input[type="radio"] + label:after {
 				.b-addition-item-content a{
 
 				}
+
+/*-------datepicker-------*/
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next{
+	box-sizing: content-box;
+}
+
+.ui-widget-header .ui-icon{
+	background-image: url(../i/ui-icons_444444_256x240.png);
+}
 
 /*-------slick-------*/
 
