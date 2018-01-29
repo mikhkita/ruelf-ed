@@ -1889,9 +1889,17 @@ input[type="radio"] + label:after {
 			background-color: #f8f8f8;
 			margin-right: 24px;
 			margin-bottom: 14px;
+			-webkit-transition: background-color 200ms ease-out;
+		    -moz-transition: background-color 200ms ease-out;
+		    -ms-transition: background-color 200ms ease-out;
+		    -o-transition: background-color 200ms ease-out;
+		    transition: background-color 200ms ease-out;
 		}
 		.b-questions-item:last-child{
 			margin-right: 0;
+		}
+		.b-questions-item:hover{
+			background-color: #FFF;
 		}
 			.b-questions-item p{
 				font-family: 'Geometria-Medium';
