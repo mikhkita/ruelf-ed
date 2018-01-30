@@ -750,7 +750,7 @@ h4{
 	}
 	.b-top-fixed {
 	    position: fixed;
-		padding-top: 18px;
+		padding-top: 16px;
 		width: 100%;
 	    background-position: 50% 50%;
 	    background-size: cover;
