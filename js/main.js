@@ -92,6 +92,14 @@ $(document).ready(function(){
         });
     }
 
+    /*var $this = $('.b-top'),
+        imgMenu = new Image(),
+        src = $this.attr("data-back-menu");
+    imgMenu.onload = function(){
+        console.log("+++++++");
+    };
+    imgMenu.src = src;*/
+
     $('.b-review-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -234,6 +242,8 @@ $(document).ready(function(){
             $('.b-top').removeClass("b-top-fixed");
         }
     });
+
+    $(window).scroll();
 
     /*if( isIE ){
         $("body").on('mousedown click', ".b-input input, .b-input textarea", function(e) {
