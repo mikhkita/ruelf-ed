@@ -140,7 +140,7 @@ $(document).ready(function(){
     });
 
     $('.color-reset').on('click', function(){
-        $('.b-colors-form input[type="checkbox"]').prop("checked", false);
+        $('.b-filter-colors input[type="checkbox"]').prop("checked", false);
         return false;
     });
 
@@ -240,11 +240,15 @@ $(document).ready(function(){
     $('.b-filter-price-select').on('click', function(){
         $('.b-filter-price-select.icon-arrow-down').toggleClass("arrow-rotate");
         $('.b-filter-price-list').toggleClass("show");
+        $('.b-filter-flowers-list').removeClass("show");
+        $('.b-filter-flowers-select.icon-arrow-down').removeClass("arrow-rotate");
         return false;
     });
     $('.b-filter-flowers-select').on('click', function(){
         $('.b-filter-flowers-select.icon-arrow-down').toggleClass("arrow-rotate");
         $('.b-filter-flowers-list').toggleClass("show");
+        $('.b-filter-price-list').removeClass("show");
+        $('.b-filter-price-select.icon-arrow-down').removeClass("arrow-rotate");
         return false;
     });
 
