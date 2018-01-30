@@ -1777,6 +1777,8 @@ h4{
 							.b-catalog-hover-text{
 								position: absolute;
 	    						bottom: 18px;
+	    						max-height: 120px;
+    							overflow: hidden;
 	    						font-family: 'Geometria-Medium';
 	    						color: #FFF;
 								font-size: 16px;
