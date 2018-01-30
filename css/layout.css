@@ -522,10 +522,10 @@ h4{
 	border-radius: 3px;
 	color: #434343;
 	font-size: 16px;
-    width: 100%;
-    padding: 11px 24px;
-    font-family: 'Geometria-Regular';
-    background-color: transparent;
+	/* width: 100%; */
+	padding: 11px 24px;
+	font-family: 'Geometria-Regular';
+	background-color: transparent;
 }
 
 /*------type=radio------*/
@@ -1143,7 +1143,8 @@ h4{
 				margin-right: 20px;
 				height: 40px;
 			}
-			.b-advantage-item p{
+			.b-advantage-item p,
+			.b-advantage-item .p{
 				vertical-align: top;
 				display: inline-block;
 			}
