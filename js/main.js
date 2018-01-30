@@ -182,6 +182,56 @@ $(document).ready(function(){
         $(".b-catalog-menu .b-line").removeClass("b-line-color");
     });
 
+    var $window = $(window),
+        $targetMain = $(".b-content"),
+        $hMain = $targetMain.offset().top,
+        moveMenu = 0,
+        timerBlock = false,
+        afterHeader = false;
+
+    $window.on('scroll', function() {
+        // Как далеко вниз прокрутили страницу
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        // Если прокрутили скролл ниже макушки нужного блока, включаем ему фиксацию
+        if (scrollTop > $hMain){
+            console.log("///");
+            clearTimeout(moveMenu);
+            timerBlock = false;
+            $('.b-top').addClass("b-top-fixed b-top-change");
+            afterHeader = true;
+        }else{
+            console.log("++++");
+            $('.b-top').removeClass("b-top-change")
+            if(scrollTop > 80){
+                if(afterHeader){
+                    $('.b-top').addClass("b-top-visible");
+                }
+                if(!timerBlock){
+                    timerBlock = true;
+                    moveMenu = setTimeout(function(){
+                        timerBlock = false;
+                        console.log("timer");
+                        $('.b-top').removeClass("b-top-fixed b-top-visible");
+                    }, 300);
+                }
+            }else{
+                clearTimeout(moveMenu);
+                $('.b-top').removeClass("b-top-fixed b-top-visible");
+            }
+            afterHeader = false;
+            /*if(!timerBlock){
+                timerBlock = true;
+                moveMenu = setTimeout(function(){
+                timerBlock = false;
+                console.log("timer");
+                $('.b-top').removeClass("b-top-fixed");
+            }, 300);
+            }*/
+        }
+        $targetMain = $(".b-content"),
+        $hMain = $targetMain.offset().top;
+    });
+
     /*if( isIE ){
         $("body").on('mousedown click', ".b-input input, .b-input textarea", function(e) {
             $(this).parents(".b-input").addClass("focus");

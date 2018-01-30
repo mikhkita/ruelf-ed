@@ -700,8 +700,24 @@ input[type="radio"] + label:after {
     background-size: 2560px;
 }
 	.b-top{
+		position: absolute;
+		top: 30px;
+		left: 0;
+		z-index: 200;
+		width: 100%;
 		font-family: "Geometria-Medium";
 		padding-top: 36px;
+		padding-bottom: 11px;
+		-webkit-transform: translate(0,-30px);
+	    -o-transform: translate(0,-30px);
+	    -moz-transform: translate(0,-30px);
+	    -ms-transform: translate(0,-30px);
+		transform: translate(0,-30px);
+		-webkit-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+	    -moz-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+	    -ms-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+		-o-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+	    transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
 	}
 
 		.b-top a,.b-top p{
@@ -718,15 +734,53 @@ input[type="radio"] + label:after {
 		    width: 280px;
 		    height: 47px;
 		}
+		.b-top .b-logo{
+			margin-right: 47px;
+		}
 
 	.b-header-title{
-		margin-top: 75px;
+		padding-top: 158px;
 		margin-bottom: 188px;
 	}
 
+	.top-hide{
+		display: none;
+	}
+	.b-top-fixed {
+	    position: fixed;
+	    top: 0px;
+	    left: 0px;
+		padding-top: 18px;
+	}
+	.b-top-hide {
+	    opacity: 0;
+		visibility: hidden;
+	}
+	.b-top-visible{
+		opacity: 0;
+		visibility: hidden;
+		background-color: rgba(0,0,0,0.7);
+	}
+	.b-top-change{
+	    width: 100%;
+	    background-color: rgba(0,0,0,0.7);
+		opacity: 1;
+		visibility: visible;
+		-webkit-transform: translate(0,0);
+	    -o-transform: translate(0,0);
+	    -moz-transform: translate(0,0);
+	    -ms-transform: translate(0,0);
+		transform: translate(0,0);
+	}
+		.b-top-fixed .top-hide{
+			display: inline-block;
+		}
+		.b-top-fixed .b-logo{
+			display: none;
+		}
+
 	.b-menu{
 		float: left;
-		margin-left: 47px;
 		margin-top: 3px;
 	}
 
@@ -766,6 +820,7 @@ input[type="radio"] + label:after {
 		    left: 0px;
 		    top: 54px;
 		    background-color: #FFF;
+		    z-index: 5;
 		    padding: 20px 22px 15px;
 		    border-radius: 3px;
 		    -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -1170,6 +1225,7 @@ input[type="radio"] + label:after {
 
 .b-filter{
 	padding-top: 36px;
+	margin-bottom: 5px;
 	font-size: 18px;
 	font-family: 'Geometria-Medium';
 }
