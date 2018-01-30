@@ -500,7 +500,7 @@ h4{
 	position: relative;
 }
 
-select {
+.b-selects select {
 	color: #c4c4c4;
 	font-size: 18px;
     border: none;
@@ -516,7 +516,7 @@ select {
     appearance: none;
 }
 
-input{
+.b-inputs input{
 	display: inline-block;
 	border: 1px solid #c4c4c4;
 	border-radius: 3px;
@@ -530,19 +530,19 @@ input{
 
 /*------type=radio------*/
 
-input[type="radio"]{
+.b-radio input[type="radio"]{
 	position: absolute;
 	opacity: 0;
 	visibility: hidden;
 	margin-bottom: 0;
 }
 
-input[type="radio"] + label {
+.b-radio input[type="radio"] + label {
     position: relative;
     padding-left: 30px;
     cursor: pointer;
 }
-input[type="radio"] + label:hover:after{
+.b-radio input[type="radio"] + label:hover:after{
     top: 5px;
     left: 5px;
     height: 10px;
@@ -551,7 +551,7 @@ input[type="radio"] + label:hover:after{
     background-color: #e4e4e4;
 }
 
-input[type="radio"] + label:before {
+.b-radio input[type="radio"] + label:before {
     top: 0;
     left: 0;
     width: 20px;
@@ -562,15 +562,15 @@ input[type="radio"] + label:before {
 	background-color: #ffffff;
 }
 
-input[type="radio"]:checked + label:after {
+.b-radio input[type="radio"]:checked + label:after {
    background-color: #6e58ac;
 }
 
-input[type="radio"]:checked + label{
+.b-radio input[type="radio"]:checked + label{
 
 }
 
-input[type="radio"] + label:after {
+.b-radio input[type="radio"] + label:after {
     top: 5px;
     left: 5px;
     height: 10px;
@@ -578,8 +578,8 @@ input[type="radio"] + label:after {
     border-radius: 10px;
 }
 
-input[type="radio"] + label:before,
-input[type="radio"] + label:after {
+.b-radio input[type="radio"] + label:before,
+.b-radio input[type="radio"] + label:after {
     content: ' ';
     border-radius: 50%;
     position: absolute;
@@ -708,11 +708,11 @@ input[type="radio"] + label:after {
 		font-family: "Geometria-Medium";
 		padding-top: 36px;
 		padding-bottom: 11px;
-		-webkit-transform: translate(0,-30px);
-	    -o-transform: translate(0,-30px);
-	    -moz-transform: translate(0,-30px);
-	    -ms-transform: translate(0,-30px);
-		transform: translate(0,-30px);
+		-webkit-transform: translateY(-30px);
+	    -o-transform: translateY(-30px);
+	    -moz-transform: translateY(-30px);
+	    -ms-transform: translateY(-30px);
+		transform: translateY(-30px);
 		-webkit-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
 	    -moz-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
 	    -ms-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
@@ -759,7 +759,7 @@ input[type="radio"] + label:after {
 	.b-top-visible{
 		opacity: 0;
 		visibility: hidden;
-		background-color: rgba(0,0,0,0.7);
+		background-color: #6e58ac;
 	}
 	.b-top-change{
 	    width: 100%;
@@ -768,11 +768,11 @@ input[type="radio"] + label:after {
 	    background-image: url('../i/back-menu.jpg');
 		opacity: 1;
 		visibility: visible;
-		-webkit-transform: translate(0,0);
-	    -o-transform: translate(0,0);
-	    -moz-transform: translate(0,0);
-	    -ms-transform: translate(0,0);
-		transform: translate(0,0);
+		-webkit-transform: translateY(0);
+	    -o-transform: translateY(0);
+	    -moz-transform: translateY(0);
+	    -ms-transform: translateY(0);
+		transform: translateY(0);
 	}
 		.b-top-fixed .top-hide{
 			display: inline-block;

@@ -26,8 +26,8 @@
 <body>
 
 	<div class="b b-header-inner" data-back="i/header-inner@2x.svg">
-		<div class="b-block">
-			<div class="b-top clearfix">
+		<div class="b-top">
+			<div class="b-block clearfix">
 				<a href="index.html" class="b-logo"></a>
 				<ul class="b-menu">
 					<li>
@@ -93,7 +93,8 @@
 					</div>
 				</div>
 			</div>
-
+		</div>
+		<div class="b-block">
 			<div class="b-header-title-inner">
 				<ul class="b-breadcrumbs">
 					<li><a href="index.html">Главная</a></li>
@@ -193,16 +194,14 @@
 				<div class="b-data-order-top clearfix">
 					<h2 class="b-title">Данные к заказу</h2>
 					<div class="b b-addressee">
-						<a href="#" class="b-addressee-switch">
-
-						</a>
+						<a href="#" class="b-addressee-switch"></a>
 						<div class="b-btn-switch b-addressee-left active">Доставить получателю</div>
 						<div class="b-btn-switch b-addressee-right">Доставить мне</div>
 						<div class="b-btn-addressee"></div>
 					</div>
 				</div>
 				<form id="b-data-order-form" class="b-data-order-form" method="post" action="kitsend.php">
-					<div class="b-input-row clearfix">
+					<div class="b-inputs b-input-row clearfix">
 						<div class="b-input">
 							<input type="text" id="name" name="name" required>
 							<label for="name">Ваше имя <span class="required">*</span></label>
@@ -216,7 +215,7 @@
 							<a href="#" class="fancy b-btn-dashed choose-address">указать адрес</a>
 						</div>
 					</div>
-					<div class="b-input-row clearfix">
+					<div class="b-inputs b-input-row clearfix">
 						<div class="b-input">
 							<input type="text" id="date" name="date">
 							<label for="date">Дата доставки</label>
@@ -236,7 +235,7 @@
 							<label for="addressee-phone">Телефон получателя</label>
 						</div>
 					</div>
-					<div class="b-input-row clearfix">
+					<div class="b-inputs b-input-row clearfix">
 						<div class="b-radio b-payment-method">
 							<p>Способ оплаты:</p>
 							<input id="card" type="radio" name="payment-method" checked required>
@@ -346,8 +345,10 @@
 					<a href="tel:+79994995000" class="b-footer-phone">+7 (999) 499-50-00</a>
 					<p class="b-footer-address">г.&nbsp;Томск, ул.&nbsp;Красноармейская&nbsp;114а</p>
 					<form id="b-sub-form" class="b-sub-form" method="post" action="action.php">
-						<input name="email" type="text" placeholder="Ваш e-mail" required>
-						<a href="#" class="b-btn b-btn-sub ajax" onclick="$('#b-sub-form').submit(); return false;">Подписаться</a>
+						<div class="b-inputs">
+							<input name="email" type="text" placeholder="Ваш e-mail" required>
+							<a href="#" class="b-btn b-btn-sub ajax" onclick="$('#b-sub-form').submit(); return false;">Подписаться</a>
+						</div>
 					</form>
 				</div>
 			</div>
