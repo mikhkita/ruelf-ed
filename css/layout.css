@@ -763,7 +763,9 @@ input[type="radio"] + label:after {
 	}
 	.b-top-change{
 	    width: 100%;
-	    background-color: rgba(0,0,0,0.7);
+	    background-position: 50% 50%;
+	    background-size: cover;
+	    background-image: url('../i/back-menu.jpg');
 		opacity: 1;
 		visibility: visible;
 		-webkit-transform: translate(0,0);
