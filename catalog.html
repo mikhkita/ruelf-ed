@@ -24,10 +24,11 @@
 <body>
 
 	<div class="b b-header-inner" data-back="i/header-inner@2x.svg">
-		<div class="b-block">
-			<div class="b-top clearfix">
+		<div class="b-top">
+			<div class="b-block clearfix">
 				<a href="index.html" class="b-logo"></a>
 				<ul class="b-menu">
+					<li class="top-hide"><a href="catalog.html">Каталог букетов</a></li>
 					<li>
 						<a href="about.html">О магазине</a>
 						<ul class="b-submenu">
@@ -91,7 +92,8 @@
 					</div>
 				</div>
 			</div>
-
+		</div>
+		<div class="b-block">
 			<div class="b-header-title-inner">
 				<ul class="b-breadcrumbs">
 					<li><a href="index.html">Главная</a></li>
@@ -118,29 +120,168 @@
 		
 		<div class="b-filter">
 			<div class="b-block">
-				<div class="b-filter-price">
-					<p>Цена:</p>
-					<div class="select-wrapper icon-arrow-down">
-						<select>
-							<option>Любая цена</option>
-							<option>до 2000</option>
-							<option>до 4000</option>
-							<option>до 6000</option>
-						</select>
+				<form id="b-filter-form" class="b-filter-form" method="post" action="action.php">
+					<div class="b b-filter-price">
+						<div class="b-filter-select-wrap">
+							<p>Цена:</p>
+							<a href="#" class="b-filter-price-select icon-arrow-down">Любая цена</a>
+						</div>
+						<ul class="b-radio b-filter-price-list">
+							<li>
+								<input id="any" type="radio" name="filter-price" checked>
+								<label for="any">Любая цена</label>
+							</li>
+							<li>
+								<input id="less-1000" type="radio" name="filter-price">
+								<label for="less-1000">До 1 000</label>
+							</li>
+							<li>
+								<input id="between-1000-2000" type="radio" name="filter-price">
+								<label for="between-1000-2000">От 1 000 до 2 000</label>
+							</li>
+							<li>
+								<input id="between-2000-4000" type="radio" name="filter-price">
+								<label for="between-2000-4000">От 2 000 до 4 000</label>
+							</li>
+							<li>
+								<input id="over-4000" type="radio" name="filter-price">
+								<label for="over-4000">От 4 000</label>
+							</li>
+						</ul>
 					</div>
-				</div>
-				<div class="b-filter-flowers">
-					<p>Цветы:</p>
-					<div class="select-wrapper icon-arrow-down">
-						<select>
-							<option>Любые цветы</option>
-							<option>Розы</option>
-							<option>Тюльпаны</option>
-						</select>
+					<div class="b b-filter-flowers">
+						<div class="b-filter-select-wrap">
+							<p>Цветы:</p>
+							<a href="#" class="b-filter-flowers-select icon-arrow-down" data-default="Любые цветы">Любые цветы</a>
+						</div>
+						<div class="b-checkbox b-filter-flowers-list">
+							<ul>
+								<li>
+									<input id="flowers-1" type="checkbox" name="flowers-list">
+									<label for="flowers-1">Тюльпаны</label>
+								</li>
+								<li>
+									<input id="flowers-2" type="checkbox" name="flowers-list">
+									<label for="flowers-2">Розы</label>
+								</li>
+								<li>
+									<input id="flowers-3" type="checkbox" name="flowers-list">
+									<label for="flowers-3">Пионы</label>
+								</li>
+								<li>
+									<input id="flowers-4" type="checkbox" name="flowers-list">
+									<label for="flowers-4">Герберы</label>
+								</li>
+								<li>
+									<input id="flowers-5" type="checkbox" name="flowers-list">
+									<label for="flowers-5">Альстромерия</label>
+								</li>
+								<li>
+									<input id="flowers-6" type="checkbox" name="flowers-list">
+									<label for="flowers-6">Анемоны</label>
+								</li>
+								<li>
+									<input id="flowers-7" type="checkbox" name="flowers-list">
+									<label for="flowers-7">Гвоздики</label>
+								</li>
+								<li>
+									<input id="flowers-8" type="checkbox" name="flowers-list">
+									<label for="flowers-8">Гермини</label>
+								</li>
+							</ul>
+							<ul>
+								<li>
+									<input id="flowers-9" type="checkbox" name="flowers-list">
+									<label for="flowers-9">Гиацинт</label>
+								</li>
+								<li>
+									<input id="flowers-10" type="checkbox" name="flowers-list">
+									<label for="flowers-10">Гортензия</label>
+								</li>
+								<li>
+									<input id="flowers-11" type="checkbox" name="flowers-list">
+									<label for="flowers-11">Ирис</label>
+								</li>
+								<li>
+									<input id="flowers-12" type="checkbox" name="flowers-list">
+									<label for="flowers-12">Калла</label>
+								</li>
+								<li>
+									<input id="flowers-13" type="checkbox" name="flowers-list">
+									<label for="flowers-13">Клематис</label>
+								</li>
+								<li>
+									<input id="flowers-14" type="checkbox" name="flowers-list">
+									<label for="flowers-14">Лаванда</label>
+								</li>
+								<li>
+									<input id="flowers-15" type="checkbox" name="flowers-list">
+									<label for="flowers-15">Ландыши</label>
+								</li>
+								<li>
+									<input id="flowers-16" type="checkbox" name="flowers-list">
+									<label for="flowers-16">Лизиантусы</label>
+								</li>
+							</ul>
+							<ul>
+								<li>
+									<input id="flowers-17" type="checkbox" name="flowers-list">
+									<label for="flowers-17">Мимозы</label>
+								</li>
+								<li>
+									<input id="flowers-18" type="checkbox" name="flowers-list">
+									<label for="flowers-18">Нарцисс</label>
+								</li>
+								<li>
+									<input id="flowers-19" type="checkbox" name="flowers-list">
+									<label for="flowers-19">Орхидея</label>
+								</li>
+								<li>
+									<input id="flowers-20" type="checkbox" name="flowers-list">
+									<label for="flowers-20">Подсолнух</label>
+								</li>
+								<li>
+									<input id="flowers-21" type="checkbox" name="flowers-list">
+									<label for="flowers-21">Ранукулюс</label>
+								</li>
+								<li>
+									<input id="flowers-22" type="checkbox" name="flowers-list">
+									<label for="flowers-22">Роза кустовая</label>
+								</li>
+								<li>
+									<input id="flowers-23" type="checkbox" name="flowers-list">
+									<label for="flowers-23">Роза пионовидная</label>
+								</li>
+								<li>
+									<input id="flowers-24" type="checkbox" name="flowers-list">
+									<label for="flowers-24">Сирень</label>
+								</li>
+							</ul>
+							<ul>
+								<li>
+									<input id="flowers-25" type="checkbox" name="flowers-list">
+									<label for="flowers-25">Тюльпаны пионовидные</label>
+								</li>
+								<li>
+									<input id="flowers-26" type="checkbox" name="flowers-list">
+									<label for="flowers-26">Фрезия</label>
+								</li>
+								<li>
+									<input id="flowers-27" type="checkbox" name="flowers-list">
+									<label for="flowers-27">Эустома</label>
+								</li>
+								<li>
+									<input id="flowers-28" type="checkbox" name="flowers-list">
+									<label for="flowers-28">Ромашки</label>
+								</li>
+								<li>
+									<input id="flowers-29" type="checkbox" name="flowers-list">
+									<label for="flowers-29">Хризантемы</label>
+								</li>
+							</ul>
+						</div>
 					</div>
-				</div>
-				<div class="b-filter-colors">
-					<form id="b-colors-form" class="b-colors-form" method="post" action="action.php">
+					<div class="b-filter-colors">
 						<ul>
 							<li>
 								<input id="label-red" type="checkbox" name="red">
@@ -185,12 +326,12 @@
 								</label>
 							</li>
 							<li class="b-tip-cont">
-								<a href="#" class="color-reset icon-update"></a>
+								<a href="#" class="color-reset icon-update b-tip-ref"></a>
 								<div class="b-tip">Сбросить</div>
 							</li>
 						</ul>
-					</form>
-				</div>
+					</div>
+				</form>
 			</div>
 		</div>
 
@@ -871,8 +1012,10 @@
 					<a href="tel:+79994995000" class="b-footer-phone">+7 (999) 499-50-00</a>
 					<p class="b-footer-address">г.&nbsp;Томск, ул.&nbsp;Красноармейская&nbsp;114а</p>
 					<form id="b-sub-form" class="b-sub-form" method="post" action="action.php">
-						<input name="email" type="text" placeholder="Ваш e-mail" required>
-						<a href="#" class="b-btn b-btn-sub ajax" onclick="$('#b-sub-form').submit(); return false;">Подписаться</a>
+						<div class="b-inputs">
+							<input name="email" type="text" placeholder="Ваш e-mail" required>
+							<a href="#" class="b-btn b-btn-sub ajax" onclick="$('#b-sub-form').submit(); return false;">Подписаться</a>
+						</div>
 					</form>
 				</div>
 			</div>
