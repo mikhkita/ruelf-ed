@@ -224,6 +224,17 @@ $(document).ready(function(){
         $hMain = $targetMain.offset().top;
     });*/
 
+    $window.on('scroll', function() {
+        // Как далеко вниз прокрутили страницу
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        // Если прокрутили скролл ниже макушки нужного блока, включаем ему фиксацию
+        if (scrollTop > 20){
+            $('.b-top').addClass("b-top-fixed");
+        }else{
+            $('.b-top').removeClass("b-top-fixed");
+        }
+    });
+
     /*if( isIE ){
         $("body").on('mousedown click', ".b-input input, .b-input textarea", function(e) {
             $(this).parents(".b-input").addClass("focus");

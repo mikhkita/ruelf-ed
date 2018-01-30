@@ -701,23 +701,13 @@ h4{
 }
 	.b-top{
 		position: absolute;
-		top: 30px;
+		top: 0;
 		left: 0;
 		z-index: 200;
 		width: 100%;
 		font-family: "Geometria-Medium";
 		padding-top: 36px;
 		padding-bottom: 11px;
-		-webkit-transform: translateY(-30px);
-	    -o-transform: translateY(-30px);
-	    -moz-transform: translateY(-30px);
-	    -ms-transform: translateY(-30px);
-		transform: translateY(-30px);
-		-webkit-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-	    -moz-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-	    -ms-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-		-o-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-	    transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
 	}
 
 		.b-top a,.b-top p{
@@ -725,6 +715,7 @@ h4{
 		}
 
 		.b-logo{
+			position: absolute;
 			float: left;
 			display: inline-block;
 			background-position: 50% 50%;
@@ -736,6 +727,11 @@ h4{
 		}
 		.b-top .b-logo{
 			margin-right: 47px;
+			-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+		    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+		    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+			-o-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+		    transition: opacity 200ms ease-out, visibility 200ms ease-out;
 		}
 
 	.b-header-title{
@@ -743,47 +739,46 @@ h4{
 		margin-bottom: 188px;
 	}
 
-	.top-hide{
-		display: none;
+	.b-menu .top-hide{
+		opacity: 0;
+		visibility: hidden;
+		-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+	    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+	    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+		-o-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+	    transition: opacity 200ms ease-out, visibility 200ms ease-out;
 	}
 	.b-top-fixed {
 	    position: fixed;
-	    top: 0px;
-	    left: 0px;
 		padding-top: 18px;
-	}
-	.b-top-hide {
-	    opacity: 0;
-		visibility: hidden;
-	}
-	.b-top-visible{
-		opacity: 0;
-		visibility: hidden;
-		background-color: #6e58ac;
-	}
-	.b-top-change{
-	    width: 100%;
+		width: 100%;
 	    background-position: 50% 50%;
 	    background-size: cover;
 	    background-image: url('../i/back-menu.jpg');
 		opacity: 1;
 		visibility: visible;
-		-webkit-transform: translateY(0);
-	    -o-transform: translateY(0);
-	    -moz-transform: translateY(0);
-	    -ms-transform: translateY(0);
-		transform: translateY(0);
+	}
+	.b-top-fixed .b-menu{
+		margin-left: 0;
 	}
 		.b-top-fixed .top-hide{
-			display: inline-block;
+			opacity: 1;
+			visibility: visible;
 		}
 		.b-top-fixed .b-logo{
-			display: none;
+			opacity: 0;
+			visibility: hidden;
 		}
 
 	.b-menu{
 		float: left;
 		margin-top: 3px;
+		margin-left: 145px;
+		-webkit-transition: margin-left 200ms ease-out;
+	    -moz-transition: margin-left 200ms ease-out;
+	    -ms-transition: margin-left 200ms ease-out;
+	    -o-transition: margin-left 200ms ease-out;
+	    transition: margin-left 200ms ease-out;
 	}
 
 		.b-menu li{
