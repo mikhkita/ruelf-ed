@@ -677,10 +677,6 @@ h4{
 	padding-bottom: 70px;
 }
 
-.b-content.b-content-detail{
-	padding-bottom: 24px;
-}
-
 .b-padding{
 	padding-bottom: 50px;
 }
@@ -706,6 +702,10 @@ h4{
 		padding-bottom: 11px;
 	}
 
+		.b-top .b-block{
+			z-index: 200;
+		}
+
 		.b-top a,.b-top p{
 			color: #FFF;
 		}
@@ -730,11 +730,6 @@ h4{
 		    transition: opacity 200ms ease-out, visibility 200ms ease-out;
 		}
 
-	.b-header-title{
-		padding-top: 158px;
-		margin-bottom: 188px;
-	}
-
 	.b-menu .top-hide{
 		opacity: 0;
 		visibility: hidden;
@@ -748,9 +743,6 @@ h4{
 	    position: fixed;
 		padding-top: 16px;
 		width: 100%;
-	    background-position: 50% 50%;
-	    background-size: cover;
-	    background-image: url('../i/back-menu.jpg');
 		opacity: 1;
 		visibility: visible;
 	}
@@ -765,6 +757,32 @@ h4{
 			opacity: 0;
 			visibility: hidden;
 		}
+
+	.b-fixed-back{
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	    background-position: 0 50%;
+	    background-image: url('../i/header.svg');
+		-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+	    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+	    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+		-o-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+	    transition: opacity 200ms ease-out, visibility 200ms ease-out;
+	}
+	.b-top.b-top-fixed .b-fixed-back{
+		opacity: 0.7;
+		visibility: visible;
+	}
+
+	.b-header-title{
+		padding-top: 158px;
+		margin-bottom: 188px;
+	}
 
 	.b-menu{
 		float: left;
@@ -2210,6 +2228,10 @@ h4{
 
 .b-catalog-margin{
 	margin-top: 64px;
+}
+
+.b-catalog-similar{
+	margin-bottom: -22px;
 }
 
 /*-------Детальная-------*/
