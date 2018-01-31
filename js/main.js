@@ -99,7 +99,7 @@ $(document).ready(function(){
                 src = $this.attr("data-catalog-retina");
             img.onload = function(){
                 $this.css("background-image", 'url(' + $this.attr("data-catalog-retina") + ')');
-                $this.removeAttr("data-catalog-retina")
+                $this.removeAttr("data-catalog-retina");
             };
             img.src = src;
         });
@@ -339,12 +339,22 @@ $(document).ready(function(){
         $('.b-filter-price-select.icon-arrow-down').removeClass("arrow-rotate");
     });
 
-    $('.b-filter-flowers-list input').change(function(){
+    $('input[name="flowers-list"]').change(function(){
         var count = $('input[name="flowers-list"]:checked').length;
         if(count > 0)
             $('.b-filter-flowers-select').text("Выбрано " + count + " шт.");
         else
             $('.b-filter-flowers-select').text($('.b-filter-flowers-select').attr("data-default"));
+        $('input[name="any-flowers"]').prop("checked", false);
+        console.log("+++");
+    });
+
+    $('input[name="any-flowers"]').change(function(){
+        if($(this).prop("checked")){
+           $('input[name="flowers-list"]').prop("checked", false);
+           $('.b-filter-flowers-select').text($('.b-filter-flowers-select').attr("data-default"));
+       }
+       console.log("+++");
     });
 
     $(function(){
