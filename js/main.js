@@ -138,10 +138,6 @@ $(document).ready(function(){
         return false;
     });
 
-    $('.b-catalog-item .b-btn-buy').on('click', function(){
-        alert("Добавлено в корзину");
-    });
-
     $('.b-favorites').on('click', function(){
         $(this).toggleClass("active");
         return false;
@@ -345,6 +341,29 @@ $(document).ready(function(){
         }
         event.stopPropagation();
       });
+    });
+
+    // Добавление в корзину
+    $("body").on("click",".b-btn-to-cart",function(){
+        var url = $(this).attr("href"),
+            img = null,
+            name = null;
+
+        if( $("input[name=quantity]").length ){
+            url = url + "&quantity=" + $("input[name=quantity]").val();
+        }
+
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function(msg){
+                $(".b-basket-btn-cont").html(msg);
+            },
+            error: function(){
+                alert("Ошибка добавления в корзину");
+            }
+        });
+        return false;
     });
 
     /*if( typeof autosize == "function" )
