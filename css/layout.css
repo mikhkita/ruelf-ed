@@ -1059,7 +1059,7 @@ h4{
 				}
 
 				.b-basket-btn-cont:hover .b-basket,
-				.b-basket-btn-cont.b-show .b-basket{
+				.b-basket-btn-cont.show .b-basket{
 					visibility: visible;
 				    opacity: 1;
 				    -webkit-transform: translateY(0px);
