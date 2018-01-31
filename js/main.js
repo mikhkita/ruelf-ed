@@ -346,9 +346,7 @@ $(document).ready(function(){
     // Добавление в корзину
     var cartTimeout = 0;
     $("body").on("click",".b-btn-to-cart",function(){
-        var url = $(this).attr("href"),
-            img = null,
-            name = null;
+        var url = $(this).attr("href");
 
         if( $("input[name=quantity]").length ){
             url = url + "&quantity=" + $("input[name=quantity]").val();
@@ -380,6 +378,53 @@ $(document).ready(function(){
         });
         return false;
     });
+
+    // Удаление из мини-корзины
+    var cartTimeout = 0;
+    $("body").on("click",".b-btn-remove-from-cart",function(){
+        var url = $(this).attr("href"),
+            $item = $(this).parents("li");
+
+        $item.hide().addClass("hidden");
+
+        updateMiniCartSum();
+
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function(msg){
+                var reg = /<!--([\s\S]*?)-->/mig;
+                msg = msg.replace(reg, "");
+                var json = JSON.parse(msg);
+
+                if( json.result == "success" ){
+                    $item.remove();
+                    
+                    $(".b-basket-btn-total, .b-basket-total").text( json.sum );
+                }else{
+                    $item.show().removeClass("hidden");
+                    alert("Ошибка удаления из корзины");
+                }
+            },
+            error: function(){
+                alert("Ошибка удаления из корзины");
+                $item.show().removeClass("hidden");
+            }
+        });
+        return false;
+    });
+
+    function updateMiniCartSum(){
+        var sum = 0;
+        $(".b-basket li:not(.hidden)").each(function(){
+            var price = $(this).find(".b-basket-item-price").text().replace(/[^0-9\.]+/g,"")*1,
+                count = $(this).find(".b-basket-item-count").text().replace(/[^0-9\.]+/g,"")*1;
+
+            sum += (price*count);
+        });
+
+        $(".b-basket-btn-total, .b-basket-total").text( (sum+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
+    }
 
     /*if( typeof autosize == "function" )
         autosize(document.querySelectorAll('textarea'));*/
