@@ -792,12 +792,15 @@ h4{
 	.b-menu{
 		float: left;
 		margin-top: 3px;
-		margin-left: 145px;
+		margin-left: 138px;
 		-webkit-transition: margin-left 200ms ease-out;
 	    -moz-transition: margin-left 200ms ease-out;
 	    -ms-transition: margin-left 200ms ease-out;
 	    -o-transition: margin-left 200ms ease-out;
 	    transition: margin-left 200ms ease-out;
+	}
+	.b-top.basket-null .b-menu{
+		margin-left: 156px;
 	}
 
 		.b-menu li{
@@ -1014,7 +1017,7 @@ h4{
 				    z-index: 2;
 				    left: -222px;
 				    top: 56px;
-				    min-width: 345px;
+				    width: 345px;
 				    background-color: #FFF;
 				    padding: 16px;
 				    border-radius: 3px;
@@ -1698,6 +1701,9 @@ h4{
 				}
 				.b-catalog-item-content h4{
 					font-family: 'Geometria-Medium';
+					overflow: hidden;
+				    white-space: nowrap;
+				    text-overflow: ellipsis;
 				}
 				.b-catalog-favorites{
 					position: absolute;
