@@ -349,6 +349,7 @@ $(document).ready(function(){
     });
 
     // Добавление в корзину
+    var cartTimeout = 0;
     $("body").on("click",".b-btn-to-cart",function(){
         var url = $(this).attr("href"),
             img = null,
@@ -357,12 +358,26 @@ $(document).ready(function(){
         if( $("input[name=quantity]").length ){
             url = url + "&quantity=" + $("input[name=quantity]").val();
         }
+        clearTimeout(cartTimeout);
 
         $.ajax({
             type: "GET",
             url: url,
             success: function(msg){
-                $(".b-basket-btn-cont").html(msg);
+                $(".b-basket-btn-cont").addClass("show");
+                $(".b-basket").html(msg);
+
+                $(".b-basket-btn-total").text( $(".b-basket-total").text() );
+
+                if( $(".b-basket-total").text() == "0" ){
+                    $(".b-top").addClass("basket-null");
+                }else{
+                    $(".b-top").removeClass("basket-null");
+                }
+
+                cartTimeout = setTimeout(function(){
+                    $(".b-basket-btn-cont").removeClass("show");
+                }, 2000);
             },
             error: function(){
                 alert("Ошибка добавления в корзину");
