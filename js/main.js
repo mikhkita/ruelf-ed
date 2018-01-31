@@ -25,8 +25,8 @@ $(document).ready(function(){
             $('.b-catalog-item-back').css("-o-transform", "scale("+scaleX+","+scaleY+")");
             $('.b-catalog-item-back').css("transform", "scale("+scaleX+","+scaleY+")");
         }
-
         $(window).scroll();
+        footerToBottom();
     }
 
     function retina(){
@@ -104,6 +104,23 @@ $(document).ready(function(){
             img.src = src;
         });
     }
+
+    function footerToBottom(){
+        var browserHeight = window.innerHeight,
+            footerOuterHeight = !!$('.b-footer').outerHeight() ? $('.b-footer').outerHeight(true) : 0,
+            headerHeight = 0;
+        if($('.b-header').length){
+            headerHeight = $('.b-header').outerHeight(true);
+        }else{
+            headerHeight = $('.b-header-inner').outerHeight(true);
+        }
+        var minHeight = browserHeight - footerOuterHeight - headerHeight;
+        if(minHeight >= 0){
+            $('.b-content').css({
+                'min-height': minHeight
+            });
+        }  
+    };
 
     $('.b-review-slider').slick({
         slidesToShow: 1,
