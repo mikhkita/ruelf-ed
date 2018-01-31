@@ -345,16 +345,15 @@ $(document).ready(function(){
             $('.b-filter-flowers-select').text("Выбрано " + count + " шт.");
         else
             $('.b-filter-flowers-select').text($('.b-filter-flowers-select').attr("data-default"));
-        $('input[name="any-flowers"]').prop("checked", false);
-        console.log("+++");
+        $('input[name="any-flowers"]').prop("checked", false).prop("disabled", false);
     });
 
     $('input[name="any-flowers"]').change(function(){
         if($(this).prop("checked")){
+            $(this).prop("disabled", true);
            $('input[name="flowers-list"]').prop("checked", false);
            $('.b-filter-flowers-select').text($('.b-filter-flowers-select').attr("data-default"));
        }
-       console.log("+++");
     });
 
     $(function(){
