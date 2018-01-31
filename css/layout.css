@@ -1053,7 +1053,8 @@ h4{
 				    height: 21px;
 				}
 
-				.b-basket-btn-cont:hover .b-basket{
+				.b-basket-btn-cont:hover .b-basket,
+				.b-basket-btn-cont.b-show .b-basket{
 					visibility: visible;
 				    opacity: 1;
 				    -webkit-transform: translateY(0px);
