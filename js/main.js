@@ -92,13 +92,18 @@ $(document).ready(function(){
         });
     }
 
-    /*var $this = $('.b-top'),
-        imgMenu = new Image(),
-        src = $this.attr("data-back-menu");
-    imgMenu.onload = function(){
-        console.log("+++++++");
-    };
-    imgMenu.src = src;*/
+    function updateCatalog(){
+        $("*[data-catalog-retina]").each(function(){
+            var $this = $(this),
+                img = new Image(),
+                src = $this.attr("data-catalog-retina");
+            img.onload = function(){
+                $this.css("background-image", 'url(' + $this.attr("data-catalog-retina") + ')');
+                $this.removeAttr("data-catalog-retina")
+            };
+            img.src = src;
+        });
+    }
 
     $('.b-review-slider').slick({
         slidesToShow: 1,
