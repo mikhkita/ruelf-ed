@@ -2359,6 +2359,7 @@ h4{
 			.b-detail-right h4{
 				font-size: 24px;
 				line-height: 24px;
+				font-family: 'Geometria-Medium';
 				margin-bottom: 16px;
 			}
 
@@ -2743,23 +2744,23 @@ h4{
 
 	.icon-calendar{
 		position: absolute;
-		top: 17px;
+		top: 15px;
 		right: 18px;
 	}
 	.icon-calendar:before{
-		content: "\e90b";
-	  	font-size: 14px;
+		content: "\e914";
+	  	font-size: 26px;
 	  	color: #c4c4c4;
 	}
 
 	.icon-clock{
 		position: absolute;
-		top: 17px;
+		top: 15px;
 		right: 18px;
 	}
 	.icon-clock:before{
-		content: "\e90b";
-	  	font-size: 14px;
+		content: "\e915";
+	  	font-size: 26px;
 	  	color: #c4c4c4;
 	}
 

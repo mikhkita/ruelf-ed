@@ -269,11 +269,11 @@ $(document).ready(function(){
         if($('.b-addressee-left').hasClass("active")){
             $('.b-addressee-left').removeClass("active");
             $('.b-addressee-right').addClass("active");
-            $('#addressee-name, #addressee-phone').parent().addClass("hide");
+            $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
         }else{
             $('.b-addressee-right').removeClass("active");
             $('.b-addressee-left').addClass("active");
-            $('#addressee-name, #addressee-phone').parent().removeClass("hide");
+            $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
         }
         return false;
     });

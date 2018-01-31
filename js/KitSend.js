@@ -66,8 +66,8 @@ $(document).ready(function(){
 			    $(element).removeClass("error").parents(".b-input").removeClass("error");
 			}
 		});
-		if( $(this).find("input[name=phone]").length ){
-			$(this).find("input[name=phone]").mask(tePhone,{placeholder:" "});
+		if( $(this).find("input[name=phone], input[name=addressee-phone]").length ){
+			$(this).find("input[name=phone], input[name=addressee-phone]").mask(tePhone,{placeholder:" "});
 		}
 		if( $(this).find("#date").length ){
 			$(this).find("#date").mask(teDates,{placeholder:"x"});
