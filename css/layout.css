@@ -766,13 +766,18 @@ h4{
 		left: 0;
 		width: 100%;
 		height: 100%;
-	    background-position: 0 50%;
-	    background-image: url('../i/header.svg');
+	    background-position: 50% 0;
 		-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out;
 	    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out;
 	    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out;
 		-o-transition: opacity 200ms ease-out, visibility 200ms ease-out;
 	    transition: opacity 200ms ease-out, visibility 200ms ease-out;
+	}
+	.b-header .b-fixed-back{
+		background-image: url('../i/header.svg');
+	}
+	.b-header-inner .b-fixed-back{
+		background-image: url('../i/header-inner.svg');
 	}
 	.b-top.b-top-fixed .b-fixed-back{
 		opacity: 0.7;
