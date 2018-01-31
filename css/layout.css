@@ -1069,17 +1069,23 @@ h4{
 								right: -8px;
 							}
 							.b-basket img{
+								width: 64px;
+								height: 64px;
 								display: inline-block;
 								border-radius: 3px;
 								margin-right: 12px;
 								vertical-align: top;
 							}
 							.b-basket-item-text{
+								width: calc(100% - 100px);
 								display: inline-block;
 								vertical-align: top;
 								margin-top: 8px;
 							}
 									.b-basket-item-text h4{
+										overflow: hidden;
+										white-space: nowrap;
+										text-overflow: ellipsis;
 										line-height: 22px;
 									}
 									.b-basket-item-name:hover h4{
