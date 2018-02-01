@@ -212,9 +212,14 @@
 							<input type="text" id="phone" name="phone" required>
 							<label for="phone">Ваш телефон <span class="required">*</span></label>
 						</div>
-						<div class="b-address">
-							<p>Адрес доставки: <span class="required">*</span></p>
-							<a href="#" class="fancy b-btn-dashed choose-address">указать адрес</a>
+						<div class="b-address b-table">
+							<div class="b-table-cell">
+								<p>Адрес доставки: <span class="required">*</span></p>
+								<a href="#b-popup-map" class="fancy b-btn-dashed choose-address">
+									<span class="choose-address-value">укажите адрес</span>
+									<input class="error" type="text" id="address" name="address" required value="укажите адрес">
+								</a>
+							</div>
 						</div>
 					</div>
 					<div class="b-inputs b-input-row clearfix">
@@ -251,7 +256,7 @@
 						</div>
 					</div>
 					<div class="b-center">
-						<a href="#" class="b-btn b-btn-buy ajax" onclick="$('#b-data-order-form').submit(); return false;">Оформить заказ</a>
+						<a href="#" class="b-btn b-btn-buy ajax">Оформить заказ</a>
 					</div>
 				</form>
 			</div>
@@ -352,7 +357,7 @@
 					<form id="b-sub-form" class="b-sub-form" method="post" action="action.php">
 						<div class="b-inputs">
 							<input name="email" type="text" placeholder="Ваш e-mail" required>
-							<a href="#" class="b-btn b-btn-sub ajax" onclick="$('#b-sub-form').submit(); return false;">Подписаться</a>
+							<a href="#" class="b-btn b-btn-sub ajax">Подписаться</a>
 						</div>
 					</form>
 				</div>
@@ -398,6 +403,24 @@
 			<h4>Приносим свои извинения. Пожалуйста, попробуйте отправить Вашу заявку позже.</h4>
 			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
 		</div>
+		<div class="b-popup b-popup-map" id="b-popup-map">
+			<div class="delivery-page js-popup-map-address">
+			    <form class="order-adress-map-form" style="position: relative">
+			        <div class="order-adress-map-form-title">Адрес доставки</div>
+			        <div class="order-adress-map-form-content">
+			            <div class="form-item __adress b-inputs b-ui-autocomplete">
+			            	<div class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front">
+			                	<input type="text" placeholder="Адрес, дом" class="js-order-adress-map-input">
+			                 </div>
+			            </div>
+			        </div>
+			        <div class="order-adress-map-form-label js-order-adress-map-form-label">Стоимость доставки: 
+			        	<span class="js-order-adress-map-price"></span>
+			        </div>
+			    </form>
+			    <div id="map-address"></div>
+			</div>
+		</div>
 	</div>
 
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
@@ -409,7 +432,10 @@
 	<script type="text/javascript" src="js/KitAnimate.js"></script>
 	<script type="text/javascript" src="js/KitSend.js"></script>
 	<script type="text/javascript" src="js/slick.js"></script>
+	<script type="text/javascript" src="https://api-maps.yandex.ru/2.1.41/?load=package.full&lang=ru-RU"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/AddressDeliveryClass.js"></script>
+	<script type="text/javascript" src="js/address.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

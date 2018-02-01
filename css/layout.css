@@ -79,6 +79,10 @@ input.error,textarea.error{
 	border: 1px solid #F00;
 	box-shadow: 0 0px 0px 1px #F00;
 }
+.choose-address.error{
+	color: #f43d84;
+	border-bottom: 1px dashed #f43d84 !important;
+}
 .b-sub-form input.error{
 	border: 1px solid #F00;
 	border-right: 0;
@@ -2697,8 +2701,8 @@ h4{
 
 		.b-address{
 			float: left;
-			padding-top: 16px;
 			width: calc(50% - 12px);
+			height: 55px;
 		}
 			.b-address p{
 				display: inline-block;
@@ -2707,6 +2711,9 @@ h4{
 				display: inline-block;
 				font-size: 16px;
 			}
+				.b-address .choose-address input{
+					display: none;
+				}
 	.b-payment-method{
 		float: left;
 	}	
@@ -2816,6 +2823,32 @@ h4{
 				.b-addition-item-content a{
 
 				}
+
+/*------popup------*/
+
+.b-popup{
+
+}
+	#b-popup-map{
+		width: 100%;
+		max-width: calc(100% - 48px);
+	}
+
+	#b-popup-map h1,
+	#b-popup-map h2,
+	#b-popup-map h3,
+	#b-popup-map h4,
+	#b-popup-map p{
+		color: #434343;
+	}
+
+	.b-ui-autocomplete .ui-autocomplete{
+		position: static;
+	}
+
+	#map-address{
+		height: 400px;
+	}
 
 /*-------datepicker-------*/
 
