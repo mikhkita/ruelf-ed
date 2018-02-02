@@ -403,21 +403,25 @@
 			<h4>Приносим свои извинения. Пожалуйста, попробуйте отправить Вашу заявку позже.</h4>
 			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
 		</div>
-		<div class="b-popup b-popup-map" id="b-popup-map">
+		<div class="b-popup b-popup-map b-popup-padding" id="b-popup-map">
 			<div class="delivery-page js-popup-map-address">
-			    <form class="order-adress-map-form" style="position: relative">
-			        <div class="order-adress-map-form-title">Адрес доставки</div>
+				<h3>Адрес доставки</h3>
+			    <form class="order-adress-map-form clearfix" style="position: relative">
 			        <div class="order-adress-map-form-content">
-			            <div class="form-item __adress b-inputs b-ui-autocomplete">
-			            	<div class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front">
-			                	<input type="text" placeholder="Адрес, дом" class="js-order-adress-map-input">
+			            <div class="form-item __adress b-ui-autocomplete b-inputs">
+			            	<div class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front b-input">
+			            		<input type="text" placeholder="Адрес, дом" class="js-order-adress-map-input">
 			                 </div>
 			            </div>
 			        </div>
-			        <div class="order-adress-map-form-label js-order-adress-map-form-label">Стоимость доставки: 
-			        	<span class="js-order-adress-map-price"></span>
+			        <div class="b-input number-room">
+			        	<input type="text" placeholder="Квартира/офис" class="">
+			        	<a href="#" class="b-btn b-btn-buy">Принять</a>
 			        </div>
 			    </form>
+			    <div class="order-adress-map-form-label js-order-adress-map-form-label">Стоимость доставки: 
+		        	<span class="js-order-adress-map-price"></span>
+		        </div>
 			    <div id="map-address"></div>
 			</div>
 		</div>

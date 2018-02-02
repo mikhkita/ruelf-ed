@@ -799,9 +799,6 @@ h4{
 		opacity: 1;
 		visibility: visible;
 	}
-	.b-top-fixed .b-menu{
-		margin-left: 0;
-	}
 		.b-top-fixed .top-hide{
 			opacity: 1;
 			visibility: visible;
@@ -854,6 +851,10 @@ h4{
 	}
 	.b-top.basket-null .b-menu{
 		margin-left: 156px;
+	}
+	.b-top-fixed .b-menu,
+	.b-top-fixed.basket-null .b-menu{
+		margin-left: 0;
 	}
 
 		.b-menu li{
@@ -2738,6 +2739,9 @@ h4{
 				border-radius: 3px;
 				border: 1px solid #e4e4e4;
 				background-color: #ffffff;
+				font-size: 16px;
+				line-height: 20px;
+				font-family: 'Geometria-Regular';
 			}
 			.b-input textarea{
 				float: left;
@@ -2878,7 +2882,19 @@ h4{
 .b-popup{
 	width: 600px;
 	padding: 0;
+	border-radius: 3px;
 }
+.b-popup-padding{
+	padding: 40px 44px 50px 44px;
+}
+.b-popup-padding-header{
+	padding: 40px 44px 40px 44px;
+}
+	.b-popup h3{
+		color: #434343;
+		font-family: 'Geometria-Medium';
+		margin-bottom: 34px;
+	}
 	.b-popup .b-btn{
 		min-width: 250px;
 		padding: 13px 34px 14px;
@@ -2907,24 +2923,39 @@ h4{
 	#b-popup-map p{
 		color: #434343;
 	}
+		#b-popup-map h3{
+			text-align: center;
+		}
+		#b-popup-map .b-inputs{
+			padding-top: 0;
+		}
+		#b-popup-map .b-input{
+
+		}
+		.b-inputs .ui-widget{
+			width: 56%;
+		}
+		.b-popup .b-input.number-room{
+			width: 42%;
+		}
+		.b-popup .b-input.number-room .b-btn{
+			float: right;
+		}
+			.js-order-adress-map-input{
+				width: 100%;
+			}
 
 	.b-ui-autocomplete .ui-autocomplete{
 		position: static;
 	}
 
 	#map-address{
-		height: 400px;
+		height: 500px;
 	}
 
 	#b-popup-one-click{
 		padding: 0;
 	}
-
-		#b-popup-one-click h3{
-			color: #434343;
-			font-family: 'Geometria-Medium';
-			margin-bottom: 34px;
-		}
 		#b-popup-one-click img{
 			width: 98px;
 			height: 98px;
@@ -2956,8 +2987,47 @@ h4{
 			    line-height: 22px;
 			}
 
-.b-popup-padding{
-	padding: 40px 44px 50px 44px;
+	#b-popup-question{
+		width: 620px;
+	}
+		#b-popup-question h3{
+			position: relative;
+			margin-bottom: 0;
+			padding-left: 40px;
+		}
+		#b-popup-question h3:before{
+			content: "";
+			display: inline-block;
+			position: absolute;
+			top: 10px;
+			left: 0;
+			background-image: url('../i/quotes-up.svg');
+			width: 24px;
+			height: 19px;
+		}
+		#b-popup-question h3:after{
+			content: "";
+			display: inline-block;
+			position: absolute;
+			bottom: 10px;
+			right: 0;
+			background-image: url('../i/quotes-down.svg');
+			width: 24px;
+			height: 19px;
+		}
+
+.b-popup .ui-widget.ui-widget-content{
+	border: 0;
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button{
+	font-family: 'Geometria-Regular';
+	font-size: 16px;
+	line-height: 28px;
+}
+
+.fancybox-container{
+	font-family: 'Geometria-Regular';
 }
 
 .fancybox-close-small {
