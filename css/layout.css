@@ -1477,6 +1477,21 @@ h4{
 				margin-bottom: 0;
 			}
 
+	.b-filter-flowers-list .b-checkbox input[type="checkbox"] + span + label,
+	.b-filter-flowers-list .b-checkbox input[type="checkbox"] + label{
+		padding: 8px 0 8px 31px;
+		margin-bottom: 0;
+	}
+	.b-filter-flowers-list .b-checkbox input[type="checkbox"] + span + label:before,
+	.b-filter-flowers-list .b-checkbox input[type="checkbox"] + label:before{
+		top: 8px;
+	}
+
+	.b-filter-flowers-list .b-checkbox input[type="checkbox"] + span + label:after,
+	.b-filter-flowers-list .b-checkbox input[type="checkbox"] + label:after{
+	    top: 10px;
+	}
+
 	.b-filter-colors{
 		float: right;
 		margin-right: 10px;
@@ -3159,12 +3174,3 @@ h4{
 		left: calc(50% + 496px);
 	}
 }
-
-/*- крестик в basket 3-4м
--подсвет лейблов 1-2м
--ховер крестика 1м
--close title 2м
-отстут меню 1м
-+3-5м
-валидация адреса доставки 1-2м
-popup-call 2-3м*/
