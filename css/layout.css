@@ -123,7 +123,9 @@ input:-moz-placeholder {
 [class^="icon-"]:after, 
 [class*=" icon-"]:after,
 ul.b-breadcrumbs li:after,
-.fancybox-close-small:after{
+.fancybox-close-small:after,
+#b-popup-question h3:before,
+#b-popup-question h3:after{
 	font-family: 'icomoon' !important;
 	speak: none;
 	font-style: normal;
@@ -3022,25 +3024,22 @@ h4{
 			padding-left: 40px;
 		}
 		#b-popup-question h3:before{
-			content: "";
+			content: "\e916";
 			display: inline-block;
+			color: #6e58ac;
 			position: absolute;
-			top: 8px;
+			top: 7px;
 			left: 0;
-			background-image: url('../i/quotes-up.svg');
-			background-position: 50% 50%;
-			background-repeat: no-repeat;
+			font-size: 19px;
 			width: 24px;
 			height: 19px;
 		}
 		#b-popup-question h3:after{
-			content: "";
+			content: "\e917";
 			display: inline-block;
+			color: #6e58ac;
 			margin-left: 16px;
-			margin-bottom: -1px;
-			background-image: url('../i/quotes-down.svg');
-			background-position: 50% 50%;
-			background-repeat: no-repeat;
+			font-size: 19px;
 			width: 24px;
 			height: 19px;
 		}
