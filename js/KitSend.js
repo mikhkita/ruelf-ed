@@ -96,11 +96,15 @@ $(document).ready(function(){
 			padding : 0,
 			content : $popup,
 	      	touch: false,
+	      	autoFocus : false,
 			helpers: {
 	         	overlay: {
 	            	locked: true 
 	         	}
 	      	},
+	      	btnTpl : {
+		        smallBtn   : '<button data-fancybox-close class="fancybox-close-small" title="Закрыть"></button>',
+		    },
 			beforeShow: function(){
 				$(".fancybox-wrap").addClass("beforeShow");
 				$popup.find(".custom-field").remove();

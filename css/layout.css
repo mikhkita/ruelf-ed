@@ -856,6 +856,12 @@ h4{
 	.b-top-fixed.basket-null .b-menu{
 		margin-left: 0;
 	}
+	.b-top-fixed .b-menu .b-submenu{
+		top: 52px;
+	}
+	.b-top-fixed .b-basket{
+		top: 55px;
+	}
 
 		.b-menu li{
 			float: left;
@@ -1797,11 +1803,11 @@ h4{
 							background-color: #000;
 							opacity: 0;
 							visibility: hidden;
-							-webkit-transition: opacity 300ms ease-out, visibility 300ms ease-out;
-						    -moz-transition: opacity 300ms ease-out, visibility 300ms ease-out;
-						    -ms-transition: opacity 300ms ease-out, visibility 300ms ease-out;
-						    -o-transition: opacity 300ms ease-out, visibility 300ms ease-out;
-						    transition: opacity 300ms ease-out, visibility 300ms ease-out;
+							-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+						    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+						    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+						    -o-transition: opacity 300ms ease-out, visibility 200ms ease-out;
+						    transition: opacity 200ms ease-out, visibility 200ms ease-out;
 						}
 						.b-catalog-item:hover .b-catalog-item-hover-back{
 							opacity: 0.5;
@@ -1813,11 +1819,11 @@ h4{
 	    					padding: 10px 24px 24px;
     						opacity: 0;
 							visibility: hidden;
-							-webkit-transition: opacity 300ms ease-out, visibility 300ms ease-out;
-						    -moz-transition: opacity 300ms ease-out, visibility 300ms ease-out;
-						    -ms-transition: opacity 300ms ease-out, visibility 300ms ease-out;
-						    -o-transition: opacity 300ms ease-out, visibility 300ms ease-out;
-						    transition: opacity 300ms ease-out, visibility 300ms ease-out;
+							-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+						    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+						    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+						    -o-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+						    transition: opacity 200ms ease-out, visibility 200ms ease-out;
 						}
 						.b-catalog-item:hover .b-catalog-item-hover-content{
 							opacity: 1;
@@ -1878,11 +1884,11 @@ h4{
 					font-family: 'Geometria-Bold';
 					font-size: 26px;
 					line-height: 28px;
-					-webkit-transition: transform 300ms ease-out;
-				    -moz-transition: transform 300ms ease-out;
-				    -ms-transition: transform 300ms ease-out;
-				    -o-transition: transform 300ms ease-out;
-				    transition: transform 300ms ease-out;
+					-webkit-transition: transform 200ms ease-out;
+				    -moz-transition: transform 200ms ease-out;
+				    -ms-transition: transform 200ms ease-out;
+				    -o-transition: transform 200ms ease-out;
+				    transition: transform 200ms ease-out;
 				}
 					.b-catalog-item-price.icon-ruble:after{
 						color: #434343;
@@ -1934,11 +1940,11 @@ h4{
 					z-index: 101;
 					opacity: 0;
 					visibility: hidden;
-					-webkit-transition: opacity 300ms ease-out, visibility 300ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
-				    -moz-transition: opacity 300ms ease-out, visibility 300ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
-				    -ms-transition: opacity 300ms ease-out, visibility 300ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
-				    -o-transition: opacity 300ms ease-out, visibility 300ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
-				    transition: opacity 300ms ease-out, visibility 300ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
+					-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
+				    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
+				    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
+				    -o-transition: opacity 200ms ease-out, visibility 200ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
+				    transition: opacity 200ms ease-out, visibility 200ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
 				}
 
 				.b-catalog-item:hover .b-btn-buy{
@@ -2462,7 +2468,7 @@ h4{
 	}
 		.table-header th{
 			color: #c4c4c4;
-			font-family: 'Geometria-Medium';
+			font-family: 'Geometria-Bold';
 			font-size: 14px;
 			line-height: 24px;
 			text-transform: uppercase;
@@ -2506,6 +2512,9 @@ h4{
 	.b-basket-price{
 		width: 17%;
 	}
+		.b-basket-price h4{
+			font-family: 'Geometria-Medium';
+		}
 
 	.b-basket-count .input-cont{
 		display: inline-block;
@@ -2514,12 +2523,13 @@ h4{
 
 	.icon-minus{
 		position: absolute;
-		top: -1px;
+		top: 3px;
 		left: -11px;
 		color: #e4e4e4;
 	}
 	.icon-minus:before{
 		content: "\e910";
+		display: block;
 	  	font-size: 1px;
 	  	color: #c4c4c4;
 		padding: 12px;
@@ -2529,12 +2539,13 @@ h4{
 	}
 	.icon-plus{
 		position: absolute;
-		top: 3px;
+		top: 1px;
 		right: -9px;
 		color: #e4e4e4;
 	}
 	.icon-plus:before{
 		content: "\e911";
+		display: block;
 	  	font-size: 10px;
 	  	color: #c4c4c4;
 		padding: 10px;
@@ -2549,7 +2560,7 @@ h4{
 		border: none;
 	    width: 80px;
 	    color: #434343;
-		font-family: 'Geometria-Bold';
+		font-family: 'Geometria-Medium';
 		font-size: 18px;
 		line-height: 18px;
 	    font-size: 18px;
@@ -2564,7 +2575,17 @@ h4{
 	.b-basket-table .b-tip-cont{
 		display: table-cell;
 		vertical-align: middle;
+		float: right;
+		text-align: center;
+		width: 36px;
+		height: 36px;
 	}
+		.b-basket-table .b-tip-cont a{
+			display: inline-block;
+			width: 36px;
+			height: 36px;
+			line-height: 36px;
+		}
 
 	.b-basket-table .icon-close:before{
 		opacity: 0.4;
@@ -2576,7 +2597,7 @@ h4{
 	}
 
 	.b-basket-table .b-tip{
-		left: -50px;
+		left: -39px;
 	}
 
 	.b-basket-table .b-tip:before{
@@ -2723,8 +2744,6 @@ h4{
 				line-height: 14px;
 				font-size: 14px;
 				font-family: "Geometria-Medium";
-			}
-			.b-input.focus label{
 				color: #434343 !important;
 			}
 			.b-input.error label{
@@ -2913,7 +2932,7 @@ h4{
 
 	#b-popup-map{
 		width: 100%;
-		max-width: calc(100% - 48px);
+		max-width: 1240px;
 	}
 
 	#b-popup-map h1,
@@ -2972,6 +2991,7 @@ h4{
 				font-size: 18px;
 				line-height: 26px;
 				margin-bottom: 14px;
+				font-family: 'Geometria-Medium';
 
 			}
 			#b-popup-one-click .b-basket-item-price {
@@ -3002,22 +3022,29 @@ h4{
 			top: 10px;
 			left: 0;
 			background-image: url('../i/quotes-up.svg');
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
 			width: 24px;
 			height: 19px;
 		}
 		#b-popup-question h3:after{
 			content: "";
 			display: inline-block;
-			position: absolute;
-			bottom: 10px;
-			right: 0;
+			margin-left: 16px;
+			margin-bottom: -3px;
 			background-image: url('../i/quotes-down.svg');
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
 			width: 24px;
 			height: 19px;
 		}
 
 .b-popup .ui-widget.ui-widget-content{
 	border: 0;
+}
+
+.fancybox-close-small:active:after, .fancybox-close-small:focus:after {
+	outline: none;
 }
 
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button{
@@ -3041,8 +3068,7 @@ h4{
     position: absolute;
     left: 6px;
     top: 12px;
-    color: #434343;
-    opacity: 0.7;
+    color: #c4c4c4;
     font-size: 14px;
     width: auto;
     height: auto;
@@ -3050,9 +3076,11 @@ h4{
 }
 
 .fancybox-close-small:hover:after{
-	opacity: 1;
 	color: #434343;
 	background-color: transparent;
+}
+.fancybox-close-small:active:after {
+    color: #6e58ac;
 }
 
 /*-------datepicker-------*/
@@ -3122,3 +3150,10 @@ h4{
 		left: calc(50% + 496px);
 	}
 }
+
+/*- крестик в basket 3-4м
+-подсвет лейблов 1-2м
+-ховер крестика 1м
+-close title 2м
+отстут меню 1м
++3-5м*/
