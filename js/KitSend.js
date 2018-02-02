@@ -131,14 +131,15 @@ $(document).ready(function(){
 					customHandlers[$this.attr("data-beforeClose")]($this);
 				}
 				if($this.hasClass("choose-address")){
-					if($('.js-order-adress-map-input').attr("valid-delivery")){
+					if($('.js-order-adress-map-input').attr("valid-delivery") &&
+						!!$('.js-order-adress-map-input').val()){
 						var resString = $('.js-order-adress-map-input').val() + " (" + $('.js-order-adress-map-price').text() + ")";
 						$this.children(".choose-address-value").text(resString);
-						$('.choose-address, .choose-address input').removeClass("error");
+						$('.b-choose-address, .choose-address input').removeClass("error");
 						$('.choose-address input[name="address"]').val(resString);
 					}else{
 						$this.children(".choose-address-value").text("указать адрес");
-						$(".choose-address, .choose-address input").addClass("error");
+						$(".b-choose-address, .choose-address input").addClass("error");
 						$('.choose-address input[name="address"]').val("");
 					}
 				}
@@ -185,8 +186,8 @@ $(document).ready(function(){
 	});
 
 	$(".ajax").parents("form").submit(function(){
-		if($(this).find(".choose-address input.error").length){
-			$('.choose-address').addClass("error");
+		if($(this).find(".b-choose-address input.error").length){
+			$('.b-choose-address').addClass("error");
 		}
   		if( $(this).find("input.error,select.error,textarea.error").length == 0 ){
   			var $this = $(this),

@@ -1160,7 +1160,7 @@
 						<div class="b-table-cell">
 							<h3>Не нашли подходящий букет?</h3>
 							<p>Наши специалисты помогут Вам составить эксклюзивный букет, подходящий под Ваши запросы!</p>
-							<a href="#" class="b-btn b-btn-white icon-phone">
+							<a href="#b-popup-call" class="fancy b-btn b-btn-white icon-phone">
 								<div class="b-btn-more-text b-center">Заказать звонок</div>
 							</a>
 						</div>
@@ -1313,6 +1313,31 @@
 			<div class="b-center b-popup-padding">
 				<a href="#" class="b-btn b-btn-more" onclick="$.fancybox.close(); return false;">Закрыть</a>
 			</div>
+		</div>
+		<div class="b-popup" id="b-popup-call">
+			<div class="b-popup-padding b-popup-padding-header">
+				<h3>Заказ обратного звонка</h3>
+			</div>
+			<form id="b-one-click-form" class="b-one-click-form" method="post" action="action.php">
+				<div class="b-block-gray">
+					<div class="b-popup-padding">
+						<p>Вы можете купить букет по телефону. Просто оставьте свой номер и мы свяжемся с Вами в течении 10 минут.</p>
+						<div class="b-inputs clearfix">
+							<div class="b-input">
+								<input type="text" id="name" name="name" required>
+								<label for="name">Ваше имя <span class="required">*</span></label>
+							</div>
+							<div class="b-input">
+								<input type="text" id="phone" name="phone" required>
+								<label for="phone">Ваш телефон <span class="required">*</span></label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="b-center b-popup-padding">
+					<a href="#" class="b-btn b-btn-buy ajax">Заказать</a>
+				</div>
+			</form>
 		</div>
 	</div>
 
