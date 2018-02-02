@@ -70,7 +70,7 @@ $(document).ready(function(){
 			$(this).find("input[name=phone], input[name=addressee-phone]").mask(tePhone,{placeholder:" "});
 		}
 		if( $(this).find("#date").length ){
-			$(this).find("#date").mask(teDates,{placeholder:"x"});
+			$(this).find("#date").mask(teDates,{placeholder:"_"});
 		}
 		$(this).find("input[type='text'], input[type='email'], textarea, select").blur(function(){
 		   $(this).valid();
@@ -96,7 +96,7 @@ $(document).ready(function(){
 			padding : 0,
 			content : $popup,
 	      	touch: false,
-	      	autoFocus : false,
+	      	autoFocus : true,
 			helpers: {
 	         	overlay: {
 	            	locked: true 

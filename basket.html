@@ -137,7 +137,7 @@
 						<a href="detail.html"><h4>Красно-белый букет из роз</h4></a>
 					</td>
 					<td class="b-basket-price">
-						<h4 class="icon-ruble">4 500</h4>
+						<h4 class="icon-ruble-medium">4 500</h4>
 					</td>
 					<td class="b-basket-count">
 						<form id="b-basket-form" class="b-basket-form" method="post" action="action.php">
@@ -166,7 +166,7 @@
 						<a href="detail.html"><h4>Букет «Розовое вино»</h4></a>
 					</td>
 					<td class="b-basket-price">
-						<h4 class="icon-ruble">5 400</h4>
+						<h4 class="icon-ruble-medium">5 400</h4>
 					</td>
 					<td class="b-basket-count">
 						<form id="b-basket-form" class="b-basket-form" method="post" action="action.php">
@@ -412,12 +412,14 @@
 			        <div class="order-adress-map-form-content">
 			            <div class="form-item __adress b-ui-autocomplete b-inputs">
 			            	<div class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front b-input">
-			            		<input type="text" placeholder="Адрес, дом" class="js-order-adress-map-input">
+			            		<input type="text" id="js-order-adress-map-input" class="js-order-adress-map-input">
+			            		<label for="">Адрес, дом</label>
 			                 </div>
 			            </div>
 			        </div>
 			        <div class="b-input number-room">
-			        	<input type="text" placeholder="Квартира/офис" class="number-room-input" maxlength="5">
+			        	<input type="text" id="number-room-input" class="number-room-input" maxlength="5">
+			        	<label for="number-room-input">Квартира/офис</label>
 			        	<a href="#" class="b-btn b-btn-buy">Принять</a>
 			        </div>
 			    </form>

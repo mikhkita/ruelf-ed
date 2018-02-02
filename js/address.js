@@ -1,5 +1,4 @@
 ymaps.ready(['AddressDelivery']).then(function init() {
-    console.log("ymaps");
     jQuery.ajax({
         url: '/ajax/tariffZone.php',
         dataType: 'json',
@@ -8,9 +7,7 @@ ymaps.ready(['AddressDelivery']).then(function init() {
         },
         success: onPolygonLoad
     });
-    console.log("ajax-end");
     function onPolygonLoad(json) {
-        console.log("onPolygonLoad");
         if($("#map-address").length <= 0){
             return true;
         }

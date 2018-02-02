@@ -156,7 +156,7 @@ $(document).ready(function(){
     $('.arrow-up').on('click', function(){
         $("body,html").animate({
             scrollTop: 0
-        }, 800);
+        }, 300);
         return false;
     });
 

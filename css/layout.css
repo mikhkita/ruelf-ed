@@ -1130,6 +1130,10 @@ h4{
 				    -o-transform: translateY(0px);
 				    transform: translateY(0px);
 				}
+				.b-top.basket-null .b-basket-btn-cont:hover .b-basket{
+					visibility: hidden;
+				    opacity: 0;
+				}
 
 					.b-basket .icon-ruble:after{
 						color: #434343;
@@ -2210,7 +2214,7 @@ h4{
 
 .arrow-up{
 	position: fixed;
-	z-index: 10;
+	z-index: 201;
 	bottom: 24px;
 	left: calc(50% + 600px);
 	width: 80px;
@@ -2467,7 +2471,7 @@ h4{
 	}
 		.table-header th{
 			color: #c4c4c4;
-			font-family: 'Geometria-Bold';
+			font-family: 'Geometria-Medium';
 			font-size: 14px;
 			line-height: 24px;
 			text-transform: uppercase;
@@ -2566,7 +2570,7 @@ h4{
 	}
 
 	.b-basket-sum .icon-ruble:after,
-	.b-basket-price .icon-ruble:after{
+	.b-basket-price .icon-ruble-medium:after{
 		font-size: 14px;
 		color: #434343;
 	}
@@ -3021,7 +3025,7 @@ h4{
 			content: "";
 			display: inline-block;
 			position: absolute;
-			top: 10px;
+			top: 8px;
 			left: 0;
 			background-image: url('../i/quotes-up.svg');
 			background-position: 50% 50%;
@@ -3033,7 +3037,7 @@ h4{
 			content: "";
 			display: inline-block;
 			margin-left: 16px;
-			margin-bottom: -3px;
+			margin-bottom: -1px;
 			background-image: url('../i/quotes-down.svg');
 			background-position: 50% 50%;
 			background-repeat: no-repeat;
