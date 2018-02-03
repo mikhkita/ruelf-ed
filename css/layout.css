@@ -2925,6 +2925,30 @@ h4{
 
 				}
 
+/*------Доставка------*/
+
+.delivery-page{
+
+}
+	.delivery-page .b-price-delivery{
+		text-align: center;
+		margin-bottom: 34px;
+		font-size: 18px;
+	}
+	.delivery-page .b-ui-autocomplete .ui-autocomplete{
+		margin: 0 auto;
+		float: none;
+	}
+	.delivery-page .b-inputs .ui-widget{
+		width: 500px;
+	}
+	.delivery-page .ui-widget.ui-widget-content{
+		border: 0;
+	}
+	#map-address h3{
+		color: #434343;
+	}
+
 /*------popup------*/
 
 .b-popup{
