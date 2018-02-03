@@ -406,28 +406,34 @@
 			<h4>Приносим свои извинения. Пожалуйста, попробуйте отправить Вашу заявку позже.</h4>
 			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
 		</div>
-		<div class="b-popup b-popup-map b-popup-padding" id="b-popup-map">
+		<div class="b-popup b-popup-map" id="b-popup-map">
+			<div class="b-popup-padding-header">
+				<h3>Выбор адреса доставки</h3>
+			</div>
 			<div class="delivery-page js-popup-map-address">
-				<h3>Адрес доставки</h3>
-			    <form class="order-adress-map-form clearfix" style="position: relative">
-			        <div class="order-adress-map-form-content">
-			            <div class="form-item __adress b-ui-autocomplete b-inputs">
-			            	<div class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front b-input">
-			            		<input type="text" id="js-order-adress-map-input" class="js-order-adress-map-input">
-			            		<label for="">Адрес, дом</label>
-			                 </div>
-			            </div>
+				<div class="b-block-gray b-popup-padding">
+					<div class="b-price-delivery order-adress-map-form-label js-order-adress-map-form-label">
+						<span class="default">Для расчета доставки укажите адрес</span>
+						<span class="price-text hide">Стоимость доставки: </span>
+			        	<span class="js-order-adress-map-price"></span>
 			        </div>
-			        <div class="b-input number-room">
-			        	<input type="text" id="number-room-input" class="number-room-input" maxlength="5">
-			        	<label for="number-room-input">Квартира/офис</label>
-			        	<a href="#" class="b-btn b-btn-buy">Принять</a>
-			        </div>
-			        <input type="submit" value="Заказать" style="display:none;">
-			    </form>
-			    <div class="order-adress-map-form-label js-order-adress-map-form-label">Стоимость доставки: 
-		        	<span class="js-order-adress-map-price"></span>
-		        </div>
+				    <form class="order-adress-map-form clearfix" style="position: relative">
+				        <div class="order-adress-map-form-content">
+				            <div class="form-item __adress b-ui-autocomplete b-inputs">
+				            	<div class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front b-input">
+				            		<input type="text" id="js-order-adress-map-input" class="js-order-adress-map-input">
+				            		<label for="">Адрес, дом <span class="required">*</span></label>
+				                 </div>
+				            </div>
+				        </div>
+				        <div class="b-input number-room">
+				        	<input type="text" id="number-room-input" class="number-room-input" maxlength="5">
+				        	<label for="number-room-input">Квартира/офис</label>
+				        	<a href="#" class="b-btn b-btn-buy b-btn-address">Принять</a>
+				        </div>
+				        <input type="submit" value="Заказать" style="display:none;">
+				    </form>
+			    </div>
 			    <div id="map-address"></div>
 			</div>
 		</div>

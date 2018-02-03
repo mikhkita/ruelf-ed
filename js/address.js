@@ -77,7 +77,16 @@ ymaps.ready(['AddressDelivery']).then(function init() {
 
         mapNew.events.add('changed-price', function(e){
             $('.js-order-adress-map-form-label').show();
+            console.log(e.get('label'));
+            if(e.get('label') > 0){
+                $('.js-order-adress-map-price').addClass("icon-ruble");
+            }else{
+                $('.js-order-adress-map-price').removeClass("icon-ruble");
+            }
             $('.js-order-adress-map-price').html( e.get('label') );
+            $('.b-price-delivery .default').addClass("hide");
+            $('.b-price-delivery .price-text').removeClass("hide");
+            $('.ui-widget.b-input').addClass("not-empty");
         });
         mapNew.events.add('adress-changed', function(e){
             $('.js-order-adress-map-input').val( e.get('geocode').getAddressLine() )

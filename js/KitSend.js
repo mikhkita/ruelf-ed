@@ -46,7 +46,7 @@ $(document).ready(function(){
 	var rePhone = /^\+\d \(\d{3}\) \d{3}-\d{2}-\d{2}$/,
 		tePhone = '+7 (999) 999-99-99';
 		reDates = /^\(\d{2}\)\.\d{2}.\d{4}$/,
-		teDates = '99.99.2099';
+		teDates = '99.99.2018';
 
 	$.validator.addMethod('customPhone', function (value) {
 		return rePhone.test(value);
@@ -132,8 +132,13 @@ $(document).ready(function(){
 				}
 				if($this.hasClass("choose-address")){
 					if($('.js-order-adress-map-input').attr("valid-delivery") &&
-						!!$('.js-order-adress-map-input').val()){
-						var resString = $('.js-order-adress-map-input').val() + " (" + $('.js-order-adress-map-price').text() + ")";
+					!!$('.js-order-adress-map-input').val()){
+						var ruble = "";
+						if(!isNaN($('.js-order-adress-map-price').text()))
+							ruble = "р."
+						var resString = $('.js-order-adress-map-input').val() + ", кв. "
+							+ $('.number-room-input').val()
+							+ " (" + $('.js-order-adress-map-price').text() + ruble + ")";
 						$this.children(".choose-address-value").text(resString);
 						$('.b-choose-address, .choose-address input').removeClass("error");
 						$('.choose-address input[name="address"]').val(resString);

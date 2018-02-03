@@ -400,6 +400,11 @@ $(document).ready(function(){
       });
     });
 
+    $('.b-btn-address').on('click', function(){
+        $.fancybox.close(); 
+        return false;
+    });
+
     // Добавление в корзину
     var cartTimeout = 0;
     $("body").on("click",".b-btn-to-cart",function(){

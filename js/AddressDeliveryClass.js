@@ -188,7 +188,7 @@ ymaps.modules.define(
                 });
                 this._map.events.fire('changed-price', {
                     value: this._priceDlivery,
-                    label: this._priceDlivery == 0 ? "бесплатно" : ( this._priceDlivery > 0 ? this._priceDlivery + "р." : "Доставка не осуществляется" )
+                    label: this._priceDlivery == 0 ? "бесплатно" : ( this._priceDlivery > 0 ? this._priceDlivery : "Доставка не осуществляется" )
                 });
                 if(this._priceDlivery < 0){
                     $('.js-order-adress-map-input').removeAttr("valid-delivery");
