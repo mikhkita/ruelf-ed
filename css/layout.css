@@ -2184,6 +2184,7 @@ h4{
 						margin-right: 0;
 					}
 						ul.b-social li a{
+							font-size: 0;
 							width: 100%;
 							display: inline-block;
 						}

@@ -121,204 +121,32 @@
 	<div class="b b-content">
 
 		<div class="b-block">
-			<table class="b-basket-table">
-				<tr class="table-header">
-					<th>Название</th>
-					<th>Цена</th>
-					<th>Количество</th>
-					<th>Сумма</th>
-					<th></th>
-				</tr>
-				<tr>
-					<td class="b-basket-name">
-						<a href="detail.html">
-							<img src="i/basket-detail-1.jpg">
-						</a>	
-						<a href="detail.html"><h4>Красно-белый букет из роз</h4></a>
-					</td>
-					<td class="b-basket-price">
-						<h4 class="icon-ruble-medium">4 500</h4>
-					</td>
-					<td class="b-basket-count">
-						<form id="b-basket-form" class="b-basket-form" method="post" action="action.php">
-							<div class="b input-cont">
-								<a href="#" onclick="return false;" class="icon-minus"></a>
-								<a href="#" onclick="return false;" class="icon-plus"></a>
-								<input name="count" type="text" maxlength="3" oninput="this.value = this.value.replace(/\D/g, '')" value="1">
-							</div>
-						</form>
-					</td>
-					<td class="b-basket-sum">
-						<h4 class="icon-ruble">9 000</h4>
-					</td>
-					<td class="b-basket-delete">
-						<div class="b-tip-cont">
-							<a href="#" class="icon-close b-tip-ref"></a>
-							<div class="b-tip">Удалить</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td class="b-basket-name">
-						<a href="detail.html">
-							<img src="i/basket-detail-2.jpg">
-						</a>	
-						<a href="detail.html"><h4>Букет «Розовое вино»</h4></a>
-					</td>
-					<td class="b-basket-price">
-						<h4 class="icon-ruble-medium">5 400</h4>
-					</td>
-					<td class="b-basket-count">
-						<form id="b-basket-form" class="b-basket-form" method="post" action="action.php">
-							<div class="b input-cont">
-								<a href="#" onclick="return false;" class="icon-minus"></a>
-								<a href="#" onclick="return false;" class="icon-plus"></a>
-								<input name="count" type="text" maxlength="3" oninput="this.value = this.value.replace(/\D/g, '')" value="2">
-							</div>
-						</form>
-					</td>
-					<td class="b-basket-sum">
-						<h4 class="icon-ruble">5 400</h4>
-					</td>
-					<td class="b-basket-delete">
-						<div class="b-tip-cont">
-							<a href="#" class="icon-close b-tip-ref"></a>
-							<div class="b-tip">Удалить</div>
-						</div>
-					</td>
-				</tr>
-			</table>
-		</div>
-
-
-		<div class="b-data-order b-block-gray b-padding">
-			<div class="b-block">
-				<div class="b-data-order-top clearfix">
-					<h2 class="b-title">Данные к заказу</h2>
-					<div class="b b-addressee">
-						<a href="#" class="b-addressee-switch"></a>
-						<div class="b-btn-switch b-addressee-left active">Доставить получателю</div>
-						<div class="b-btn-switch b-addressee-right">Доставить мне</div>
-						<div class="b-btn-addressee"></div>
-					</div>
-				</div>
-				<form id="b-data-order-form" class="b-data-order-form" method="post" action="kitsend.php">
-					<div class="b-inputs b-input-row clearfix">
-						<div class="b-input">
-							<input type="text" id="name" name="name" required>
-							<label for="name">Ваше имя <span class="required">*</span></label>
-						</div>
-						<div class="b-input">
-							<input type="text" id="phone" name="phone" required>
-							<label for="phone">Ваш телефон <span class="required">*</span></label>
-						</div>
-						<div class="b-address b-table">
-							<div class="b-table-cell">
-								<div class="b-choose-address">
-									<p>Адрес доставки: <span class="required">*</span></p>
-									<a href="#b-popup-map" class="fancy b-btn-dashed choose-address">
-										<span class="choose-address-value">укажите адрес</span>
-										<input class="error" type="text" id="address" name="address" required value="укажите адрес">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="b-inputs b-input-row b-input-move clearfix">
-						<div class="b-input move-element">
-							<input type="text" id="date" name="date">
-							<label for="date">Дата доставки</label>
-							<div class="icon-calendar"></div>
-						</div>
-						<div class="b-input move-element">
-							<input type="text" id="time" name="time">
-							<label for="time">Время доставки</label>
-							<div class="icon-clock"></div>
-						</div>
-						<div class="b-input">
-							<input type="text" id="addressee-name" name="addressee-name">
-							<label for="addressee-name">Имя получателя</label>
-						</div>
-						<div class="b-input">
-							<input type="text" id="addressee-phone" name="addressee-phone">
-							<label for="addressee-phone">Телефон получателя</label>
-						</div>
-					</div>
-					<div class="b-inputs b-input-row clearfix">
-						<div class="b-radio b-payment-method">
-							<p>Способ оплаты:</p>
-							<input id="card" type="radio" name="payment-method" checked required>
-							<label for="card">Онлайн-оплата картой</label>
-							<input id="cash" type="radio" name="payment-method" required>
-							<label for="cash">Наличными курьеру</label>
-						</div>
-						<div class="b-total-price">
-							<p>Итого с доставкой:</p>
-							<p class="total-price icon-ruble">14 700</p>
-						</div>
-					</div>
-					<div class="b-center">
-						<a href="#" class="b-btn b-btn-buy ajax">Оформить заказ</a>
-					</div>
-					<input type="submit" value="Заказать" style="display:none;">
-				</form>
+			<div class="b-text">
+				<h3>Доставка по Томску – бесплатно</h3>
+				<p>Стоимость доставки за пределы города устанавливается в зависимости от расстояния. Вы можете проверить свой адрес доставки и узнать её стоимость.<br><br>
+				Время доставки указано в каждой композиции и зависит от сложности букета.<br>
+				После оформления заказа вы получите SMS-сообщение и письмо на указанный вами e-mail адрес о том, что заказ принят. И соответствующие сообщения, что заказ доставлен.</p>
 			</div>
-		</div>
-
-		<div class="b-addition">
-			<div class="b-block">
-				<h2 class="b-title">Приятные дополнения</h2>
-				<div class="b-addition-list clearfix">
-					<div class="b-addition-item">
-						<a href="detail.html"><img src="i/addition-1.jpg"></a>
-						<div class="b-addition-item-content">
-							<a href="detail.html"><p class="b-addition-item-name"><b>Подарочная корзина со сладостями</b></p></a>
-							<h3 class="icon-ruble">3 550</h3>
-							<a href="#" class="b-btn-buy">Добавить</a>
-						</div>
-					</div>
-					<div class="b-addition-item">
-						<a href="detail.html"><img src="i/addition-2.jpg"></a>
-						<div class="b-addition-item-content">
-							<a href="detail.html"><p class="b-addition-item-name"><b>Подарок из Raffaello</b></p></a>
-							<h3 class="icon-ruble">2 500</h3>
-							<a href="#" class="b-btn-buy">Добавить</a>
-						</div>
-					</div>
-					<div class="b-addition-item">
-						<a href="detail.html"><img src="i/addition-3.jpg"></a>
-						<div class="b-addition-item-content">
-							<a href="detail.html"><p class="b-addition-item-name"><b>Белый плюшевый мишка</b></p></a>
-							<h3 class="icon-ruble">6 900</h3>
-							<a href="#" class="b-btn-buy">Добавить</a>
-						</div>
-					</div>
-					<div class="b-addition-item">
-						<a href="detail.html"><img src="i/addition-4.jpg"></a>
-						<div class="b-addition-item-content">
-							<a href="detail.html"><p class="b-addition-item-name"><b>Плюшевый мишка Томас</b></p></a>
-							<h3 class="icon-ruble">5 200</h3>
-							<a href="#" class="b-btn-buy">Добавить</a>
-						</div>
-					</div>
-					<div class="b-addition-item">
-						<a href="detail.html"><img src="i/addition-5.jpg"></a>
-						<div class="b-addition-item-content">
-							<a href="detail.html"><p class="b-addition-item-name"><b>Корзина из киндеров</b></p></a>
-							<h3 class="icon-ruble">1 900</h3>
-							<a href="#" class="b-btn-buy">Добавить</a>
-						</div>
-					</div>
-					<div class="b-addition-item">
-						<a href="detail.html"><img src="i/addition-6.jpg"></a>
-						<div class="b-addition-item-content">
-							<a href="detail.html"><p class="b-addition-item-name"><b>Воздушные шарики</b></p></a>
-							<h3 class="icon-ruble">650</h3>
-							<a href="#" class="b-btn-buy">Добавить</a>
-						</div>
-					</div>
-				</div>
-			</div>
+			<h2 class="b-title">Узнать стоимость доставки</h2>
+			<div class="delivery-page js-popup-map-address">
+				<div class="b-price-delivery order-adress-map-form-label js-order-adress-map-form-label">
+					<span class="default">Для расчета доставки укажите адрес</span>
+					<span class="price-text hide">Стоимость доставки: </span>
+		        	<span class="js-order-adress-map-price"></span>
+		        </div>
+			    <form class="order-adress-map-form clearfix" style="position: relative">
+			        <div class="order-adress-map-form-content">
+			            <div class="form-item __adress b-ui-autocomplete b-inputs">
+			            	<div class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front b-input">
+			            		<input type="text" id="js-order-adress-map-input" class="js-order-adress-map-input">
+			            		<label for="">Адрес, дом <span class="required">*</span></label>
+			                 </div>
+			            </div>
+			        </div>
+			        <input type="submit" value="Заказать" style="display:none;">
+			    </form>
+		    </div>
+		    <div id="map-address"></div>
 		</div>
 
 		<div class="arrow-up hide-opacity"><div class="icon-arrow-up"></div></div>
@@ -407,33 +235,20 @@
 			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
 		</div>
 		<div class="b-popup b-popup-map" id="b-popup-map">
-			<div class="b-popup-padding-header">
-				<h3>Выбор адреса доставки</h3>
-			</div>
-			<div class="js-popup-map-address">
-				<div class="b-block-gray b-popup-padding">
-					<div class="b-price-delivery order-adress-map-form-label js-order-adress-map-form-label">
-						<span class="default">Для расчета доставки укажите адрес</span>
-						<span class="price-text hide">Стоимость доставки: </span>
+			<div class="delivery-page js-popup-map-address">
+			    <form class="order-adress-map-form" style="position: relative">
+			        <div class="order-adress-map-form-title">Адрес доставки</div>
+			        <div class="order-adress-map-form-content">
+			            <div class="form-item __adress b-inputs b-ui-autocomplete">
+			            	<div class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front">
+			                	<input type="text" placeholder="Адрес, дом" class="js-order-adress-map-input">
+			                 </div>
+			            </div>
+			        </div>
+			        <div class="order-adress-map-form-label js-order-adress-map-form-label">Стоимость доставки: 
 			        	<span class="js-order-adress-map-price"></span>
 			        </div>
-				    <form class="order-adress-map-form clearfix" style="position: relative">
-				        <div class="order-adress-map-form-content">
-				            <div class="form-item __adress b-ui-autocomplete b-inputs">
-				            	<div class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front b-input">
-				            		<input type="text" id="js-order-adress-map-input" class="js-order-adress-map-input">
-				            		<label for="">Адрес, дом <span class="required">*</span></label>
-				                 </div>
-				            </div>
-				        </div>
-				        <div class="b-input number-room">
-				        	<input type="text" id="number-room-input" class="number-room-input" maxlength="5">
-				        	<label for="number-room-input">Квартира/офис</label>
-				        	<a href="#" class="b-btn b-btn-buy b-btn-address">Принять</a>
-				        </div>
-				        <input type="submit" value="Заказать" style="display:none;">
-				    </form>
-			    </div>
+			    </form>
 			    <div id="map-address"></div>
 			</div>
 		</div>
