@@ -47,7 +47,7 @@ ymaps.ready(['AddressDelivery']).then(function init() {
 
         $('.js-order-adress-map-input').autocomplete({
             source: function(req, autocompleteRes){
-                ymaps.geocode(req.term, {
+                ymaps.geocode("Томск, " + req.term, {
                     results: 10
                 }).then(function (res) {
                     var result = [];
