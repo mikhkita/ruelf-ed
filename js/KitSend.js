@@ -133,10 +133,14 @@ $(document).ready(function(){
 				if($this.hasClass("choose-address")){
 					if($('.js-order-adress-map-input').attr("valid-delivery") &&
 					!!$('.js-order-adress-map-input').val()){
-						var ruble = "";
+						var ruble = "",
+							room = "";
 						if(!isNaN($('.js-order-adress-map-price').text()))
-							ruble = "р."
-						var resString = $('.js-order-adress-map-input').val() + ", кв. "
+							ruble = "р.";
+						if(!!$('.number-room-input').val()){
+							room = ", кв. ";
+						}
+						var resString = $('.js-order-adress-map-input').val() + room
 							+ $('.number-room-input').val()
 							+ " (" + $('.js-order-adress-map-price').text() + ruble + ")";
 						$this.children(".choose-address-value").text(resString);
