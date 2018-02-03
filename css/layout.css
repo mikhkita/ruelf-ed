@@ -2789,6 +2789,10 @@ h4{
 				resize: none;
 			}
 
+			.b-input-row.b-input-margin{
+				margin-bottom: 10px;
+			}
+
 			.b-data-order .b-btn-dashed{
 				border-bottom: 1px dashed #434343;
 			}
@@ -2808,6 +2812,9 @@ h4{
 				.b-address .choose-address input{
 					display: none;
 				}
+		.b-address.b-address-margin{
+			margin-top: 18px;
+		}
 	.b-payment-method{
 		float: left;
 	}	

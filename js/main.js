@@ -306,10 +306,17 @@ $(document).ready(function(){
             $('.b-addressee-left').removeClass("active");
             $('.b-addressee-right').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
+            $('.b-address').before($(".move-element"))
+                .addClass("b-address-margin")
+                .parent().addClass("b-input-margin");
+            $('.b-input-move').addClass("hide");
         }else{
             $('.b-addressee-right').removeClass("active");
             $('.b-addressee-left').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
+            $('.b-input-move').prepend($(".move-element")).removeClass("hide");
+            $('.b-address').removeClass("b-address-margin").parent().removeClass("b-input-margin");
+
         }
         return false;
     });
