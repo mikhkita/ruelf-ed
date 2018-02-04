@@ -25,8 +25,8 @@ $(document).ready(function(){
             $('.b-catalog-item-back').css("-o-transform", "scale("+scaleX+","+scaleY+")");
             $('.b-catalog-item-back').css("transform", "scale("+scaleX+","+scaleY+")");
         }
-
         $(window).scroll();
+        footerToBottom();
     }
 
     function retina(){
@@ -39,6 +39,25 @@ $(document).ready(function(){
         if (window.matchMedia && window.matchMedia(mediaQuery).matches)
             return true;
         return false;
+    }
+
+    function isIE() {
+        var rv = -1;
+        if (navigator.appName == 'Microsoft Internet Explorer')
+        {
+            var ua = navigator.userAgent;
+            var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+            if (re.exec(ua) != null)
+                rv = parseFloat( RegExp.$1 );
+        }
+        else if (navigator.appName == 'Netscape')
+        {
+            var ua = navigator.userAgent;
+            var re  = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})");
+            if (re.exec(ua) != null)
+                rv = parseFloat( RegExp.$1 );
+        }
+        return rv == -1 ? false: true;
     }
 
     $(window).resize(resize);
@@ -99,11 +118,28 @@ $(document).ready(function(){
                 src = $this.attr("data-catalog-retina");
             img.onload = function(){
                 $this.css("background-image", 'url(' + $this.attr("data-catalog-retina") + ')');
-                $this.removeAttr("data-catalog-retina")
+                $this.removeAttr("data-catalog-retina");
             };
             img.src = src;
         });
     }
+
+    function footerToBottom(){
+        var browserHeight = window.innerHeight,
+            footerOuterHeight = !!$('.b-footer').outerHeight() ? $('.b-footer').outerHeight(true) : 0,
+            headerHeight = 0;
+        if($('.b-header').length){
+            headerHeight = $('.b-header').outerHeight(true);
+        }else{
+            headerHeight = $('.b-header-inner').outerHeight(true);
+        }
+        var minHeight = browserHeight - footerOuterHeight - headerHeight;
+        if(minHeight >= 0){
+            $('.b-content').css({
+                'min-height': minHeight
+            });
+        }  
+    };
 
     $('.b-review-slider').slick({
         slidesToShow: 1,
@@ -139,7 +175,7 @@ $(document).ready(function(){
     $('.arrow-up').on('click', function(){
         $("body,html").animate({
             scrollTop: 0
-        }, 800);
+        }, 300);
         return false;
     });
 
@@ -246,11 +282,11 @@ $(document).ready(function(){
 
     $(window).scroll();
 
-    /*if( isIE ){
+    if( isIE ){
         $("body").on('mousedown click', ".b-input input, .b-input textarea", function(e) {
             $(this).parents(".b-input").addClass("focus");
         });
-    }*/
+    }
 
     $("body").on("focusin", ".b-input input, .b-input textarea", function(){
         $(this).parents(".b-input").addClass("focus");
@@ -270,10 +306,17 @@ $(document).ready(function(){
             $('.b-addressee-left').removeClass("active");
             $('.b-addressee-right').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
+            $('.b-address').before($(".move-element"))
+                .addClass("b-address-margin")
+                .parent().addClass("b-input-margin");
+            $('.b-input-move').addClass("hide");
         }else{
             $('.b-addressee-right').removeClass("active");
             $('.b-addressee-left').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
+            $('.b-input-move').prepend($(".move-element")).removeClass("hide");
+            $('.b-address').removeClass("b-address-margin").parent().removeClass("b-input-margin");
+
         }
         return false;
     });
@@ -322,12 +365,21 @@ $(document).ready(function(){
         $('.b-filter-price-select.icon-arrow-down').removeClass("arrow-rotate");
     });
 
-    $('.b-filter-flowers-list input').change(function(){
+    $('input[name="flowers-list"]').change(function(){
         var count = $('input[name="flowers-list"]:checked').length;
         if(count > 0)
             $('.b-filter-flowers-select').text("Выбрано " + count + " шт.");
         else
             $('.b-filter-flowers-select').text($('.b-filter-flowers-select').attr("data-default"));
+        $('input[name="any-flowers"]').prop("checked", false).prop("disabled", false);
+    });
+
+    $('input[name="any-flowers"]').change(function(){
+        if($(this).prop("checked")){
+            $(this).prop("disabled", true);
+           $('input[name="flowers-list"]').prop("checked", false);
+           $('.b-filter-flowers-select').text($('.b-filter-flowers-select').attr("data-default"));
+       }
     });
 
     $(function(){
@@ -346,6 +398,11 @@ $(document).ready(function(){
         }
         event.stopPropagation();
       });
+    });
+
+    $('.b-btn-address').on('click', function(){
+        $.fancybox.close(); 
+        return false;
     });
 
     // Добавление в корзину

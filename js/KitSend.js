@@ -46,7 +46,7 @@ $(document).ready(function(){
 	var rePhone = /^\+\d \(\d{3}\) \d{3}-\d{2}-\d{2}$/,
 		tePhone = '+7 (999) 999-99-99';
 		reDates = /^\(\d{2}\)\.\d{2}.\d{4}$/,
-		teDates = '99.99.2099';
+		teDates = '99.99.2018';
 
 	$.validator.addMethod('customPhone', function (value) {
 		return rePhone.test(value);
@@ -70,7 +70,7 @@ $(document).ready(function(){
 			$(this).find("input[name=phone], input[name=addressee-phone]").mask(tePhone,{placeholder:" "});
 		}
 		if( $(this).find("#date").length ){
-			$(this).find("#date").mask(teDates,{placeholder:"x"});
+			$(this).find("#date").mask(teDates,{placeholder:"_"});
 		}
 		$(this).find("input[type='text'], input[type='email'], textarea, select").blur(function(){
 		   $(this).valid();
@@ -95,11 +95,16 @@ $(document).ready(function(){
 		$this.fancybox({
 			padding : 0,
 			content : $popup,
+	      	touch: false,
+	      	autoFocus : true,
 			helpers: {
 	         	overlay: {
 	            	locked: true 
 	         	}
 	      	},
+	      	btnTpl : {
+		        smallBtn   : '<button data-fancybox-close class="fancybox-close-small" title="Закрыть"></button>',
+		    },
 			beforeShow: function(){
 				$(".fancybox-wrap").addClass("beforeShow");
 				$popup.find(".custom-field").remove();
@@ -124,6 +129,28 @@ $(document).ready(function(){
 				$(".fancybox-wrap").addClass("beforeClose");
 				if( $this.attr("data-beforeClose") && customHandlers[$this.attr("data-beforeClose")] ){
 					customHandlers[$this.attr("data-beforeClose")]($this);
+				}
+				if($this.hasClass("choose-address")){
+					if($('.js-order-adress-map-input').attr("valid-delivery") &&
+					!!$('.js-order-adress-map-input').val()){
+						var ruble = "",
+							room = "";
+						if(!isNaN($('.js-order-adress-map-price').text()))
+							ruble = "р.";
+						if(!!$('.number-room-input').val()){
+							room = ", кв. ";
+						}
+						var resString = $('.js-order-adress-map-input').val() + room
+							+ $('.number-room-input').val()
+							+ " (" + $('.js-order-adress-map-price').text() + ruble + ")";
+						$this.children(".choose-address-value").text(resString);
+						$('.b-choose-address, .choose-address input').removeClass("error");
+						$('.choose-address input[name="address"]').val(resString);
+					}else{
+						$this.children(".choose-address-value").text("указать адрес");
+						$(".b-choose-address, .choose-address input").addClass("error");
+						$('.choose-address input[name="address"]').val("");
+					}
 				}
 			},
 			afterClose: function(){
@@ -168,6 +195,9 @@ $(document).ready(function(){
 	});
 
 	$(".ajax").parents("form").submit(function(){
+		if($(this).find(".b-choose-address input.error").length){
+			$('.b-choose-address').addClass("error");
+		}
   		if( $(this).find("input.error,select.error,textarea.error").length == 0 ){
   			var $this = $(this),
   				$thanks = $($this.attr("data-block"));

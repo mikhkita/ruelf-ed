@@ -137,7 +137,7 @@
 						<a href="detail.html"><h4>Красно-белый букет из роз</h4></a>
 					</td>
 					<td class="b-basket-price">
-						<h4 class="icon-ruble">4 500</h4>
+						<h4 class="icon-ruble-medium">4 500</h4>
 					</td>
 					<td class="b-basket-count">
 						<form id="b-basket-form" class="b-basket-form" method="post" action="action.php">
@@ -166,7 +166,7 @@
 						<a href="detail.html"><h4>Букет «Розовое вино»</h4></a>
 					</td>
 					<td class="b-basket-price">
-						<h4 class="icon-ruble">5 400</h4>
+						<h4 class="icon-ruble-medium">5 400</h4>
 					</td>
 					<td class="b-basket-count">
 						<form id="b-basket-form" class="b-basket-form" method="post" action="action.php">
@@ -212,18 +212,25 @@
 							<input type="text" id="phone" name="phone" required>
 							<label for="phone">Ваш телефон <span class="required">*</span></label>
 						</div>
-						<div class="b-address">
-							<p>Адрес доставки: <span class="required">*</span></p>
-							<a href="#" class="fancy b-btn-dashed choose-address">указать адрес</a>
+						<div class="b-address b-table">
+							<div class="b-table-cell">
+								<div class="b-choose-address">
+									<p>Адрес доставки: <span class="required">*</span></p>
+									<a href="#b-popup-map" class="fancy b-btn-dashed choose-address">
+										<span class="choose-address-value">укажите адрес</span>
+										<input class="error" type="text" id="address" name="address" required value="укажите адрес">
+									</a>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="b-inputs b-input-row clearfix">
-						<div class="b-input">
+					<div class="b-inputs b-input-row b-input-move clearfix">
+						<div class="b-input move-element">
 							<input type="text" id="date" name="date">
 							<label for="date">Дата доставки</label>
 							<div class="icon-calendar"></div>
 						</div>
-						<div class="b-input">
+						<div class="b-input move-element">
 							<input type="text" id="time" name="time">
 							<label for="time">Время доставки</label>
 							<div class="icon-clock"></div>
@@ -251,8 +258,9 @@
 						</div>
 					</div>
 					<div class="b-center">
-						<a href="#" class="b-btn b-btn-buy ajax" onclick="$('#b-data-order-form').submit(); return false;">Оформить заказ</a>
+						<a href="#" class="b-btn b-btn-buy ajax">Оформить заказ</a>
 					</div>
+					<input type="submit" value="Заказать" style="display:none;">
 				</form>
 			</div>
 		</div>
@@ -313,6 +321,9 @@
 			</div>
 		</div>
 
+		<div class="arrow-up hide-opacity"><div class="icon-arrow-up"></div></div>
+		<div class="arrow-hide"></div>
+
 	</div>
 
 	<div class="b-footer">
@@ -321,10 +332,10 @@
 				<div class="b-footer-column">
 					<a href="#" class="b-footer-logo"></a>
 					<ul class="b-social">
-						<li><a href="#" class="icon-vk"></a></li>
-						<li><a href="#" class="icon-facebook"></a></li>
-						<li><a href="#" class="icon-ok"></a></li>
-						<li><a href="#" class="icon-instagram"></a></li>
+						<li><a href="#" class="icon-vk">Вконтакте</a></li>
+						<li><a href="#" class="icon-facebook">Facebook</a></li>
+						<li><a href="#" class="icon-ok">Одноклассники</a></li>
+						<li><a href="#" class="icon-instagram">Instagram</a></li>
 					</ul>
 				</div>
 				<div class="b-footer-column">
@@ -349,7 +360,7 @@
 					<form id="b-sub-form" class="b-sub-form" method="post" action="action.php">
 						<div class="b-inputs">
 							<input name="email" type="text" placeholder="Ваш e-mail" required>
-							<a href="#" class="b-btn b-btn-sub ajax" onclick="$('#b-sub-form').submit(); return false;">Подписаться</a>
+							<a href="#" class="b-btn b-btn-sub ajax">Подписаться</a>
 						</div>
 					</form>
 				</div>
@@ -395,6 +406,37 @@
 			<h4>Приносим свои извинения. Пожалуйста, попробуйте отправить Вашу заявку позже.</h4>
 			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
 		</div>
+		<div class="b-popup b-popup-map" id="b-popup-map">
+			<div class="b-popup-padding-header">
+				<h3>Выбор адреса доставки</h3>
+			</div>
+			<div class="js-popup-map-address">
+				<div class="b-block-gray b-popup-padding">
+					<div class="b-price-delivery order-adress-map-form-label js-order-adress-map-form-label">
+						<span class="default">Для расчета доставки укажите адрес</span>
+						<span class="price-text hide">Стоимость доставки: </span>
+			        	<span class="js-order-adress-map-price"></span>
+			        </div>
+				    <form class="order-adress-map-form clearfix" style="position: relative">
+				        <div class="order-adress-map-form-content">
+				            <div class="form-item __adress b-ui-autocomplete b-inputs">
+				            	<div class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front b-input">
+				            		<input type="text" id="js-order-adress-map-input" class="js-order-adress-map-input">
+				            		<label for="">Адрес, дом <span class="required">*</span></label>
+				                 </div>
+				            </div>
+				        </div>
+				        <div class="b-input number-room">
+				        	<input type="text" id="number-room-input" class="number-room-input" maxlength="5">
+				        	<label for="number-room-input">Квартира/офис</label>
+				        	<a href="#" class="b-btn b-btn-buy b-btn-address">Принять</a>
+				        </div>
+				        <input type="submit" value="Заказать" style="display:none;">
+				    </form>
+			    </div>
+			    <div id="map-address"></div>
+			</div>
+		</div>
 	</div>
 
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
@@ -406,7 +448,10 @@
 	<script type="text/javascript" src="js/KitAnimate.js"></script>
 	<script type="text/javascript" src="js/KitSend.js"></script>
 	<script type="text/javascript" src="js/slick.js"></script>
+	<script type="text/javascript" src="https://api-maps.yandex.ru/2.1.41/?load=package.full&lang=ru-RU"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/AddressDeliveryClass.js"></script>
+	<script type="text/javascript" src="js/address.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

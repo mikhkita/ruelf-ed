@@ -14,6 +14,8 @@
 	<link rel="stylesheet" href="css/KitAnimate.css" type="text/css">
 	<link rel="stylesheet" href="css/slick.css" type="text/css">
 	<link rel="stylesheet" href="css/slick-theme.css" type="text/css">
+	<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+	<link rel="stylesheet" href="css/jquery-ui.theme.min.css" type="text/css">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
 
 	<link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 1199px)" href="css/layout-tablet.css">
@@ -98,10 +100,9 @@
 			<div class="b-header-title-inner">
 				<ul class="b-breadcrumbs">
 					<li><a href="index.html">Главная</a></li>
-					<li><a href="catalog.html">Каталог</a></li>
-					<li><span>Классика</span></li>
+					<li><span>Доставка</span></li>
 				</ul>
-				<h1 class="b-title">Классические букеты</h1>
+				<h1 class="b-title">Доставка</h1>
 			</div>
 			<div class="b-catalog-menu">
 				<div class="b-line"></div>
@@ -118,159 +119,38 @@
 	</div>
 
 	<div class="b b-content">
-		<div class="b-detail clearfix">
-			<div class="b-block">
-				<div class="b-detail-left">
-					<a data-fancybox="gallery" href="i/detail-1.jpg"><img src="i/detail-1.jpg"></a>
-				</div>
-				<div class="b-detail-right">
-					<h3>Красно-белый букет из роз</h3>
-					<p class="vendor-code">Артикул: 28912-120</p>
-					<h3 class="b-detail-price icon-ruble">4 500</h3>
-					<a href="#" class="b-btn b-btn-add-basket icon-basket">
-						<div class="b-btn-more-text b-center">Добавить в корзину</div>
-					</a>
-					<p class="buy-one-click">или <a href="#b-popup-one-click" class="fancy">купить в один клик</a></p>
-					<div class="b-payment">
-						<p>Принимаем к оплате:</p>
-						<a href="#"><span class="payment-visa"></span></a>
-						<a href="#"><span class="payment-masterCard"></span></a>
-						<a href="#"><span class="payment-qiwi"></span></a>
-						<a href="#"><span class="payment-webmoney"></span></a>
-						<a href="#"><span class="payment-yaDengi"></span></a>
-						<a href="#"><span class="payment-mir"></span></a>
-					</div>
-					<ul class="b-advantage-list">
-						<li class="b-advantage-item">
-							<img src="i/bouquet-black.svg">
-							<p>Авторский<br>букет</p>
-						</li>
-						<li class="b-advantage-item">
-							<img src="i/delivery-black.svg">
-							<p>Бесплатная<br>доставка по Томску</p>
-						</li>
-					</ul>
-					<h4>Состав:</h4>
-					<p>Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт.</p>
-				</div>
+
+		<div class="b-block">
+			<div class="b-text">
+				<h3>Доставка по Томску – бесплатно</h3>
+				<p>Стоимость доставки за пределы города устанавливается в зависимости от расстояния. Вы можете проверить свой адрес доставки и узнать её стоимость.<br><br>
+				Время доставки указано в каждой композиции и зависит от сложности букета.<br>
+				После оформления заказа вы получите SMS-сообщение и письмо на указанный вами e-mail адрес о том, что заказ принят. И соответствующие сообщения, что заказ доставлен.</p>
 			</div>
+			<h2 class="b-title">Узнать стоимость доставки</h2>
+			<div class="delivery-page js-popup-map-address">
+				<div class="b-price-delivery order-adress-map-form-label js-order-adress-map-form-label">
+					<span class="default">Для расчета доставки укажите адрес</span>
+					<span class="price-text hide">Стоимость доставки: </span>
+		        	<span class="js-order-adress-map-price"></span>
+		        </div>
+			    <form class="order-adress-map-form clearfix" style="position: relative">
+			        <div class="order-adress-map-form-content">
+			            <div class="form-item __adress b-ui-autocomplete b-inputs b-input-row">
+			            	<div class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front b-input">
+			            		<input type="text" id="js-order-adress-map-input" class="js-order-adress-map-input">
+			            		<label for="">Адрес, дом <span class="required">*</span></label>
+			                 </div>
+			            </div>
+			        </div>
+			    </form>
+		    </div>
+		    <div id="map-address"></div>
 		</div>
-		
-		<div class="b-catalog b-catalog-similar">
-			<div class="b-block">
-				<h2 class="b-title">Похожие букеты</h2>
-				<div class="b-catalog-list clearfix">
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-1.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Красно-белый букет из роз</h4>
-							<p class="b-catalog-item-price icon-ruble">4 500</p>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-2.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Букет пионовых роз</h4>
-							<p class="b-catalog-item-price icon-ruble">3 760</p>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-3.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Букет «Розовое вино»</h4>
-							<p class="b-catalog-item-price icon-ruble">5 400</p>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-4.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>«Солнечный букет»</h4>
-							<p class="b-catalog-item-price icon-ruble">6 350</p>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>	
 
 		<div class="arrow-up hide-opacity"><div class="icon-arrow-up"></div></div>
 		<div class="arrow-hide"></div>
-		
+
 	</div>
 
 	<div class="b-footer">
@@ -353,36 +233,23 @@
 			<h4>Приносим свои извинения. Пожалуйста, попробуйте отправить Вашу заявку позже.</h4>
 			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
 		</div>
-		<div class="b-popup" id="b-popup-one-click">
-			<div class="b-popup-padding b-popup-padding-header">
-				<h3>Покупка в один клик</h3>
-				<a href="detail.html"><img src="i/basket-1.jpg"></a>
-				<div class="b-basket-item-text">
-					<a href="detail.html" class="b-basket-item-name"><h4>Букет пионовых роз</h4></a>
-					<p class="b-basket-item-price icon-ruble-medium">3 760</p>
-				</div>
+		<div class="b-popup b-popup-map" id="b-popup-map">
+			<div class="delivery-page js-popup-map-address">
+			    <form class="order-adress-map-form" style="position: relative">
+			        <div class="order-adress-map-form-title">Адрес доставки</div>
+			        <div class="order-adress-map-form-content">
+			            <div class="form-item __adress b-inputs b-ui-autocomplete">
+			            	<div class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front">
+			                	<input type="text" placeholder="Адрес, дом" class="js-order-adress-map-input">
+			                 </div>
+			            </div>
+			        </div>
+			        <div class="order-adress-map-form-label js-order-adress-map-form-label">Стоимость доставки: 
+			        	<span class="js-order-adress-map-price"></span>
+			        </div>
+			    </form>
+			    <div id="map-address"></div>
 			</div>
-			<form id="b-one-click-form" class="b-one-click-form" method="post" action="action.php">
-				<div class="b-block-gray">
-					<div class="b-popup-padding">
-						<p>Вы можете купить букет по телефону. Просто оставьте свой номер и мы свяжемся с Вами в течении 10 минут.</p>
-						<div class="b-inputs clearfix">
-							<div class="b-input">
-								<input type="text" id="name" name="name" required>
-								<label for="name">Ваше имя <span class="required">*</span></label>
-							</div>
-							<div class="b-input">
-								<input type="text" id="phone" name="phone" required>
-								<label for="phone">Ваш телефон <span class="required">*</span></label>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="b-center b-popup-padding">
-					<a href="#" class="b-btn b-btn-buy ajax">Заказать</a>
-				</div>
-				<input type="submit" value="Заказать" style="display:none;">
-			</form>
 		</div>
 	</div>
 
@@ -395,6 +262,10 @@
 	<script type="text/javascript" src="js/KitAnimate.js"></script>
 	<script type="text/javascript" src="js/KitSend.js"></script>
 	<script type="text/javascript" src="js/slick.js"></script>
+	<script type="text/javascript" src="https://api-maps.yandex.ru/2.1.41/?load=package.full&lang=ru-RU"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/AddressDeliveryClass.js"></script>
+	<script type="text/javascript" src="js/address.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
