@@ -1972,10 +1972,11 @@ h4{
 					visibility: visible;
 				}
 
-.b-review-slider{
+.b-review-slider-cont{
 	float: right;
 	width: calc(50% - 13px);
-	min-height: 270px;
+	height: 270px;
+	padding: 30px 0;
 	color: #FFF;
 	border-radius: 3px;
 	background-position: 50% 50%;
@@ -1985,18 +1986,19 @@ h4{
 }
 
 	.b-review-item{
+		position: relative;
+		height: 140px;
 		width: 100%;
-		padding: 30px 32px;
+		padding: 0 32px;
 	}
-		.b-review-slider h3{
-
+		.b-review-slider-cont h3{
+			padding: 0 32px;
 		}
-		.b-review-slider .b-review-text{
-			margin-bottom: 19px;
-		}
-		.b-review-slider .b-review-name{
+		.b-review-slider-cont .b-review-name{
 			font-family: 'Geometria-Medium';
-			float: right;
+			position: absolute;
+			bottom: 0;
+			right: 32px;
 		}
 
 .b-call{
@@ -2493,7 +2495,7 @@ h4{
 			font-size: 14px;
 			line-height: 24px;
 			text-transform: uppercase;
-			padding-bottom: 12px;
+			padding-bottom: 8px;
 			font-weight: normal;
 		}
 
@@ -3166,13 +3168,30 @@ h4{
 /*-------slick-------*/
 
 .slick-dots {
-    bottom: -45px;
+    bottom: -80px;
+}
+
+.slick-dots li{
+	width: 20px;
+	height: 20px;
+	margin: 0 4px;
+}
+.slick-dots li button{
+	width: 20px;
+	height: 20px;
 }
 
 .slick-dots li button:before,
 .slick-dots li button:before{
-    font-size: 14px;
-    color: #f0f0f0;
+    content: '';
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 12px;
+	height: 12px;
+    font-size: 0;
+    background-color: #f0f0f0;
+    border-radius: 100px;
     opacity: 1;
 }
 
@@ -3183,9 +3202,9 @@ h4{
 }
 
 .slick-dots li.slick-active button:before,
-.slick-dots li.slick-active button:before {
-    color: #6e58ac;
+.slick-dots li.slick-active button:before{
     opacity: 1;
+    background-color: #6e58ac;
 }
 
 /*--------------------*/
