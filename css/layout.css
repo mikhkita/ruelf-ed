@@ -2763,7 +2763,16 @@ h4{
 	  	font-size: 26px;
 	  	color: #c4c4c4;
 	}
+.b-cart-empty{
 
+}
+	.b-cart-empty a{
+		color: #6E58AC;
+		text-decoration: underline;
+	}
+		.b-cart-empty a:hover{
+			text-decoration: none;
+		}
 .b-addition{
 
 }

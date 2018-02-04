@@ -384,15 +384,20 @@ $(document).ready(function(){
         return false;
     });
 
-    // Удаление из мини-корзины
+    // Удаление из корзины
     var cartTimeout = 0;
     $("body").on("click",".b-btn-remove-from-cart",function(){
         var url = $(this).attr("href"),
-            $item = $(this).parents("li");
+            $item = $(".b-cart-item[data-id='"+$(this).parents("li, tr").attr("data-id")+"']");
 
         $item.hide().addClass("hidden");
 
         updateMiniCartSum();
+
+        if( $(".b-basket-table").length && $(".b-basket-table tr:not(.hidden)").length <= 1 ){
+            $(".b-cart-empty").show();
+            $(".b-basket-table").hide();
+        }
 
         $.ajax({
             type: "GET",
@@ -407,13 +412,17 @@ $(document).ready(function(){
                     
                     $(".b-basket-btn-total, .b-basket-total").text( json.sum );
                 }else{
-                    $item.show().removeClass("hidden");
                     alert("Ошибка удаления из корзины");
+                    $item.show().removeClass("hidden");
+                    $(".b-cart-empty").hide();
+                    $(".b-basket-table").show();
                 }
             },
             error: function(){
                 alert("Ошибка удаления из корзины");
                 $item.show().removeClass("hidden");
+                $(".b-cart-empty").hide();
+                $(".b-basket-table").show();
             }
         });
         return false;
