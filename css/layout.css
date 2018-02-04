@@ -123,9 +123,7 @@ input:-moz-placeholder {
 [class^="icon-"]:after, 
 [class*=" icon-"]:after,
 ul.b-breadcrumbs li:after,
-.fancybox-close-small:after,
-#b-popup-question h3:before,
-#b-popup-question h3:after{
+.fancybox-close-small:after{
 	font-family: 'icomoon' !important;
 	speak: none;
 	font-style: normal;
@@ -3083,27 +3081,12 @@ h4{
 		#b-popup-question h3{
 			position: relative;
 			margin-bottom: 0;
-			padding-left: 40px;
 		}
-		#b-popup-question h3:before{
-			content: "\e916";
-			display: inline-block;
-			color: #6e58ac;
-			position: absolute;
-			top: 7px;
-			left: 0;
-			font-size: 19px;
-			width: 24px;
-			height: 19px;
-		}
-		#b-popup-question h3:after{
-			content: "\e917";
-			display: inline-block;
-			color: #6e58ac;
-			margin-left: 16px;
-			font-size: 19px;
-			width: 24px;
-			height: 19px;
+		#b-popup-question h4{
+			font-size: 22px;
+			line-height: 30px;
+			font-family: 'Geometria-Medium';
+			margin-bottom: 16px;
 		}
 
 	#b-popup-call h3{
