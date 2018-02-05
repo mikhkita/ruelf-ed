@@ -369,19 +369,22 @@ $(document).ready(function(){
 
     $('input[name="flowers-list"]').change(function(){
         var count = $('input[name="flowers-list"]:checked').length;
-        if(count > 0)
+        if(count > 0){
             $('.b-filter-flowers-select').text("Выбрано " + count + " шт.");
-        else
+            $('input[name="any-flowers"]').prop("checked", false).prop("disabled", false);
+        }  
+        else{
             $('.b-filter-flowers-select').text($('.b-filter-flowers-select').attr("data-default"));
-        $('input[name="any-flowers"]').prop("checked", false).prop("disabled", false);
+            $('input[name="any-flowers"]').prop("checked", true);
+        }
     });
 
     $('input[name="any-flowers"]').change(function(){
         if($(this).prop("checked")){
             $(this).prop("disabled", true);
-           $('input[name="flowers-list"]').prop("checked", false);
-           $('.b-filter-flowers-select').text($('.b-filter-flowers-select').attr("data-default"));
-       }
+            $('input[name="flowers-list"]').prop("checked", false);
+            $('.b-filter-flowers-select').text($('.b-filter-flowers-select').attr("data-default"));
+        }
     });
 
     $(function(){
@@ -400,6 +403,11 @@ $(document).ready(function(){
         }
         event.stopPropagation();
       });
+    });
+
+    $('.order-adress-map-form').submit(function(){
+        $('.b-btn-address').click();
+        return false;
     });
 
     $('.b-btn-address').on('click', function(){
