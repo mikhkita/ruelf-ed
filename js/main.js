@@ -496,6 +496,30 @@ $(document).ready(function(){
         return false;
     });
 
+    // Изменение количества в корзине
+    $("body").on("click", ".b-change-quantity", function(){
+        var url = $(this).attr("href"),
+            $item = $(".b-cart-item[data-id='"+$(this).parents("li, tr").attr("data-id")+"']"),
+            $input = $(this).parents(".input-cont").find("input"),
+            quantity = $input.val()*1,
+            side = $(this).attr("data-side");
+
+        if( (quantity == 1 && side == "-") || (quantity == 100 && side == "+") ){
+            return false;
+        }
+
+        quantity = (side == "+")?(quantity+1):(quantity-1);
+        
+        $input.val(quantity);
+        $item.find(".b-basket-item-count").text(quantity+" шт.");
+
+        updateMiniCartSum();
+
+        ajaxChangeQuantity(url, quantity);
+
+        return false;
+    });
+
     function checkMiniCart(){
         if( $(".b-basket-total").text() == "0" ){
             $(".b-top").addClass("basket-null");
@@ -513,9 +537,38 @@ $(document).ready(function(){
             sum += (price*count);
         });
 
-        $(".b-basket-btn-total, .b-basket-total").text( (sum+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
+        $(".b-basket-btn-total, .total-price").text( (sum+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
 
         checkMiniCart();
+    }
+
+    function ajaxChangeQuantity(url, quantity){
+        $.ajax({
+            type: "GET",
+            url: url,
+            data: { QUANTITY : quantity },
+            success: function(msg){
+                var reg = /<!--([\s\S]*?)-->/mig;
+                msg = msg.replace(reg, "");
+                var json = JSON.parse(msg);
+                    console.log(json);
+                if( json.result == "success" ){
+                    
+                    // $(".b-basket-btn-total, .b-basket-total").text( json.sum );
+                }else{
+                    // alert("Ошибка удаления из корзины");
+                    // $item.show().removeClass("hidden");
+                    // $(".b-cart-empty").hide();
+                    // $(".b-basket-table").show();
+                }
+            },
+            error: function(){
+                // alert("Ошибка удаления из корзины");
+                // $item.show().removeClass("hidden");
+                // $(".b-cart-empty").hide();
+                // $(".b-basket-table").show();
+            }
+        });
     }
 
     /*if( typeof autosize == "function" )
