@@ -112,7 +112,7 @@ ymaps.ready(['AddressDelivery']).then(function init() {
                 }
             });*/
 
-        var colors = ["#FF0000","#00FF00"],
+        var colors = ["#FFFF00","#00FF00"],
             _i = 0;
         console.log(json);
         if ("polygons" in json) {
