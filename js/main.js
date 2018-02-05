@@ -63,6 +63,8 @@ $(document).ready(function(){
     $(window).resize(resize);
     resize();
 
+    checkMiniCart();
+
     $.fn.placeholder = function() {
         if(typeof document.createElement("input").placeholder == 'undefined') {
             $('[placeholder]').focus(function() {
@@ -445,6 +447,8 @@ $(document).ready(function(){
         }
         clearTimeout(cartTimeout);
 
+        checkMiniCart();
+
         $.ajax({
             type: "GET",
             url: url,
@@ -454,11 +458,7 @@ $(document).ready(function(){
 
                 $(".b-basket-btn-total").text( $(".b-basket-total").text() );
 
-                if( $(".b-basket-total").text() == "0" ){
-                    $(".b-top").addClass("basket-null");
-                }else{
-                    $(".b-top").removeClass("basket-null");
-                }
+                checkMiniCart();
 
                 cartTimeout = setTimeout(function(){
                     $(".b-basket-btn-cont").removeClass("show");
@@ -471,15 +471,20 @@ $(document).ready(function(){
         return false;
     });
 
-    // Удаление из мини-корзины
+    // Удаление из корзины
     var cartTimeout = 0;
     $("body").on("click",".b-btn-remove-from-cart",function(){
         var url = $(this).attr("href"),
-            $item = $(this).parents("li");
+            $item = $(".b-cart-item[data-id='"+$(this).parents("li, tr").attr("data-id")+"']");
 
         $item.hide().addClass("hidden");
 
         updateMiniCartSum();
+
+        if( $(".b-basket-table").length && $(".b-basket-table tr:not(.hidden)").length <= 1 ){
+            $(".b-cart-empty").show();
+            $(".b-basket-table, .b-data-order, .b-addition").hide();
+        }
 
         $.ajax({
             type: "GET",
@@ -494,17 +499,32 @@ $(document).ready(function(){
                     
                     $(".b-basket-btn-total, .b-basket-total").text( json.sum );
                 }else{
-                    $item.show().removeClass("hidden");
                     alert("Ошибка удаления из корзины");
+                    $item.show().removeClass("hidden");
+                    $(".b-cart-empty").hide();
+                    $(".b-basket-table").show();
                 }
+            },
+            complete: function(){
+                setTimeout(checkMiniCart, 10);
             },
             error: function(){
                 alert("Ошибка удаления из корзины");
                 $item.show().removeClass("hidden");
+                $(".b-cart-empty").hide();
+                $(".b-basket-table").show();
             }
         });
         return false;
     });
+
+    function checkMiniCart(){
+        if( $(".b-basket-total").text() == "0" ){
+            $(".b-top").addClass("basket-null");
+        }else{
+            $(".b-top").removeClass("basket-null");
+        }
+    }
 
     function updateMiniCartSum(){
         var sum = 0;
@@ -516,6 +536,8 @@ $(document).ready(function(){
         });
 
         $(".b-basket-btn-total, .b-basket-total").text( (sum+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
+
+        checkMiniCart();
     }
 
     /*if( typeof autosize == "function" )

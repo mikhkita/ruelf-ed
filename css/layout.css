@@ -1130,9 +1130,15 @@ h4{
 				    -o-transform: translateY(0px);
 				    transform: translateY(0px);
 				}
-				.b-top.basket-null .b-basket-btn-cont:hover .b-basket{
-					visibility: hidden;
-				    opacity: 0;
+				.b-top.basket-null .b-basket-btn-cont:hover .b-basket,
+				.b-top.basket-null .b-basket-btn-cont .b-basket{
+					visibility: hidden !important;
+				    opacity: 0 !important;
+				    -webkit-transition: transform 0ms ease-out, opacity 0ms ease-out, visibility 0ms ease-out !important;
+				    -moz-transition: transform 0ms ease-out, opacity 0ms ease-out, visibility 0ms ease-out !important;
+				    -ms-transition: transform 0ms ease-out, opacity 0ms ease-out, visibility 0ms ease-out !important;
+				    -o-transition: transform 0ms ease-out, opacity 0ms ease-out, visibility 0ms ease-out !important;
+				    transition: transform 0ms ease-out, opacity 0ms ease-out, visibility 0ms ease-out !important;
 				}
 
 					.b-basket .icon-ruble:after{
@@ -1711,9 +1717,7 @@ h4{
 .b-catalog{
 	margin-bottom: 12px;
 }
-	.b-catalog-list{
-
-	}
+	.b-catalog-list{/* font-size: 0px; */}
 		.b-catalog-item{
 			display: inline-block;
 			height: 380px;
@@ -1724,10 +1728,10 @@ h4{
 			margin-right: 24px;
 			margin-bottom: 4px;
 			-webkit-transition: z-index 200ms ease-out;
-		    -moz-transition: z-index 200ms ease-out;
-		    -ms-transition: z-index 200ms ease-out;
-		    -o-transition: z-index 200ms ease-out;
-		    transition: z-index 200ms ease-out;
+			-moz-transition: z-index 200ms ease-out;
+			-ms-transition: z-index 200ms ease-out;
+			-o-transition: z-index 200ms ease-out;
+			transition: z-index 200ms ease-out;
 		}
 		.b-catalog-item:nth-child(4n){
 			margin-right: 0;
@@ -2020,7 +2024,8 @@ h4{
 		margin-bottom: 16px;
 	}
 
-	.b-call p{
+	.b-call p,
+	.b-call .p{
 		font-size: 18px;
 		line-height: 26px;
 	}
@@ -2493,7 +2498,7 @@ h4{
 			font-size: 14px;
 			line-height: 24px;
 			text-transform: uppercase;
-			padding-bottom: 8px;
+			padding-bottom: 6px;
 			font-weight: normal;
 		}
 
@@ -2884,7 +2889,16 @@ h4{
 	  	font-size: 26px;
 	  	color: #c4c4c4;
 	}
+.b-cart-empty{
 
+}
+	.b-cart-empty a{
+		color: #6E58AC;
+		text-decoration: underline;
+	}
+		.b-cart-empty a:hover{
+			text-decoration: none;
+		}
 .b-addition{
 
 }
@@ -3085,14 +3099,14 @@ h4{
 			    line-height: 22px;
 			}
 
-	#b-popup-question{
+	.b-popup-question{
 		width: 620px;
 	}
-		#b-popup-question h3{
+		.b-popup-question h3{
 			position: relative;
 			margin-bottom: 0;
 		}
-		#b-popup-question h4{
+		.b-popup-question h4{
 			font-size: 22px;
 			line-height: 30px;
 			font-family: 'Geometria-Medium';
