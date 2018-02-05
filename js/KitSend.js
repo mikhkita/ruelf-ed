@@ -59,6 +59,7 @@ $(document).ready(function(){
 				email: 'email',
 				phone: 'customPhone'
 			},
+			errorElement : "span",
 			highlight: function(element, errorClass) {
 			    $(element).addClass("error").parents(".b-input").addClass("error");
 			},
@@ -90,7 +91,7 @@ $(document).ready(function(){
 	whenScroll();
 
 	$(".fancy").each(function(){
-		var $popup = $($(this).attr("data-block")),
+		var $popup = $($(this).attr("href")),
 			$this = $(this);
 		$this.fancybox({
 			padding : 0,
@@ -115,6 +116,8 @@ $(document).ready(function(){
 				if( $this.attr("data-beforeShow") && customHandlers[$this.attr("data-beforeShow")] ){
 					customHandlers[$this.attr("data-beforeShow")]($this);
 				}
+				$popup.find(".error").removeClass("error");
+				$popup.find(".b-input span").remove();
 			},
 			afterShow: function(){
 				$(".fancybox-wrap").removeClass("beforeShow");

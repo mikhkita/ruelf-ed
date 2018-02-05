@@ -32,6 +32,8 @@ ymaps.ready(['AddressDelivery']).then(function init() {
             }),
             addressClass = new ymaps.AddressDelivery(mapNew);
 
+        mapNew.behaviors.disable('scrollZoom');
+
         $("body").on("keyup", "#js-order-adress-map-input-floor",
             $.proxy(addressClass.__setFlat, addressClass, $("#js-order-adress-map-input-floor").get(0)));
 
