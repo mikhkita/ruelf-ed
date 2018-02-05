@@ -409,6 +409,28 @@ $(document).ready(function(){
     });
 
     $('.b-btn-address').on('click', function(){
+        if($('.js-order-adress-map-input').attr("valid-delivery") &&
+            !!$('.js-order-adress-map-input').val()){
+                var room = "";
+                if(!isNaN($('.js-order-adress-map-price').text()))
+                    $('.delivery-price-value').addClass("icon-ruble");
+                else
+                    $('.delivery-price-value').removeClass("icon-ruble");
+                if(!!$('.number-room-input').val()){
+                    room = ", кв. ";
+                }
+                var resString = $('.js-order-adress-map-input').val() + room + $('.number-room-input').val();
+                $(".choose-address-value").text(resString);
+                $('.b-choose-address, .choose-address-change input[name="address"]').removeClass("error");
+                $('.choose-address-change input[name="address"]').val(resString);
+                $('.delivery-price-value').text($('.js-order-adress-map-price').text())
+                    .parent().removeClass("hide");
+            }else{
+                $(".choose-address-value").text("");
+                $('.b-choose-address, .choose-address-change input[name="address"]').addClass("error");
+                $('.choose-address-change input[name="address"]').val("");
+                $('.delivery-price-value').text("").parent().addClass("hide");
+            }
         $.fancybox.close(); 
         return false;
     });

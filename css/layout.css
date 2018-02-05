@@ -2809,7 +2809,10 @@ h4{
 				display: inline-block;
 				font-size: 16px;
 			}
-				.b-address .choose-address input{
+				.choose-address-change{
+					margin-left: 8px;
+				}
+				.b-choose-address input{
 					display: none;
 				}
 		.b-address.b-address-margin{
@@ -2830,22 +2833,28 @@ h4{
 		}
 
 	.b-total-price{
+		text-align: right;
 		float: right;
 	}
 		.b-total-price p{
 			display: inline-block;
 		}
 
-		.total-price{
+		.delivery-price-value,
+		.total-price-value{
 			font-family: 'Geometria-Bold';
 			font-size: 24px;
 			line-height: 22px;
 			margin-left: 16px;
 		}
+		.delivery-price-value{
+			margin-bottom: 12px;
+		}
 
-		.total-price.icon-ruble:after{
+		.b-total-price .icon-ruble:after{
 			color: #434343;
 			font-size: 18px;
+			margin-left: 6px;
 		}
 
 	.b-data-order .b-btn-buy{
@@ -2947,6 +2956,7 @@ h4{
 	}
 	#map-address h3{
 		color: #434343;
+		margin-bottom: 5px;
 	}
 
 /*------popup------*/
