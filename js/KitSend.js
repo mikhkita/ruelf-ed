@@ -130,28 +130,6 @@ $(document).ready(function(){
 				if( $this.attr("data-beforeClose") && customHandlers[$this.attr("data-beforeClose")] ){
 					customHandlers[$this.attr("data-beforeClose")]($this);
 				}
-				if($this.hasClass("choose-address")){
-					if($('.js-order-adress-map-input').attr("valid-delivery") &&
-					!!$('.js-order-adress-map-input').val()){
-						var ruble = "",
-							room = "";
-						if(!isNaN($('.js-order-adress-map-price').text()))
-							ruble = "р.";
-						if(!!$('.number-room-input').val()){
-							room = ", кв. ";
-						}
-						var resString = $('.js-order-adress-map-input').val() + room
-							+ $('.number-room-input').val()
-							+ " (" + $('.js-order-adress-map-price').text() + ruble + ")";
-						$this.children(".choose-address-value").text(resString);
-						$('.b-choose-address, .choose-address input').removeClass("error");
-						$('.choose-address input[name="address"]').val(resString);
-					}else{
-						$this.children(".choose-address-value").text("указать адрес");
-						$(".b-choose-address, .choose-address input").addClass("error");
-						$('.choose-address input[name="address"]').val("");
-					}
-				}
 			},
 			afterClose: function(){
 				$(".fancybox-wrap").removeClass("beforeClose");
