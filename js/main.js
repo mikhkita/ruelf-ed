@@ -63,6 +63,8 @@ $(document).ready(function(){
     $(window).resize(resize);
     resize();
 
+    checkMiniCart();
+
     $.fn.placeholder = function() {
         if(typeof document.createElement("input").placeholder == 'undefined') {
             $('[placeholder]').focus(function() {
@@ -415,6 +417,8 @@ $(document).ready(function(){
         }
         clearTimeout(cartTimeout);
 
+        checkMiniCart();
+
         $.ajax({
             type: "GET",
             url: url,
@@ -424,11 +428,7 @@ $(document).ready(function(){
 
                 $(".b-basket-btn-total").text( $(".b-basket-total").text() );
 
-                if( $(".b-basket-total").text() == "0" ){
-                    $(".b-top").addClass("basket-null");
-                }else{
-                    $(".b-top").removeClass("basket-null");
-                }
+                checkMiniCart();
 
                 cartTimeout = setTimeout(function(){
                     $(".b-basket-btn-cont").removeClass("show");
@@ -453,7 +453,7 @@ $(document).ready(function(){
 
         if( $(".b-basket-table").length && $(".b-basket-table tr:not(.hidden)").length <= 1 ){
             $(".b-cart-empty").show();
-            $(".b-basket-table").hide();
+            $(".b-basket-table, .b-data-order, .b-addition").hide();
         }
 
         $.ajax({
@@ -475,6 +475,9 @@ $(document).ready(function(){
                     $(".b-basket-table").show();
                 }
             },
+            complete: function(){
+                setTimeout(checkMiniCart, 10);
+            },
             error: function(){
                 alert("Ошибка удаления из корзины");
                 $item.show().removeClass("hidden");
@@ -484,6 +487,14 @@ $(document).ready(function(){
         });
         return false;
     });
+
+    function checkMiniCart(){
+        if( $(".b-basket-total").text() == "0" ){
+            $(".b-top").addClass("basket-null");
+        }else{
+            $(".b-top").removeClass("basket-null");
+        }
+    }
 
     function updateMiniCartSum(){
         var sum = 0;
@@ -495,6 +506,8 @@ $(document).ready(function(){
         });
 
         $(".b-basket-btn-total, .b-basket-total").text( (sum+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
+
+        checkMiniCart();
     }
 
     /*if( typeof autosize == "function" )
