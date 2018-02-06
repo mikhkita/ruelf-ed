@@ -781,6 +781,10 @@ strong, b{
 	.b-text p{
 		
 	}
+	.b-text b{
+		font-family: "Geometria-Bold";
+		font-weight: normal;
+	}
 	.b-text a{
 		color: #6e58ac;
 		text-decoration: underline;
@@ -1037,6 +1041,9 @@ strong, b{
 				    color: #434343;
 				    font-family: "Geometria-Medium";
 				    border-radius: 0;
+				}
+				.b-submenu li a.active{
+					color: #6e58ac;
 				}
 
 			.b-menu li:hover .b-submenu {
