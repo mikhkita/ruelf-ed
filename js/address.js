@@ -42,7 +42,8 @@ ymaps.ready(['AddressDelivery']).then(function init() {
         );
 
         ymaps.geocode(json.city, {
-            results: 1
+            results: 1,
+
         }).then(function (res) {
             mapNew.setCenter(res.geoObjects.get(0).geometry.getCoordinates());
         });
@@ -62,8 +63,9 @@ ymaps.ready(['AddressDelivery']).then(function init() {
                             value: value,
                             coords: coords,
                             balloonContent: item.properties.get("balloonContent")
-                        })
-                    })
+                        });
+                        console.log(item.properties);
+                    });
                     autocompleteRes(result);
                     // res([{value: 1, label: 111}, {value: 2, test: 'abc'}, {value: 3}]);
                     // _.each(res, function(item){
