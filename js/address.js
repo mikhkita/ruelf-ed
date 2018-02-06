@@ -32,6 +32,8 @@ ymaps.ready(['AddressDelivery']).then(function init() {
             }),
             addressClass = new ymaps.AddressDelivery(mapNew);
 
+        mapNew.behaviors.disable('scrollZoom');
+
         $("body").on("keyup", "#js-order-adress-map-input-floor",
             $.proxy(addressClass.__setFlat, addressClass, $("#js-order-adress-map-input-floor").get(0)));
 
@@ -112,7 +114,7 @@ ymaps.ready(['AddressDelivery']).then(function init() {
                 }
             });*/
 
-        var colors = ["#FF0000","#00FF00"],
+        var colors = ["#FFFF00","#00FF00"],
             _i = 0;
         console.log(json);
         if ("polygons" in json) {

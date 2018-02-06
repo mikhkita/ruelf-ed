@@ -447,11 +447,13 @@ $(document).ready(function(){
                 $('.choose-address-change input[name="address"]').val(resString);
                 $('.delivery-price-value').text($('.js-order-adress-map-price').text())
                     .parent().removeClass("hide");
+                $('.choose-address-action').text("изменить");
             }else{
                 $(".choose-address-value").text("");
                 $('.b-choose-address, .choose-address-change input[name="address"]').addClass("error");
                 $('.choose-address-change input[name="address"]').val("");
                 $('.delivery-price-value').text("").parent().addClass("hide");
+                $('.choose-address-action').text("указать адрес");
             }
         $.fancybox.close(); 
         return false;
