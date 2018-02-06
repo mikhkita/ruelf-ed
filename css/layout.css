@@ -152,6 +152,10 @@ h2.b-title{
 	line-height: 44px;
 	margin-bottom: 37px;
 }
+.b-catalog-similar h2.b-title,
+.b-addition h2.b-title{
+	margin-bottom: 50px;
+}
 
 h3{
 	color: #FFF;
@@ -1881,7 +1885,8 @@ h4{
 						}
 							.b-catalog-hover-size{
 								position: absolute;
-	    						top: 20px;
+								top: 19px;
+								margin-left: -2px;
 								color: #FFF;
 								font-family: 'Geometria-Regular';
 								font-size: 16px;
@@ -1915,6 +1920,8 @@ h4{
 								}
 									.size-height .icon-arrow-left:before{
 										margin-right: 8px;
+										position: relative;
+										top: 1px;
 									}
 							.b-catalog-hover-text{
 								position: absolute;
@@ -2964,7 +2971,7 @@ h4{
 					font-family: 'Geometria-Bold';
 				}
 				.b-addition-item-name:hover{
-					text-decoration: underline;
+					/*text-decoration: underline;*/
 				}
 				.b-addition-item-content h3{
 					color: #434343;

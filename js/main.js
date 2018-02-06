@@ -404,7 +404,6 @@ $(document).ready(function(){
                 
             }
         });
-        console.log("123123123");
     }
 
     $(function(){
@@ -471,20 +470,33 @@ $(document).ready(function(){
 
         checkMiniCart();
 
+        if( $(".b-basket-table").length ){
+            $("body, html").animate({
+                scrollTop : $(".b-basket-table").offset().top - $(".b-fixed-back").height() - 20
+            }, 300);    
+        }
+
         $.ajax({
             type: "GET",
             url: url,
             success: function(msg){
-                $(".b-basket-btn-cont").addClass("show");
-                $(".b-basket").html(msg);
+                if( $(msg).find(".b-basket-table").length ){
+                    $(".b-basket").html($(msg).find(".b-basket").html());
+                    $(".b-for-basket").html($(msg).find(".b-basket-table"));
+                }else{
+                    $(".b-basket").html($(msg).find(".b-basket").html());
+
+                    $(".b-basket-btn-cont").addClass("show");
+
+                    cartTimeout = setTimeout(function(){
+                        $(".b-basket-btn-cont").removeClass("show");
+                    }, 2000);
+                }
+                updateMiniCartSum();
 
                 $(".b-basket-btn-total").text( $(".b-basket-total").text() );
 
                 checkMiniCart();
-
-                cartTimeout = setTimeout(function(){
-                    $(".b-basket-btn-cont").removeClass("show");
-                }, 2000);
             },
             error: function(){
                 alert("Ошибка добавления в корзину");
@@ -628,9 +640,11 @@ $(document).ready(function(){
 
                 countQueue[url]--;
 
+                console.log([json.id, json.quantity]);
+
                 if( json.result == "success" ){
                     if( countQueue[url] == 0 ){
-                        console.log([json.id, json.quantity]);
+                        // console.log([json.id, json.quantity]);
                         $(".b-cart-item[data-id='"+json.id+"'] input").val(json.quantity);
                         $(".b-cart-item[data-id='"+json.id+"'] .b-basket-item-count").text(json.quantity+" шт.");
                     }
