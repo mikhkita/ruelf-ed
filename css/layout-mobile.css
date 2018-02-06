@@ -52,6 +52,29 @@ h1.b-title-temp{
 			margin-right: 0;
 		}
 
+.b-review-slider-cont {
+    float: none;
+    width: 100%;
+    margin: 0 auto 70px auto;
+    clear: both;
+}
+
+.b-call{
+	float: none;
+    width: 100%;
+    clear: both;
+    margin-bottom: 30px;
+}
+
+.b-addition-item {
+    width: 100%;
+    margin-right: 0;
+}
+.b-addition-item:nth-child(3n),
+.b-addition-item:nth-child(2n){
+	margin-right: 0;
+}
+
 @media screen and (max-width: 570px){
 
 	.b-questions-item{
