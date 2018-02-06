@@ -175,6 +175,7 @@ h4{
 }
 
 .b-btn{
+	position: relative;
 	display: inline-block;
 	font-family: 'Geometria-Medium';
 	font-size: 18px;
@@ -264,12 +265,16 @@ h4{
 
 	.b-btn-more.icon-arrow-right-bold,
 	.b-btn-white.icon-phone,
-	.b-btn-add-basket.icon-basket{
+	.b-btn-add-basket.icon-basket,
+	.b-btn-buy.icon-success,
+	.b-btn-more.icon-close-btn:before{
 		display: inline-block;
 	}
 	.b-btn-more.icon-arrow-right-bold:before,
 	.b-btn-white.icon-phone:before,
-	.b-btn-add-basket.icon-basket:before{
+	.b-btn-add-basket.icon-basket:before,
+	.b-btn-buy.icon-success:before,
+	.b-btn-more.icon-close-btn:before{
 		position: absolute;
 		top: 40%;
 		right: 16%;
@@ -284,6 +289,10 @@ h4{
 	.b-btn-more.icon-arrow-right-bold:before{
 		color: #6e58ac;
 		font-size: 12px;
+	}
+
+	.b-btn-more.icon-close-btn:before{
+		top: 33%;
 	}
 
 	.b-btn-white.icon-phone:before{
@@ -303,12 +312,30 @@ h4{
 		margin-right: 0;
 	}
 
+	.b-btn-buy.icon-success:before{
+		font-size: 16px;
+		top: 33%;
+		padding-top: 0;
+		margin-right: 0;
+	}
+
+	.b-popup .b-btn-buy.icon-success:before,
+	.b-btn-more.icon-close-btn:before{
+		right: 33%;
+	}
+
 	.b-btn-more.icon-arrow-right-bold:hover:before,
 	.b-btn-white.icon-phone:hover:before,
-	.b-btn-add-basket.icon-basket:hover:before{
+	.b-btn-add-basket.icon-basket:hover:before,
+	.b-btn-buy.icon-success:hover:before,
+	.b-btn-more.icon-close-btn:hover:before{
 		right: 11%;
 		opacity: 1;
 		visibility: visible;
+	}
+
+	.b-btn-buy.icon-success:hover:before{
+		right: 13%;
 	}
 
 	.b-btn-add-basket.icon-basket:hover:before{
@@ -316,15 +343,19 @@ h4{
 		right: 14%;
 	}
 
-	.b-btn-more.icon-arrow-right-bold:active:before{
-		color: #FFF;
+	.b-popup .b-btn-buy.icon-success:hover:before,
+	.b-btn-more.icon-close-btn:hover:before{
+		right: 27%;
 	}
 
 	.b-btn-white.icon-phone:active:before{
 		color: #434343;
 	}
 
-	.b-btn-add-basket.icon-basket:active:before{
+	.b-btn-add-basket.icon-basket:active:before,
+	.b-btn-more.icon-arrow-right-bold:active:before,
+	.b-btn-buy.icon-success:active:before,
+	.b-btn-more.icon-close-btn:active:before{
 		color: #FFF;
 	}
 
@@ -337,7 +368,9 @@ h4{
 	}
 
 	.b-btn-more:hover .b-btn-more-text,
-	.b-btn-white.icon-phone:hover .b-btn-more-text{
+	.b-btn-white.icon-phone:hover .b-btn-more-text,
+	.b-btn-buy.icon-success:hover .b-btn-more-text,
+	.b-btn-more.icon-close-btn:hover .b-btn-more-text{
 		-webkit-transform: translateX(-14px);
 	    -moz-transform: translateX(-14px);
 	    -ms-transform: translateX(-14px);
@@ -507,6 +540,20 @@ h4{
 	.icon-close:active:before{
 		color: #6e58ac;
 	}
+
+.icon-close-btn:before{
+	content: "\e917";
+    color: #6e58ac;
+	font-size: 14px;
+    line-height: 18px;
+}
+
+.icon-success:before{
+	content: "\e916";
+    font-size: 14px;
+   	color: #f43d84;
+    line-height: 18px;
+}
 
 /*----Инпуты/селекты----*/
 
@@ -3212,11 +3259,7 @@ h4{
 	padding: 12px 24px;
 }
 
-.ui-state-active,
-.ui-widget-content .ui-state-active,
-.ui-widget-header .ui-state-active,
-a.ui-button:active, .ui-button:active,
-.ui-button.ui-state-active:hover {
+.ui-menu .ui-menu-item .ui-state-active{
     border: 1px solid transparent;
     background: transparent;
     color: #6e58ac !important;

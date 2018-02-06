@@ -344,7 +344,12 @@ $(document).ready(function(){
         $(function(){
             $("#date").datepicker({
                 changeMonth: true,
-                minDate: 0
+                minDate: 0,
+                beforeShow: function() {
+                    setTimeout(function(){
+                        $('.ui-datepicker').css('z-index', 100);
+                    }, 0);
+                }
             }).on("change", function(){
                 $(this).parents(".b-input").addClass("not-empty");
             });
