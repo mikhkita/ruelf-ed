@@ -1,6 +1,6 @@
 $(document).ready(function(){
-
-    var isRetina = retina();
+    var isRetina = retina(),
+        countQueue = {};
 
     function resize(){
        if( typeof( window.innerWidth ) == 'number' ) {
@@ -64,6 +64,8 @@ $(document).ready(function(){
     resize();
 
     checkMiniCart();
+
+    updateCatalog();
 
     $.fn.placeholder = function() {
         if(typeof document.createElement("input").placeholder == 'undefined') {
@@ -186,8 +188,11 @@ $(document).ready(function(){
         return false;
     });
 
-    $('.color-reset').on('click', function(){
+    $("body").on("click", ".color-reset", function(){
         $('.b-filter-colors input[type="checkbox"]').prop("checked", false);
+        $(".any-prices").prop("checked", true);
+        checkPrices();
+        $(".any-flowers").prop("checked", true).change();
         return false;
     });
 
@@ -351,46 +356,61 @@ $(document).ready(function(){
         });
     }
 
-    $('.b-filter-price-select').on('click', function(){
-        $('.b-filter-price-select.icon-arrow-down').toggleClass("arrow-rotate");
-        $('.b-filter-price-list').toggleClass("show");
-        $('.b-filter-flowers-list').removeClass("show");
-        $('.b-filter-flowers-select.icon-arrow-down').removeClass("arrow-rotate");
-        return false;
-    });
-    $('.b-filter-flowers-select').on('click', function(){
-        $('.b-filter-flowers-select.icon-arrow-down').toggleClass("arrow-rotate");
-        $('.b-filter-flowers-list').toggleClass("show");
-        $('.b-filter-price-list').removeClass("show");
-        $('.b-filter-price-select.icon-arrow-down').removeClass("arrow-rotate");
+    $('body').on("click", ".b-filter-price-select, .b-filter-flowers-select", function(){
         return false;
     });
 
-    $('.b-filter-price-list input:radio').change(function(){
-        $('.b-filter-price-select').text($(this).siblings("label").text());
-        $('.b-filter-price-list').removeClass("show");
-        $('.b-filter-price-select.icon-arrow-down').removeClass("arrow-rotate");
-    });
+    $('.b-filter-price-list input:radio').change(checkPrices);
 
-    $('input[name="flowers-list"]').change(function(){
-        var count = $('input[name="flowers-list"]:checked').length;
-        if(count > 0){
-            $('.b-filter-flowers-select').text("Выбрано " + count + " шт.");
-            $('input[name="any-flowers"]').prop("checked", false).prop("disabled", false);
-        }  
-        else{
-            $('.b-filter-flowers-select').text($('.b-filter-flowers-select').attr("data-default"));
-            $('input[name="any-flowers"]').prop("checked", true);
-        }
-    });
+    $(".b-filter-flowers-list input:not(.any-flowers)").change(checkFlowers);
 
-    $('input[name="any-flowers"]').change(function(){
-        if($(this).prop("checked")){
+    checkPrices();
+
+    checkFlowers();
+
+    $(".any-flowers").change(function(){
+        if( $(this).prop("checked") ){
+            $(".b-filter-flowers-list input:not(.any-flowers)").prop("checked", false);
+            $(".b-filter-flowers-select").text($(".b-filter-flowers-select").attr("data-default"));
             $(this).prop("disabled", true);
-            $('input[name="flowers-list"]').prop("checked", false);
-            $('.b-filter-flowers-select').text($('.b-filter-flowers-select').attr("data-default"));
         }
     });
+
+    function checkFlowers(){
+        var count = $(".b-filter-flowers-list input:not(.any-flowers):checked").length;
+        if(count > 0){
+            $(".b-filter-flowers-select").text("Выбрано " + count + " шт.");
+            $(".any-flowers").prop("checked", false).prop("disabled", false);
+        }else{
+            $(".b-filter-flowers-select").text($(".b-filter-flowers-select").attr("data-default"));
+            $(".any-flowers").prop("checked", true).prop("disabled", true);
+        }
+    }
+
+    function checkPrices(){
+        $('.b-filter-price-select').text($(".b-filter-price-list input:radio:checked").siblings("label").text());
+        $('.b-filter-price-list').removeClass("show");
+        $('.b-filter-price-select.icon-arrow-down').removeClass("arrow-rotate");
+    }
+
+    function ajaxFilter(){
+        var url = window.location.href;
+        $.ajax({
+            type: "GET",
+            url: url,
+            data: { partial : true },
+            success: function(msg){
+                $(".b-catalog:not(.b-catalog:first), .b-questions").remove();
+                $(".b-catalog .b-block").html(msg);
+
+                updateCatalog();
+            },
+            error: function(){
+                
+            }
+        });
+        console.log("123123123");
+    }
 
     $(function(){
       $(document).click(function(event) {
@@ -525,11 +545,9 @@ $(document).ready(function(){
         return false;
     });
 
-    // Изменение количества в корзине
+    // Изменение количества в корзине по кнопкам
     $("body").on("click", ".b-change-quantity", function(){
-        var url = $(this).attr("href"),
-            $item = $(".b-cart-item[data-id='"+$(this).parents("li, tr").attr("data-id")+"']"),
-            $input = $(this).parents(".input-cont").find("input"),
+        var $input = $(this).parents(".input-cont").find("input"),
             quantity = $input.val()*1,
             side = $(this).attr("data-side");
 
@@ -539,14 +557,34 @@ $(document).ready(function(){
 
         quantity = (side == "+")?(quantity+1):(quantity-1);
         
+        $input.val(quantity).change();
+
+        return false;
+    });
+
+    // Изменение количества в корзине путем ввода
+    $("body").on("change", ".b-quantity-input", function(){
+        var url = $(this).parents(".input-cont").find(".icon-minus").attr("href"),
+            $item = $(".b-cart-item[data-id='"+$(this).parents("li, tr").attr("data-id")+"']"),
+            $input = $(this),
+            quantity = $input.val()*1;
+
+        quantity = ( quantity < 1 )?1:quantity;
+        quantity = ( quantity > 100 )?100:quantity;
+        
         $input.val(quantity);
         $item.find(".b-basket-item-count").text(quantity+" шт.");
 
         updateMiniCartSum();
 
         ajaxChangeQuantity(url, quantity);
+    });
 
-        return false;
+    $("#b-filter-form input").change(function(){
+        History.replaceState(null , null, "?"+$("#b-filter-form").serialize());
+
+        ajaxFilter();
+        // console.log();
     });
 
     function checkMiniCart(){
@@ -566,12 +604,24 @@ $(document).ready(function(){
             sum += (price*count);
         });
 
-        $(".b-basket-btn-total, .total-price").text( (sum+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
+        $(".b-basket-table .b-cart-item").each(function(){
+            var price = $(this).find(".b-basket-price").text().replace(/[^0-9\.]+/g,"")*1,
+                count = $(this).find(".b-quantity-input").val().replace(/[^0-9\.]+/g,"")*1;
+
+            $(this).find(".b-basket-sum h4").text( ((price*count)+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
+        });
+
+        $(".b-basket-btn-total, .total-price-value, .b-basket-total").text( (sum+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
 
         checkMiniCart();
     }
 
     function ajaxChangeQuantity(url, quantity){
+        if( typeof countQueue[url] == "undefined" ){
+            countQueue[url] = 0;
+        }
+        countQueue[url]++;
+
         $.ajax({
             type: "GET",
             url: url,
@@ -580,64 +630,22 @@ $(document).ready(function(){
                 var reg = /<!--([\s\S]*?)-->/mig;
                 msg = msg.replace(reg, "");
                 var json = JSON.parse(msg);
-                    console.log(json);
+
+                countQueue[url]--;
+
                 if( json.result == "success" ){
-                    
-                    // $(".b-basket-btn-total, .b-basket-total").text( json.sum );
+                    if( countQueue[url] == 0 ){
+                        console.log([json.id, json.quantity]);
+                        $(".b-cart-item[data-id='"+json.id+"'] input").val(json.quantity);
+                        $(".b-cart-item[data-id='"+json.id+"'] .b-basket-item-count").text(json.quantity+" шт.");
+                    }
                 }else{
-                    // alert("Ошибка удаления из корзины");
-                    // $item.show().removeClass("hidden");
-                    // $(".b-cart-empty").hide();
-                    // $(".b-basket-table").show();
+                    alert("Ошибка изменения количества, пожалуйста, обновите страницу");
                 }
             },
             error: function(){
-                // alert("Ошибка удаления из корзины");
-                // $item.show().removeClass("hidden");
-                // $(".b-cart-empty").hide();
-                // $(".b-basket-table").show();
+                countQueue[url]--;
             }
         });
     }
-
-    /*if( typeof autosize == "function" )
-        autosize(document.querySelectorAll('textarea'));*/
-
-
-    
-	// var myPlace = new google.maps.LatLng(55.754407, 37.625151);
- //    var myOptions = {
- //        zoom: 16,
- //        center: myPlace,
- //        mapTypeId: google.maps.MapTypeId.ROADMAP,
- //        disableDefaultUI: true,
- //        scrollwheel: false,
- //        zoomControl: true
- //    }
- //    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions); 
-
- //    var marker = new google.maps.Marker({
-	//     position: myPlace,
-	//     map: map,
-	//     title: "Ярмарка вакансий и стажировок"
-	// });
-
-    //  var options = {
-    //     $AutoPlay: true,                                
-    //     $SlideDuration: 500,                            
-
-    //     $BulletNavigatorOptions: {                      
-    //         $Class: $JssorBulletNavigator$,             
-    //         $ChanceToShow: 2,                           
-    //         $AutoCenter: 1,                            
-    //         $Steps: 1,                                  
-    //         $Lanes: 1,                                  
-    //         $SpacingX: 10,                              
-    //         $SpacingY: 10,                              
-    //         $Orientation: 1                             
-    //     }
-    // };
-
-    // var jssor_slider1 = new $JssorSlider$("slider1_container", options);
-
 });

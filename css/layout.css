@@ -150,7 +150,6 @@ h2.b-title{
 	text-align: center;
 	font-size: 36px;
 	line-height: 44px;
-	padding-top: 62px;
 	margin-bottom: 37px;
 }
 
@@ -633,6 +632,11 @@ h4{
 	line-height: 22px;
 	margin-bottom: 17px;
 }
+.b-checkbox input[type="checkbox"]:disabled:not(.any-flowers) + span + label,
+.b-checkbox input[type="checkbox"]:disabled:not(.any-flowers) + label{
+	cursor: default;
+	color: #C4C4C4;
+}
 .b-checkbox input[type="checkbox"] + span + label:before,
 .b-checkbox input[type="checkbox"] + label:before{
 	position: absolute;
@@ -722,6 +726,13 @@ h4{
 	.b-text p{
 		
 	}
+	.b-text a{
+		color: #6e58ac;
+		text-decoration: underline;
+	}
+		.b-text a:hover{
+			text-decoration: none;
+		}
 	.b-text ul{
 	    list-style: none;
 	}
@@ -1361,11 +1372,11 @@ h4{
 				max-width: 200px;
 			}
 			.b-filter-price-select.selected,
-			.b-filter-price-select:hover,
-			.b-filter-price-select:hover:after,
+			.b-filter-select-wrap:hover .b-filter-price-select,
+			.b-filter-select-wrap:hover .b-filter-price-select:after,
 			.b-filter-flowers-select.selected,
-			.b-filter-flowers-select:hover,
-			.b-filter-flowers-select:hover:after{
+			.b-filter-select-wrap:hover .b-filter-flowers-select,
+			.b-filter-select-wrap:hover .b-filter-flowers-select:after{
 				color: #434343;
 			}
 
@@ -1408,7 +1419,7 @@ h4{
 		    border-left: 10px solid transparent;
 		}
 
-		.b-filter-price-list.show{
+		.b-filter-select-wrap:hover ul.b-filter-price-list{
 			opacity: 1;
 			visibility: visible;
 			-webkit-transform: translateY(0px);
@@ -1433,29 +1444,30 @@ h4{
 		padding-top: 2px;
 	}
 		.b-filter-flowers-list{
-			width: 860px;
-		    z-index: 101;
-		    padding: 26px 18px 30px 26px;
-		    position: absolute;
-		    left: 0px;
-		    top: 40px;
-		    background-color: #FFF;
-		    border-radius: 3px;
-		    -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-		    -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-		    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-		    visibility: hidden;
-		    opacity: 0;
-		    -webkit-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-		    -moz-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-		    -ms-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-		    -o-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-		    transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-		    -webkit-transform: translateY(-10px);
-		    -moz-transform: translateY(-10px);
-		    -ms-transform: translateY(-10px);
-		    -o-transform: translateY(-10px);
-		    transform: translateY(-10px);
+			max-width: 860px;
+			z-index: 101;
+			padding: 26px 18px 30px 26px;
+			position: absolute;
+			left: 0px;
+			top: 40px;
+			background-color: #FFF;
+			border-radius: 3px;
+			-webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+			-moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+			visibility: hidden;
+			opacity: 0;
+			-webkit-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+			-moz-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+			-ms-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+			-o-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+			transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+			-webkit-transform: translateY(-10px);
+			-moz-transform: translateY(-10px);
+			-ms-transform: translateY(-10px);
+			-o-transform: translateY(-10px);
+			transform: translateY(-10px);
+			white-space: nowrap;
 		}
 		.b-filter-flowers-list:before{
 			position: absolute;
@@ -1471,14 +1483,25 @@ h4{
 		    border-left: 10px solid transparent;
 		}
 
-		.b-filter-flowers-list.show{
+		.b-filter-flowers-list:after,
+		ul.b-filter-price-list:after{
+			position: absolute;
+			content: "s";
+			font-size: 0px;
+			width: 100%;
+			height: 10px;
+			left: 0px;
+			top: -10px;
+		}
+
+	.b-filter-select-wrap:hover .b-filter-flowers-list{
 			opacity: 1;
 			visibility: visible;
 			-webkit-transform: translateY(0px);
-		    -moz-transform: translateY(0px);
-		    -ms-transform: translateY(0px);
-		    -o-transform: translateY(0px);
-		    transform: translateY(0px);
+			-moz-transform: translateY(0px);
+			-ms-transform: translateY(0px);
+			-o-transform: translateY(0px);
+			transform: translateY(0px);
 		}
 			.b-filter-flowers-list ul{
 				width: 200px;
@@ -1505,8 +1528,8 @@ h4{
 	}
 
 	.b-filter-colors{
-		float: right;
 		margin-right: 10px;
+		display: inline-block;
 	}
 
 	.b-filter p{
@@ -1514,12 +1537,8 @@ h4{
 		margin-right: 8px;
 	}
 
-	.b-filter-colors{
-
-	}
-		.b-filter-colors ul{
-
-		}
+	.b-filter-colors{position: relative;z-index: 102;}
+		.b-filter-colors ul{padding-bottom: 10px;}
 			.b-filter-colors ul li{
 				display: inline-block;
 			}
@@ -1723,7 +1742,8 @@ h4{
 				}
 
 .b-catalog{
-	margin-bottom: 12px;
+	padding-bottom: 22px;
+	margin-top: 54px;
 }
 	.b-catalog-list{/* font-size: 0px; */}
 		.b-catalog-item{
@@ -2044,6 +2064,7 @@ h4{
 
 .b-questions{
 	margin-bottom: 60px;
+	margin-top: 54px;
 }
 	.b-questions-list{
 
@@ -2325,15 +2346,16 @@ h4{
 			}
 			ul.b-breadcrumbs li a:hover{
 				border-bottom: 1px solid transparent;
+				text-decoration: none;
 			}
 
 			ul.b-breadcrumbs li span{
 
 			}
 
-.b-catalog-margin{
-	margin-top: 64px;
-}
+/*.b-catalog-margin{
+	margin-top: 54px;
+}*/
 
 .b-catalog-similar{
 	margin-bottom: -22px;
@@ -2557,7 +2579,7 @@ h4{
 
 	.icon-minus{
 		position: absolute;
-		top: 3px;
+		top: 2px;
 		left: -11px;
 		color: #e4e4e4;
 	}
@@ -2573,7 +2595,7 @@ h4{
 	}
 	.icon-plus{
 		position: absolute;
-		top: 1px;
+		top: 0px;
 		right: -9px;
 		color: #e4e4e4;
 	}
@@ -2817,6 +2839,7 @@ h4{
 		}
 			.b-address p{
 				display: inline-block;
+				font-family: "Geometria-Medium";
 			}
 			.b-address .choose-address{
 				display: inline-block;
@@ -2837,6 +2860,7 @@ h4{
 		.b-payment-method p{
 			display: inline-block;
 			margin-right: 30px;
+			font-family: "Geometria-Medium";
 		}
 		.b-radio label{
 			margin-right: 30px;
@@ -2907,9 +2931,7 @@ h4{
 		.b-cart-empty a:hover{
 			text-decoration: none;
 		}
-.b-addition{
-
-}
+.b-addition{padding-top: 54px;}
 	.b-addition-list{
 
 	}
