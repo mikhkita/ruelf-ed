@@ -170,6 +170,10 @@ h4{
 	margin-bottom: 4px;
 }
 
+strong, b{
+	font-weight: normal;
+}
+
 .b-btn{
 	position: relative;
 	display: inline-block;
@@ -2066,7 +2070,7 @@ h4{
 		position: relative;
 		height: 140px;
 		width: 100%;
-		padding: 0 32px;
+		padding: 0 32px 24px 32px;
 	}
 		.b-review-slider-cont h3{
 			padding: 0 32px;
@@ -2077,6 +2081,11 @@ h4{
 			bottom: 0;
 			right: 32px;
 		}
+			.b-review-text{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
 
 .b-call{
 	float: right;
@@ -2089,6 +2098,7 @@ h4{
     background-repeat: no-repeat;
     background-image: url(../i/index-1.jpg);
     background-size: cover;
+    border-radius: 3px;
 }
 
 	.b-call .b-table-cell{
@@ -2908,13 +2918,25 @@ h4{
 			display: inline-block;
 			margin-right: 30px;
 			font-family: "Geometria-Medium";
+			vertical-align: top;
 		}
-		.b-radio label{
-			margin-right: 30px;
-		}
-		.b-radio label:last-child{
-			margin-right: 0;
-		}
+			.b-payment-method-list{
+				display: inline-block;
+				width: 500px
+			}
+				.b-payment-method-item{
+					display: inline-block;
+					padding-right: 25px;
+					width: 49%;
+					margin-bottom: 12px;
+				}
+				.b-radio label:last-child{
+					margin-right: 0;
+				}
+
+				.b-payment-method .b-radio input[type="radio"] + label{
+
+				}
 
 	.b-total-price{
 		text-align: right;

@@ -41,6 +41,16 @@ ymaps.ready(['AddressDelivery']).then(function init() {
             $.proxy(addressClass.__applyAddress, addressClass)
         );
 
+        $(".js-order-adress-map-input").blur(function(){
+            if(!!$(this).val()){
+                ymaps.geocode("город Томск, " + $(this).val(), {
+                    results: 1
+                }).then(function (res) {
+                    addressClass.setPoint(res.geoObjects.get(0).geometry.getCoordinates());
+                });
+            }
+        });
+
         ymaps.geocode(json.city, {
             results: 1
         }).then(function (res) {
@@ -65,11 +75,6 @@ ymaps.ready(['AddressDelivery']).then(function init() {
                         })
                     })
                     autocompleteRes(result);
-                    // res([{value: 1, label: 111}, {value: 2, test: 'abc'}, {value: 3}]);
-                    // _.each(res, function(item){
-                    // 	console.log(item)
-                    // })
-                    // mapNew.setCenter(res.geoObjects.get(0).geometry.getCoordinates());
                 });
             },
             select: function(e, selected){

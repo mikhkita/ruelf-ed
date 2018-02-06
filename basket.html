@@ -263,10 +263,20 @@
 					<div class="b-inputs b-input-row clearfix">
 						<div class="b-radio b-payment-method">
 							<p>Способ оплаты:</p>
-							<input id="card" type="radio" name="payment-method" checked required>
-							<label for="card">Онлайн-оплата картой</label>
-							<input id="cash" type="radio" name="payment-method" required>
-							<label for="cash">Наличными курьеру</label>
+							<div class="b-payment-method-list">
+								<div class="b-payment-method-item">
+									<input id="card" type="radio" name="payment-method" checked required>
+									<label for="card">Онлайн-оплата картой</label>
+								</div>
+								<div class="b-payment-method-item">
+									<input id="cash" type="radio" name="payment-method" required>
+									<label for="cash">Наличными курьеру</label>
+								</div>
+								<div class="b-payment-method-item">
+									<input id="test" type="radio" name="payment-method" required>
+									<label for="test">Тестовая запись</label>
+								</div>
+							</div>
 						</div>
 						<div class="b-total-price">
 							<div class="delivery-price hide">
