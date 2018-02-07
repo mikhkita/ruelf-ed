@@ -1844,6 +1844,11 @@ strong, b{
 				left: -16px;
 				border-radius: 6px;
 				background-color: #FFF;
+				-webkit-transform: scale(0.9);
+				   -moz-transform: scale(0.9);
+				    -ms-transform: scale(0.9);
+				   	 -o-transform: scale(0.9);
+						transform: scale(0.9);
 				-webkit-transition: transform 200ms ease-out, box-shadow 200ms ease-out, z-index 200ms ease-out;
 			    -moz-transition: transform 200ms ease-out, box-shadow 200ms ease-out, z-index 200ms ease-out;
 			    -ms-transition: transform 200ms ease-out, box-shadow 200ms ease-out, z-index 200ms ease-out;
@@ -3100,6 +3105,21 @@ strong, b{
 		color: #434343;
 		margin-bottom: 5px;
 	}
+
+/*-------Контакты-------*/
+
+.b-contacts{
+	float: left;
+	width: 51%;
+	padding-right: 24px;
+}
+
+.b-map{
+	float: right;
+	width: 49%;
+	height: 439px;
+	border-radius: 3px;
+}
 
 /*------popup------*/
 

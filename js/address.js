@@ -51,9 +51,17 @@ ymaps.ready(['AddressDelivery']).then(function init() {
             }
         });
 
+        $(".js-order-adress-map-input").on('keydown', function(e) { 
+          var keyCode = e.keyCode || e.which; 
+          if (keyCode == 9) {
+            setTimeout(function(){ 
+                $('#number-room-input').focus();
+            }, 10);
+          } 
+        });
+
         ymaps.geocode(json.city, {
             results: 1,
-
         }).then(function (res) {
             mapNew.setCenter(res.geoObjects.get(0).geometry.getCoordinates());
         });
@@ -62,11 +70,12 @@ ymaps.ready(['AddressDelivery']).then(function init() {
             source: function(req, autocompleteRes){
                 ymaps.geocode("город Томск, " + req.term, {
                     results: 10,
-                    boundedBy : [56.231866, 84.579932][56.666401, 85.270441],
-                    strictBounds : true,
+                    //strictBounds : true,
+                    //boundedBy : [56.248472, 84.658275][56.658356, 85.285869],
                 }).then(function (res) {
-                    var result = [];
+                    var result = [];console.log(res.geoObjects);
                     res.geoObjects.each(function(item){
+
                         var address = item.properties._data.metaDataProperty.GeocoderMetaData.Address.Components;
                         var label = getAddressLine(address);
                         var value = label;
@@ -88,7 +97,6 @@ ymaps.ready(['AddressDelivery']).then(function init() {
 
         mapNew.events.add('changed-price', function(e){
             $('.js-order-adress-map-form-label').show();
-            console.log(e.get('label'));
             if(e.get('label') > 0){
                 $('.js-order-adress-map-price').addClass("icon-ruble");
             }else{
@@ -100,7 +108,8 @@ ymaps.ready(['AddressDelivery']).then(function init() {
             $('.ui-widget.b-input').addClass("not-empty");
         });
         mapNew.events.add('adress-changed', function(e){
-            $('.js-order-adress-map-input').val( e.get('geocode').getAddressLine() )
+            var address = e.get('geocode').properties._data.metaDataProperty.GeocoderMetaData.Address.Components;
+            $('.js-order-adress-map-input').val(getAddressLine(address));
         });
         // Добавляем контрол в верхний правый угол,
         /*mapNew.controls
@@ -125,7 +134,6 @@ ymaps.ready(['AddressDelivery']).then(function init() {
 
         var colors = ["#FFFF00","#00FF00"],
             _i = 0;
-        console.log(json);
         if ("polygons" in json) {
             for (var polygonBlock in json.polygons) {
                 

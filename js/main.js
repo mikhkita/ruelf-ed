@@ -15,7 +15,7 @@ $(document).ready(function(){
             myHeight = document.body.clientHeight;
         }
 
-        if($('.b-catalog').length){
+        /*if($('.b-catalog').length){
             var scaleX = 1, scaleY = 1;
             scaleX = ($('.b-catalog-item').innerWidth() - 32) / $('.b-catalog-item').innerWidth();
             scaleY = ($('.b-catalog-item').innerHeight() - 32) / $('.b-catalog-item').innerHeight();
@@ -24,7 +24,7 @@ $(document).ready(function(){
             $('.b-catalog-item-back').css("-ms-transform", "scale("+scaleX+","+scaleY+")");
             $('.b-catalog-item-back').css("-o-transform", "scale("+scaleX+","+scaleY+")");
             $('.b-catalog-item-back').css("transform", "scale("+scaleX+","+scaleY+")");
-        }
+        }*/
         $(window).scroll();
         footerToBottom();
     }
@@ -466,6 +466,84 @@ $(document).ready(function(){
             }
         return false;
     });
+
+    /*var styles = [
+        {
+            "featureType": "all",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "saturation": -100
+                },
+                {
+                    "gamma": 1
+                }
+            ]
+        },
+        {
+            "featureType": "road",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "saturation": "-99"
+                },
+                {
+                    "lightness": "38"
+                },
+                {
+                    "gamma": "3.11"
+                },
+                {
+                    "color": "#aaaaaa"
+                }
+            ]
+        },
+        {
+            "featureType": "road.arterial",
+            "elementType": "geometry",
+            "stylers": [
+                { "color": "#fece0b" },
+                { "visibility": "simplified" }
+            ]
+        },
+        {
+            "featureType": "road",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#000000"
+                }
+            ]
+        }
+    ];*/
+
+    if($('.b-map').length){
+        var myPlace = new google.maps.LatLng(56.463328, 84.966415);
+        var myOptions = {
+            zoom: 16,
+            center: myPlace,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true,
+            scrollwheel: false,
+            zoomControl: true
+        }
+        var map = new google.maps.Map(document.getElementById("b-map"), myOptions);
+        //var styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"});
+            //map.mapTypes.set('map_style', styledMap);
+            //map.setMapTypeId('map_style');
+
+        var marker = new google.maps.Marker({
+            position: myPlace,
+            map: map,
+            icon: {
+                url: "i/pin.svg",
+                scaledSize: new google.maps.Size(40, 58), // scaled size
+                origin: new google.maps.Point(0,0), // origin
+                anchor: new google.maps.Point(17,53), // anchor
+            },
+            title: "Магазин"
+        });
+    }
 
     // Добавление в корзину
     var cartTimeout = 0;
