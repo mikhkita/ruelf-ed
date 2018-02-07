@@ -431,8 +431,10 @@ $(document).ready(function(){
 
     $('.order-adress-map-form').submit(function(){
         $('.b-btn-address').click();
-        ymaps.geocode("город Томск, " + $('.js-order-adress-map-input').val(), {
-            results: 1
+        ymaps.geocode($('.js-order-adress-map-input').val(), {
+            results: 1,
+            boundedBy : [[56.248472, 84.658275],[56.658356, 85.285869]],
+            strictBounds : true,
         }).then(function (res) {
             addressClass.setPoint(res.geoObjects.get(0).geometry.getCoordinates());
         });

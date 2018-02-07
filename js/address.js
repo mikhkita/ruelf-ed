@@ -43,8 +43,10 @@ ymaps.ready(['AddressDelivery']).then(function init() {
 
         $(".js-order-adress-map-input").blur(function(){
             if(!!$(this).val()){
-                ymaps.geocode("город Томск, " + $(this).val(), {
-                    results: 1
+                ymaps.geocode($(this).val(), {
+                    results: 1,
+                    boundedBy : [[56.248472, 84.658275],[56.658356, 85.285869]],
+                    strictBounds : true,
                 }).then(function (res) {
                     addressClass.setPoint(res.geoObjects.get(0).geometry.getCoordinates());
                 });
@@ -62,16 +64,18 @@ ymaps.ready(['AddressDelivery']).then(function init() {
 
         ymaps.geocode(json.city, {
             results: 1,
+            boundedBy : [[56.248472, 84.658275],[56.658356, 85.285869]],
+            strictBounds : true,
         }).then(function (res) {
             mapNew.setCenter(res.geoObjects.get(0).geometry.getCoordinates());
         });
 
         $('.js-order-adress-map-input').autocomplete({
             source: function(req, autocompleteRes){
-                ymaps.geocode("город Томск, " + req.term, {
+                ymaps.geocode(req.term, {
                     results: 10,
-                    //strictBounds : true,
-                    //boundedBy : [56.248472, 84.658275][56.658356, 85.285869],
+                    boundedBy : [[56.248472, 84.658275],[56.658356, 85.285869]],
+                    strictBounds : true,
                 }).then(function (res) {
                     var result = [];console.log(res.geoObjects);
                     res.geoObjects.each(function(item){
