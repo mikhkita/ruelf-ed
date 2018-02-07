@@ -61,7 +61,9 @@ ymaps.ready(['AddressDelivery']).then(function init() {
         $('.js-order-adress-map-input').autocomplete({
             source: function(req, autocompleteRes){
                 ymaps.geocode("город Томск, " + req.term, {
-                    results: 10
+                    results: 10,
+                    boundedBy : [56.231866, 84.579932][56.666401, 85.270441],
+                    strictBounds : true,
                 }).then(function (res) {
                     var result = [];
                     res.geoObjects.each(function(item){
@@ -176,7 +178,6 @@ ymaps.ready(['AddressDelivery']).then(function init() {
         locations.forEach(function(_item, _i, _arr) {
             address.forEach(function(item, i, arr) {
                 if(item.kind == _item){
-                    console.log(item.name.indexOf("микрорайон"));
                     if(_item == "district" && 
                         (item.name.indexOf("микрорайон") >= 0 || item.name.indexOf("район") >= 0)){
                         return;

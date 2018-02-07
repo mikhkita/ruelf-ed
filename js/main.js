@@ -431,9 +431,13 @@ $(document).ready(function(){
 
     $('.order-adress-map-form').submit(function(){
         $('.b-btn-address').click();
+        ymaps.geocode("город Томск, " + $('.js-order-adress-map-input').val(), {
+            results: 1
+        }).then(function (res) {
+            addressClass.setPoint(res.geoObjects.get(0).geometry.getCoordinates());
+        });
         return false;
     });
-
     $('.b-btn-address').on('click', function(){
         if($('.js-order-adress-map-input').attr("valid-delivery") &&
             !!$('.js-order-adress-map-input').val()){
@@ -452,6 +456,7 @@ $(document).ready(function(){
                 $('.delivery-price-value').text($('.js-order-adress-map-price').text())
                     .parent().removeClass("hide");
                 $('.choose-address-action').text("изменить");
+                $.fancybox.close(); 
             }else{
                 $(".choose-address-value").text("");
                 $('.b-choose-address, .choose-address-change input[name="address"]').addClass("error");
@@ -459,7 +464,6 @@ $(document).ready(function(){
                 $('.delivery-price-value').text("").parent().addClass("hide");
                 $('.choose-address-action').text("указать адрес");
             }
-        $.fancybox.close(); 
         return false;
     });
 

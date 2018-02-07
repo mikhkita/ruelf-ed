@@ -81,6 +81,27 @@ $(document).ready(function(){
 		});
 	});
 
+	$('.order-adress-map-form').validate({
+		onkeyup: true,
+		rules: {
+			email: 'email',
+			phone: 'customPhone'
+		},
+		errorElement : "span",
+		highlight: function(element, errorClass) {
+		    $(element).addClass("error").parents(".b-input").addClass("error");
+		},
+		unhighlight: function(element) {
+		    $(element).removeClass("error").parents(".b-input").removeClass("error");
+		}
+	});
+	$('.order-adress-map-form').find("input[type='text'], input[type='email'], textarea, select").blur(function(){
+	   $(this).valid();
+	});
+	$('.order-adress-map-form').find("input[type='text'], input[type='email'], textarea, select").keyup(function(){
+	   $(this).valid();
+	});
+
 	function whenScroll(){
 		var scroll = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
 		if( customHandlers["onScroll"] ){
@@ -117,7 +138,7 @@ $(document).ready(function(){
 					customHandlers[$this.attr("data-beforeShow")]($this);
 				}
 				$popup.find(".error").removeClass("error");
-				$popup.find(".b-input span").remove();
+				$popup.find(".b-input input + span").remove();
 			},
 			afterShow: function(){
 				$(".fancybox-wrap").removeClass("beforeShow");
@@ -169,7 +190,11 @@ $(document).ready(function(){
 	$(".fancy-img").fancybox({
 		padding : 0,
 		hash : false,
-		clickContent : false
+		clickContent : false,
+		buttons : [
+	        'fullScreen',
+	        'close'
+	    ],
 	});
 
 	$(".goal-click").click(function(){
