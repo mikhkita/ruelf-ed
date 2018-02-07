@@ -156,6 +156,9 @@ h2.b-title{
 .b-addition h2.b-title{
 	margin-bottom: 50px;
 }
+.b-delivery h2.b-title{
+	margin-bottom: 25px;
+}
 
 h3{
 	color: #FFF;
@@ -794,6 +797,12 @@ strong, b{
 		}
 	.b-text ul{
 	    list-style: none;
+	    margin-top: 9px;
+	}
+	.b-text h3 + ul,
+	.b-text h2 + ul,
+	.b-text h4 + ul{
+		margin-top: 0;
 	}
 		.b-text ul li{
 			position: relative;
@@ -3015,7 +3024,12 @@ strong, b{
 		.b-cart-empty a:hover{
 			text-decoration: none;
 		}
-.b-addition{padding-top: 54px;}
+.b-addition{
+	padding-top: 54px;
+}
+.b-delivery{
+	padding-top: 54px;
+}
 	.b-addition-list{
 
 	}
@@ -3077,7 +3091,7 @@ strong, b{
 		float: none;
 	}
 	.delivery-page .b-inputs .ui-widget{
-		width: 500px;
+		width: 100%;
 	}
 	.delivery-page .ui-widget.ui-widget-content{
 		border: 0;
