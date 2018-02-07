@@ -64,7 +64,8 @@ ymaps.ready(['AddressDelivery']).then(function init() {
                 }).then(function (res) {
                     var result = [];
                     res.geoObjects.each(function(item){
-                        var label = item.getAddressLine();
+                        var address = item.properties._data.metaDataProperty.GeocoderMetaData.Address.Components;
+                        var label = getAddressLine(address);
                         var value = label;
                         var coords = item.geometry.getCoordinates();
                         result.push({
@@ -72,7 +73,9 @@ ymaps.ready(['AddressDelivery']).then(function init() {
                             value: value,
                             coords: coords,
                             balloonContent: item.properties.get("balloonContent")
-                        })
+                        });
+
+                     console.log(item.properties._data.metaDataProperty.GeocoderMetaData.Address.Components);
                     })
                     autocompleteRes(result);
                 });
@@ -166,5 +169,24 @@ ymaps.ready(['AddressDelivery']).then(function init() {
             }
         }
         mapNew.container.fitToViewport(true);
+    }
+
+    function getAddressLine(address) {  
+        var res = [];
+        var locations = ["locality","district","street","house"];
+        locations.forEach(function(_item, _i, _arr) {
+            address.forEach(function(item, i, arr) {
+                if(item.kind == _item){
+                    console.log(item.name.indexOf("микрорайон"));
+                    if(_item == "district" && 
+                        (item.name.indexOf("микрорайон") >= 0 || item.name.indexOf("район") >= 0)){
+                        return;
+                    }
+                    res.push(item.name);
+                }
+            });
+        });
+        res = res.join(', ');
+        return res;
     }
 });
