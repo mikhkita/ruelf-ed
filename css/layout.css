@@ -3359,7 +3359,7 @@ strong, b{
 
 .slick-dots li:hover button:before,
 .slick-dots li:hover button:before{
-    color: #6e58ac;
+    background-color: #6e58ac;
     opacity: 0.5;
 }
 
