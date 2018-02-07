@@ -162,7 +162,7 @@ ymaps.ready(['AddressDelivery']).then(function init() {
                         strokeOpacity: .8,
                         strokeWeight: 4,
                         fillColor: color,
-                        fillOpacity: .2
+                        fillOpacity: (!_i)?(.15):(.1)
                     });
                 itemGeoObject.events.add('click', addressClass._onClick, addressClass);
                 mapNew.geoObjects.add(itemGeoObject);

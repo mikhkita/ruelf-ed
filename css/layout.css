@@ -2756,7 +2756,7 @@ strong, b{
 		margin-bottom: 0; 
 	}
 
-	.required{
+	.required, .red{
 		color: #f43d84;
 	}
 
@@ -3240,6 +3240,13 @@ strong, b{
 			font-family: 'Geometria-Medium';
 			margin-bottom: 16px;
 		}
+		.b-popup-question a{
+			color: #6e58ac;
+			text-decoration: underline;
+		}
+			.b-popup-question a:hover{
+				text-decoration: none;
+			}
 
 	#b-popup-call h3{
 		margin-bottom: 0;
