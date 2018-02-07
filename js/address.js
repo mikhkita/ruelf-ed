@@ -43,28 +43,43 @@ ymaps.ready(['AddressDelivery']).then(function init() {
 
         $(".js-order-adress-map-input").blur(function(){
             if(!!$(this).val()){
-                ymaps.geocode("город Томск, " + $(this).val(), {
-                    results: 1
+                ymaps.geocode($(this).val(), {
+                    results: 1,
+                    boundedBy : [[56.248472, 84.658275],[56.658356, 85.285869]],
+                    strictBounds : true,
                 }).then(function (res) {
                     addressClass.setPoint(res.geoObjects.get(0).geometry.getCoordinates());
                 });
             }
         });
 
+        $(".js-order-adress-map-input").on('keydown', function(e) { 
+          var keyCode = e.keyCode || e.which; 
+          if (keyCode == 9) {
+            setTimeout(function(){ 
+                $('#number-room-input').focus();
+            }, 10);
+          } 
+        });
+
         ymaps.geocode(json.city, {
             results: 1,
-
+            boundedBy : [[56.248472, 84.658275],[56.658356, 85.285869]],
+            strictBounds : true,
         }).then(function (res) {
             mapNew.setCenter(res.geoObjects.get(0).geometry.getCoordinates());
         });
 
         $('.js-order-adress-map-input').autocomplete({
             source: function(req, autocompleteRes){
-                ymaps.geocode("город Томск, " + req.term, {
-                    results: 10
+                ymaps.geocode(req.term, {
+                    results: 10,
+                    boundedBy : [[56.248472, 84.658275],[56.658356, 85.285869]],
+                    strictBounds : true,
                 }).then(function (res) {
-                    var result = [];
+                    var result = [];console.log(res.geoObjects);
                     res.geoObjects.each(function(item){
+
                         var address = item.properties._data.metaDataProperty.GeocoderMetaData.Address.Components;
                         var label = getAddressLine(address);
                         var value = label;
@@ -86,7 +101,6 @@ ymaps.ready(['AddressDelivery']).then(function init() {
 
         mapNew.events.add('changed-price', function(e){
             $('.js-order-adress-map-form-label').show();
-            console.log(e.get('label'));
             if(e.get('label') > 0){
                 $('.js-order-adress-map-price').addClass("icon-ruble");
             }else{
@@ -98,7 +112,8 @@ ymaps.ready(['AddressDelivery']).then(function init() {
             $('.ui-widget.b-input').addClass("not-empty");
         });
         mapNew.events.add('adress-changed', function(e){
-            $('.js-order-adress-map-input').val( e.get('geocode').getAddressLine() )
+            var address = e.get('geocode').properties._data.metaDataProperty.GeocoderMetaData.Address.Components;
+            $('.js-order-adress-map-input').val(getAddressLine(address));
         });
         // Добавляем контрол в верхний правый угол,
         /*mapNew.controls
@@ -123,7 +138,6 @@ ymaps.ready(['AddressDelivery']).then(function init() {
 
         var colors = ["#FFFF00","#00FF00"],
             _i = 0;
-        console.log(json);
         if ("polygons" in json) {
             for (var polygonBlock in json.polygons) {
                 
@@ -176,7 +190,6 @@ ymaps.ready(['AddressDelivery']).then(function init() {
         locations.forEach(function(_item, _i, _arr) {
             address.forEach(function(item, i, arr) {
                 if(item.kind == _item){
-                    console.log(item.name.indexOf("микрорайон"));
                     if(_item == "district" && 
                         (item.name.indexOf("микрорайон") >= 0 || item.name.indexOf("район") >= 0)){
                         return;

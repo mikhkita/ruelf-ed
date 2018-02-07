@@ -15,7 +15,7 @@ $(document).ready(function(){
             myHeight = document.body.clientHeight;
         }
 
-        if($('.b-catalog').length){
+        /*if($('.b-catalog').length){
             var scaleX = 1, scaleY = 1;
             scaleX = ($('.b-catalog-item').innerWidth() - 32) / $('.b-catalog-item').innerWidth();
             scaleY = ($('.b-catalog-item').innerHeight() - 32) / $('.b-catalog-item').innerHeight();
@@ -24,7 +24,7 @@ $(document).ready(function(){
             $('.b-catalog-item-back').css("-ms-transform", "scale("+scaleX+","+scaleY+")");
             $('.b-catalog-item-back').css("-o-transform", "scale("+scaleX+","+scaleY+")");
             $('.b-catalog-item-back').css("transform", "scale("+scaleX+","+scaleY+")");
-        }
+        }*/
         $(window).scroll();
         footerToBottom();
     }
@@ -431,9 +431,15 @@ $(document).ready(function(){
 
     $('.order-adress-map-form').submit(function(){
         $('.b-btn-address').click();
+        ymaps.geocode($('.js-order-adress-map-input').val(), {
+            results: 1,
+            boundedBy : [[56.248472, 84.658275],[56.658356, 85.285869]],
+            strictBounds : true,
+        }).then(function (res) {
+            addressClass.setPoint(res.geoObjects.get(0).geometry.getCoordinates());
+        });
         return false;
     });
-
     $('.b-btn-address').on('click', function(){
         if($('.js-order-adress-map-input').attr("valid-delivery") &&
             !!$('.js-order-adress-map-input').val()){
@@ -452,6 +458,7 @@ $(document).ready(function(){
                 $('.delivery-price-value').text($('.js-order-adress-map-price').text())
                     .parent().removeClass("hide");
                 $('.choose-address-action').text("изменить");
+                $.fancybox.close(); 
             }else{
                 $(".choose-address-value").text("");
                 $('.b-choose-address, .choose-address-change input[name="address"]').addClass("error");
@@ -459,9 +466,86 @@ $(document).ready(function(){
                 $('.delivery-price-value').text("").parent().addClass("hide");
                 $('.choose-address-action').text("указать адрес");
             }
-        $.fancybox.close(); 
         return false;
     });
+
+    /*var styles = [
+        {
+            "featureType": "all",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "saturation": -100
+                },
+                {
+                    "gamma": 1
+                }
+            ]
+        },
+        {
+            "featureType": "road",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "saturation": "-99"
+                },
+                {
+                    "lightness": "38"
+                },
+                {
+                    "gamma": "3.11"
+                },
+                {
+                    "color": "#aaaaaa"
+                }
+            ]
+        },
+        {
+            "featureType": "road.arterial",
+            "elementType": "geometry",
+            "stylers": [
+                { "color": "#fece0b" },
+                { "visibility": "simplified" }
+            ]
+        },
+        {
+            "featureType": "road",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#000000"
+                }
+            ]
+        }
+    ];*/
+
+    if($('.b-map').length){
+        var myPlace = new google.maps.LatLng(56.463328, 84.966415);
+        var myOptions = {
+            zoom: 16,
+            center: myPlace,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true,
+            scrollwheel: false,
+            zoomControl: true
+        }
+        var map = new google.maps.Map(document.getElementById("b-map"), myOptions);
+        //var styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"});
+            //map.mapTypes.set('map_style', styledMap);
+            //map.setMapTypeId('map_style');
+
+        var marker = new google.maps.Marker({
+            position: myPlace,
+            map: map,
+            icon: {
+                url: "i/pin.svg",
+                scaledSize: new google.maps.Size(40, 58), // scaled size
+                origin: new google.maps.Point(0,0), // origin
+                anchor: new google.maps.Point(17,53), // anchor
+            },
+            title: "Магазин"
+        });
+    }
 
     // Добавление в корзину
     var cartTimeout = 0;
