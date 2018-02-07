@@ -156,6 +156,9 @@ h2.b-title{
 .b-addition h2.b-title{
 	margin-bottom: 50px;
 }
+.b-delivery h2.b-title{
+	margin-bottom: 25px;
+}
 
 h3{
 	color: #FFF;
@@ -781,6 +784,10 @@ strong, b{
 	.b-text p{
 		
 	}
+	.b-text b{
+		font-family: "Geometria-Bold";
+		font-weight: normal;
+	}
 	.b-text a{
 		color: #6e58ac;
 		text-decoration: underline;
@@ -790,6 +797,12 @@ strong, b{
 		}
 	.b-text ul{
 	    list-style: none;
+	    margin-top: 9px;
+	}
+	.b-text h3 + ul,
+	.b-text h2 + ul,
+	.b-text h4 + ul{
+		margin-top: 0;
 	}
 		.b-text ul li{
 			position: relative;
@@ -1037,6 +1050,9 @@ strong, b{
 				    color: #434343;
 				    font-family: "Geometria-Medium";
 				    border-radius: 0;
+				}
+				.b-submenu li a.active{
+					color: #6e58ac;
 				}
 
 			.b-menu li:hover .b-submenu {
@@ -2422,6 +2438,7 @@ strong, b{
 }*/
 
 .b-catalog-similar{
+	padding-top: 10px;
 	margin-bottom: -22px;
 }
 
@@ -3007,7 +3024,12 @@ strong, b{
 		.b-cart-empty a:hover{
 			text-decoration: none;
 		}
-.b-addition{padding-top: 54px;}
+.b-addition{
+	padding-top: 54px;
+}
+.b-delivery{
+	padding-top: 54px;
+}
 	.b-addition-list{
 
 	}
@@ -3069,7 +3091,7 @@ strong, b{
 		float: none;
 	}
 	.delivery-page .b-inputs .ui-widget{
-		width: 500px;
+		width: 100%;
 	}
 	.delivery-page .ui-widget.ui-widget-content{
 		border: 0;
