@@ -145,7 +145,7 @@ $(document).ready(function(){
         }  
     };
 
-    $('.b-review-slider').slick({
+    $('.b-review-slider, .b-addition-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
@@ -309,20 +309,23 @@ $(document).ready(function(){
     });
 
     $('.b-addressee-switch').on('click', function(){
-        if($('.b-addressee-left').hasClass("active")){
+        if($('.b-addressee-left').hasClass("active")){//клик на самовывоз
             $('.b-addressee-left').removeClass("active");
             $('.b-addressee-right').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
-            $('.b-address').before($(".move-element"))
-                .addClass("b-address-margin")
-                .parent().addClass("b-input-margin");
+            $('#address').prop({"disabled": true, "required": false}).removeClass("error");
+            $('.b-address').before($(".move-element")).addClass("hide").removeClass("error");;
             $('.b-input-move').addClass("hide");
-        }else{
+        }else{//клик на доставку
             $('.b-addressee-right').removeClass("active");
             $('.b-addressee-left').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
+            $('#address').prop({"disabled": false, "required": true});
+            if(!$('#address').val()){
+                $('#address').addClass("error");
+            }
             $('.b-input-move').prepend($(".move-element")).removeClass("hide");
-            $('.b-address').removeClass("b-address-margin").parent().removeClass("b-input-margin");
+            $('.b-address').removeClass("hide");
 
         }
         return false;

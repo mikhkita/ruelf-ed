@@ -2796,7 +2796,7 @@ strong, b{
 				position: absolute;
 				left: 0;
 				z-index: 1;
-				padding: 14px 32px 15px;
+				padding: 14px 63px 15px;
 				border-radius: 30px;
 				font-size: 18px;
 				line-height: 26px;
@@ -2810,7 +2810,7 @@ strong, b{
 				position: absolute;
 				right: 0;
 				z-index: 1;
-				padding: 14px 65px 15px 53px;
+				padding: 14px 80px 15px 80px;
 				border-radius: 30px;
 				font-size: 18px;
 				line-height: 26px;
@@ -3349,8 +3349,11 @@ strong, b{
 
 /*-------slick-------*/
 
-.slick-dots {
+.b-review-slider .slick-dots {
     bottom: -80px;
+}
+.b-addition-slider .slick-dots{
+	bottom: -25px;
 }
 
 .slick-dots li{
