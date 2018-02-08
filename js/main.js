@@ -739,6 +739,8 @@ $(document).ready(function(){
                         // console.log([json.id, json.quantity]);
                         $(".b-cart-item[data-id='"+json.id+"'] input").val(json.quantity);
                         $(".b-cart-item[data-id='"+json.id+"'] .b-basket-item-count").text(json.quantity+" шт.");
+
+                        updateMiniCartSum();
                     }
                 }else{
                     alert("Ошибка изменения количества, пожалуйста, обновите страницу");
