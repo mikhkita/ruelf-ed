@@ -246,7 +246,7 @@ strong, b{
 	position: relative;
 	color: #f43d84;
 	border: 3px solid #f43d84;
-	padding: 18px 46px;
+	padding: 18px 46px 20px;
     border-radius: 100px;
     font-size: 24px;
 	line-height: 26px;
@@ -313,7 +313,7 @@ strong, b{
 	.b-btn-add-basket.icon-basket:before{
 		color: #f43d84;
 		font-size: 24px;
-		top: 34%;
+		top: 32%;
 		right: 18%;
 		padding-top: 0;
 		margin-right: 0;
@@ -3412,6 +3412,9 @@ strong, b{
 	}
 	.payment-mir{
 		background-image: url(../i/mir@2x.png);
+	}
+	.b-header-temp{
+	    background-image: url(../i/back-temp@2x.jpg);
 	}
 }
 
