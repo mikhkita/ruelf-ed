@@ -248,16 +248,16 @@ strong, b{
 	position: relative;
 	color: #f43d84;
 	border: 3px solid #f43d84;
-	padding: 18px 46px 20px;
-    border-radius: 100px;
-    font-size: 24px;
+	padding: 19px 46px 20px;
+	border-radius: 100px;
+	font-size: 24px;
 	line-height: 26px;
 	font-family: 'Geometria-Medium';
 	-webkit-transition: background-color 150ms ease-out;
-    -moz-transition: background-color 150ms ease-out;
-    -ms-transition: background-color 150ms ease-out;
-    -o-transition: background-color 150ms ease-out;
-    transition: background-color 150ms ease-out;
+	-moz-transition: background-color 150ms ease-out;
+	-ms-transition: background-color 150ms ease-out;
+	-o-transition: background-color 150ms ease-out;
+	transition: background-color 150ms ease-out;
 }
 	.b-btn-add-basket:hover{
 		background-color: rgba(244, 61, 132, 0.1);
@@ -932,7 +932,7 @@ strong, b{
 	.b-menu{
 		float: left;
 		margin-top: 3px;
-		margin-left: 138px;
+		margin-left: 180px;
 		-webkit-transition: margin-left 200ms ease-out;
 	    -moz-transition: margin-left 200ms ease-out;
 	    -ms-transition: margin-left 200ms ease-out;
@@ -940,7 +940,7 @@ strong, b{
 	    transition: margin-left 200ms ease-out;
 	}
 	.b-top.basket-null .b-menu{
-		margin-left: 156px;
+		margin-left: 192px;
 	}
 	.b-top-fixed .b-menu,
 	.b-top-fixed.basket-null .b-menu{
@@ -2195,10 +2195,52 @@ strong, b{
 			}
 
 			.b-questions-item.read-more{
+				cursor: pointer;
 				background-position: 50% 50%;
 			    background-repeat: no-repeat;
 			    background-image: url(../i/review-back.jpg);
+			    position: relative;
 			    background-size: cover;
+			}
+			.b-questions-item.read-more .icon-arrow-right{
+				/*position: absolute;*/
+				-webkit-transition: -webkit-transform 150ms ease-out;
+				   -moz-transition: transform 150ms ease-out;
+				    -ms-transition: -ms-transform 150ms ease-out;
+				   	 -o-transition: -o-transform 150ms ease-out;
+						transition: transform 150ms ease-out;
+			}
+			.b-questions-item.read-more:before{
+				position: absolute;
+				content: "s";
+				font-size: 0px;
+				width: 100%;
+				height: 100%;
+				left: 0px;
+				top: 0px;
+				z-index: 1;
+				opacity: 0;
+				background-color: #FFF;
+				-webkit-transition: opacity 150ms ease-out;
+				   -moz-transition: opacity 150ms ease-out;
+				    -ms-transition: opacity 150ms ease-out;
+				   	 -o-transition: opacity 150ms ease-out;
+						transition: opacity 150ms ease-out;
+			}
+			.b-questions-item.read-more:hover:before{
+				opacity: 0.07;
+			}
+			.b-questions-item.read-more .b-table-cell{
+				position: relative;
+				cursor: pointer;
+				z-index: 2;
+			}
+			.b-questions-item.read-more:hover .icon-arrow-right{
+				-webkit-transform: translateX(10px);
+				   -moz-transform: translateX(10px);
+				    -ms-transform: translateX(10px);
+				   	 -o-transform: translateX(10px);
+						transform: translateX(10px);
 			}
 
 .b-main-info{
@@ -2249,7 +2291,7 @@ strong, b{
 			margin-right: 0;
 		}
 
-			.b-footer-phone{
+			.b-footer-contacts a:not(.b-btn){
 				font-family: 'Geometria-Bold';
 				font-size: 20px;
 				line-height: 32px;
@@ -2484,10 +2526,11 @@ strong, b{
 			}
 			.vendor-code{
 				color: #909090;
-				margin-bottom: 32px;
+				margin-bottom: 26px;
 			}
 			.b-detail-right h3.b-detail-price{
-				margin-bottom: 30px;
+				margin-bottom: 36px;
+				margin-top: 0px;
 			}
 			.buy-one-click{
 				margin-top: 14px;
@@ -2980,7 +3023,7 @@ strong, b{
 			}
 			.b-input input[type="text"],
 			.b-input textarea{
-				padding: 16px 22px 18px 22px;
+				padding: 16px 22px 17px 22px;
 				-webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 			    -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 			    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
@@ -3346,7 +3389,7 @@ strong, b{
 			font-family: 'Geometria-Medium';
 			margin-bottom: 16px;
 		}
-		.b-popup-question a{
+		.b-popup-question .b-block-gray a{
 			color: #6e58ac;
 			text-decoration: underline;
 		}
