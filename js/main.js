@@ -340,13 +340,13 @@ $(document).ready(function(){
             dayNames: ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'], // set days names
             dayNamesShort: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // set short day names
             dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // set more short days names
-            dateFormat: 'dd.mm.yy' // set format date
+            dateFormat: 'dd.mm.yy', // set format date
+            firstDay: 1
         };        
         $.datepicker.setDefaults($.datepicker.regional["ru"]);
 
         $(function(){
             $("#date").datepicker({
-                changeMonth: true,
                 minDate: 0,
                 beforeShow: function() {
                     setTimeout(function(){
