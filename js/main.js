@@ -428,8 +428,21 @@ $(document).ready(function(){
             $('.b-filter-flowers-list').removeClass("show");
             $('.b-filter-flowers-select.icon-arrow-down').removeClass("arrow-rotate");
         }
+        if ($(event.target).closest(".b-input-time").length) 
+            return;
+        else{
+            $('.b-time-list').removeClass("show");
+        }
         event.stopPropagation();
       });
+    });
+
+    $('.b-input-time').on('click', function(){
+        $('.b-time-list').addClass("show");
+    });
+
+    $(".b-time-list input").change(function(){
+         $('.input-time').val($(this).siblings("label").text());
     });
 
     $('.order-adress-map-form').submit(function(){

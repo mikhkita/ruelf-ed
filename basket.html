@@ -246,10 +246,78 @@
 							<label for="date">Дата доставки</label>
 							<div class="icon-calendar"></div>
 						</div>
-						<div class="b-input move-element">
-							<input type="text" id="time" name="time">
+						<div class="b-input b-input-time move-element">
+							<input type="text" class="input-time" id="time" name="time" disabled>
 							<label for="time">Время доставки</label>
 							<div class="icon-clock"></div>
+							<div class="b-time-list">
+								<ul>
+									<li>
+										<input class="no-active" id="hour-8" type="radio" name="time-select" disabled>
+										<label for="hour-8">08:00</label>
+									</li>
+									<li>
+										<input class="no-active" id="hour-9" type="radio" name="time-select" disabled>
+										<label for="hour-9">09:00</label>
+									</li>
+									<li>
+										<input id="hour-10" type="radio" name="time-select">
+										<label for="hour-10">10:00</label>
+									</li>
+									<li>
+										<input id="hour-11" type="radio" name="time-select">
+										<label for="hour-11">11:00</label>
+									</li>
+									<li>
+										<input id="hour-12" type="radio" name="time-select">
+										<label for="hour-12">12:00</label>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<input id="hour-13" type="radio" name="time-select">
+										<label for="hour-13">13:00</label>
+									</li>
+									<li>
+										<input id="hour-14" type="radio" name="time-select">
+										<label for="hour-14">14:00</label>
+									</li>
+									<li>
+										<input id="hour-15" type="radio" name="time-select">
+										<label for="hour-15">15:00</label>
+									</li>
+									<li>
+										<input id="hour-16" type="radio" name="time-select">
+										<label for="hour-16">16:00</label>
+									</li>
+									<li>
+										<input id="hour-17" type="radio" name="time-select">
+										<label for="hour-17">17:00</label>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<input id="hour-18" type="radio" name="time-select">
+										<label for="hour-8">18:00</label>
+									</li>
+									<li>
+										<input id="hour-19" type="radio" name="time-select">
+										<label for="hour-19">19:00</label>
+									</li>
+									<li>
+										<input id="hour-20" type="radio" name="time-select">
+										<label for="hour-20">20:00</label>
+									</li>
+									<li>
+										<input id="hour-21" type="radio" name="time-select">
+										<label for="hour-21">21:00</label>
+									</li>
+									<li>
+										<input id="hour-22" type="radio" name="time-select">
+										<label for="hour-22">22:00</label>
+									</li>
+								</ul>
+							</div>
 						</div>
 						<div class="b-input">
 							<input type="text" id="addressee-name" name="addressee-name">
