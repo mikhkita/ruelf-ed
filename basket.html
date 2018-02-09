@@ -212,8 +212,8 @@
 					<h2 class="b-title">Данные к заказу</h2>
 					<div class="b b-addressee">
 						<a href="#" class="b-addressee-switch"></a>
-						<div class="b-btn-switch b-addressee-left active">Доставить получателю</div>
-						<div class="b-btn-switch b-addressee-right">Доставить мне</div>
+						<div class="b-btn-switch b-addressee-left active">Нужна доставка</div>
+						<div class="b-btn-switch b-addressee-right">Самовывоз</div>
 						<div class="b-btn-addressee"></div>
 					</div>
 				</div>
@@ -234,7 +234,7 @@
 									<span class="choose-address-value"></span>
 									<a href="#b-popup-map" class="fancy b-btn-dashed choose-address-change">
 										<span class="choose-address-action">указать адрес</span>
-										<input class="error" type="text" id="address" name="address" required value="укажите адрес">
+										<input class="error" type="text" id="address" name="address" required>
 									</a>
 								</div>
 							</div>
@@ -246,10 +246,78 @@
 							<label for="date">Дата доставки</label>
 							<div class="icon-calendar"></div>
 						</div>
-						<div class="b-input move-element">
-							<input type="text" id="time" name="time">
+						<div class="b-input b-input-time move-element">
+							<input type="text" class="input-time" id="time" name="time" disabled>
 							<label for="time">Время доставки</label>
 							<div class="icon-clock"></div>
+							<div class="b-time-list">
+								<ul>
+									<li>
+										<input class="no-active" id="hour-8" type="radio" name="time-select" disabled>
+										<label for="hour-8">08:00</label>
+									</li>
+									<li>
+										<input class="no-active" id="hour-9" type="radio" name="time-select" disabled>
+										<label for="hour-9">09:00</label>
+									</li>
+									<li>
+										<input id="hour-10" type="radio" name="time-select">
+										<label for="hour-10">10:00</label>
+									</li>
+									<li>
+										<input id="hour-11" type="radio" name="time-select">
+										<label for="hour-11">11:00</label>
+									</li>
+									<li>
+										<input id="hour-12" type="radio" name="time-select">
+										<label for="hour-12">12:00</label>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<input id="hour-13" type="radio" name="time-select">
+										<label for="hour-13">13:00</label>
+									</li>
+									<li>
+										<input id="hour-14" type="radio" name="time-select">
+										<label for="hour-14">14:00</label>
+									</li>
+									<li>
+										<input id="hour-15" type="radio" name="time-select">
+										<label for="hour-15">15:00</label>
+									</li>
+									<li>
+										<input id="hour-16" type="radio" name="time-select">
+										<label for="hour-16">16:00</label>
+									</li>
+									<li>
+										<input id="hour-17" type="radio" name="time-select">
+										<label for="hour-17">17:00</label>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<input id="hour-18" type="radio" name="time-select">
+										<label for="hour-8">18:00</label>
+									</li>
+									<li>
+										<input id="hour-19" type="radio" name="time-select">
+										<label for="hour-19">19:00</label>
+									</li>
+									<li>
+										<input id="hour-20" type="radio" name="time-select">
+										<label for="hour-20">20:00</label>
+									</li>
+									<li>
+										<input id="hour-21" type="radio" name="time-select">
+										<label for="hour-21">21:00</label>
+									</li>
+									<li>
+										<input id="hour-22" type="radio" name="time-select">
+										<label for="hour-22">22:00</label>
+									</li>
+								</ul>
+							</div>
 						</div>
 						<div class="b-input">
 							<input type="text" id="addressee-name" name="addressee-name">
@@ -302,53 +370,139 @@
 		<div class="b-addition">
 			<div class="b-block">
 				<h2 class="b-title">Приятные дополнения</h2>
-				<div class="b-addition-list clearfix">
-					<div class="b-addition-item">
-						<a href="detail.html"><img src="i/addition-1.jpg"></a>
-						<div class="b-addition-item-content">
-							<a href="detail.html"><p class="b-addition-item-name"><b>Подарочная корзина со сладостями</b></p></a>
-							<h3 class="icon-ruble">3 550</h3>
-							<a href="#" class="b-btn-buy">Добавить</a>
+				<div class="b-addition-list b-addition-slider clearfix">
+					<div class="b-addition-slide">
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-1.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Подарочная корзина со сладостями</b></p></a>
+								<h3 class="icon-ruble">3 550</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
+						</div>
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-2.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Подарок из Raffaello</b></p></a>
+								<h3 class="icon-ruble">2 500</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
+						</div>
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-3.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Белый плюшевый мишка</b></p></a>
+								<h3 class="icon-ruble">6 900</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
+						</div>
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-4.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Плюшевый мишка Томас</b></p></a>
+								<h3 class="icon-ruble">5 200</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
+						</div>
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-5.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Корзина из киндеров</b></p></a>
+								<h3 class="icon-ruble">1 900</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
+						</div>
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-6.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Воздушные шарики</b></p></a>
+								<h3 class="icon-ruble">650</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
 						</div>
 					</div>
-					<div class="b-addition-item">
-						<a href="detail.html"><img src="i/addition-2.jpg"></a>
-						<div class="b-addition-item-content">
-							<a href="detail.html"><p class="b-addition-item-name"><b>Подарок из Raffaello</b></p></a>
-							<h3 class="icon-ruble">2 500</h3>
-							<a href="#" class="b-btn-buy">Добавить</a>
+					<div class="b-addition-slide">
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-1.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Подарочная корзина со сладостями</b></p></a>
+								<h3 class="icon-ruble">3 550</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
+						</div>
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-2.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Подарок из Raffaello</b></p></a>
+								<h3 class="icon-ruble">2 500</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
+						</div>
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-3.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Белый плюшевый мишка</b></p></a>
+								<h3 class="icon-ruble">6 900</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
+						</div>
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-1.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Подарочная корзина со сладостями</b></p></a>
+								<h3 class="icon-ruble">3 550</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
+						</div>
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-1.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Подарочная корзина со сладостями</b></p></a>
+								<h3 class="icon-ruble">3 550</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
+						</div>
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-1.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Подарочная корзина со сладостями</b></p></a>
+								<h3 class="icon-ruble">3 550</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
 						</div>
 					</div>
-					<div class="b-addition-item">
-						<a href="detail.html"><img src="i/addition-3.jpg"></a>
-						<div class="b-addition-item-content">
-							<a href="detail.html"><p class="b-addition-item-name"><b>Белый плюшевый мишка</b></p></a>
-							<h3 class="icon-ruble">6 900</h3>
-							<a href="#" class="b-btn-buy">Добавить</a>
+					<div class="b-addition-slide">
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-1.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Подарочная корзина со сладостями</b></p></a>
+								<h3 class="icon-ruble">3 550</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
 						</div>
-					</div>
-					<div class="b-addition-item">
-						<a href="detail.html"><img src="i/addition-4.jpg"></a>
-						<div class="b-addition-item-content">
-							<a href="detail.html"><p class="b-addition-item-name"><b>Плюшевый мишка Томас</b></p></a>
-							<h3 class="icon-ruble">5 200</h3>
-							<a href="#" class="b-btn-buy">Добавить</a>
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-2.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Подарок из Raffaello</b></p></a>
+								<h3 class="icon-ruble">2 500</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
 						</div>
-					</div>
-					<div class="b-addition-item">
-						<a href="detail.html"><img src="i/addition-5.jpg"></a>
-						<div class="b-addition-item-content">
-							<a href="detail.html"><p class="b-addition-item-name"><b>Корзина из киндеров</b></p></a>
-							<h3 class="icon-ruble">1 900</h3>
-							<a href="#" class="b-btn-buy">Добавить</a>
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-3.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Белый плюшевый мишка</b></p></a>
+								<h3 class="icon-ruble">6 900</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
 						</div>
-					</div>
-					<div class="b-addition-item">
-						<a href="detail.html"><img src="i/addition-6.jpg"></a>
-						<div class="b-addition-item-content">
-							<a href="detail.html"><p class="b-addition-item-name"><b>Воздушные шарики</b></p></a>
-							<h3 class="icon-ruble">650</h3>
-							<a href="#" class="b-btn-buy">Добавить</a>
+						<div class="b-addition-item">
+							<a href="detail.html"><img src="i/addition-4.jpg"></a>
+							<div class="b-addition-item-content">
+								<a href="detail.html"><p class="b-addition-item-name"><b>Плюшевый мишка Томас</b></p></a>
+								<h3 class="icon-ruble">5 200</h3>
+								<a href="#" class="b-btn-buy">Добавить</a>
+							</div>
 						</div>
 					</div>
 				</div>

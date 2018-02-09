@@ -145,7 +145,7 @@ $(document).ready(function(){
         }  
     };
 
-    $('.b-review-slider').slick({
+    $('.b-review-slider, .b-addition-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
@@ -309,20 +309,23 @@ $(document).ready(function(){
     });
 
     $('.b-addressee-switch').on('click', function(){
-        if($('.b-addressee-left').hasClass("active")){
+        if($('.b-addressee-left').hasClass("active")){//клик на самовывоз
             $('.b-addressee-left').removeClass("active");
             $('.b-addressee-right').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
-            $('.b-address').before($(".move-element"))
-                .addClass("b-address-margin")
-                .parent().addClass("b-input-margin");
+            $('#address').prop({"disabled": true, "required": false}).removeClass("error");
+            $('.b-address').before($(".move-element")).addClass("hide").removeClass("error");;
             $('.b-input-move').addClass("hide");
-        }else{
+        }else{//клик на доставку
             $('.b-addressee-right').removeClass("active");
             $('.b-addressee-left').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
+            $('#address').prop({"disabled": false, "required": true});
+            if(!$('#address').val()){
+                $('#address').addClass("error");
+            }
             $('.b-input-move').prepend($(".move-element")).removeClass("hide");
-            $('.b-address').removeClass("b-address-margin").parent().removeClass("b-input-margin");
+            $('.b-address').removeClass("hide");
 
         }
         return false;
@@ -337,13 +340,13 @@ $(document).ready(function(){
             dayNames: ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'], // set days names
             dayNamesShort: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // set short day names
             dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // set more short days names
-            dateFormat: 'dd.mm.yy' // set format date
+            dateFormat: 'dd.mm.yy', // set format date
+            firstDay: 1
         };        
         $.datepicker.setDefaults($.datepicker.regional["ru"]);
 
         $(function(){
             $("#date").datepicker({
-                changeMonth: true,
                 minDate: 0,
                 beforeShow: function() {
                     setTimeout(function(){
@@ -425,8 +428,21 @@ $(document).ready(function(){
             $('.b-filter-flowers-list').removeClass("show");
             $('.b-filter-flowers-select.icon-arrow-down').removeClass("arrow-rotate");
         }
+        if ($(event.target).closest(".b-input-time").length) 
+            return;
+        else{
+            $('.b-time-list').removeClass("show");
+        }
         event.stopPropagation();
       });
+    });
+
+    $('.b-input-time').on('click', function(){
+        $('.b-time-list').addClass("show");
+    });
+
+    $(".b-time-list input").change(function(){
+         $('.input-time').val($(this).siblings("label").text());
     });
 
     $('.order-adress-map-form').submit(function(){
