@@ -383,7 +383,30 @@ $(document).ready(function(){
                 }
             }).on("change", function(){
                 $(this).parents(".b-input").addClass("not-empty");
+
+                var dateToday = new Date();
+                var dateSelect = $("#date").datepicker("getDate");
+
+                resetTime();
+
+                if(dateToday.getDate() === dateSelect.getDate() &&
+                    dateToday.getMonth() === dateSelect.getMonth() &&
+                    dateToday.getFullYear() === dateSelect.getFullYear())
+                {
+                    checkDeliveryTime(true);
+                }else if(dateToday.getDate() + 1 === dateSelect.getDate() &&
+                    dateToday.getMonth() === dateSelect.getMonth() &&
+                    dateToday.getFullYear() === dateSelect.getFullYear())
+                {
+                    checkDeliveryTime(false);
+                }
             });
+        });
+    }
+
+    function resetTime(){
+        $('input[name="time-select"]').each(function(){
+            $(this).removeClass("no-active").prop("disabled", true);
         });
     }
 
@@ -478,16 +501,39 @@ $(document).ready(function(){
          $('.b-time-list').removeClass("show");
     });
 
-    if($('.b-input-time').length){
-        var date = new Date();
-            hours = date.getHours();
-            minutes = date.getMinutes(),
-            bouquetTime = parseInt($('.input-time').attr("data-hour"));//время сбора букета (в часах)
-
-        if(hours + bouquetTime > 22){
-            //заблочить сегодняшний день
-            $("#date").datepicker({minDate: '1'});
-            //пересчитываем время на следующий день
+    function checkDeliveryTime (isToday) {
+        var bouquetTime = parseInt($('.input-time').attr("data-hour"));//время сбора букета (в часах)
+            date = new Date(),
+            hours = date.getHours(),
+            minutes = date.getMinutes();
+        if(isToday){
+            if(hours + bouquetTime > 22){
+                //заблочить сегодняшний день
+                $("#date").datepicker({minDate: '1'});
+                //пересчитываем время на следующий день
+                var hoursDelivery = hours - 22 + 8 + bouquetTime;
+                if(minutes > 20){
+                    hoursDelivery++;
+                }
+                $('input[name="time-select"]').each(function(){
+                    $this = $(this);
+                    if(parseInt($this.attr("data-hour")) < hoursDelivery){
+                        $this.addClass("no-active").prop("disabled", true);
+                    }
+                });
+            }else{
+                var hoursDelivery = hours + bouquetTime;
+                if(minutes > 20){
+                    hoursDelivery++;
+                }
+                $('input[name="time-select"]').each(function(){
+                    $this = $(this);
+                    if(parseInt($this.attr("data-hour")) < hoursDelivery){
+                        $this.addClass("no-active").prop("disabled", true);
+                    }
+                });
+            }
+        }else{
             var hoursDelivery = hours - 22 + 8 + bouquetTime;
             if(minutes > 20){
                 hoursDelivery++;
@@ -498,18 +544,11 @@ $(document).ready(function(){
                     $this.addClass("no-active").prop("disabled", true);
                 }
             });
-        }else{
-            var hoursDelivery = hours + bouquetTime;
-            if(minutes > 20){
-                hoursDelivery++;
-            }
-            $('input[name="time-select"]').each(function(){
-                $this = $(this);
-                if(parseInt($this.attr("data-hour")) < hoursDelivery){
-                    $this.addClass("no-active").prop("disabled", true);
-                }
-            });
         }
+    }
+
+    if($('.b-input-time').length){
+        checkDeliveryTime(true);
     }
 
     $('.order-adress-map-form').submit(function(){
