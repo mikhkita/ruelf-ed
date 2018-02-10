@@ -16,7 +16,7 @@ body {
 	}
 		.b-catalog-item{
 			width: calc(100%/3 - 17px);
-			height: 40vw;
+			height: calc(100vw/3 - 17px + 94px);
 		}
 		.b-catalog-item:nth-child(4n){
 			margin-right: 24px;
