@@ -508,15 +508,15 @@ $(document).ready(function(){
             date = new Date(),
             hours = date.getHours(),
             minutes = date.getMinutes();
+        if(minutes > 20){
+            hours++;
+        }
         if(isToday){
             if(hours + bouquetTime > 22){
                 //заблочить сегодняшний день
                 $("#date").datepicker({minDate: '1'});
                 //пересчитываем время на следующий день
                 var hoursDelivery = hours - 22 + 8 + bouquetTime;
-                if(minutes > 20){
-                    hoursDelivery++;
-                }
                 $('input[name="time-select"]').each(function(){
                     $this = $(this);
                     if(parseInt($this.attr("data-hour")) < hoursDelivery){
@@ -525,9 +525,6 @@ $(document).ready(function(){
                 });
             }else{
                 var hoursDelivery = hours + bouquetTime;
-                if(minutes > 20){
-                    hoursDelivery++;
-                }
                 $('input[name="time-select"]').each(function(){
                     $this = $(this);
                     if(parseInt($this.attr("data-hour")) < hoursDelivery){
@@ -537,9 +534,6 @@ $(document).ready(function(){
             }
         }else{
             var hoursDelivery = hours - 22 + 8 + bouquetTime;
-            if(minutes > 20){
-                hoursDelivery++;
-            }
             $('input[name="time-select"]').each(function(){
                 $this = $(this);
                 if(parseInt($this.attr("data-hour")) < hoursDelivery){
