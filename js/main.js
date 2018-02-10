@@ -350,6 +350,7 @@ $(document).ready(function(){
             $("label[for='time']").text("Время самовывоза");
 
             $(".b-email-input").after($(".b-payment-method"));
+            $("#delivery-price").prop("disabled", true);
 
             $(".delivery-price").addClass("s-hide");
 
@@ -371,6 +372,8 @@ $(document).ready(function(){
             $("label[for='time']").text("Время доставки");
 
             $(".b-for-payment").prepend($(".b-payment-method"));
+            $("#delivery-price").prop("disabled", false);
+
             $(".delivery-price").removeClass("s-hide");
 
             $(".b-payment-method-item").addClass("hide");
@@ -379,6 +382,7 @@ $(document).ready(function(){
         if( !$(".b-payment-method-item input:visible:checked").length ){
             $(".b-payment-method-item:not(.hide)").eq(0).find("input").prop("checked", true);
         }
+        updateMiniCartSum();
         return false;
     });
 
@@ -603,6 +607,7 @@ $(document).ready(function(){
                 $('.choose-address-change #address').val(resString);
                 $('.delivery-price-value').text($('.js-order-adress-map-price').text())
                     .parent().removeClass("hide");
+                $("#delivery-price").val($('.js-order-adress-map-price').text().replace(/[^0-9\.]+/g,"")*1);
                 $('.choose-address-action').text("изменить");
                 $.fancybox.close(); 
             }else{
@@ -610,8 +615,10 @@ $(document).ready(function(){
                 $('.b-choose-address, .choose-address-change #address').addClass("error");
                 $('.choose-address-change #address').val("");
                 $('.delivery-price-value').text("").parent().addClass("hide");
+                $("#delivery-price").val("");
                 $('.choose-address-action').text("указать адрес");
             }
+        updateMiniCartSum();
         return false;
     });
 
@@ -668,7 +675,7 @@ $(document).ready(function(){
     if($('.b-map').length){
         var myPlace = new google.maps.LatLng(56.463328, 84.966415);
         var myOptions = {
-            zoom: 16,
+            zoom: 17,
             center: myPlace,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             disableDefaultUI: true,
@@ -684,7 +691,7 @@ $(document).ready(function(){
             position: myPlace,
             map: map,
             icon: {
-                url: "i/pin.svg",
+                url: "/bitrix/templates/main/html/i/pin.svg",
                 scaledSize: new google.maps.Size(40, 58), // scaled size
                 origin: new google.maps.Point(0,0), // origin
                 anchor: new google.maps.Point(17,53), // anchor
@@ -853,7 +860,12 @@ $(document).ready(function(){
             $(this).find(".b-basket-sum h4").text( ((price*count)+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
         });
 
-        $(".b-basket-btn-total, .total-price-value, .b-basket-total").text( (sum+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
+        $(".b-basket-btn-total, .b-basket-total").text( (sum+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
+
+        if( $(".delivery-price:not(.hide):not(.s-hide)").length ){
+            sum += ($(".delivery-price-value").text().replace(/[^0-9\.]+/g,"")*1);
+        }
+        $(".total-price-value").text( (sum+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
 
         checkMiniCart();
     }

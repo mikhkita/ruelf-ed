@@ -212,8 +212,8 @@
 					<h2 class="b-title">Данные к заказу</h2>
 					<div class="b b-addressee">
 						<a href="#" class="b-addressee-switch"></a>
-						<div class="b-btn-switch b-addressee-left active" data-payment=".payment-card, .payment-cash">Нужна доставка</div>
-						<div class="b-btn-switch b-addressee-right" data-payment=".payment-test">Самовывоз</div>
+						<div class="b-btn-switch b-addressee-left active" data-payment="delivery">Нужна доставка</div>
+						<div class="b-btn-switch b-addressee-right" data-payment="pickup">Самовывоз</div>
 						<div class="b-btn-addressee"></div>
 					</div>
 				</div>
@@ -227,24 +227,6 @@
 							<input type="text" id="phone" name="phone" required>
 							<label for="phone">Ваш телефон <span class="required">*</span></label>
 						</div>
-						<div class="b-input">
-							<input type="text" id="email" name="email" required>
-							<label for="email">Ваш E-mail <span class="required">*</span></label>
-						</div>
-					</div>
-					<div class="b-address b-table">
-						<div class="b-table-cell">
-							<div class="b-choose-address">
-								<p>Адрес доставки: <span class="required">*</span></p>
-								<span class="choose-address-value"></span>
-								<a href="#b-popup-map" class="fancy b-btn-dashed choose-address-change">
-									<span class="choose-address-action">указать адрес</span>
-									<input class="error" type="text" id="address" name="address" required>
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="b-inputs b-input-row b-input-move clearfix">
 						<div class="b-input move-element">
 							<input type="text" id="date" name="date">
 							<label for="date">Дата доставки</label>
@@ -323,6 +305,24 @@
 								</ul>
 							</div>
 						</div>
+					</div>
+					<div class="b-address b-table">
+						<div class="b-table-cell">
+							<div class="b-choose-address">
+								<p>Адрес доставки: <span class="required">*</span></p>
+								<span class="choose-address-value"></span>
+								<a href="#b-popup-map" class="fancy b-btn-dashed choose-address-change">
+									<span class="choose-address-action">указать адрес</span>
+									<input class="error" type="text" id="address" name="address" required>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="b-inputs b-input-row b-input-move clearfix">
+						<div class="b-input b-email-input">
+							<input type="text" id="email" name="email" required>
+							<label for="email">Ваш E-mail <span class="required">*</span></label>
+						</div>
 						<div class="b-input">
 							<input type="text" id="addressee-name" name="addressee-name">
 							<label for="addressee-name">Имя получателя</label>
@@ -332,19 +332,19 @@
 							<label for="addressee-phone">Телефон получателя</label>
 						</div>
 					</div>
-					<div class="b-inputs b-input-row clearfix">
+					<div class="b-inputs b-input-row b-for-payment clearfix">
 						<div class="b-radio b-payment-method">
 							<p>Способ оплаты:</p>
 							<div class="b-payment-method-list">
-								<div class="b-payment-method-item">
+								<div class="b-payment-method-item delivery pickup">
 									<input id="card" type="radio" class="payment-card" name="payment-method" checked required>
 									<label for="card">Онлайн-оплата картой</label>
 								</div>
-								<div class="b-payment-method-item">
+								<div class="b-payment-method-item delivery pickup">
 									<input id="cash" type="radio" class="payment-cash" name="payment-method" required>
 									<label for="cash">Наличными курьеру</label>
 								</div>
-								<div class="b-payment-method-item">
+								<div class="b-payment-method-item pickup">
 									<input id="test" type="radio" class="payment-test" name="payment-method" required>
 									<label for="test">Тестовая запись</label>
 								</div>
