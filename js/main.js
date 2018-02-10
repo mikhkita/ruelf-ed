@@ -145,7 +145,7 @@ $(document).ready(function(){
         }  
     };
 
-    $('.b-review-slider, .b-addition-slider').slick({
+    $('.b-review-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
@@ -155,6 +155,34 @@ $(document).ready(function(){
         autoplay: true,
         autoplaySpeed: 3000,
     });
+
+    $('.b-addition-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        infinite: true,
+        arrows: false,
+        speed: 600,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        rows: 2,
+        slidesPerRow: 3,
+        responsive: [
+            {
+              breakpoint: 1200,
+              settings: {
+                rows: 2,
+                slidesPerRow: 2,
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                rows: 2,
+                slidesPerRow: 1,
+              }
+            }]
+        });
 
     var arrowOffset = 0,
         footerOffset = 0;
@@ -460,7 +488,10 @@ $(document).ready(function(){
             //заблочить сегодняшний день
             $("#date").datepicker({minDate: '1'});
             //пересчитываем время на следующий день
-            var hoursDelivery = hours - 22 + 8 + bouquetTime + 1;
+            var hoursDelivery = hours - 22 + 8 + bouquetTime;
+            if(minutes > 20){
+                hoursDelivery++;
+            }
             $('input[name="time-select"]').each(function(){
                 $this = $(this);
                 if(parseInt($this.attr("data-hour")) < hoursDelivery){
@@ -468,7 +499,10 @@ $(document).ready(function(){
                 }
             });
         }else{
-            var hoursDelivery = hours + bouquetTime + 1;
+            var hoursDelivery = hours + bouquetTime;
+            if(minutes > 20){
+                hoursDelivery++;
+            }
             $('input[name="time-select"]').each(function(){
                 $this = $(this);
                 if(parseInt($this.attr("data-hour")) < hoursDelivery){

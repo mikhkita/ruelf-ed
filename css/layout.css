@@ -276,14 +276,16 @@ strong, b{
 	.b-btn-white.icon-phone,
 	.b-btn-add-basket.icon-basket,
 	.b-btn-buy.icon-success,
-	.b-btn-more.icon-close-btn:before{
+	.b-btn-more.icon-close-btn,
+	.b-btn-buy.icon-card{
 		display: inline-block;
 	}
 	.b-btn-more.icon-arrow-right-bold:before,
 	.b-btn-white.icon-phone:before,
 	.b-btn-add-basket.icon-basket:before,
 	.b-btn-buy.icon-success:before,
-	.b-btn-more.icon-close-btn:before{
+	.b-btn-more.icon-close-btn:before,
+	.b-btn-buy.icon-card:before{
 		position: absolute;
 		top: 40%;
 		right: 16%;
@@ -302,6 +304,11 @@ strong, b{
 
 	.b-btn-more.icon-close-btn:before{
 		top: 33%;
+	}
+
+	.b-btn-buy.icon-card:before{
+		top: 31%;
+		right: 21%;
 	}
 
 	.b-btn-white.icon-phone:before{
@@ -337,13 +344,15 @@ strong, b{
 	.b-btn-white.icon-phone:hover:before,
 	.b-btn-add-basket.icon-basket:hover:before,
 	.b-btn-buy.icon-success:hover:before,
-	.b-btn-more.icon-close-btn:hover:before{
+	.b-btn-more.icon-close-btn:hover:before,
+	.b-btn-buy.icon-card:hover:before{
 		right: 11%;
 		opacity: 1;
 		visibility: visible;
 	}
 
-	.b-btn-buy.icon-success:hover:before{
+	.b-btn-buy.icon-success:hover:before,
+	.b-btn-buy.icon-card:hover:before{
 		right: 13%;
 	}
 
@@ -364,7 +373,8 @@ strong, b{
 	.b-btn-add-basket.icon-basket:active:before,
 	.b-btn-more.icon-arrow-right-bold:active:before,
 	.b-btn-buy.icon-success:active:before,
-	.b-btn-more.icon-close-btn:active:before{
+	.b-btn-more.icon-close-btn:active:before,
+	.b-btn-buy.icon-card:active:before{
 		color: #FFF;
 	}
 
@@ -386,7 +396,8 @@ strong, b{
 	    -o-transform: translateX(-14px);
 	    transform: translateX(-14px);
 	}
-	.b-btn-add-basket.icon-basket:hover .b-btn-more-text{
+	.b-btn-add-basket.icon-basket:hover .b-btn-more-text,
+	.b-btn-buy.icon-card:hover .b-btn-more-text{
 		-webkit-transform: translateX(-22px);
 	    -moz-transform: translateX(-22px);
 	    -ms-transform: translateX(-22px);
@@ -444,6 +455,13 @@ strong, b{
 
 .icon-ruble-medium:after{
 	content: "\e912";
+  	font-size: 12px;
+  	color: #FFF;
+  	margin-left: 4px;
+}
+
+.icon-ruble-regular:after{
+	content: "\e913";
   	font-size: 12px;
   	color: #FFF;
   	margin-left: 4px;
@@ -562,6 +580,13 @@ strong, b{
     font-size: 14px;
    	color: #f43d84;
     line-height: 18px;
+}
+
+.icon-card:before{
+	content: "\e918";
+    font-size: 20px;
+   	color: #f43d84;
+    line-height: 20px;
 }
 
 /*----Инпуты/селекты----*/
@@ -2919,7 +2944,7 @@ strong, b{
 			padding: 18px 20px 22px;
 			position: absolute;
 			left: 0px;
-			top: 55px;
+			top: 54px;
 			background-color: #FFF;
 			border-radius: 3px;
 			-webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
@@ -3191,11 +3216,11 @@ strong, b{
 			display: inline-block;
 			vertical-align: top;
 			width: calc(100%/3 - 20px);
-			margin-right: 24px;
+			padding-right: 24px;
 			margin-bottom: 34px;
 		}
 		.b-addition-item:nth-child(3n){
-			margin-right: 0;
+			padding-right: 0;
 		}
 			.b-addition-item img{
 				display: inline-block;
@@ -3269,6 +3294,41 @@ strong, b{
 	height: 439px;
 	border-radius: 3px;
 }
+
+/*------Оплата заказа------*/
+
+.b-order-left{
+	float: left;
+	width: 29%;
+	padding-right: 37px;
+}
+	.b-order-box{
+		width: 100%;
+		height: 309px;
+		background-image: url(../i/gift.jpg);
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+.b-order-right{
+	float: right;
+	width: 71%;
+}
+	ul.b-order-items{
+		margin-top: 24px;
+	}
+	.payment-sum.icon-ruble-regular:after{
+		color: #434343;
+		font-size: 12px;
+	}
+	.b-order-right .b-btn{
+		min-width: 250px;
+		margin-top: 28px;
+		padding: 13px 34px 14px;
+		font-family: 'Geometria-Medium';
+		font-size: 18px;
+		line-height: 26px;
+	}
 
 /*------popup------*/
 
@@ -3668,6 +3728,9 @@ strong, b{
 	}
 	.b-header-temp{
 	    background-image: url(../i/back-temp@2x.jpg);
+	}
+	.b-order-box{
+		background-image: url(../i/gift@2x.jpg);
 	}
 }
 
