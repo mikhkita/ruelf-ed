@@ -338,15 +338,15 @@ $(document).ready(function(){
 
     $('.b-addressee-switch').on('click', function(){
         if($('.b-addressee-left').hasClass("active")){//клик на самовывоз
-            $("#b-pickup").click();
+            $("input[name='DELIVERY_ID']").val(3);
             $('.b-addressee-left').removeClass("active");
             $('.b-addressee-right').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
             $('#address').prop({"disabled": true, "required": false}).removeClass("error");
-            $('.b-address').before($(".move-element")).addClass("hide").removeClass("error");;
+            $('.b-address').before($(".move-element")).addClass("hide").removeClass("error");
             $('.b-input-move').addClass("hide");
         }else{//клик на доставку
-            $("#b-delivery").click();
+            $("input[name='DELIVERY_ID']").val(2);
             $('.b-addressee-right').removeClass("active");
             $('.b-addressee-left').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
@@ -573,16 +573,16 @@ $(document).ready(function(){
                 }
                 var resString = $('.js-order-adress-map-input').val() + room + $('.number-room-input').val();
                 $(".choose-address-value").text(resString);
-                $('.b-choose-address, .choose-address-change input[name="address"]').removeClass("error");
-                $('.choose-address-change input[name="address"]').val(resString);
+                $('.b-choose-address, .choose-address-change #address').removeClass("error");
+                $('.choose-address-change #address').val(resString);
                 $('.delivery-price-value').text($('.js-order-adress-map-price').text())
                     .parent().removeClass("hide");
                 $('.choose-address-action').text("изменить");
                 $.fancybox.close(); 
             }else{
                 $(".choose-address-value").text("");
-                $('.b-choose-address, .choose-address-change input[name="address"]').addClass("error");
-                $('.choose-address-change input[name="address"]').val("");
+                $('.b-choose-address, .choose-address-change #address').addClass("error");
+                $('.choose-address-change #address').val("");
                 $('.delivery-price-value').text("").parent().addClass("hide");
                 $('.choose-address-action').text("указать адрес");
             }

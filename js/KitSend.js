@@ -54,12 +54,14 @@ $(document).ready(function(){
 		return rePhone.test(value);
 	});
 
-	$(".ajax").parents("form").each(function(){
+	$(".ajax, .not-ajax").parents("form").each(function(){
 		$(this).validate({
 			onkeyup: true,
 			rules: {
 				email: 'email',
-				phone: 'customPhone'
+				ORDER_PROP_2: 'email',
+				phone: 'customPhone',
+				ORDER_PROP_3: 'customPhone'
 			},
 			errorElement : "span",
 			highlight: function(element, errorClass) {
@@ -69,8 +71,8 @@ $(document).ready(function(){
 			    $(element).removeClass("error").parents(".b-input").removeClass("error");
 			}
 		});
-		if( $(this).find("input[name=phone], input[name=addressee-phone]").length ){
-			$(this).find("input[name=phone], input[name=addressee-phone]").mask(tePhone,{placeholder:" "});
+		if( $(this).find("input[name=phone], input[name=addressee-phone], input[name=ORDER_PROP_3]").length ){
+			$(this).find("input[name=phone], input[name=addressee-phone], input[name=ORDER_PROP_3]").mask(tePhone,{placeholder:" "});
 		}
 		if( $(this).find("#date").length ){
 			$(this).find("#date").mask(teDates,{placeholder:"_"});
@@ -207,11 +209,13 @@ $(document).ready(function(){
 			yaCounter12345678.reachGoal($(this).attr("data-goal"));
 	});
 
-	$(".ajax").parents("form").submit(function(){
+	$(".ajax, .not-ajax").parents("form").submit(function(){
 		if($(this).find(".b-choose-address input.error").length){
 			$('.b-choose-address').addClass("error");
 		}
   		if( $(this).find("input.error,select.error,textarea.error").length == 0 ){
+  			if( $(this).find(".not-ajax").length ) return true;
+
   			var $this = $(this),
   				$thanks = $($this.attr("data-block"));
 
@@ -259,7 +263,7 @@ $(document).ready(function(){
   		return false;
   	});
 
-	$("body").on("click", ".ajax", function(){
+	$("body").on("click", ".ajax, .not-ajax", function(){
 		$(this).parents("form").submit();
 		return false;
 	});
