@@ -482,7 +482,7 @@ $(document).ready(function(){
         var date = new Date();
             hours = date.getHours();
             minutes = date.getMinutes(),
-            bouquetTime = 4;//время сбора букета (в часах)
+            bouquetTime = parseInt($('.input-time').attr("data-hour"));//время сбора букета (в часах)
 
         if(hours + bouquetTime > 22){
             //заблочить сегодняшний день
