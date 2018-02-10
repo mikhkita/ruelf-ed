@@ -3546,6 +3546,22 @@ strong, b{
     color: #6e58ac !important;
 }
 
+.b-popup-order-success{
+	width: 600px;
+}
+	.b-order-success-content{
+
+	}
+		.b-order-success-left{
+			float: left;
+			width: 116px;
+			height: 119px;
+			padding-right: 23px;
+		}
+		.b-order-success-right{
+			float: right;
+		}
+
 /*-------datepicker-------*/
 
 .ui-datepicker .ui-datepicker-prev,
