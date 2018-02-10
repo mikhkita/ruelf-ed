@@ -538,34 +538,37 @@ $(document).ready(function(){
     function checkDeliveryTime (isToday) {
         var bouquetTime = parseInt($('.input-time').attr("data-hour"));//время сбора букета (в часах)
             date = new Date(),
-            hours = date.getHours(),
-            minutes = date.getMinutes();
+            hours = 19,
+            minutes = date.getMinutes(),
+            workDay = {
+                from : 8,
+                to : 22,
+            };
+
         if(minutes > 20){
             hours++;
         }
+        
         if(isToday){
-            if(hours + bouquetTime > 22){
+            if(hours + bouquetTime > workDay.to){
                 //заблочить сегодняшний день
                 $("#date").datepicker({minDate: '1'});
                 //пересчитываем время на следующий день
-                var hoursDelivery = hours - 22 + 8 + bouquetTime;
-                $('input[name="time-select"]').each(function(){
-                    $this = $(this);
-                    if(parseInt($this.attr("data-hour")) < hoursDelivery){
-                        $this.addClass("no-active").prop("disabled", true);
-                    }
-                });
+                var hoursDelivery = hours - workDay.to + workDay.from + bouquetTime;
+            }else if( hours < workDay.from ){
+                var hoursDelivery =  workDay.from + bouquetTime;
             }else{
-                var hoursDelivery = hours + bouquetTime;
-                $('input[name="time-select"]').each(function(){
-                    $this = $(this);
-                    if(parseInt($this.attr("data-hour")) < hoursDelivery){
-                        $this.addClass("no-active").prop("disabled", true);
-                    }
-                });
+                var hoursDelivery =  hours + bouquetTime;
             }
+
+            $('input[name="time-select"]').each(function(){
+                $this = $(this);
+                if(parseInt($this.attr("data-hour")) < hoursDelivery){
+                    $this.addClass("no-active").prop("disabled", true);
+                }
+            });
         }else{
-            var hoursDelivery = hours - 22 + 8 + bouquetTime;
+            var hoursDelivery = hours - workDay.to + workDay.from + bouquetTime;
             $('input[name="time-select"]').each(function(){
                 $this = $(this);
                 if(parseInt($this.attr("data-hour")) < hoursDelivery){
