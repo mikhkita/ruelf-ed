@@ -98,7 +98,8 @@ input.error, textarea.error{
 .white{
 	color: #FFF;
 }
-.hide{
+.hide,
+.s-hide{
 	display: none !important;
 }
 .b{
@@ -3019,6 +3020,9 @@ strong, b{
 
 	.b-input-row{
 		margin-bottom: 40px;
+	}
+	.b-address.hide + .b-input-row{
+		margin-bottom: 0px;
 	}
 
 		.b-input{

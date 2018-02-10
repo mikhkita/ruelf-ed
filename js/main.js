@@ -346,6 +346,12 @@ $(document).ready(function(){
             //$('.b-address').before($(".move-element")).addClass("hide").removeClass("error");;
             //$('.b-input-move').addClass("hide");
             $('.b-address').addClass("hide");
+            $("label[for='date']").text("Дата самовывоза");
+            $("label[for='time']").text("Время самовывоза");
+
+            $(".b-email-input").after($(".b-payment-method"));
+
+            $(".delivery-price").addClass("s-hide");
 
             $(".b-payment-method-item").addClass("hide");
             $("." + $('.b-addressee-right').attr("data-payment")).removeClass("hide");
@@ -360,6 +366,12 @@ $(document).ready(function(){
             }
             //$('.b-input-move').prepend($(".move-element")).removeClass("hide");
             $('.b-address').removeClass("hide");
+
+            $("label[for='date']").text("Дата доставки");
+            $("label[for='time']").text("Время доставки");
+
+            $(".b-for-payment").prepend($(".b-payment-method"));
+            $(".delivery-price").removeClass("s-hide");
 
             $(".b-payment-method-item").addClass("hide");
             $("." + $('.b-addressee-left').attr("data-payment")).removeClass("hide");
