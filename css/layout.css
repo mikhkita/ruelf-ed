@@ -1292,7 +1292,7 @@ strong, b{
 								vertical-align: top;
 								background-position: 50% 50%;
 					    		background-repeat: no-repeat;
-								background-size: cover;
+								background-size: contain;
 							}
 							.b-basket-item-text{
 								width: calc(100% - 108px);
@@ -2732,13 +2732,13 @@ strong, b{
 
 			.b-basket-name-img{
 	    		display: block;
-				width: 98px;
-				height: 98px;
-				border-radius: 3px;
-				background-position: 50% 50%;
+	    		width: 98px;
+	    		height: 98px;
+	    		border-radius: 3px;
+	    		background-position: 50% 50%;
 	    		background-repeat: no-repeat;
-				background-size: cover;
-			}
+	    		background-size: contain;
+	  }
 
 	.b-basket-count{
 		width: 19%;
