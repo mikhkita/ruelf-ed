@@ -338,6 +338,7 @@ $(document).ready(function(){
 
     $('.b-addressee-switch').on('click', function(){
         if($('.b-addressee-left').hasClass("active")){//клик на самовывоз
+            $("#b-pickup").click();
             $('.b-addressee-left').removeClass("active");
             $('.b-addressee-right').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
@@ -351,6 +352,7 @@ $(document).ready(function(){
             $(selector).parent().removeClass("hide");
             $(selector).eq(0).prop("checked", true);
         }else{//клик на доставку
+            $("#b-delivery").click();
             $('.b-addressee-right').removeClass("active");
             $('.b-addressee-left').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
