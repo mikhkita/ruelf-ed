@@ -3549,18 +3549,62 @@ strong, b{
 .b-popup-order-success{
 	width: 600px;
 }
-	.b-order-success-content{
+	.b-thanks-content{
 
 	}
-		.b-order-success-left{
+		.b-thanks-left{
 			float: left;
-			width: 116px;
+			width: 23%;
 			height: 119px;
-			padding-right: 23px;
+			background-image: url(../i/gift.jpg);
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			background-size: contain;
+			margin-right: 23px;
 		}
-		.b-order-success-right{
+		.b-thanks-right{
 			float: right;
+			width: 71%;
+			padding-top: 7px;
 		}
+
+.b-thanks{
+	width: 500px;
+}
+	.icon-thanks-success{
+		float: left;
+		width: 85px;
+  		height: 69px;
+  		margin-right: 35px;
+	}
+	.icon-thanks-success:before{
+		content: "\e919";
+		font-size: 70px;
+  		color: #6e58ac;
+	}
+	.icon-thanks-error{
+		float: left;
+		width: 81px;
+		height: 81px;
+		margin-right: 35px;
+	}
+	.icon-thanks-error:before{
+		content: "\e91a";
+		font-size: 78px;
+	  	color: #6e58ac;
+	}
+
+	.b-popup-success .b-thanks-right,
+	.b-popup-error .b-thanks-right{
+		float: right;
+		width: calc(100% - 120px);
+		padding-top: 2px;
+	}
+
+	.b-thanks .b-btn,
+	.b-popup-order-success .b-btn{
+		margin-top: 27px;
+	}
 
 /*-------datepicker-------*/
 

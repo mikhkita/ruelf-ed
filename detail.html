@@ -358,15 +358,41 @@
 				</div>
 			</form>
 		</div>
-		<div class="b-thanks b-popup" id="b-popup-success">
-			<h3>Спасибо!</h3>
-			<h4>Ваша заявка успешно отправлена.<br/>Наш менеджер свяжется с Вами в течение часа.</h4>
-			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
+		<div class="b-popup-order-success b-popup b-popup-padding" id="b-popup-order-success">
+			<h3>Заказ успешно создан!</h3>
+			<div class="b-thanks-content clearfix">
+				<div class="b-thanks-left"></div>
+				<p class="b-thanks-right">Наш менеджер свяжется с Вами в ближайшее время по телефону, который Вы указали при оформлении заказа, для уточнения деталей.</p>
+			</div>
+			<div class="b-center">
+				<a href="#" class="b-btn b-btn-more icon-close-btn" onclick="$.fancybox.close(); return false;">
+					<div class="b-btn-more-text b-center">Закрыть</div>
+				</a>
+			</div>
 		</div>
-		<div class="b-thanks b-popup" id="b-popup-error">
-			<h3>Ошибка отправки!</h3>
-			<h4>Приносим свои извинения. Пожалуйста, попробуйте отправить Вашу заявку позже.</h4>
-			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
+		<div class="b-thanks b-popup-success b-popup b-popup-padding" id="b-popup-success">
+			<h3>Спасибо за заявку!</h3>
+			<div class="b-thanks-content clearfix">
+				<div class="icon-thanks-success"></div>
+				<p class="b-thanks-right">Ваша заявка успешно отправлена. Наш менеджер свяжется с Вами в ближайшее время.</p>
+			</div>
+			<div class="b-center">
+				<a href="#" class="b-btn b-btn-more icon-close-btn" onclick="$.fancybox.close(); return false;">
+					<div class="b-btn-more-text b-center">Закрыть</div>
+				</a>
+			</div>
+		</div>
+		<div class="b-thanks b-popup-error b-popup b-popup-padding" id="b-popup-error">
+			<h3>Ошибка отправки</h3>
+			<div class="b-thanks-content clearfix">
+				<div class="icon-thanks-error"></div>
+				<p class="b-thanks-right">Не удалось отправить заявку. Попробуйте повторить попытку или позвоните по номеру 33-88-30.</p>
+			</div>
+			<div class="b-center">
+				<a href="#" class="b-btn b-btn-more icon-close-btn" onclick="$.fancybox.close(); return false;">
+					<div class="b-btn-more-text b-center">Закрыть</div>
+				</a>
+			</div>
 		</div>
 		<div class="b-popup" id="b-popup-one-click">
 			<div class="b-popup-padding b-popup-padding-header">
@@ -399,6 +425,7 @@
 		        	</a>
 				</div>
 				<input type="submit" value="Заказать" style="display:none;">
+				<a href="#b-popup-order-success" class="b-thanks-link fancy" style="display:none;"></a>
 			</form>
 		</div>
 	</div>
