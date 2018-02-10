@@ -3095,8 +3095,8 @@ strong, b{
 
 		.b-address{
 			float: left;
-			width: calc(50% - 12px);
-			height: 55px;
+			width: 100%;
+			margin-bottom: 40px;
 		}
 			.b-address p{
 				display: inline-block;
