@@ -346,11 +346,9 @@ $(document).ready(function(){
             //$('.b-address').before($(".move-element")).addClass("hide").removeClass("error");;
             //$('.b-input-move').addClass("hide");
             $('.b-address').addClass("hide");
-            var selector = $('.b-addressee-left').attr("data-payment");
-            $(selector).parent().addClass("hide");
-            selector = $('.b-addressee-right').attr("data-payment");
-            $(selector).parent().removeClass("hide");
-            $(selector).eq(0).prop("checked", true);
+
+            $(".b-payment-method-item").addClass("hide");
+            $("." + $('.b-addressee-right').attr("data-payment")).removeClass("hide");
         }else{//клик на доставку
             $("input[name='DELIVERY_ID']").val(2);
             $('.b-addressee-right').removeClass("active");
@@ -362,18 +360,19 @@ $(document).ready(function(){
             }
             //$('.b-input-move').prepend($(".move-element")).removeClass("hide");
             $('.b-address').removeClass("hide");
-            var selector = $('.b-addressee-right').attr("data-payment");
-            $(selector).parent().addClass("hide");
-            selector = $('.b-addressee-left').attr("data-payment");
-            $(selector).parent().removeClass("hide");
-            $(selector).eq(0).prop("checked", true);
+
+            $(".b-payment-method-item").addClass("hide");
+            $("." + $('.b-addressee-left').attr("data-payment")).removeClass("hide");
+        }
+        if( !$(".b-payment-method-item input:visible:checked").length ){
+            $(".b-payment-method-item:not(.hide)").eq(0).find("input").prop("checked", true);
         }
         return false;
     });
 
     if($('.b-addressee-switch').length){
-        var selector = $('.b-addressee-right').attr("data-payment");
-        $(selector).parent().addClass("hide");
+        $(".b-payment-method-item").addClass("hide");
+        $("." + $('.b-addressee-left').attr("data-payment")).removeClass("hide");
     }
 
     if($('#date').length){
