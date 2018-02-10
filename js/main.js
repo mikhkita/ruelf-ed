@@ -538,7 +538,7 @@ $(document).ready(function(){
     function checkDeliveryTime (isToday) {
         var bouquetTime = parseInt($('.input-time').attr("data-hour"));//время сбора букета (в часах)
             date = new Date(),
-            hours = 19,
+            hours = date.getHours(),
             minutes = date.getMinutes(),
             workDay = {
                 from : 8,
@@ -548,7 +548,7 @@ $(document).ready(function(){
         if(minutes > 20){
             hours++;
         }
-        
+
         if(isToday){
             if(hours + bouquetTime > workDay.to){
                 //заблочить сегодняшний день
