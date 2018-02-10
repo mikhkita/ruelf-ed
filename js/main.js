@@ -371,6 +371,11 @@ $(document).ready(function(){
         return false;
     });
 
+    if($('.b-addressee-switch').length){
+        var selector = $('.b-addressee-right').attr("data-payment");
+        $(selector).parent().addClass("hide");
+    }
+
     if($('#date').length){
         $.datepicker.regional['ru'] = {
             closeText: 'Готово', // set a close button text
