@@ -46,7 +46,9 @@ $(document).ready(function(){
 	var rePhone = /^\+\d \(\d{3}\) \d{3}-\d{2}-\d{2}$/,
 		tePhone = '+7 (999) 999-99-99';
 		reDates = /^\(\d{2}\)\.\d{2}.\d{4}$/,
-		teDates = '99.99.2018';
+		teDates = '99.99.2018',
+		reTime = /^\d{2}:\d{2}$/,
+		teTime = '99:99';
 
 	$.validator.addMethod('customPhone', function (value) {
 		return rePhone.test(value);
@@ -72,6 +74,9 @@ $(document).ready(function(){
 		}
 		if( $(this).find("#date").length ){
 			$(this).find("#date").mask(teDates,{placeholder:"_"});
+		}
+		if( $(this).find("#time").length ){
+			$(this).find("#time").mask(teTime,{placeholder:"_"});
 		}
 		$(this).find("input[type='text'], input[type='email'], textarea, select").blur(function(){
 		   $(this).valid();
