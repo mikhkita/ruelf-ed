@@ -343,8 +343,14 @@ $(document).ready(function(){
             $('.b-addressee-right').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
             $('#address').prop({"disabled": true, "required": false}).removeClass("error");
-            $('.b-address').before($(".move-element")).addClass("hide").removeClass("error");
-            $('.b-input-move').addClass("hide");
+            //$('.b-address').before($(".move-element")).addClass("hide").removeClass("error");;
+            //$('.b-input-move').addClass("hide");
+            $('.b-address').addClass("hide");
+            var selector = $('.b-addressee-left').attr("data-payment");
+            $(selector).parent().addClass("hide");
+            selector = $('.b-addressee-right').attr("data-payment");
+            $(selector).parent().removeClass("hide");
+            $(selector).eq(0).prop("checked", true);
         }else{//клик на доставку
             $("input[name='DELIVERY_ID']").val(2);
             $('.b-addressee-right').removeClass("active");
@@ -354,12 +360,21 @@ $(document).ready(function(){
             if(!$('#address').val()){
                 $('#address').addClass("error");
             }
-            $('.b-input-move').prepend($(".move-element")).removeClass("hide");
+            //$('.b-input-move').prepend($(".move-element")).removeClass("hide");
             $('.b-address').removeClass("hide");
-
+            var selector = $('.b-addressee-right').attr("data-payment");
+            $(selector).parent().addClass("hide");
+            selector = $('.b-addressee-left').attr("data-payment");
+            $(selector).parent().removeClass("hide");
+            $(selector).eq(0).prop("checked", true);
         }
         return false;
     });
+
+    if($('.b-addressee-switch').length){
+        var selector = $('.b-addressee-right').attr("data-payment");
+        $(selector).parent().addClass("hide");
+    }
 
     if($('#date').length){
         $.datepicker.regional['ru'] = {

@@ -212,8 +212,8 @@
 					<h2 class="b-title">Данные к заказу</h2>
 					<div class="b b-addressee">
 						<a href="#" class="b-addressee-switch"></a>
-						<div class="b-btn-switch b-addressee-left active">Нужна доставка</div>
-						<div class="b-btn-switch b-addressee-right">Самовывоз</div>
+						<div class="b-btn-switch b-addressee-left active" data-payment=".payment-card, .payment-cash">Нужна доставка</div>
+						<div class="b-btn-switch b-addressee-right" data-payment=".payment-test">Самовывоз</div>
 						<div class="b-btn-addressee"></div>
 					</div>
 				</div>
@@ -227,16 +227,20 @@
 							<input type="text" id="phone" name="phone" required>
 							<label for="phone">Ваш телефон <span class="required">*</span></label>
 						</div>
-						<div class="b-address b-table">
-							<div class="b-table-cell">
-								<div class="b-choose-address">
-									<p>Адрес доставки: <span class="required">*</span></p>
-									<span class="choose-address-value"></span>
-									<a href="#b-popup-map" class="fancy b-btn-dashed choose-address-change">
-										<span class="choose-address-action">указать адрес</span>
-										<input class="error" type="text" id="address" name="address" required>
-									</a>
-								</div>
+						<div class="b-input">
+							<input type="text" id="email" name="email" required>
+							<label for="email">Ваш E-mail <span class="required">*</span></label>
+						</div>
+					</div>
+					<div class="b-address b-table">
+						<div class="b-table-cell">
+							<div class="b-choose-address">
+								<p>Адрес доставки: <span class="required">*</span></p>
+								<span class="choose-address-value"></span>
+								<a href="#b-popup-map" class="fancy b-btn-dashed choose-address-change">
+									<span class="choose-address-action">указать адрес</span>
+									<input class="error" type="text" id="address" name="address" required>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -333,15 +337,15 @@
 							<p>Способ оплаты:</p>
 							<div class="b-payment-method-list">
 								<div class="b-payment-method-item">
-									<input id="card" type="radio" name="payment-method" checked required>
+									<input id="card" type="radio" class="payment-card" name="payment-method" checked required>
 									<label for="card">Онлайн-оплата картой</label>
 								</div>
 								<div class="b-payment-method-item">
-									<input id="cash" type="radio" name="payment-method" required>
+									<input id="cash" type="radio" class="payment-cash" name="payment-method" required>
 									<label for="cash">Наличными курьеру</label>
 								</div>
 								<div class="b-payment-method-item">
-									<input id="test" type="radio" name="payment-method" required>
+									<input id="test" type="radio" class="payment-test" name="payment-method" required>
 									<label for="test">Тестовая запись</label>
 								</div>
 							</div>
@@ -363,6 +367,7 @@
 						</a>
 					</div>
 					<input type="submit" value="Заказать" style="display:none;">
+					<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
 				</form>
 			</div>
 		</div>
@@ -616,6 +621,7 @@
 				        	</a>
 				        </div>
 				        <input type="submit" class="b-popup-map-submit" style="display:none;">
+				        <a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
 				    </form>
 			    </div>
 			    <div id="map-address"></div>
