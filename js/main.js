@@ -450,6 +450,34 @@ $(document).ready(function(){
          $('.b-time-list').removeClass("show");
     });
 
+    if($('.b-input-time').length){
+        var date = new Date();
+            hours = date.getHours();
+            minutes = date.getMinutes(),
+            bouquetTime = 4;//время сбора букета (в часах)
+
+        if(hours + bouquetTime > 22){
+            //заблочить сегодняшний день
+            $("#date").datepicker({minDate: '1'});
+            //пересчитываем время на следующий день
+            var hoursDelivery = hours - 22 + 8 + bouquetTime + 1;
+            $('input[name="time-select"]').each(function(){
+                $this = $(this);
+                if(parseInt($this.attr("data-hour")) < hoursDelivery){
+                    $this.addClass("no-active").prop("disabled", true);
+                }
+            });
+        }else{
+            var hoursDelivery = hours + bouquetTime + 1;
+            $('input[name="time-select"]').each(function(){
+                $this = $(this);
+                if(parseInt($this.attr("data-hour")) < hoursDelivery){
+                    $this.addClass("no-active").prop("disabled", true);
+                }
+            });
+        }
+    }
+
     $('.order-adress-map-form').submit(function(){
         $('.b-btn-address').click();
         ymaps.geocode($('.js-order-adress-map-input').val(), {

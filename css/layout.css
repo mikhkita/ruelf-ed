@@ -1257,13 +1257,16 @@ strong, b{
 								right: -7px;
 								line-height: 38px;
 							}
-							.b-basket img{
+							.b-basket .b-basket-item-img{
 								width: 64px;
 								height: 64px;
 								display: inline-block;
 								border-radius: 3px;
 								margin-right: 12px;
 								vertical-align: top;
+								background-position: 50% 50%;
+					    		background-repeat: no-repeat;
+								background-size: cover;
 							}
 							.b-basket-item-text{
 								width: calc(100% - 108px);
@@ -2689,14 +2692,18 @@ strong, b{
 			display: table-cell;
 			vertical-align: middle;
 		}
-			.b-basket-name a img{
-				display: block;
+			.b-basket-name a h4{
+				margin: 0 20px;
+			}
+
+			.b-basket-name-img{
+	    		display: block;
 				width: 98px;
 				height: 98px;
 				border-radius: 3px;
-			}
-			.b-basket-name a h4{
-				margin: 0 20px;
+				background-position: 50% 50%;
+	    		background-repeat: no-repeat;
+				background-size: cover;
 			}
 
 	.b-basket-count{
