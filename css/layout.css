@@ -2302,8 +2302,13 @@ strong, b{
 			.b-footer-contacts a:not(.b-btn){
 				font-family: 'Geometria-Bold';
 				font-size: 20px;
-				line-height: 32px;
+				line-height: 24px;
+				display: inline-block;
+				margin-bottom: 5px;
 			}
+				.b-footer-phone.icon-phone:before{
+					color: #434343;
+				}
 
 			.b-sub-form{
 				margin-top: 18px;

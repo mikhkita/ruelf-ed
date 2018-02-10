@@ -432,6 +432,9 @@ $(document).ready(function(){
             return;
         else{
             $('.b-time-list').removeClass("show");
+            if(!$('.input-time').val()){
+                $(".b-input-time").removeClass("focus not-empty");
+            }
         }
         event.stopPropagation();
       });
@@ -439,10 +442,12 @@ $(document).ready(function(){
 
     $('.b-input-time').on('click', function(){
         $('.b-time-list').addClass("show");
+
     });
 
     $(".b-time-list input").change(function(){
          $('.input-time').val($(this).siblings("label").text());
+         $('.b-time-list').removeClass("show");
     });
 
     $('.order-adress-map-form').submit(function(){
