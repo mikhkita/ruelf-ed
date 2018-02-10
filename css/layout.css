@@ -1115,6 +1115,7 @@ strong, b{
 			margin-right: 20px;
 			width: 25px;
 			height: 23px;
+			display: none;
 		}
 
 			.icon-favorites{
