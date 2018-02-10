@@ -388,6 +388,8 @@ $(document).ready(function(){
                 var dateSelect = $("#date").datepicker("getDate");
 
                 resetTime();
+                $('input[name="time-select"]:checked').prop("checked", false);
+                $('.input-time').val("");
 
                 if(dateToday.getDate() === dateSelect.getDate() &&
                     dateToday.getMonth() === dateSelect.getMonth() &&
@@ -406,7 +408,7 @@ $(document).ready(function(){
 
     function resetTime(){
         $('input[name="time-select"]').each(function(){
-            $(this).removeClass("no-active").prop("disabled", true);
+            $(this).removeClass("no-active").prop("disabled", false);
         });
     }
 
