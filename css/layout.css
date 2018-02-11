@@ -53,7 +53,7 @@ body {
 	position: relative;
 }
 body {
-	min-width: 1000px;
+	min-width: 1200px;
 	text-align: left;
 	font-family: 'Geometria-Regular';
 	font-size: 16px;
@@ -98,7 +98,8 @@ input.error, textarea.error{
 .white{
 	color: #FFF;
 }
-.hide{
+.hide,
+.s-hide{
 	display: none !important;
 }
 .b{
@@ -786,9 +787,16 @@ strong, b{
 	padding-top: 50px;
 	padding-bottom: 70px;
 }
+.b-inner-cart.b-content{
+	overflow: hidden;
+}
 
 .b-padding{
 	padding-bottom: 50px;
+}
+
+.b-not-result{
+	margin-bottom: 32px;
 }
 
 /*------b-text-----*/
@@ -953,11 +961,13 @@ strong, b{
 		padding-top: 158px;
 		margin-bottom: 188px;
 	}
-
+	input[name='MAIL']{
+		display: none;
+	}
 	.b-menu{
 		float: left;
 		margin-top: 3px;
-		margin-left: 180px;
+		margin-left: 170px;
 		-webkit-transition: margin-left 200ms ease-out;
 	    -moz-transition: margin-left 200ms ease-out;
 	    -ms-transition: margin-left 200ms ease-out;
@@ -965,7 +975,7 @@ strong, b{
 	    transition: margin-left 200ms ease-out;
 	}
 	.b-top.basket-null .b-menu{
-		margin-left: 192px;
+		margin-left: 180px;
 	}
 	.b-top-fixed .b-menu,
 	.b-top-fixed.basket-null .b-menu{
@@ -983,7 +993,7 @@ strong, b{
 			position: relative;
 			border-radius: 20px;
 			margin-bottom: 7px;
-			margin-right: 14px;
+			margin-right: 24px;
 			-webkit-transition: background-color 100ms ease-out, border 100ms ease-out;
 		    -moz-transition: background-color 100ms ease-out, border 100ms ease-out;
 		    -ms-transition: background-color 100ms ease-out, border 100ms ease-out;
@@ -1100,7 +1110,7 @@ strong, b{
 
 		.b-top-phone{
 			display: inline-block;
-			margin-right: 20px;
+			margin-right: 32px;
 		}
 
 			.icon-phone:before{
@@ -3020,6 +3030,9 @@ strong, b{
 	.b-input-row{
 		margin-bottom: 40px;
 	}
+	.b-address.hide + .b-input-row{
+		margin-bottom: 0px;
+	}
 
 		.b-input{
 			position: relative;
@@ -3126,12 +3139,12 @@ strong, b{
 		}
 			.b-payment-method-list{
 				display: inline-block;
-				width: 500px
+				width: 500px;
 			}
 				.b-payment-method-item{
 					display: inline-block;
 					padding-right: 25px;
-					width: 49%;
+					/*width: 49%;*/
 					margin-bottom: 12px;
 				}
 				.b-radio label:last-child{
@@ -3279,6 +3292,8 @@ strong, b{
 	#map-address h3{
 		color: #434343;
 		margin-bottom: 5px;
+		text-align: left !important;
+		font-size: 20px;
 	}
 
 /*-------Контакты-------*/
@@ -3603,8 +3618,10 @@ strong, b{
 
 	.b-thanks .b-btn,
 	.b-popup-order-success .b-btn{
-		margin-top: 27px;
+		margin-top: 38px;
 	}
+
+
 
 /*-------datepicker-------*/
 

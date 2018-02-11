@@ -54,12 +54,14 @@ $(document).ready(function(){
 		return rePhone.test(value);
 	});
 
-	$(".ajax").parents("form").each(function(){
+	$(".ajax, .not-ajax").parents("form").each(function(){
 		$(this).validate({
-			onkeyup: true,
+			onkeyup: ($(this).hasClass("b-sub-form"))?false:true,
 			rules: {
 				email: 'email',
-				phone: 'customPhone'
+				ORDER_PROP_2: 'email',
+				phone: 'customPhone',
+				ORDER_PROP_3: 'customPhone',
 			},
 			errorElement : "span",
 			highlight: function(element, errorClass) {
@@ -69,8 +71,8 @@ $(document).ready(function(){
 			    $(element).removeClass("error").parents(".b-input").removeClass("error");
 			}
 		});
-		if( $(this).find("input[name=phone], input[name=addressee-phone]").length ){
-			$(this).find("input[name=phone], input[name=addressee-phone]").mask(tePhone,{placeholder:" "});
+		if( $(this).find("input[name=phone], input[name=addressee-phone], input[name=ORDER_PROP_3], input[name=ORDER_PROP_8]").length ){
+			$(this).find("input[name=phone], input[name=addressee-phone], input[name=ORDER_PROP_3], input[name=ORDER_PROP_8]").mask(tePhone,{placeholder:" "});
 		}
 		if( $(this).find("#date").length ){
 			$(this).find("#date").mask(teDates,{placeholder:"_"});
@@ -78,12 +80,15 @@ $(document).ready(function(){
 		if( $(this).find("#time").length ){
 			$(this).find("#time").mask(teTime,{placeholder:"_"});
 		}
-		$(this).find("input[type='text'], input[type='email'], textarea, select").blur(function(){
-		   $(this).valid();
-		});
-		$(this).find("input[type='text'], input[type='email'], textarea, select").keyup(function(){
-		   $(this).valid();
-		});
+		if( !$(this).hasClass("b-sub-form") ){
+			$(this).find("input[type='text'], input[type='email'], textarea, select").blur(function(){
+			   $(this).valid();
+			});
+
+			$(this).find("input[type='text'], input[type='email'], textarea, select").keyup(function(){
+			   $(this).valid();
+			});
+		}
 	});
 
 	$('.order-adress-map-form').validate({
@@ -200,6 +205,7 @@ $(document).ready(function(){
 	$(".fancy-img").fancybox({
 		padding : 0,
 		hash : false,
+		touch : false,
 		clickContent : false,
 		buttons : [
 	        'fullScreen',
@@ -209,14 +215,16 @@ $(document).ready(function(){
 
 	$(".goal-click").click(function(){
 		if( $(this).attr("data-goal") )
-			yaCounter12345678.reachGoal($(this).attr("data-goal"));
+			yaCounter47641909.reachGoal($(this).attr("data-goal"));
 	});
 
-	$(".ajax").parents("form").submit(function(){
+	$(".ajax, .not-ajax").parents("form").submit(function(){
 		if($(this).find(".b-choose-address input.error").length){
 			$('.b-choose-address').addClass("error");
 		}
   		if( $(this).find("input.error,select.error,textarea.error").length == 0 ){
+  			if( $(this).find(".not-ajax").length ) return true;
+
   			var $this = $(this),
   				$thanks = $($this.attr("data-block"));
 
@@ -227,7 +235,7 @@ $(document).ready(function(){
 			}
 
 			if( $this.attr("data-goal") ){
-				yaCounter12345678.reachGoal($this.attr("data-goal"));
+				yaCounter47641909.reachGoal($this.attr("data-goal"));
 			}
 
   			$.ajax({
@@ -264,7 +272,7 @@ $(document).ready(function(){
   		return false;
   	});
 
-	$("body").on("click", ".ajax", function(){
+	$("body").on("click", ".ajax, .not-ajax", function(){
 		$(this).parents("form").submit();
 		return false;
 	});

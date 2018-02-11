@@ -338,7 +338,7 @@ $(document).ready(function(){
 
     $('.b-addressee-switch').on('click', function(){
         if($('.b-addressee-left').hasClass("active")){//клик на самовывоз
-            $("#b-pickup").click();
+            $("input[name='DELIVERY_ID']").val(3);
             $('.b-addressee-left').removeClass("active");
             $('.b-addressee-right').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
@@ -346,13 +346,18 @@ $(document).ready(function(){
             //$('.b-address').before($(".move-element")).addClass("hide").removeClass("error");;
             //$('.b-input-move').addClass("hide");
             $('.b-address').addClass("hide");
-            var selector = $('.b-addressee-left').attr("data-payment");
-            $(selector).parent().addClass("hide");
-            selector = $('.b-addressee-right').attr("data-payment");
-            $(selector).parent().removeClass("hide");
-            $(selector).eq(0).prop("checked", true);
+            $("label[for='date']").text("Дата самовывоза");
+            $("label[for='time']").text("Время самовывоза");
+
+            $(".b-email-input").after($(".b-payment-method"));
+            $("#delivery-price").prop("disabled", true);
+
+            $(".delivery-price").addClass("s-hide");
+
+            $(".b-payment-method-item").addClass("hide");
+            $("." + $('.b-addressee-right').attr("data-payment")).removeClass("hide");
         }else{//клик на доставку
-            $("#b-delivery").click();
+            $("input[name='DELIVERY_ID']").val(2);
             $('.b-addressee-right').removeClass("active");
             $('.b-addressee-left').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
@@ -362,18 +367,28 @@ $(document).ready(function(){
             }
             //$('.b-input-move').prepend($(".move-element")).removeClass("hide");
             $('.b-address').removeClass("hide");
-            var selector = $('.b-addressee-right').attr("data-payment");
-            $(selector).parent().addClass("hide");
-            selector = $('.b-addressee-left').attr("data-payment");
-            $(selector).parent().removeClass("hide");
-            $(selector).eq(0).prop("checked", true);
+
+            $("label[for='date']").text("Дата доставки");
+            $("label[for='time']").text("Время доставки");
+
+            $(".b-for-payment").prepend($(".b-payment-method"));
+            $("#delivery-price").prop("disabled", false);
+
+            $(".delivery-price").removeClass("s-hide");
+
+            $(".b-payment-method-item").addClass("hide");
+            $("." + $('.b-addressee-left').attr("data-payment")).removeClass("hide");
         }
+        if( !$(".b-payment-method-item input:visible:checked").length ){
+            $(".b-payment-method-item:not(.hide)").eq(0).find("input").prop("checked", true);
+        }
+        updateMiniCartSum();
         return false;
     });
 
     if($('.b-addressee-switch').length){
-        var selector = $('.b-addressee-right').attr("data-payment");
-        $(selector).parent().addClass("hide");
+        $(".b-payment-method-item").addClass("hide");
+        $("." + $('.b-addressee-left').attr("data-payment")).removeClass("hide");
     }
 
     if($('#date').length){
@@ -541,33 +556,36 @@ $(document).ready(function(){
         var bouquetTime = parseInt($('.input-time').attr("data-hour"));//время сбора букета (в часах)
             date = new Date(),
             hours = date.getHours(),
-            minutes = date.getMinutes();
+            minutes = date.getMinutes(),
+            workDay = {
+                from : 8,
+                to : 22,
+            };
+
         if(minutes > 20){
             hours++;
         }
+
         if(isToday){
-            if(hours + bouquetTime > 22){
+            if(hours + bouquetTime > workDay.to){
                 //заблочить сегодняшний день
                 $("#date").datepicker({minDate: '1'});
                 //пересчитываем время на следующий день
-                var hoursDelivery = hours - 22 + 8 + bouquetTime;
-                $('input[name="time-select"]').each(function(){
-                    $this = $(this);
-                    if(parseInt($this.attr("data-hour")) < hoursDelivery){
-                        $this.addClass("no-active").prop("disabled", true);
-                    }
-                });
+                var hoursDelivery = hours - workDay.to + workDay.from + bouquetTime;
+            }else if( hours < workDay.from ){
+                var hoursDelivery =  workDay.from + bouquetTime;
             }else{
-                var hoursDelivery = hours + bouquetTime;
-                $('input[name="time-select"]').each(function(){
-                    $this = $(this);
-                    if(parseInt($this.attr("data-hour")) < hoursDelivery){
-                        $this.addClass("no-active").prop("disabled", true);
-                    }
-                });
+                var hoursDelivery =  hours + bouquetTime;
             }
+
+            $('input[name="time-select"]').each(function(){
+                $this = $(this);
+                if(parseInt($this.attr("data-hour")) < hoursDelivery){
+                    $this.addClass("no-active").prop("disabled", true);
+                }
+            });
         }else{
-            var hoursDelivery = hours - 22 + 8 + bouquetTime;
+            var hoursDelivery = hours - workDay.to + workDay.from + bouquetTime;
             $('input[name="time-select"]').each(function(){
                 $this = $(this);
                 if(parseInt($this.attr("data-hour")) < hoursDelivery){
@@ -605,19 +623,22 @@ $(document).ready(function(){
                 }
                 var resString = $('.js-order-adress-map-input').val() + room + $('.number-room-input').val();
                 $(".choose-address-value").text(resString);
-                $('.b-choose-address, .choose-address-change input[name="address"]').removeClass("error");
-                $('.choose-address-change input[name="address"]').val(resString);
+                $('.b-choose-address, .choose-address-change #address').removeClass("error");
+                $('.choose-address-change #address').val(resString);
                 $('.delivery-price-value').text($('.js-order-adress-map-price').text())
                     .parent().removeClass("hide");
+                $("#delivery-price").val($('.js-order-adress-map-price').text().replace(/[^0-9\.]+/g,"")*1);
                 $('.choose-address-action').text("изменить");
                 $.fancybox.close(); 
             }else{
                 $(".choose-address-value").text("");
-                $('.b-choose-address, .choose-address-change input[name="address"]').addClass("error");
-                $('.choose-address-change input[name="address"]').val("");
+                $('.b-choose-address, .choose-address-change #address').addClass("error");
+                $('.choose-address-change #address').val("");
                 $('.delivery-price-value').text("").parent().addClass("hide");
+                $("#delivery-price").val("");
                 $('.choose-address-action').text("указать адрес");
             }
+        updateMiniCartSum();
         return false;
     });
 
@@ -674,7 +695,7 @@ $(document).ready(function(){
     if($('.b-map').length){
         var myPlace = new google.maps.LatLng(56.463328, 84.966415);
         var myOptions = {
-            zoom: 16,
+            zoom: 17,
             center: myPlace,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             disableDefaultUI: true,
@@ -690,7 +711,7 @@ $(document).ready(function(){
             position: myPlace,
             map: map,
             icon: {
-                url: "i/pin.svg",
+                url: "/bitrix/templates/main/html/i/pin.svg",
                 scaledSize: new google.maps.Size(40, 58), // scaled size
                 origin: new google.maps.Point(0,0), // origin
                 anchor: new google.maps.Point(17,53), // anchor
@@ -859,7 +880,12 @@ $(document).ready(function(){
             $(this).find(".b-basket-sum h4").text( ((price*count)+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
         });
 
-        $(".b-basket-btn-total, .total-price-value, .b-basket-total").text( (sum+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
+        $(".b-basket-btn-total, .b-basket-total").text( (sum+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
+
+        if( $(".delivery-price:not(.hide):not(.s-hide)").length ){
+            sum += ($(".delivery-price-value").text().replace(/[^0-9\.]+/g,"")*1);
+        }
+        $(".total-price-value").text( (sum+"").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') );
 
         checkMiniCart();
     }
