@@ -396,7 +396,14 @@ $(document).ready(function(){
                 beforeShow: function() {
                     setTimeout(function(){
                         $('.ui-datepicker').css('z-index', 100);
-                    }, 0);
+                    }, 10);
+                },
+                onClose: function(){
+                    setTimeout(function(){
+                        if(!$("#date").val()){
+                            $("#date").parent().removeClass("focus not-empty");
+                        }
+                    }, 10);
                 }
             }).on("change", function(){
                 $(this).parents(".b-input").addClass("not-empty");
@@ -405,19 +412,29 @@ $(document).ready(function(){
                 var dateSelect = $("#date").datepicker("getDate");
 
                 resetTime();
-                $('input[name="time-select"]:checked').prop("checked", false);
-                $('.input-time').val("");
 
-                if(dateToday.getDate() === dateSelect.getDate() &&
-                    dateToday.getMonth() === dateSelect.getMonth() &&
-                    dateToday.getFullYear() === dateSelect.getFullYear())
-                {
-                    checkDeliveryTime(true);
-                }else if(dateToday.getDate() + 1 === dateSelect.getDate() &&
-                    dateToday.getMonth() === dateSelect.getMonth() &&
-                    dateToday.getFullYear() === dateSelect.getFullYear())
-                {
-                    checkDeliveryTime(false);
+                if(dateSelect){
+                    if(dateToday.getDate() === dateSelect.getDate() &&
+                        dateToday.getMonth() === dateSelect.getMonth() &&
+                        dateToday.getFullYear() === dateSelect.getFullYear())
+                    {
+                        checkDeliveryTime(true);
+                    }else if(dateToday.getDate() + 1 === dateSelect.getDate() &&
+                        dateToday.getMonth() === dateSelect.getMonth() &&
+                        dateToday.getFullYear() === dateSelect.getFullYear())
+                    {
+                        checkDeliveryTime(false);
+                    }
+
+                    //проверить доступно ли время для этой даты
+                    if($('input[name="time-select"]:checked').length && 
+                        $('input[name="time-select"]:checked').hasClass("no-active")){
+                        $('input[name="time-select"]:checked').prop("checked", false);
+                        //поставить первую доступную дату
+                        $firstTime = $('input[name="time-select"]:not(.no-active):first');
+                        $firstTime.prop("checked", true);
+                        $('.input-time').val($firstTime.siblings("label").text());
+                    }
                 }
             });
         });

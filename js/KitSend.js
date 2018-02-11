@@ -45,8 +45,8 @@ var customHandlers = [];
 $(document).ready(function(){	
 	var rePhone = /^\+\d \(\d{3}\) \d{3}-\d{2}-\d{2}$/,
 		tePhone = '+7 (999) 999-99-99';
-		reDates = /^\(\d{2}\)\.\d{2}.\d{4}$/,
-		teDates = '99.99.2018',
+		reDates = /^\d{2}.\d{2}.\d{4}$/,
+		teDates = '99.99.9999',
 		reTime = /^\d{2}:\d{2}$/,
 		teTime = '99:99';
 
@@ -143,6 +143,11 @@ $(document).ready(function(){
 					customHandlers[$this.attr("data-beforeShow")]($this);
 				}
 				$popup.find(".error").removeClass("error");
+				$popup.find(".b-input").each(function(){
+					$this = $(this);
+					if(!$this.children("input").val())
+						$this.removeClass("not-empty");
+				});
 				$popup.find(".b-input input + span").remove();
 			},
 			afterShow: function(){
