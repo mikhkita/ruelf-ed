@@ -3002,7 +3002,7 @@ strong, b{
 						font-family: 'Geometria-Regular';
 						font-size: 16px;
 						line-height: 24px;
-						padding: 3px 8px;
+						padding: 3px 0;
 						border: 1px solid transparent;
 					}
 					.b-time-list ul li label:hover{
@@ -3488,7 +3488,7 @@ strong, b{
 		background-image: url(../i/gift.jpg);
 		background-position: 50% 50%;
 		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: contain;
 	}
 .b-order-right{
 	float: right;

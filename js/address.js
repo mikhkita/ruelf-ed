@@ -70,6 +70,26 @@ ymaps.ready(['AddressDelivery']).then(function init() {
             mapNew.setCenter(res.geoObjects.get(0).geometry.getCoordinates());
         });
 
+        $('.order-adress-map-form').submit(function(){   
+            ymaps.geocode($('.js-order-adress-map-input').val(), {
+                results: 1,
+                boundedBy : [[56.248472, 84.658275],[56.658356, 85.285869]],
+                strictBounds : true,
+            }).then(function (res) {
+                if(res.geoObjects.properties._data.metaDataProperty.GeocoderResponseMetaData.found > 0){
+                    res.geoObjects.each(function(item){
+                        var address = item.properties._data.metaDataProperty.GeocoderMetaData.Address.Components;
+                        var label = getAddressLine(address);
+                        $('.js-order-adress-map-input').val(label);
+                    });
+                    addressClass.setPoint(res.geoObjects.get(0).geometry.getCoordinates());
+                    //addressClass.balloonOpen(res.geoObjects.get(0).geometry.getCoordinates());
+                    $('.b-btn-address').click();
+                }
+            });
+            return false;
+        });
+
         $('.js-order-adress-map-input').autocomplete({
             source: function(req, autocompleteRes){
                 ymaps.geocode(req.term, {
@@ -77,20 +97,25 @@ ymaps.ready(['AddressDelivery']).then(function init() {
                     boundedBy : [[56.248472, 84.658275],[56.658356, 85.285869]],
                     strictBounds : true,
                 }).then(function (res) {
-                    var result = [];console.log(res.geoObjects);
-                    res.geoObjects.each(function(item){
-
-                        var address = item.properties._data.metaDataProperty.GeocoderMetaData.Address.Components;
-                        var label = getAddressLine(address);
-                        var value = label;
-                        var coords = item.geometry.getCoordinates();
-                        result.push({
-                            label: label,
-                            value: value,
-                            coords: coords,
-                            balloonContent: item.properties.get("balloonContent")
+                    var result = [];
+                    console.log(res.geoObjects);
+                    if(res.geoObjects.properties._data.metaDataProperty.GeocoderResponseMetaData.found > 0){
+                        res.geoObjects.each(function(item){
+                            var address = item.properties._data.metaDataProperty.GeocoderMetaData.Address.Components;
+                            var label = getAddressLine(address);
+                            var value = label;
+                            var coords = item.geometry.getCoordinates();
+                            result.push({
+                                label: label,
+                                value: value,
+                                coords: coords,
+                                balloonContent: item.properties.get("balloonContent")
+                            });
                         });
-                    })
+                        $('.js-order-adress-map-input').attr("valid-delivery", "true");
+                    }else{
+                        $('.js-order-adress-map-input').removeAttr("valid-delivery");
+                    }
                     autocompleteRes(result);
                 });
             },
@@ -113,7 +138,10 @@ ymaps.ready(['AddressDelivery']).then(function init() {
         });
         mapNew.events.add('adress-changed', function(e){
             var address = e.get('geocode').properties._data.metaDataProperty.GeocoderMetaData.Address.Components;
-            $('.js-order-adress-map-input').val(getAddressLine(address));
+            $input = $('.js-order-adress-map-input');
+            $input.val(getAddressLine(address));
+            if(!!$input.val())
+                $input.removeClass("error").parent().removeClass("error");
         });
         // Добавляем контрол в верхний правый угол,
         /*mapNew.controls
