@@ -25,6 +25,8 @@ $(document).ready(function(){
             $('.b-catalog-item-back').css("-o-transform", "scale("+scaleX+","+scaleY+")");
             $('.b-catalog-item-back').css("transform", "scale("+scaleX+","+scaleY+")");
         }*/
+        
+        checkMenu();
         $(window).scroll();
         footerToBottom();
     }
@@ -59,6 +61,10 @@ $(document).ready(function(){
         }
         return rv == -1 ? false: true;
     }
+
+    $(window).on('load', function(){
+        checkMenu();
+    });
 
     $(window).resize(resize);
     resize();
@@ -599,17 +605,6 @@ $(document).ready(function(){
         checkDeliveryTime(true);
     }
 
-    $('.order-adress-map-form').submit(function(){
-        $('.b-btn-address').click();
-        ymaps.geocode($('.js-order-adress-map-input').val(), {
-            results: 1,
-            boundedBy : [[56.248472, 84.658275],[56.658356, 85.285869]],
-            strictBounds : true,
-        }).then(function (res) {
-            addressClass.setPoint(res.geoObjects.get(0).geometry.getCoordinates());
-        });
-        return false;
-    });
     $('.b-btn-address').on('click', function(){
         if($('.js-order-adress-map-input').attr("valid-delivery") &&
             !!$('.js-order-adress-map-input').val()){
@@ -633,6 +628,7 @@ $(document).ready(function(){
             }else{
                 $(".choose-address-value").text("");
                 $('.b-choose-address, .choose-address-change #address').addClass("error");
+                $('.js-order-adress-map-input').addClass("error").parent().addClass("error");
                 $('.choose-address-change #address').val("");
                 $('.delivery-price-value').text("").parent().addClass("hide");
                 $("#delivery-price").val("");
