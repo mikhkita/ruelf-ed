@@ -3310,6 +3310,170 @@ strong, b{
 	height: 439px;
 	border-radius: 3px;
 }
+/*@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 1;
+	}
+	20% {
+		opacity: 0;
+	}
+	40% {
+	    opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 1;
+	}
+	20% {
+		opacity: 0;
+	}
+	40% {
+	    opacity: 1;
+	}
+}*/
+/*@-webkit-keyframes fade {
+	0% {
+		opacity: 0;
+	}
+	15% {
+		opacity: 1;
+	}
+	50% {
+	    opacity: 1;
+	}
+	63% {
+	    opacity: 0;
+	}
+}
+@keyframes fade {
+	0% {
+		opacity: 0;
+	}
+	15% {
+		opacity: 1;
+	}
+	50% {
+	    opacity: 1;
+	}
+	63% {
+	    opacity: 0;
+	}
+}
+.b-svg{
+	opacity: 0;
+	-webkit-animation: fade 1800ms linear infinite;
+	   -moz-animation: fade 1800ms linear infinite;
+	    -ms-animation: fade 1800ms linear infinite;
+	   	 -o-animation: fade 1800ms linear infinite;
+			animation: fade 1800ms linear infinite;
+}
+.b-svg-3{
+	-webkit-animation-delay: 0s;
+	   -moz-animation-delay: 0s;
+		-ms-animation-delay: 0s;
+		 -o-animation-delay: 0s;
+			animation-delay: 0s;
+}
+.b-svg-4{
+	-webkit-animation-delay: 200ms;
+	   -moz-animation-delay: 200ms;
+		-ms-animation-delay: 200ms;
+		 -o-animation-delay: 200ms;
+			animation-delay: 200ms;
+}
+.b-svg-5{
+	-webkit-animation-delay: 300ms;
+	   -moz-animation-delay: 300ms;
+		-ms-animation-delay: 300ms;
+		 -o-animation-delay: 300ms;
+			animation-delay: 300ms;
+}
+.b-svg-6{
+	-webkit-animation-delay: 400ms;
+	   -moz-animation-delay: 400ms;
+		-ms-animation-delay: 400ms;
+		 -o-animation-delay: 400ms;
+			animation-delay: 400ms;
+}
+.b-svg-2{
+	-webkit-animation-delay: 500ms;
+	   -moz-animation-delay: 500ms;
+		-ms-animation-delay: 500ms;
+		 -o-animation-delay: 500ms;
+			animation-delay: 500ms;
+}
+.b-svg-1{
+	-webkit-animation-delay: 600ms;
+	   -moz-animation-delay: 600ms;
+		-ms-animation-delay: 600ms;
+		 -o-animation-delay: 600ms;
+			animation-delay: 600ms;
+}
+.b-svg-0{
+	-webkit-animation-delay: 700ms;
+	   -moz-animation-delay: 700ms;
+		-ms-animation-delay: 700ms;
+		 -o-animation-delay: 700ms;
+			animation-delay: 700ms;
+}*/
+/*.b-sv-1{
+
+}
+.b-sv-2{
+	-webkit-animation-delay: 100ms;
+			animation-delay: 100ms;
+}
+.b-sv-3{
+	-webkit-animation-delay: 200ms;
+			animation-delay: 200ms;
+}
+.b-sv-4{
+	-webkit-animation-delay: 300ms;
+			animation-delay: 300ms;
+}
+.b-sv-5{
+	-webkit-animation-delay: 400ms;
+			animation-delay: 400ms;
+}
+.b-sv-6{
+	-webkit-animation-delay: 500ms;
+			animation-delay: 500ms;
+}
+.b-sv-7{
+	-webkit-animation-delay: 600ms;
+			animation-delay: 600ms;
+}
+.b-sv-8{
+	-webkit-animation-delay: 700ms;
+			animation-delay: 700ms;
+}
+.b-sv-9{
+	-webkit-animation-delay: 800ms;
+			animation-delay: 800ms;
+}
+.b-sv-10{
+	-webkit-animation-delay: 900ms;
+			animation-delay: 900ms;
+}*/
+.b-svg-preload-popup{
+	height: 57px !important;
+	width: auto !important;
+	display: none !important;
+	vertical-align: top !important;
+}
+.blocked .b-svg-preload-popup{
+	display: inline-block !important;
+}
+.blocked .ajax,
+.blocked .not-ajax{
+	display: none !important;
+}
+.blocked .ajax.b-btn-sub{
+	display: inline-block !important;
+}
+
+
 
 /*------Оплата заказа------*/
 

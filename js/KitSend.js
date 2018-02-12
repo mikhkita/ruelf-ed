@@ -214,15 +214,20 @@ $(document).ready(function(){
 	});
 
 	$(".goal-click").click(function(){
-		if( $(this).attr("data-goal") )
+		if( $(this).attr("data-goal") && typeof yaCounter47641909 != "undefined" )
 			yaCounter47641909.reachGoal($(this).attr("data-goal"));
 	});
 
 	$(".ajax, .not-ajax").parents("form").submit(function(){
+		if( $(this).hasClass("blocked") )
+			return false;
+
 		if($(this).find(".b-choose-address input.error").length){
 			$('.b-choose-address').addClass("error");
 		}
   		if( $(this).find("input.error,select.error,textarea.error").length == 0 ){
+  			$(this).addClass("blocked");
+
   			if( $(this).find(".not-ajax").length ) return true;
 
   			var $this = $(this),
@@ -234,7 +239,7 @@ $(document).ready(function(){
 				customHandlers[$this.attr("data-beforeAjax")]($this);
 			}
 
-			if( $this.attr("data-goal") ){
+			if( $this.attr("data-goal") && typeof yaCounter47641909 != "undefined" ){
 				yaCounter47641909.reachGoal($this.attr("data-goal"));
 			}
 
@@ -264,6 +269,7 @@ $(document).ready(function(){
 				complete: function(){
 					$this.find(".ajax").removeAttr("onclick");
 					$this.find("input[type=text],textarea").val("");
+					$this.removeClass("blocked");
 				}
 			});
   		}else{
