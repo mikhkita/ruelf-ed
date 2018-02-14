@@ -662,56 +662,6 @@ $(document).ready(function(){
         return false;
     });
 
-    /*var styles = [
-        {
-            "featureType": "all",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "saturation": -100
-                },
-                {
-                    "gamma": 1
-                }
-            ]
-        },
-        {
-            "featureType": "road",
-            "elementType": "geometry.fill",
-            "stylers": [
-                {
-                    "saturation": "-99"
-                },
-                {
-                    "lightness": "38"
-                },
-                {
-                    "gamma": "3.11"
-                },
-                {
-                    "color": "#aaaaaa"
-                }
-            ]
-        },
-        {
-            "featureType": "road.arterial",
-            "elementType": "geometry",
-            "stylers": [
-                { "color": "#fece0b" },
-                { "visibility": "simplified" }
-            ]
-        },
-        {
-            "featureType": "road",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "color": "#000000"
-                }
-            ]
-        }
-    ];*/
-
     if($('.b-map').length){
         var myPlace = new google.maps.LatLng(56.463328, 84.966415);
         var myOptions = {
