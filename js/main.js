@@ -451,14 +451,18 @@ $(document).ready(function(){
                     if($('input[name="time-select"]:checked').length && 
                         $('input[name="time-select"]:checked').hasClass("no-active")){
                         $('input[name="time-select"]:checked').prop("checked", false);
-                        //поставить первую доступную дату
-                        $firstTime = $('input[name="time-select"]:not(.no-active):first');
-                        $firstTime.prop("checked", true);
-                        $('.input-time').val($firstTime.siblings("label").text());
+                        setFirstTime();
                     }
                 }
             });
         });
+    }
+
+    //поставить первую доступную дату
+    function setFirstTime(){
+        $firstTime = $('input[name="time-select"]:not(.no-active):first');
+        $firstTime.prop("checked", true);
+        $('.input-time').val($firstTime.siblings("label").text());
     }
 
     function resetTime(){
@@ -466,6 +470,25 @@ $(document).ready(function(){
             $(this).removeClass("no-active").prop("disabled", false);
         });
     }
+
+    //проверить, валидно ли время
+    $('.input-time').blur(function(){
+        if(!!$(this).val()){
+            var time = $(this).val().split(':');
+            var hour = parseInt(time[0]);
+            if(hour < workDay.from){
+               setFirstTime();
+            }else if(hour >= workDay.from && hour <= workDay.to){
+                if(!!hour && $('.b-time-list input[data-hour="'+hour+'"]').hasClass("no-active")){
+                    setFirstTime();
+                }
+            }else{
+                $lastTime = $('input[name="time-select"]:not(.no-active):last');
+                $lastTime.prop("checked", true);
+                $('.input-time').val($lastTime.siblings("label").text());
+            }
+        }
+    });
 
     $('body').on("click", ".b-filter-price-select, .b-filter-flowers-select", function(){
         return false;
@@ -558,15 +581,16 @@ $(document).ready(function(){
          $('.b-time-list').removeClass("show");
     });
 
+    var workDay = {
+        from : 8,
+        to : 22,
+    };
+
     function checkDeliveryTime (isToday) {
         var bouquetTime = parseInt($('.input-time').attr("data-hour"));//время сбора букета (в часах)
             date = new Date(),
             hours = date.getHours(),
-            minutes = date.getMinutes(),
-            workDay = {
-                from : 8,
-                to : 22,
-            };
+            minutes = date.getMinutes();
 
         if(minutes > 20){
             hours++;
