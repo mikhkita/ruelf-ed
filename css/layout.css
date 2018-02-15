@@ -139,12 +139,16 @@ ul.b-breadcrumbs li:after,
 	-moz-osx-font-smoothing: grayscale;
 }
 
-h1.b-title{
+h1.b-title,
+h3.b-title{
 	color: #FFF;
 	font-family: 'Geometria-Bold';
 	font-size: 44px;
 	line-height: 64px;
 	margin-bottom: 15px;
+}
+h1.b-title span{
+	display: none;
 }
 
 h2.b-title{
@@ -2564,7 +2568,9 @@ strong, b{
     	padding-top: 8px;
     	padding-left: 36px;
 	}
+		.b-detail-right h1,
 		.b-detail-right h3{
+			font-family: 'Geometria-Bold';
 			color: #434343;
 			font-size: 36px;
 			line-height: 46px;
