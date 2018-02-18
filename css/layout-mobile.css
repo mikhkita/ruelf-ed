@@ -3,7 +3,7 @@ body {
 }
 
 .b-block{
-	width: calc(100% - 48px);
+	width: calc(100% - 64px);
 }
 
 h1.b-title-temp{
@@ -31,7 +31,7 @@ h1.b-title-temp{
 		}
 
 .b-main-info .b-block{
-	width: calc(100% - 48px);
+	width: calc(100% - 64px);
 }
 
 .arrow-up, .arrow-hide{
@@ -75,6 +75,142 @@ h1.b-title-temp{
 	margin-right: 0;
 }
 
+.b-popup{
+	width: calc(100% - 48px);
+}
+
+.b-review-slider .slick-dots {
+    bottom: -74px;
+}
+ul.b-catalog-sections{
+	width: 100%;
+	padding: 0 16px;
+}
+ul.b-catalog-sections li{
+	text-align: center;
+	padding: 0 10px;
+}
+
+.b-catalog-menu .b-line{
+	display: none;
+}
+.burger-menu{
+	display: block;
+}
+.b-top.b-top-fixed{
+	padding-top: 16px;
+	padding-bottom: 18px;
+}
+.b-top.b-top-fixed .b-logo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.b-top{
+	padding-top: 33px;
+}
+
+.b-top-phone {
+    margin-right: 20px;
+}
+
+.b-top .b-menu{
+	display: none;
+}
+
+.b-logo {
+	top: -3px;
+    background-size: 270px;
+    width: 270px;
+    height: 45px;
+}
+
+h1.b-title{
+	font-size: 36px;
+	line-height: 44px;
+	margin-bottom: 32px;
+}
+.b-header-title {
+    padding-top: 110px;
+    margin-bottom: 122px;
+}
+.b-advantage-item {
+	display: block;
+    margin-bottom: 26px;
+    margin-right: 0;
+}
+.b-advantage-item img {
+    width: 47px;
+    height: 40px;
+}
+
+.b-footer-column:nth-child(2),
+.b-footer-column:nth-child(3){
+	display: none;
+}
+
+.b-btn-sub {
+    padding: 8px 18px 7px;
+}
+
+.b-footer-down-left{
+	width: 350px;
+}
+.b-redder{
+	padding-top: 12px;
+}
+
+.b-catalog {
+    padding-bottom: 0;
+    margin-top: 50px;
+}
+
+.b-filter-price, .b-filter-flowers{
+	width: 50%;
+	float: left;
+	margin-bottom: 42px;
+}
+
+.b-filter-colors ul {
+    padding-bottom: 0;
+    margin-bottom: 40px;
+}
+
+.color-item {
+    width: 36px;
+    height: 36px;
+    margin-right: 21px;
+}
+.color-all {
+    margin-right: 0;
+}
+.color-all .color-all-img{
+	width: 36px;
+    height: 36px;
+    margin-right: 0;
+}
+.b-filter-colors ul .b-tip-cont{
+	display: none;
+}
+.b-btn-reset,
+.b-btn-params{
+	display: inline-block;
+}
+.color-all{
+	text-align: center;
+}
+.color-all:hover .color-all-img {
+    width: 30px;
+    height: 30px;
+    margin-top: 1px;
+}
+.b-filter-colors input[type="checkbox"]:checked + .color-all .color-all-img,
+.b-filter-colors input[type="checkbox"]:checked + .color-all .color-all-img {
+    width: 26px;
+    height: 26px;
+    margin-top: 1px;
+}
+
 @media screen and (max-width: 570px){
 
 	.b-questions-item{
@@ -82,6 +218,29 @@ h1.b-title-temp{
 		height: 200px;
 		width: 100%;
 		margin-right: 0;
+	}
+
+	.b-popup .b-input {
+	    width: 100%;
+	    margin-right: 0;
+	    margin-bottom: 40px;
+	}
+
+	.b-popup .b-inputs .b-input:last-child{
+		margin-bottom: 0;
+	}
+
+	.b-questions-item:last-child{
+		margin-bottom: 0;
+	}
+
+	.b-thanks-left{
+		width: 20%;
+	}
+
+	.b-thanks-right{
+	    width: calc(100% - 82px);
+	    padding-top: 0;
 	}
 
 }
@@ -100,6 +259,91 @@ h1.b-title-temp{
 	}
 	.b-catalog-item:nth-child(2n){
 		margin-right: 0;
+	}
+
+	.b-popup-padding {
+	    padding: 24px 24px 28px 24px;
+	}
+
+	.b-call{
+		padding: 0 16px;
+	}
+	.b-call .b-table-cell{
+		padding-top: 0;
+	}
+	.b-call h3{
+		line-height: 32px;
+		margin-bottom: 12px;
+	}
+	.b-call .b-btn {
+	    margin-top: 19px;
+	}
+
+	.b-review-slider-cont{
+		padding: 20px 0;
+	}
+	.b-review-slider-cont h3{
+		line-height: 30px;
+		margin-bottom: 12px;
+		padding: 0 24px;
+	}
+	.b-review-item {
+	    position: relative;
+	    height: 154px;
+	    width: 100%;
+	    padding: 0 24px 24px 24px;
+	}
+	.b-review-slider .slick-dots {
+	    bottom: -68px;
+	}
+
+	.b-popup .b-btn{
+		min-width: 200px;
+	}
+
+	.b-popup-question h4{
+		margin-bottom: 8px;
+	}
+
+	.icon-thanks-error {
+	    float: left;
+	    width: 55px;
+	    height: 55px;
+	    margin-right: 24px;
+	}
+	.icon-thanks-error:before {
+	    font-size: 55px;
+	}
+
+	.b-popup-success .b-thanks-right,
+	.b-popup-error .b-thanks-right{
+	    width: calc(100% - 82px);
+	    padding-top: 0;
+	}
+
+	.b-thanks .b-btn, .b-popup-order-success .b-btn {
+	    margin-top: 24px;
+	}
+
+	.b-popup h3 {
+		font-size: 26px;
+	    margin-bottom: 24px;
+	}
+
+	.icon-thanks-success {
+	    float: left;
+	    width: 55px;
+	    height: 43px;
+	    margin-right: 20px;
+	}
+	.icon-thanks-success:before {
+	    font-size: 44px;
+	}
+
+	.b-thanks-left {
+	    width: 60px;
+	    height: 62px;
+	    margin-right: 20px;
 	}
 
 }
