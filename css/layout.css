@@ -211,7 +211,16 @@ strong, b{
     color: #434343;
     border: 2px solid #434343;
     padding: 8px 29px;
+    -webkit-transition: background-color 50ms ease-out, color 50ms ease-out;
+    -moz-transition: background-color 50ms ease-out, color 50ms ease-out;
+    -ms-transition: background-color 50ms ease-out, color 50ms ease-out;
+    -o-transition: background-color 50ms ease-out, color 50ms ease-out;
+    transition: background-color 50ms ease-out, color 50ms ease-out;
 }
+	.b-btn-black:active{
+		color: #FFF;
+		background-color: #434343;
+	}
 
 .b-btn-white{
 	min-width: 250px;
@@ -1397,8 +1406,6 @@ strong, b{
 		    content: "\e91b";
 		    font-size: 17px;
 		    color: #FFF;
-		    padding-bottom: 5px;
-		    vertical-align: middle;
 		}
 									
 

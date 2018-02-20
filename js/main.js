@@ -179,15 +179,17 @@ $(document).ready(function(){
             };
             img.src = src;
         });
-        $("*[data-back]").each(function(){
-            var $this = $(this),
-                img = new Image(),
-                src = $this.attr("data-back");
-            img.onload = function(){
-                $this.css("background-image", 'url(' + $this.attr("data-back") + ')');
-            };
-            img.src = src;
-        });
+        if(!isMobile){
+            $("*[data-back]").each(function(){
+                var $this = $(this),
+                    img = new Image(),
+                    src = $this.attr("data-back");
+                img.onload = function(){
+                    $this.css("background-image", 'url(' + $this.attr("data-back") + ')');
+                };
+                img.src = src;
+            });
+        }
     }
 
     function updateCatalog(){
@@ -301,7 +303,7 @@ $(document).ready(function(){
         return false;
     });
 
-    $("body").on("click", ".color-reset", function(){
+    $("body").on("click", ".color-reset, .b-btn-reset", function(){
         $('.b-filter-colors input[type="checkbox"]').prop("checked", false);
         $(".any-prices").prop("checked", true);
         checkPrices();
