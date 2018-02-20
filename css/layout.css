@@ -602,16 +602,15 @@ strong, b{
     line-height: 20px;
 }
 
-.icon-params:before{
-	display: block;
-	content: "\e906";
-   	color: #6e58ac;
+.icon-params:after{
+	display: inline-block;
+	vertical-align: middle;
+	content: "\e91c";
+   	color: #434343;
     font-size: 23px;
     line-height: 23px;
+    margin-left: 12px;
 }
-	.b-btn-params:active .icon-params:before{
-		color: #FFF;
-	}
 
 /*----Инпуты/селекты----*/
 
@@ -1384,6 +1383,8 @@ strong, b{
 
 		.burger-menu {
 			display: none;
+			margin-top: 1px;
+			cursor: pointer;
 		    float: right;
 		    color: #FFF;
 		    font-family: 'RobotoMedium';
@@ -1393,8 +1394,8 @@ strong, b{
 		}
 		.icon-burger-menu:before {
 		    display: inline-block;
-		    content: "\e909";
-		    font-size: 22px;
+		    content: "\e91b";
+		    font-size: 17px;
 		    color: #FFF;
 		    padding-bottom: 5px;
 		    vertical-align: middle;
@@ -1422,6 +1423,22 @@ strong, b{
 				vertical-align: top;
 				display: inline-block;
 			}
+
+	.b-catalog-menu-mobile{
+		display: none;
+		text-align: center;
+		color: #434343;
+		font-size: 18px;
+		font-family: 'Geometria-Medium';
+		padding-bottom: 47px;
+	}
+		.sections-mobile{
+			display: inline-block;
+			margin-right: 30px;
+		}
+		.b-btn-filter{
+			display: inline-block;
+		}
 
 	.b-catalog-menu{
 		position: relative;
@@ -1898,16 +1915,6 @@ strong, b{
 		.b-btn-reset{
 			display: none;
 		}
-		.b-btn-params{
-			display: none;
-			padding: 13px 37px;
-		}
-			.icon-params{
-				padding-top: 1px;
-				vertical-align: top;
-				display: inline-block;
-				margin-right: 13px;
-			}
 
 .b-catalog{
 	padding-bottom: 22px;

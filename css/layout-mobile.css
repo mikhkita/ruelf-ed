@@ -91,8 +91,11 @@ ul.b-catalog-sections li{
 	padding: 0 10px;
 }
 
-.b-catalog-menu .b-line{
+.b-catalog-menu{
 	display: none;
+}
+.b-catalog-menu-mobile{
+	display: block;
 }
 .burger-menu{
 	display: block;
@@ -107,7 +110,7 @@ ul.b-catalog-sections li{
 }
 
 .b-top{
-	padding-top: 33px;
+	padding-top: 34px;
 }
 
 .b-top-phone {
@@ -130,13 +133,17 @@ h1.b-title{
 	line-height: 44px;
 	margin-bottom: 32px;
 }
+.b-header{
+	background-image: url(../i/header-mobile.svg);
+    background-size: 768px;
+}
 .b-header-title {
-    padding-top: 110px;
-    margin-bottom: 122px;
+    padding-top: 116px;
+    margin-bottom: 105px;
 }
 .b-advantage-item {
 	display: block;
-    margin-bottom: 26px;
+    margin-bottom: 22px;
     margin-right: 0;
 }
 .b-advantage-item img {
