@@ -2689,8 +2689,7 @@ strong, b{
     	padding-top: 8px;
     	padding-left: 36px;
 	}
-		.b-detail-right h1,
-		.b-detail-right h3{
+		.b-detail-right h2{
 			font-family: 'Geometria-Bold';
 			color: #434343;
 			font-size: 36px;
@@ -2698,19 +2697,63 @@ strong, b{
 			margin-top: 8px;
 			margin-bottom: 11px;
 		}
-			.b-detail-right h3.icon-ruble:after{
-				color: #434343;
-				font-size: 26px;
-			    margin-left: 9px;
-			}
 			.vendor-code{
 				color: #909090;
-				margin-bottom: 26px;
 			}
-			.b-detail-right h3.b-detail-price{
-				margin-bottom: 36px;
-				margin-top: 0px;
+			.b-detail-price{
+
 			}
+				.b-detail-right h3{
+					font-family: 'Geometria-Bold';
+					color: #434343;
+					font-size: 36px;
+					line-height: 46px;
+					margin-bottom: 0;
+				}
+				.b-detail-price .old-price{
+					display: inline-block;
+					position: relative;
+					color: #434343;
+					font-size: 16px;
+					line-height: 28px;
+					margin-top: 16px;
+				}
+					.b-detail-price .old-price h4{
+						font-size: 22px;
+						line-height: 26px;
+						margin-bottom: 0;
+					}
+
+						.b-detail-price .old-price h4.icon-ruble-medium:after{
+							color: #434343;
+							font-size: 16px;
+							margin-left: 6px;
+						}
+						.b-detail-price .old-price-line{
+							height: 2px;
+						}
+
+				.b-detail-price .new-price{
+					color: #f43d84;
+					margin-bottom: 16px;
+				}
+				.b-detail-price .new-price.icon-ruble:after{
+					font-size: 27px;
+					color: #f43d84;
+					margin-left: 10px;
+				}
+
+				.b-detail-price .current-price{
+					color: #434343;
+					margin-top: 28px;
+					margin-bottom: 30px;
+				}
+				.b-detail-price .current-price.icon-ruble:after{
+					font-size: 27px;
+					color: #434343;
+					margin-left: 10px;
+				}
+
 			.buy-one-click{
 				margin-top: 14px;
 				margin-left: 21.5%;
