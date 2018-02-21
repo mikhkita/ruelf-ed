@@ -43,7 +43,7 @@ $(document).ready(function(){
             isMobile = true;
         }
 
-        if(isMobile){
+        if(!isDesktop){
             $('.b-filter').addClass("hide");
         }else{
             $('.b-filter').removeClass("hide");

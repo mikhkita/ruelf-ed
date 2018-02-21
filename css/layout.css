@@ -1392,14 +1392,14 @@ strong, b{
 
 		.burger-menu {
 			display: none;
-			margin-top: 1px;
+			margin-top: 3px;
 			cursor: pointer;
-		    float: right;
+		    float: left;
 		    color: #FFF;
 		    font-family: 'RobotoMedium';
 		    font-size: 22px;
 		    line-height: 32px;
-		    margin-left: 24px;
+		    margin-right: 24px;
 		}
 		.icon-burger-menu:before {
 		    display: inline-block;
@@ -1991,6 +1991,8 @@ strong, b{
 
 				.b-catalog-item-link{
 					position: absolute;
+					top: 0;
+					left: 0;
 					width: 100%;
 	    			height: 100%;
 					z-index: 100;
@@ -2123,10 +2125,10 @@ strong, b{
 					float: left;
 					display: inline-block;
 					font-family: 'Geometria-Bold';
-					font-size: 26px;
-					line-height: 28px;
 				}
-					.b-catalog-item-price > div{
+					.b-catalog-item-price .current-price,
+					.b-catalog-item-price .old-price,
+					.b-catalog-item-price .new-price{
 						-webkit-transition: transform 200ms ease-out;
 					    -moz-transition: transform 200ms ease-out;
 					    -ms-transition: transform 200ms ease-out;
@@ -2134,6 +2136,8 @@ strong, b{
 					    transition: transform 200ms ease-out;
 					}
 					.b-catalog-item-price .current-price{
+						font-size: 26px;
+						line-height: 28px;
 						margin-top: 4px;
 					}
 						.b-catalog-item-price .current-price.icon-ruble:after{
@@ -2151,7 +2155,6 @@ strong, b{
 
 					.b-catalog-item-price .old-price{
 						display: inline-block;
-						vertical-align: top;
 						position: relative;
 						color: #434343;
 						font-size: 16px;
@@ -2161,13 +2164,6 @@ strong, b{
 							color: #434343;
 							font-size: 12px;
 							margin-left: 6px;
-						}
-						.b-catalog-item:hover .b-catalog-item-price .old-price{
-							-webkit-transform: translateY(7px);
-						    -moz-transform: translateY(7px);
-						    -ms-transform: translateY(7px);
-						    -o-transform: translateY(7px);
-						    transform: translateY(7px);
 						}
 						.old-price-line{
 							position: absolute;
@@ -2187,6 +2183,7 @@ strong, b{
 							font-size: 18px;
 							margin-left: 6px;
 						}
+						.b-catalog-item:hover .b-catalog-item-price .old-price,
 						.b-catalog-item:hover .b-catalog-item-price .new-price{
 							-webkit-transform: translateY(7px);
 						    -moz-transform: translateY(7px);
@@ -2196,6 +2193,7 @@ strong, b{
 						}
 
 				.b-btn-buy{
+					display: inline-block;
 					color: #f43d84;
 					font-family: 'Geometria-Medium';
 					font-size: 16px;
@@ -2229,6 +2227,7 @@ strong, b{
 					bottom: 6px;
 					right: 0;
 					z-index: 101;
+					text-align: center;
 					opacity: 0;
 					visibility: hidden;
 					-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
@@ -2520,7 +2519,7 @@ strong, b{
 						margin-right: 0;
 					}
 						ul.b-social li a{
-							font-size: 0;
+							font-size: 0 !important;
 							width: 100%;
 							display: inline-block;
 						}
@@ -2528,6 +2527,10 @@ strong, b{
 						ul.b-social li:hover a:before{
 							color: #6e58ac;
 						}
+
+				.b-social.b-social-mobile{
+					display: none;
+				}
 
 	.b-footer-down{
 		border-top: 1px solid #e6e6e6;
