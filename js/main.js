@@ -1,5 +1,8 @@
 $(document).ready(function(){
     var isRetina = retina(),
+        isDesktop = false,
+        isTablet = false,
+        isMobile = false,
         countQueue = {};
 
     function resize(){
@@ -24,6 +27,72 @@ $(document).ready(function(){
             $('.b-catalog-item-back').css("-ms-transform", "scale("+scaleX+","+scaleY+")");
             $('.b-catalog-item-back').css("-o-transform", "scale("+scaleX+","+scaleY+")");
             $('.b-catalog-item-back').css("transform", "scale("+scaleX+","+scaleY+")");
+        }*/
+
+        if( myWidth > 1199 ){
+            isDesktop = true;
+            isTablet = false;
+            isMobile = false;
+        }else if( myWidth > 767 ){
+            isDesktop = false;
+            isTablet = true;
+            isMobile = false;
+        }else{
+            isDesktop = false;
+            isTablet = false;
+            isMobile = true;
+        }
+
+        if(!isDesktop){
+            $('.b-filter').addClass("hide");
+        }else{
+            $('.b-filter').removeClass("hide");
+        }
+
+        /*if(!isDesktop){
+            if(!$('.b-catalog-sections').hasClass("slick-initialized")){
+                $('.b-catalog-sections').not('.slick-initialized').slick({
+                    dots: false,
+                    arrows: true,
+                    nextArrow: '<div class="icon-slider-right b-slider-arrows" aria-hidden="true"></div>',
+                    prevArrow: '<div class="icon-slider-left b-slider-arrows" aria-hidden="true"></div>',
+                    infinite: true,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    speed: 600,
+                    //autoplay: true,
+                    //autoplaySpeed: 3000,
+                    responsive: [
+                        {
+                          breakpoint: 920,
+                          settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1
+                          }
+                        },
+                        {
+                          breakpoint: 665,
+                          settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                          }
+                        },
+                        {
+                          breakpoint: 400,
+                          settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                          }
+                        }
+                    ]
+                });
+            }
+        }else{
+            if($('.b-catalog-sections').hasClass("slick-initialized")){
+                setTimeout(function(){
+                    $('.b-catalog-sections').slick('unslick');
+                },100);
+            }
         }*/
         
         checkMenu();
@@ -110,15 +179,17 @@ $(document).ready(function(){
             };
             img.src = src;
         });
-        $("*[data-back]").each(function(){
-            var $this = $(this),
-                img = new Image(),
-                src = $this.attr("data-back");
-            img.onload = function(){
-                $this.css("background-image", 'url(' + $this.attr("data-back") + ')');
-            };
-            img.src = src;
-        });
+        if(!isMobile){
+            $("*[data-back]").each(function(){
+                var $this = $(this),
+                    img = new Image(),
+                    src = $this.attr("data-back");
+                img.onload = function(){
+                    $this.css("background-image", 'url(' + $this.attr("data-back") + ')');
+                };
+                img.src = src;
+            });
+        }
     }
 
     function updateCatalog(){
@@ -222,7 +293,17 @@ $(document).ready(function(){
         return false;
     });
 
-    $("body").on("click", ".color-reset", function(){
+    $('.b-btn-filter').on('click', function(){
+        $('.b-filter').toggleClass("hide");
+        if(!$('.b-filter').hasClass("hide")){
+            $('body,html').animate({
+               scrollTop: $('.b-filter').offset().top - $('.b-top').outerHeight(true) - 10
+            }, 300);
+        }
+        return false;
+    });
+
+    $("body").on("click", ".color-reset, .b-btn-reset", function(){
         $('.b-filter-colors input[type="checkbox"]').prop("checked", false);
         $(".any-prices").prop("checked", true);
         checkPrices();
@@ -463,7 +544,7 @@ $(document).ready(function(){
         });
     }
 
-    //поставить первую доступную дату
+    //поставить первое доступное время
     function setFirstTime(){
         $firstTime = $('input[name="time-select"]:not(.no-active):first');
         $firstTime.prop("checked", true);

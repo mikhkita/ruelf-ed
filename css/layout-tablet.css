@@ -3,7 +3,7 @@ body {
 }
 
 .b-block{
-	width: calc(100% - 48px);
+	width: calc(100% - 64px);
 }
 
 /*---------------------*/
@@ -25,7 +25,7 @@ body {
 			margin-right: 0;
 		}
 			.flowers-img-cont{
-				height: calc(100% - 110px);
+				height: calc(100% - 116px);
 			}
 				.flowers-img{
 					background-position: 50% 0%;
@@ -46,7 +46,7 @@ body {
 }
 
 .b-main-info .b-block{
-	width: calc(100% - 48px);
+	width: calc(100% - 64px);
 }
 
 .arrow-up, .arrow-hide{
@@ -62,6 +62,55 @@ body {
 }
 .b-addition-item:nth-child(2n){
 	margin-right: 0;
+}
+ul.b-catalog-sections{
+	width: 100%;
+	padding: 0 16px;
+}
+ul.b-catalog-sections li{
+	text-align: center;
+	padding: 0 10px;
+}
+.b-catalog-menu .b-line{
+	display: none;
+}
+.burger-menu{
+	display: block;
+}
+.b-top.b-top-fixed{
+	padding-bottom: 18px;
+}
+.b-top.b-top-fixed .b-logo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.b-top .b-menu{
+	display: none;
+}
+
+.b-logo {
+	top: -6px;
+    background-size: 270px;
+    width: 270px;
+    height: 45px;
+}
+
+.b-filter-price, .b-filter-flowers{
+	width: 50%;
+	float: left;
+	margin-bottom: 42px;
+}
+
+.b-filter-colors ul {
+    padding-bottom: 0;
+}
+
+.b-catalog-menu{
+	display: none;
+}
+.b-catalog-menu-mobile{
+	display: block;
 }
 
 @media screen and (max-width: 1024px){
@@ -83,6 +132,9 @@ body {
 	.b-footer-column:nth-child(3){
 		display: none;
 	}
+	.b-footer-copyright {
+	    margin-right: 40px;
+	}
 
 }
 
@@ -90,7 +142,7 @@ body {
 
 	.b-catalog-item{
 		width: calc(100%/2 - 13px);
-		height: 55vw;
+		height: calc(100vw/2 - 13px + 82px);
 	}
 	.b-catalog-item:nth-child(3n){
 		margin-right: 24px;
@@ -102,11 +154,42 @@ body {
 
 		}
 
+		.b-catalog-item .b-btn-buy{
+			bottom: 10px;
+			min-width: 164px;
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.b-catalog-item:hover .b-catalog-item-price .current-price,
+		.b-catalog-item:hover .b-catalog-item-price .old-price,
+		.b-catalog-item:hover .b-catalog-item-price .new-price{
+			-webkit-transform: none;
+		    -moz-transform: none;
+		    -ms-transform: none;
+		    -o-transform: none;
+		    transform: none;
+		}
+		.b-catalog-item-price .current-price{
+			margin-top: 22px;
+		}
+		.b-catalog-item-price .old-price,
+		.b-catalog-item-price .new-price{
+			margin-top: 3px;
+		}
+
 	.b-call {
 	    width: 90%;
 	}
 
 	.b-footer-copyright {
 	    margin-right: 30px;
+	}
+
+	.b-footer-down-left{
+		width: 350px;
+	}
+	.b-redder{
+		padding-top: 12px;
 	}
 }
