@@ -310,6 +310,11 @@ $(document).ready(function(){
         $hMain = $targetMain.offset().top;
     });*/
 
+    $(".b-btn-pay").click(function(){
+        $("#pay").submit();
+        return false;
+    });
+
     $window.on('scroll', function() {
         // Как далеко вниз прокрутили страницу
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
