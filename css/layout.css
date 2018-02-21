@@ -3133,12 +3133,12 @@ strong, b{
 						border: 1px solid transparent;
 					}
 					.b-time-list ul li label:hover{
-						background-color: #6e58ac;
-						color: #FFF;
-					}
-					.b-time-list ul li input:checked + label{
 						border: 1px solid #6e58ac;
 						color: #6e58ac;
+					}
+					.b-time-list ul li input:checked + label{
+						background-color: #6e58ac;
+						color: #FFF;
 					}
 					.b-time-list ul li input:checked + label:hover{
 						color: #FFF;
@@ -3152,6 +3152,7 @@ strong, b{
 					.b-time-list ul li input.no-active + label:hover{
 						color: #c4c4c4;
 						background-color: transparent;
+						border: 1px solid transparent;
 					}
 
 	.b-input-row{
