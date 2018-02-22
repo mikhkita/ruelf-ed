@@ -113,6 +113,23 @@ ul.b-catalog-sections li{
 	display: block;
 }
 
+.b-filter-flowers-list{
+	width: 100%;
+}
+	.b-filter-flowers-list ul{
+		float: left;
+		width: 50%;
+		display: block;
+	}
+	.b-filter-flowers-list ul li:last-child label {
+	    margin-bottom: 17px;
+	}
+
+	.b-filter-flowers-list ul:nth-last-child(1) li:last-child label,
+	.b-filter-flowers-list ul:nth-last-child(2) li:last-child label{
+		margin-bottom: 0;
+	}
+
 @media screen and (max-width: 1024px){
 
 	.b-questions{
@@ -134,6 +151,11 @@ ul.b-catalog-sections li{
 	}
 	.b-footer-copyright {
 	    margin-right: 40px;
+	}
+
+	.b-filter-flowers-list ul{
+		float: none;
+		width: 100%;
 	}
 
 }

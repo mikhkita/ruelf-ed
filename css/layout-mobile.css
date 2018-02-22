@@ -219,6 +219,7 @@ h1.b-title{
 .b-filter-colors ul {
     padding-bottom: 0;
     margin-bottom: 40px;
+    margin-right: 0;
 }
 
 .color-item {
@@ -256,7 +257,29 @@ h1.b-title{
     margin-top: 1px;
 }
 
+.b-filter-flowers-list{
+	width: 100%;
+}
+	.b-filter-flowers-list ul{
+		float: none;
+		width: 100%;
+		display: block;
+	}
+	.b-filter-flowers-list ul li:last-child label {
+	    margin-bottom: 17px;
+	}
+
+	.b-filter-flowers-list ul:nth-last-child(1) li:last-child label{
+		margin-bottom: 0;
+	}
+
 @media screen and (max-width: 665px){
+
+	h1.b-title {
+	    font-size: 32px;
+	    line-height: 40px;
+	    margin-bottom: 28px;
+	}
 
 	.b-block{
 		width: calc(100% - 48px);
@@ -332,6 +355,69 @@ h1.b-title{
 	    max-width: 186px;
 	}
 
+	.b-filter-price, .b-filter-flowers{
+		float: none;
+		width: 100%;
+		margin-bottom: 24px;
+		padding-top: 0;
+	}
+	.b-filter {
+	    margin-top: 0;
+	}
+
+	.color-item {
+	    margin-bottom: 16px;
+	}
+
+	.b-filter-colors ul {
+		margin-top: 8px;
+	    margin-bottom: 16px;
+	}
+	.b-filter-flowers-list {
+	    width: 100%;
+	    padding: 24px;
+	}
+
+	.b-advantage-item:not(:first-child){
+		display: none;
+	}
+	.b-advantage-item img {
+		width: 32px;
+    	height: 34px;
+		margin-top: 2px;
+	    margin-right: 8px;
+	}
+	.b-advantage-item p, .b-advantage-item .p{
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.b-header-title {
+	    padding-top: 105px;
+	    margin-bottom: 89px;
+	}
+	.b-catalog-menu-mobile {
+	    padding-bottom: 34px;
+	}
+
+	.b-top-phone, .b-basket-btn-cont{
+		display: none;
+	}
+	.b-top-basket-mobile{
+		display: block;
+	}
+
+	.b-logo {
+		position: static;
+	    background-size: 220px;
+	    width: 220px;
+	    height: 36px;
+	}
+	.burger-menu{
+		margin-right: 30px;
+	}
+	.b-top.b-top-fixed{
+		padding-top: 18px;
+	}
 }
 
 @media screen and (max-width: 570px){
@@ -491,5 +577,16 @@ h1.b-title{
 	    min-width: 164px;
 	    left: calc(50% - 82px);
 	    right: auto;
+	}
+
+	.icon-thanks-success,
+	.icon-thanks-error,
+	.b-thanks-left{
+		display: none;
+	}
+	.b-popup-success .b-thanks-right,
+	.b-popup-error .b-thanks-right,
+	.b-thanks-right{
+		width: 100%;
 	}
 }

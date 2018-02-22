@@ -37,1336 +37,1394 @@
 	<meta name="msapplication-TileImage" content="favicon/mstile-144x144.png" />
 </head>
 <body>
-
-	<div class="b b-header" data-back="i/header@2x.svg">
-		
-		<div class="b-top">
-			<div class="b-fixed-back"></div>
-			<div class="b-block clearfix">
-				<div id="burger-menu" class="burger-menu icon-burger-menu"></div>
-				<a href="index.html" class="b-logo"></a>
-				<ul class="b-menu">
-					<li class="top-hide"><a href="catalog.html">Каталог букетов</a></li>
-					<li>
-						<a href="about.html">О магазине</a>
-						<ul class="b-submenu">
-							<li><a href="payment.html">Оплата</a></li>
-							<li><a href="delivery.html">Доставка</a></li>
-							<li><a href="order.html">Как заказать?</a></li>
-							<li><a href="about-company.html">О компании</a></li>
-						</ul>
-					</li>
-					<li><a href="question.html">Вопрос-ответ</a></li>
-					<li><a href="contacts.html">Контакты</a></li>
-				</ul>
-				<div class="b-top-right">
-					<div class="b-top-phone">
-						<a href="tel:+338830" class="icon-phone">33-88-30</a>
-					</div>
-					<a href="#" class="b-favorites">
-						<div class="icon-favorites"></div>
-						<div class="icon-favorites-back"></div>
-					</a>
-					<div class="b-basket-btn-cont">
-						<a href="#" class="b-basket-btn">
-							<div class="icon-basket"></div>
-							<div class="b-basket-btn-total icon-ruble">6 920</div>
+	<div id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+		<h2>Меню</h2>
+		<ul>
+			<li><a href="#">Каталог букетов</a></li>
+			<li><a href="#">О магазине</a></li>
+			<li><a href="#">Оплата</a></li>
+			<li><a href="#">Доставка</a></li>
+			<li><a href="#">Гарантия</a></li>
+			<li><a href="#">Вопрос-ответ</a></li>
+			<li><a href="#">Контакты</a></li>
+		</ul>
+		<div class="slideout-menu-padding">
+			<a href="#b-popup-call" class="b-btn-buy fancy">Заказать звонок</a>
+		</div>
+	</div>
+	<div id="basket-menu" class="basket-menu slideout-menu slideout-menu-right">
+		<h2>Корзина</h2>
+		<div class="b-basket">
+			<ul>
+				<li>
+					<div>
+						<a href="#" class="icon-close"></a>
+						<a href="detail.html">
+							<div class="b-basket-item-img" style="background-image: url(i/basket-1.jpg);"></div>
 						</a>
-						<div class="b-basket">
-							<ul>
-								<li>
-									<a href="#" class="icon-close"></a>
-									<a href="detail.html">
-										<div class="b-basket-item-img" style="background-image: url(i/basket-1.jpg);"></div>
-									</a>
-									<div class="b-basket-item-text">
-										<a class="b-basket-item-name" href="detail.html"><h4>Букет «Розовое вино» «Розовое вино»</h4></a>
-										<p class="b-basket-item-price icon-ruble">5 400</p>
-										<p class="b-basket-item-count">2 шт.</p>
-									</div>
-								</li>
-								<li>
-									<a href="#" class="icon-close"></a>
-									<a href="detail.html">
-										<div class="b-basket-item-img" style="background-image: url(i/basket-2.jpg);"></div>
-									</a>
-									<div class="b-basket-item-text">
-										<a class="b-basket-item-name" href="detail.html"><h4>Букет пионовых роз</h4></a>
-										<p class="b-basket-item-price icon-ruble">3 760</p>
-										<p class="b-basket-item-count">1 шт.</p>
-									</div>
-								</li>
-								<li>
-									<a href="#" class="icon-close"></a>
-									<a href="detail.html">
-										<div class="b-basket-item-img" style="background-image: url(i/basket-3.jpg);"></div>
-									</a>
-									<div class="b-basket-item-text">
-										<a class="b-basket-item-name" href="detail.html"><h4>«Солнечный букет»</h4></a>
-										<p class="b-basket-item-price icon-ruble">6 350</p>
-										<p class="b-basket-item-count">1 шт.</p>
-									</div>
-								</li>
-							</ul>
-							<div class="b-basket-down">
-								<h3 class="b-basket-total icon-ruble">20 910</h3>
-								<a href="#" class="b-btn b-btn-buy">Оформить</a>
-							</div>
+						<div class="b-basket-item-text">
+							<a class="b-basket-item-name" href="detail.html"><h4>Букет «Розовое вино» «Розовое вино»</h4></a>
+							<p class="b-basket-item-price icon-ruble">5 400</p>
+							<p class="b-basket-item-count">2 шт.</p>
 						</div>
 					</div>
+				</li>
+				<li>
+					<div>
+						<a href="#" class="icon-close"></a>
+						<a href="detail.html">
+							<div class="b-basket-item-img" style="background-image: url(i/basket-2.jpg);"></div>
+						</a>
+						<div class="b-basket-item-text">
+							<a class="b-basket-item-name" href="detail.html"><h4>Букет пионовых роз</h4></a>
+							<p class="b-basket-item-price icon-ruble">3 760</p>
+							<p class="b-basket-item-count">1 шт.</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="slideout-menu-padding">
+				<div class="b-basket-down">
+					<span>Сумма заказа:</span>
+					<h3 class="b-basket-total icon-ruble">20 910</h3>
 				</div>
-			</div>
-		</div>
-
-		<div class="b-block">
-			<div class="b-header-title">
-				<h1 class="b-title">Доставка цветов в Томске</h1>
-				<ul class="b-header-title-list">
-					<li class="b-advantage-item">
-						<img src="i/bouquet.svg">
-						<p>Всегда только<br>свежие букеты</p>
-					</li>
-					<li class="b-advantage-item">
-						<img src="i/delivery.svg">
-						<p>Бесплатная<br>доставка</p>
-					</li>
-					<li class="b-advantage-item">
-						<img src="i/calendar.svg">
-						<p>Ежедневная<br>продажа цветов</p>
-					</li>
-				</ul>
-			</div>
-			<div class="b-catalog-menu">
-				<div class="b-line"></div>
-				<ul class="b-catalog-sections clearfix">
-					<li><a href="catalog.html">Классика</a></li>
-					<li><a href="catalog.html">По случаю</a></li>
-					<li><a href="catalog.html">Авторские букеты</a></li>
-					<li><a href="catalog.html">Цветы в коробке</a></li>
-					<li><a href="catalog.html">Корзины цветов</a></li>
-					<li><a href="catalog.html">Мужские букеты</a></li>
-				</ul>
-			</div>
-			<div class="b-catalog-menu-mobile">
-				<div class="sections-mobile">Авторские букеты</div>
-				<a href="#" class="b-btn-filter icon-params">Фильтр</a>
+				<a href="#" class="b-btn b-btn-buy">Оформить заказ</a>
 			</div>
 		</div>
 	</div>
-
-	<div class="b b-content">
-		<div class="b-filter">
-			<div class="b-block">
-				<form id="b-filter-form" class="b-filter-form" method="post" action="action.php">
-					<div class="b b-filter-price">
-						<div class="b-filter-select-wrap">
-							<p>Цена:</p>
-							<a href="#" class="b-filter-price-select icon-arrow-down">Любая цена</a>
-						</div>
-						<ul class="b-radio b-filter-price-list">
-							<li>
-								<input id="any" type="radio" name="filter-price" checked>
-								<label for="any">Любая цена</label>
-							</li>
-							<li>
-								<input id="less-1000" type="radio" name="filter-price">
-								<label for="less-1000">До 1 000</label>
-							</li>
-							<li>
-								<input id="between-1000-2000" type="radio" name="filter-price">
-								<label for="between-1000-2000">От 1 000 до 2 000</label>
-							</li>
-							<li>
-								<input id="between-2000-4000" type="radio" name="filter-price">
-								<label for="between-2000-4000">От 2 000 до 4 000</label>
-							</li>
-							<li>
-								<input id="over-4000" type="radio" name="filter-price">
-								<label for="over-4000">От 4 000</label>
-							</li>
-						</ul>
-					</div>
-					<div class="b b-filter-flowers">
-						<div class="b-filter-select-wrap">
-							<p>Цветы:</p>
-							<a href="#" class="b-filter-flowers-select icon-arrow-down" data-default="Любые цветы">Любые цветы</a>
-						</div>
-						<div class="b-checkbox b-filter-flowers-list">
-							<ul>
-								<li>
-									<input id="any-flowers" class="any-flowers" type="checkbox" name="any-flowers" checked disabled>
-									<label for="any-flowers">Любые цветы</label>
-								</li>
-								<li>
-									<input id="flowers-1" type="checkbox" name="flowers-list">
-									<label for="flowers-1">Тюльпаны</label>
-								</li>
-								<li>
-									<input id="flowers-2" type="checkbox" name="flowers-list">
-									<label for="flowers-2">Розы</label>
-								</li>
-								<li>
-									<input id="flowers-3" type="checkbox" name="flowers-list">
-									<label for="flowers-3">Пионы</label>
-								</li>
-								<li>
-									<input id="flowers-4" type="checkbox" name="flowers-list">
-									<label for="flowers-4">Герберы</label>
-								</li>
-								<li>
-									<input id="flowers-5" type="checkbox" name="flowers-list">
-									<label for="flowers-5">Альстромерия</label>
-								</li>
-								<li>
-									<input id="flowers-6" type="checkbox" name="flowers-list">
-									<label for="flowers-6">Анемоны</label>
-								</li>
-								<li>
-									<input id="flowers-7" type="checkbox" name="flowers-list">
-									<label for="flowers-7">Гвоздики</label>
-								</li>
+	<div id="panel-page" class="slideout-panel slideout-panel-right">
+		<div class="b b-header" data-back="i/header@2x.svg">
+			
+			<div class="b-top">
+				<div class="b-fixed-back"></div>
+				<div class="b-block clearfix">
+					<div id="burger-menu" class="burger-menu icon-burger-menu"></div>
+					<a href="index.html" class="b-logo"></a>
+					<ul class="b-menu">
+						<li class="top-hide"><a href="catalog.html">Каталог букетов</a></li>
+						<li>
+							<a href="about.html">О магазине</a>
+							<ul class="b-submenu">
+								<li><a href="payment.html">Оплата</a></li>
+								<li><a href="delivery.html">Доставка</a></li>
+								<li><a href="order.html">Как заказать?</a></li>
+								<li><a href="about-company.html">О компании</a></li>
 							</ul>
-							<ul>
-								<li>
-									<input id="flowers-8" type="checkbox" name="flowers-list">
-									<label for="flowers-8">Гермини</label>
-								</li>
-								<li>
-									<input id="flowers-9" type="checkbox" name="flowers-list">
-									<label for="flowers-9">Гиацинт</label>
-								</li>
-								<li>
-									<input id="flowers-10" type="checkbox" name="flowers-list">
-									<label for="flowers-10">Гортензия</label>
-								</li>
-								<li>
-									<input id="flowers-11" type="checkbox" name="flowers-list">
-									<label for="flowers-11">Ирис</label>
-								</li>
-								<li>
-									<input id="flowers-12" type="checkbox" name="flowers-list">
-									<label for="flowers-12">Калла</label>
-								</li>
-								<li>
-									<input id="flowers-13" type="checkbox" name="flowers-list">
-									<label for="flowers-13">Клематис</label>
-								</li>
-								<li>
-									<input id="flowers-14" type="checkbox" name="flowers-list">
-									<label for="flowers-14">Лаванда</label>
-								</li>
-								<li>
-									<input id="flowers-15" type="checkbox" name="flowers-list">
-									<label for="flowers-15">Ландыши</label>
-								</li>
-							</ul>
-							<ul>
-								<li>
-									<input id="flowers-16" type="checkbox" name="flowers-list">
-									<label for="flowers-16">Лизиантусы</label>
-								</li>
-								<li>
-									<input id="flowers-17" type="checkbox" name="flowers-list">
-									<label for="flowers-17">Мимозы</label>
-								</li>
-								<li>
-									<input id="flowers-18" type="checkbox" name="flowers-list">
-									<label for="flowers-18">Нарцисс</label>
-								</li>
-								<li>
-									<input id="flowers-19" type="checkbox" name="flowers-list">
-									<label for="flowers-19">Орхидея</label>
-								</li>
-								<li>
-									<input id="flowers-20" type="checkbox" name="flowers-list">
-									<label for="flowers-20">Подсолнух</label>
-								</li>
-								<li>
-									<input id="flowers-21" type="checkbox" name="flowers-list">
-									<label for="flowers-21">Ранукулюс</label>
-								</li>
-								<li>
-									<input id="flowers-22" type="checkbox" name="flowers-list">
-									<label for="flowers-22">Роза кустовая</label>
-								</li>
-								<li>
-									<input id="flowers-23" type="checkbox" name="flowers-list">
-									<label for="flowers-23">Роза пионовидная</label>
-								</li>
-							</ul>
-							<ul>
-								<li>
-									<input id="flowers-24" type="checkbox" name="flowers-list">
-									<label for="flowers-24">Сирень</label>
-								</li>
-								<li>
-									<input id="flowers-25" type="checkbox" name="flowers-list">
-									<label for="flowers-25">Тюльпаны пионовидные</label>
-								</li>
-								<li>
-									<input id="flowers-26" type="checkbox" name="flowers-list">
-									<label for="flowers-26">Фрезия</label>
-								</li>
-								<li>
-									<input id="flowers-27" type="checkbox" name="flowers-list">
-									<label for="flowers-27">Эустома</label>
-								</li>
-								<li>
-									<input id="flowers-28" type="checkbox" name="flowers-list">
-									<label for="flowers-28">Ромашки</label>
-								</li>
-								<li>
-									<input id="flowers-29" type="checkbox" name="flowers-list">
-									<label for="flowers-29">Хризантемы</label>
-								</li>
-							</ul>
+						</li>
+						<li><a href="question.html">Вопрос-ответ</a></li>
+						<li><a href="contacts.html">Контакты</a></li>
+					</ul>
+					<div class="b-top-right">
+						<div class="b-top-phone">
+							<a href="tel:+338830" class="icon-phone">33-88-30</a>
 						</div>
-					</div>
-					<div class="b-filter-colors">
-						<ul>
-							<li>
-								<input id="label-red" type="checkbox" name="red">
-								<label for="label-red" class="color-item color-red"></label>
-							</li>
-							<li>
-								<input id="label-pink" type="checkbox" name="pink">
-								<label for="label-pink" class="color-item color-pink"></label>
-							</li>
-							<li>
-								<input id="label-beige" type="checkbox" name="beige">
-								<label for="label-beige" class="color-item color-beige"></label>
-							</li>
-							<li>
-								<input id="label-yellow" type="checkbox" name="yellow">
-								<label for="label-yellow" class="color-item color-yellow"></label>
-							</li>
-							<li>
-								<input id="label-orange" type="checkbox" name="orange">
-								<label for="label-orange" class="color-item color-orange"></label>
-							</li>
-							<li>
-								<input id="label-blue" type="checkbox" name="blue">
-								<label for="label-blue" class="color-item color-blue"></label>
-							</li>
-							<li>
-								<input id="label-purple" type="checkbox" name="purple">
-								<label for="label-purple" class="color-item color-purple"></label>
-							</li>
-							<li>
-								<input id="label-black" type="checkbox" name="black">
-								<label for="label-black" class="color-item color-black"></label>
-							</li>
-							<li>
-								<input id="label-white" type="checkbox" name="white">
-								<label for="label-white" class="color-item color-white"></label>
-							</li>
-							<li>
-								<input id="label-all" type="checkbox" name="all">
-								<label for="label-all" class="color-item color-all">
-									<div class="color-all-img"></div>
-								</label>
-							</li>
-							<li class="b-tip-cont">
-								<a href="#" class="color-reset icon-update b-tip-ref"></a>
-								<div class="b-tip">Сбросить</div>
-							</li>
-						</ul>
-					</div>
-				</form>
-			</div>
-			<div class="b-center">
-				<a href="#" class="b-btn b-btn-black b-btn-reset">Сбросить фильтр</a>
-			</div>
-		</div>
-
-		<div class="b-catalog">
-			<div class="b-block">
-				<h2 class="b-title">Классические букеты</h2>
-				<div class="b-catalog-list clearfix">
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-1.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Красно-белый букет из роз</h4>
-							<div class="b-catalog-item-price">
-								<div class="old-price">
-									<p class="icon-ruble-medium">5 300</p>
-									<div class="old-price-line"></div>
-								</div>
-								<div class="new-price icon-ruble">3 500</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-2.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Букет пионовых роз</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-3.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Букет «Розовое вино»</h4>
-							<div class="b-catalog-item-price">
-								<div class="old-price">
-									<p class="icon-ruble-medium">6 350</p>
-									<div class="old-price-line"></div>
-								</div>
-								<div class="new-price icon-ruble">4 150</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-4.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>«Солнечный букет»</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-5.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Большой букет пионовых роз</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-6.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Букет белых роз «51 роза»</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-
-					<div class="b-review-slider-cont">
-						<h3>Отзывы наших клиентов</h3>
-						<div class="b-review-slider">
-							<div class="b-review-item">
-								<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери. Привезли прекрасные 9 розовых роз - свежих  и красивых!! Связались сразу после заказа, еще и оплатить не успели) Все уточнили и сделали на высшем уровне!!</p>
-								<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
-							</div>
-							<div class="b-review-item">
-								<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери.</p>
-								<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
-							</div>
-							<div class="b-review-item">
-								<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери. Привезли прекрасные 9 розовых роз - свежих  и красивых!! Связались сразу после заказа, еще и оплатить не успели) Все уточнили и сделали на высшем уровне!!</p>
-								<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
-							</div>
-							<div class="b-review-item">
-								<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери. Привезли прекрасные 9 розовых роз - свежих  и красивых!!</p>
-								<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
-							</div>
-							<div class="b-review-item">
-								<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери. Привезли прекрасные 9 розовых роз - свежих  и красивых!! Связались сразу после заказа, еще и оплатить не успели) Все уточнили и сделали на высшем уровне!!</p>
-								<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="b-center">
-					<a href="#" class="b-btn b-btn-more icon-arrow-right-bold">
-						<div class="b-btn-more-text b-center">Показать больше</div>
-					</a>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="b-catalog">
-			<div class="b-block">
-				<h2 class="b-title">Букеты по случаю</h2>
-				<div class="b-catalog-list clearfix">
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-1.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Красно-белый букет из роз</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-2.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Букет пионовых роз</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-3.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Букет «Розовое вино»</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-4.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>«Солнечный букет»</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-5.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Большой букет пионовых роз</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-6.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Букет белых роз «51 роза»</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-7.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Разноцветный букет</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-8.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Большой разноцветный букет</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="b-center">
-					<a href="#" class="b-btn b-btn-more icon-arrow-right-bold">
-						<div class="b-btn-more-text b-center">Показать больше</div>
-					</a>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="b-catalog">
-			<div class="b-block">
-				<h2 class="b-title">Авторские букеты</h2>
-				<div class="b-catalog-list clearfix">
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-1.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Красно-белый букет из роз</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-2.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Букет пионовых роз</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-3.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Букет «Розовое вино»</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-4.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>«Солнечный букет»</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-5.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Большой букет пионовых роз</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-6.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Букет белых роз «51 роза»</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-7.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Разноцветный букет</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-8.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Большой разноцветный букет</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="b-center">
-					<a href="#" class="b-btn b-btn-more icon-arrow-right-bold">
-						<div class="b-btn-more-text b-center">Показать больше</div>
-					</a>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="b-catalog">
-			<div class="b-block">
-				<h2 class="b-title">Мужские букеты</h2>
-				<div class="b-catalog-list clearfix">
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-1.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Красно-белый букет из роз</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-2.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Букет пионовых роз</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-3.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Букет «Розовое вино»</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-4.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>«Солнечный букет»</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-5.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Большой букет пионовых роз</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-					<div class="b-catalog-item">
-						<div class="b-catalog-item-back"></div>
-						<div class="b-catalog-item-content">
-							<a href="detail.html" class="b-catalog-item-link"></a>
-							<div class="flowers-img-cont">
-								<div class="flowers-img" style="background-image: url(i/catalog-6.jpg);"></div>
-								<div class="b-catalog-item-hover">
-									<div class="b-catalog-item-hover-back"></div>
-									<div class="b-catalog-item-hover-content">
-										<a href="#" class="b-favorites b-catalog-favorites">
-											<div class="icon-favorites"></div>
-											<div class="icon-favorites-back"></div>
-										</a>
-										<div class="b-catalog-hover-size">
-											<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
-											<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
-										</div>
-										<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
-									</div>
-								</div>
-							</div>
-							<h4>Букет белых роз «51 роза»</h4>
-							<div class="b-catalog-item-price">
-								<div class="current-price icon-ruble">3 300</div>
-							</div>
-							<a href="#" class="b-btn-buy">Купить</a>
-						</div>
-					</div>
-
-					<div class="b-call b-table">
-						<div class="b-table-cell">
-							<h3>Не нашли подходящий букет?</h3>
-							<p>Наши специалисты помогут Вам составить эксклюзивный букет, подходящий под Ваши запросы!</p>
-							<a href="#b-popup-call" class="fancy b-btn b-btn-white icon-phone">
-								<div class="b-btn-more-text b-center">Заказать звонок</div>
+						<a href="#" class="b-favorites">
+							<div class="icon-favorites"></div>
+							<div class="icon-favorites-back"></div>
+						</a>
+						<div class="b-top-basket-mobile icon-basket"></div>
+						<div class="b-basket-btn-cont">
+							<a href="#" class="b-basket-btn">
+								<div class="icon-basket"></div>
+								<div class="b-basket-btn-total icon-ruble">6 920</div>
 							</a>
+							<div class="b-basket">
+								<ul>
+									<li>
+										<a href="#" class="icon-close"></a>
+										<a href="detail.html">
+											<div class="b-basket-item-img" style="background-image: url(i/basket-1.jpg);"></div>
+										</a>
+										<div class="b-basket-item-text">
+											<a class="b-basket-item-name" href="detail.html"><h4>Букет «Розовое вино» «Розовое вино»</h4></a>
+											<p class="b-basket-item-price icon-ruble">5 400</p>
+											<p class="b-basket-item-count">2 шт.</p>
+										</div>
+									</li>
+									<li>
+										<a href="#" class="icon-close"></a>
+										<a href="detail.html">
+											<div class="b-basket-item-img" style="background-image: url(i/basket-2.jpg);"></div>
+										</a>
+										<div class="b-basket-item-text">
+											<a class="b-basket-item-name" href="detail.html"><h4>Букет пионовых роз</h4></a>
+											<p class="b-basket-item-price icon-ruble">3 760</p>
+											<p class="b-basket-item-count">1 шт.</p>
+										</div>
+									</li>
+									<li>
+										<a href="#" class="icon-close"></a>
+										<a href="detail.html">
+											<div class="b-basket-item-img" style="background-image: url(i/basket-3.jpg);"></div>
+										</a>
+										<div class="b-basket-item-text">
+											<a class="b-basket-item-name" href="detail.html"><h4>«Солнечный букет»</h4></a>
+											<p class="b-basket-item-price icon-ruble">6 350</p>
+											<p class="b-basket-item-count">1 шт.</p>
+										</div>
+									</li>
+								</ul>
+								<div class="b-basket-down">
+									<h3 class="b-basket-total icon-ruble">20 910</h3>
+									<a href="#" class="b-btn b-btn-buy">Оформить</a>
+								</div>
+							</div>
 						</div>
 					</div>
-
 				</div>
-
-				<div class="b-center">
-					<a href="#" class="b-btn b-btn-more icon-arrow-right-bold">
-						<div class="b-btn-more-text b-center">Показать больше</div>
-					</a>
-				</div>
-
 			</div>
-		</div>
 
-		<div class="b-questions clearfix">
 			<div class="b-block">
-				<h2 class="b-title">Вопросы и ответы</h2>
-				<div class="b-questions-list">
-					<a href="#b-popup-question" class="fancy b-questions-item b-table">
-						<div class="b-table-cell">
-							<p>Будет ли доставленный букет соответствовать фото на сайте?</p>
-						</div>
-					</a>
-					<a href="#b-popup-question" class="fancy b-questions-item b-table">
-						<div class="b-table-cell">
-							<p>Какие гарантии? Почему я должен довериться именно вашей доставке?</p>
-						</div>
-					</a>
-					<a href="#b-popup-question" class="fancy b-questions-item b-table">
-						<div class="b-table-cell">
-							<p>Как я могу оплатить заказ? Почему это безопасно?</p>
-						</div>
-					</a>
-					<a href="question.html" class="b-questions-item b-table read-more">
-						<div class="b-table-cell">
-							<h3>Читать все вопросы и ответы</h3>
-							<div class="icon-arrow-right"></div>
-						</div>
-					</a>
+				<div class="b-header-title">
+					<h1 class="b-title">Доставка цветов в Томске</h1>
+					<ul class="b-header-title-list">
+						<li class="b-advantage-item">
+							<img src="i/bouquet.svg">
+							<p>Всегда только<br>свежие букеты</p>
+						</li>
+						<li class="b-advantage-item">
+							<img src="i/delivery.svg">
+							<p>Бесплатная<br>доставка</p>
+						</li>
+						<li class="b-advantage-item">
+							<img src="i/calendar.svg">
+							<p>Ежедневная<br>продажа цветов</p>
+						</li>
+					</ul>
+				</div>
+				<div class="b-catalog-menu">
+					<div class="b-line"></div>
+					<ul class="b-catalog-sections clearfix">
+						<li><a href="catalog.html">Классика</a></li>
+						<li><a href="catalog.html">По случаю</a></li>
+						<li><a href="catalog.html">Авторские букеты</a></li>
+						<li><a href="catalog.html">Цветы в коробке</a></li>
+						<li><a href="catalog.html">Корзины цветов</a></li>
+						<li><a href="catalog.html">Мужские букеты</a></li>
+					</ul>
+				</div>
+				<div class="b-catalog-menu-mobile">
+					<div class="sections-mobile">Авторские букеты</div>
+					<a href="#" class="b-btn-filter icon-params">Фильтр</a>
 				</div>
 			</div>
 		</div>
 
-		<div class="b-main-info">
-			<div class="b-block b-text">
-				<h2>Заказать букет цветов в Томске с бесплатной доставкой</h2>
-				<p>Посмотрите наш каталог. Мы делаем запоминающиеся композиции из свежих благоухающих цветов. Вы можете выбрать из имеющихся в каталоге или заказать подбор оригинального букета, который будет отвечать вкусам конкретного человека.</p>
-				<br>
-				<p>Мы знаем, как впечатлить даже искушенного ценителя красоты. Наши букеты оригинальны, современны, актуальны к любому празднику. А еще дарить их можно без повода. Мы предлагаем цветы с доставкой по Томску с бесплатной доставкой и недорого – балуйте своих любимых каждую неделю роскошными букетами роз или стильными цветами в шляпных коробках. Пусть ваш дом благоухает натуральными свежими ароматами!</p>
-			</div>
-		</div>
-
-		<div class="arrow-up hide-opacity"><div class="icon-arrow-up"></div></div>
-		<div class="arrow-hide"></div>
-		
-	</div>
-
-	<div class="b-footer">
-		<div class="b-block">
-			<div class="b-footer-top clearfix">
-				<div class="b-footer-column">
-					<a href="#" class="b-footer-logo"></a>
-					<ul class="b-social b-social-desktop">
-						<li><a href="#" class="icon-vk">Вконтакте</a></li>
-						<li><a href="#" class="icon-facebook">Facebook</a></li>
-						<li><a href="#" class="icon-ok">Одноклассники</a></li>
-						<li><a href="#" class="icon-instagram">Instagram</a></li>
-					</ul>
-				</div>
-				<div class="b-footer-column">
-					<ul>
-						<li><a href="#">Оплата</a></li>
-						<li><a href="#">Доставка</a></li>
-						<li><a href="#">Гарантия</a></li>
-						<li><a href="#">Как заказать?</a></li>
-					</ul>
-				</div>
-				<div class="b-footer-column">
-					<ul>
-						<li><a href="#">Корзина</a></li>
-						<li><a href="#">Вопрос-ответ</a></li>
-						<li><a href="#">О компании</a></li>
-						<li><a href="#">Контакты</a></li>
-					</ul>
-				</div>
-				<div class="b-footer-column b-footer-contacts">
-					<a href="tel:+338830" class="b-footer-phone icon-phone">33-88-30</a>
-					<p class="b-footer-address">г.&nbsp;Томск, ул.&nbsp;Красноармейская&nbsp;114а</p>
-					<ul class="b-social b-social-mobile">
-						<li><a href="#" class="icon-vk">Вконтакте</a></li>
-						<li><a href="#" class="icon-facebook">Facebook</a></li>
-						<li><a href="#" class="icon-ok">Одноклассники</a></li>
-						<li><a href="#" class="icon-instagram">Instagram</a></li>
-					</ul>
-					<form id="b-sub-form" class="b-sub-form" method="post" action="action.php">
-						<div class="b-inputs">
-							<input name="email" type="text" placeholder="Ваш e-mail" required>
-							<a href="#" class="b-btn b-btn-sub ajax">Подписаться</a>
+		<div class="b b-content">
+			<div class="b-filter">
+				<div class="b-block">
+					<form id="b-filter-form" class="b-filter-form" method="post" action="action.php">
+						<div class="b b-filter-price">
+							<div class="b-filter-select-wrap">
+								<p>Цена:</p>
+								<a href="#" class="b-filter-price-select icon-arrow-down">Любая цена</a>
+								<ul class="b-radio b-filter-price-list">
+									<li>
+										<input id="any" type="radio" name="filter-price" checked>
+										<label for="any">Любая цена</label>
+									</li>
+									<li>
+										<input id="less-1000" type="radio" name="filter-price">
+										<label for="less-1000">До 1 000</label>
+									</li>
+									<li>
+										<input id="between-1000-2000" type="radio" name="filter-price">
+										<label for="between-1000-2000">От 1 000 до 2 000</label>
+									</li>
+									<li>
+										<input id="between-2000-4000" type="radio" name="filter-price">
+										<label for="between-2000-4000">От 2 000 до 4 000</label>
+									</li>
+									<li>
+										<input id="over-4000" type="radio" name="filter-price">
+										<label for="over-4000">От 4 000</label>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="b b-filter-flowers">
+							<div class="b-filter-select-wrap">
+								<p>Цветы:</p>
+								<a href="#" class="b-filter-flowers-select icon-arrow-down" data-default="Любые цветы">Любые цветы</a>
+								<div class="b-checkbox b-filter-flowers-list">
+									<ul>
+										<li>
+											<input id="any-flowers" class="any-flowers" type="checkbox" name="any-flowers" checked disabled>
+											<label for="any-flowers">Любые цветы</label>
+										</li>
+										<li>
+											<input id="flowers-1" type="checkbox" name="flowers-list">
+											<label for="flowers-1">Тюльпаны</label>
+										</li>
+										<li>
+											<input id="flowers-2" type="checkbox" name="flowers-list">
+											<label for="flowers-2">Розы</label>
+										</li>
+										<li>
+											<input id="flowers-3" type="checkbox" name="flowers-list">
+											<label for="flowers-3">Пионы</label>
+										</li>
+										<li>
+											<input id="flowers-4" type="checkbox" name="flowers-list">
+											<label for="flowers-4">Герберы</label>
+										</li>
+										<li>
+											<input id="flowers-5" type="checkbox" name="flowers-list">
+											<label for="flowers-5">Альстромерия</label>
+										</li>
+										<li>
+											<input id="flowers-6" type="checkbox" name="flowers-list">
+											<label for="flowers-6">Анемоны</label>
+										</li>
+										<li>
+											<input id="flowers-7" type="checkbox" name="flowers-list">
+											<label for="flowers-7">Гвоздики</label>
+										</li>
+									</ul>
+									<ul>
+										<li>
+											<input id="flowers-8" type="checkbox" name="flowers-list">
+											<label for="flowers-8">Гермини</label>
+										</li>
+										<li>
+											<input id="flowers-9" type="checkbox" name="flowers-list">
+											<label for="flowers-9">Гиацинт</label>
+										</li>
+										<li>
+											<input id="flowers-10" type="checkbox" name="flowers-list">
+											<label for="flowers-10">Гортензия</label>
+										</li>
+										<li>
+											<input id="flowers-11" type="checkbox" name="flowers-list">
+											<label for="flowers-11">Ирис</label>
+										</li>
+										<li>
+											<input id="flowers-12" type="checkbox" name="flowers-list">
+											<label for="flowers-12">Калла</label>
+										</li>
+										<li>
+											<input id="flowers-13" type="checkbox" name="flowers-list">
+											<label for="flowers-13">Клематис</label>
+										</li>
+										<li>
+											<input id="flowers-14" type="checkbox" name="flowers-list">
+											<label for="flowers-14">Лаванда</label>
+										</li>
+										<li>
+											<input id="flowers-15" type="checkbox" name="flowers-list">
+											<label for="flowers-15">Ландыши</label>
+										</li>
+									</ul>
+									<ul>
+										<li>
+											<input id="flowers-16" type="checkbox" name="flowers-list">
+											<label for="flowers-16">Лизиантусы</label>
+										</li>
+										<li>
+											<input id="flowers-17" type="checkbox" name="flowers-list">
+											<label for="flowers-17">Мимозы</label>
+										</li>
+										<li>
+											<input id="flowers-18" type="checkbox" name="flowers-list">
+											<label for="flowers-18">Нарцисс</label>
+										</li>
+										<li>
+											<input id="flowers-19" type="checkbox" name="flowers-list">
+											<label for="flowers-19">Орхидея</label>
+										</li>
+										<li>
+											<input id="flowers-20" type="checkbox" name="flowers-list">
+											<label for="flowers-20">Подсолнух</label>
+										</li>
+										<li>
+											<input id="flowers-21" type="checkbox" name="flowers-list">
+											<label for="flowers-21">Ранукулюс</label>
+										</li>
+										<li>
+											<input id="flowers-22" type="checkbox" name="flowers-list">
+											<label for="flowers-22">Роза кустовая</label>
+										</li>
+										<li>
+											<input id="flowers-23" type="checkbox" name="flowers-list">
+											<label for="flowers-23">Роза пионовидная</label>
+										</li>
+									</ul>
+									<ul>
+										<li>
+											<input id="flowers-24" type="checkbox" name="flowers-list">
+											<label for="flowers-24">Сирень</label>
+										</li>
+										<li>
+											<input id="flowers-25" type="checkbox" name="flowers-list">
+											<label for="flowers-25">Тюльпаны пионовидные</label>
+										</li>
+										<li>
+											<input id="flowers-26" type="checkbox" name="flowers-list">
+											<label for="flowers-26">Фрезия</label>
+										</li>
+										<li>
+											<input id="flowers-27" type="checkbox" name="flowers-list">
+											<label for="flowers-27">Эустома</label>
+										</li>
+										<li>
+											<input id="flowers-28" type="checkbox" name="flowers-list">
+											<label for="flowers-28">Ромашки</label>
+										</li>
+										<li>
+											<input id="flowers-29" type="checkbox" name="flowers-list">
+											<label for="flowers-29">Хризантемы</label>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="b-filter-colors">
+							<ul>
+								<li>
+									<input id="label-red" type="checkbox" name="red">
+									<label for="label-red" class="color-item color-red"></label>
+								</li>
+								<li>
+									<input id="label-pink" type="checkbox" name="pink">
+									<label for="label-pink" class="color-item color-pink"></label>
+								</li>
+								<li>
+									<input id="label-beige" type="checkbox" name="beige">
+									<label for="label-beige" class="color-item color-beige"></label>
+								</li>
+								<li>
+									<input id="label-yellow" type="checkbox" name="yellow">
+									<label for="label-yellow" class="color-item color-yellow"></label>
+								</li>
+								<li>
+									<input id="label-orange" type="checkbox" name="orange">
+									<label for="label-orange" class="color-item color-orange"></label>
+								</li>
+								<li>
+									<input id="label-blue" type="checkbox" name="blue">
+									<label for="label-blue" class="color-item color-blue"></label>
+								</li>
+								<li>
+									<input id="label-purple" type="checkbox" name="purple">
+									<label for="label-purple" class="color-item color-purple"></label>
+								</li>
+								<li>
+									<input id="label-black" type="checkbox" name="black">
+									<label for="label-black" class="color-item color-black"></label>
+								</li>
+								<li>
+									<input id="label-white" type="checkbox" name="white">
+									<label for="label-white" class="color-item color-white"></label>
+								</li>
+								<li>
+									<input id="label-all" type="checkbox" name="all">
+									<label for="label-all" class="color-item color-all">
+										<div class="color-all-img"></div>
+									</label>
+								</li>
+								<li class="b-tip-cont">
+									<a href="#" class="color-reset icon-update b-tip-ref"></a>
+									<div class="b-tip">Сбросить</div>
+								</li>
+							</ul>
 						</div>
 					</form>
 				</div>
-			</div>
-			<div class="b-footer-down clearfix">
-				<div class="b-footer-down-left">
-					<div class="b-footer-copyright">© 2018 ООО «Мадам&nbsp;де&nbsp;Флёр»</div>
-					<a href="#" class="b-btn-dashed">Политика конфиденциальности</a>
+				<div class="b-center">
+					<a href="#" class="b-btn b-btn-black b-btn-reset">Сбросить фильтр</a>
 				</div>
-				<div class="b-redder">
-					<span>Разработка сайта:</span>
-					<a href="http://redder.pro/" class="b-redder-logo" target="_blank"></a>
+			</div>
+
+			<div class="b-catalog">
+				<div class="b-block">
+					<h2 class="b-title">Классические букеты</h2>
+					<div class="b-catalog-list clearfix">
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-1.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Красно-белый букет из роз</h4>
+								<div class="b-catalog-item-price">
+									<div class="old-price">
+										<p class="icon-ruble-medium">5 300</p>
+										<div class="old-price-line"></div>
+									</div>
+									<div class="new-price icon-ruble">3 500</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-2.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Букет пионовых роз</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-3.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Букет «Розовое вино»</h4>
+								<div class="b-catalog-item-price">
+									<div class="old-price">
+										<p class="icon-ruble-medium">6 350</p>
+										<div class="old-price-line"></div>
+									</div>
+									<div class="new-price icon-ruble">4 150</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-4.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>«Солнечный букет»</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-5.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Большой букет пионовых роз</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-6.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Букет белых роз «51 роза»</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+
+						<div class="b-review-slider-cont">
+							<h3>Отзывы наших клиентов</h3>
+							<div class="b-review-slider">
+								<div class="b-review-item">
+									<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери. Привезли прекрасные 9 розовых роз - свежих  и красивых!! Связались сразу после заказа, еще и оплатить не успели) Все уточнили и сделали на высшем уровне!!</p>
+									<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
+								</div>
+								<div class="b-review-item">
+									<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери.</p>
+									<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
+								</div>
+								<div class="b-review-item">
+									<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери. Привезли прекрасные 9 розовых роз - свежих  и красивых!! Связались сразу после заказа, еще и оплатить не успели) Все уточнили и сделали на высшем уровне!!</p>
+									<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
+								</div>
+								<div class="b-review-item">
+									<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери. Привезли прекрасные 9 розовых роз - свежих  и красивых!!</p>
+									<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
+								</div>
+								<div class="b-review-item">
+									<p class="b-review-text">Огромное спасибо! Заказала розы маме в город Северск на день матери. Привезли прекрасные 9 розовых роз - свежих  и красивых!! Связались сразу после заказа, еще и оплатить не успели) Все уточнили и сделали на высшем уровне!!</p>
+									<p class="b-review-name">Вероника, 26 ноября 2017г.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="b-center">
+						<a href="#" class="b-btn b-btn-more icon-arrow-right-bold">
+							<div class="b-btn-more-text b-center">Показать больше</div>
+						</a>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="b-catalog">
+				<div class="b-block">
+					<h2 class="b-title">Букеты по случаю</h2>
+					<div class="b-catalog-list clearfix">
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-1.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Красно-белый букет из роз</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-2.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Букет пионовых роз</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-3.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Букет «Розовое вино»</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-4.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>«Солнечный букет»</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-5.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Большой букет пионовых роз</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-6.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Букет белых роз «51 роза»</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-7.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Разноцветный букет</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-8.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Большой разноцветный букет</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="b-center">
+						<a href="#" class="b-btn b-btn-more icon-arrow-right-bold">
+							<div class="b-btn-more-text b-center">Показать больше</div>
+						</a>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="b-catalog">
+				<div class="b-block">
+					<h2 class="b-title">Авторские букеты</h2>
+					<div class="b-catalog-list clearfix">
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-1.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Красно-белый букет из роз</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-2.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Букет пионовых роз</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-3.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Букет «Розовое вино»</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-4.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>«Солнечный букет»</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-5.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Большой букет пионовых роз</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-6.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Букет белых роз «51 роза»</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-7.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Разноцветный букет</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-8.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Большой разноцветный букет</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="b-center">
+						<a href="#" class="b-btn b-btn-more icon-arrow-right-bold">
+							<div class="b-btn-more-text b-center">Показать больше</div>
+						</a>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="b-catalog">
+				<div class="b-block">
+					<h2 class="b-title">Мужские букеты</h2>
+					<div class="b-catalog-list clearfix">
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-1.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Красно-белый букет из роз</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-2.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Букет пионовых роз</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-3.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Букет «Розовое вино»</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-4.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>«Солнечный букет»</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-5.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Большой букет пионовых роз</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+						<div class="b-catalog-item">
+							<div class="b-catalog-item-back"></div>
+							<div class="b-catalog-item-content">
+								<a href="detail.html" class="b-catalog-item-link"></a>
+								<div class="flowers-img-cont">
+									<div class="flowers-img" style="background-image: url(i/catalog-6.jpg);"></div>
+									<div class="b-catalog-item-hover">
+										<div class="b-catalog-item-hover-back"></div>
+										<div class="b-catalog-item-hover-content">
+											<a href="#" class="b-favorites b-catalog-favorites">
+												<div class="icon-favorites"></div>
+												<div class="icon-favorites-back"></div>
+											</a>
+											<div class="b-catalog-hover-size">
+												<div class="size-width">45 см<span class="icon-arrow-right"></span></div>
+												<div class="size-height"><span class="icon-arrow-left"></span>30 см</div>
+											</div>
+											<p class="b-catalog-hover-text">Роза капучино - 9 шт., роза талея - 9 шт., диантус, сильвер бруния, гиперикум, эвкалипт, салал, упаковка - крафт</p>
+										</div>
+									</div>
+								</div>
+								<h4>Букет белых роз «51 роза»</h4>
+								<div class="b-catalog-item-price">
+									<div class="current-price icon-ruble">3 300</div>
+								</div>
+								<a href="#" class="b-btn-buy">Купить</a>
+							</div>
+						</div>
+
+						<div class="b-call b-table">
+							<div class="b-table-cell">
+								<h3>Не нашли подходящий букет?</h3>
+								<p>Наши специалисты помогут Вам составить эксклюзивный букет, подходящий под Ваши запросы!</p>
+								<a href="#b-popup-call" class="fancy b-btn b-btn-white icon-phone">
+									<div class="b-btn-more-text b-center">Заказать звонок</div>
+								</a>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="b-center">
+						<a href="#" class="b-btn b-btn-more icon-arrow-right-bold">
+							<div class="b-btn-more-text b-center">Показать больше</div>
+						</a>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="b-questions clearfix">
+				<div class="b-block">
+					<h2 class="b-title">Вопросы и ответы</h2>
+					<div class="b-questions-list">
+						<a href="#b-popup-question" class="fancy b-questions-item b-table">
+							<div class="b-table-cell">
+								<p>Будет ли доставленный букет соответствовать фото на сайте?</p>
+							</div>
+						</a>
+						<a href="#b-popup-question" class="fancy b-questions-item b-table">
+							<div class="b-table-cell">
+								<p>Какие гарантии? Почему я должен довериться именно вашей доставке?</p>
+							</div>
+						</a>
+						<a href="#b-popup-question" class="fancy b-questions-item b-table">
+							<div class="b-table-cell">
+								<p>Как я могу оплатить заказ? Почему это безопасно?</p>
+							</div>
+						</a>
+						<a href="question.html" class="b-questions-item b-table read-more">
+							<div class="b-table-cell">
+								<h3>Читать все вопросы и ответы</h3>
+								<div class="icon-arrow-right"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="b-main-info">
+				<div class="b-block b-text">
+					<h2>Заказать букет цветов в Томске с бесплатной доставкой</h2>
+					<p>Посмотрите наш каталог. Мы делаем запоминающиеся композиции из свежих благоухающих цветов. Вы можете выбрать из имеющихся в каталоге или заказать подбор оригинального букета, который будет отвечать вкусам конкретного человека.</p>
+					<br>
+					<p>Мы знаем, как впечатлить даже искушенного ценителя красоты. Наши букеты оригинальны, современны, актуальны к любому празднику. А еще дарить их можно без повода. Мы предлагаем цветы с доставкой по Томску с бесплатной доставкой и недорого – балуйте своих любимых каждую неделю роскошными букетами роз или стильными цветами в шляпных коробках. Пусть ваш дом благоухает натуральными свежими ароматами!</p>
+				</div>
+			</div>
+
+			<div class="arrow-up hide-opacity"><div class="icon-arrow-up"></div></div>
+			<div class="arrow-hide"></div>
+			
+		</div>
+
+		<div class="b-footer">
+			<div class="b-block">
+				<div class="b-footer-top clearfix">
+					<div class="b-footer-column">
+						<a href="#" class="b-footer-logo"></a>
+						<ul class="b-social b-social-desktop">
+							<li><a href="#" class="icon-vk">Вконтакте</a></li>
+							<li><a href="#" class="icon-facebook">Facebook</a></li>
+							<li><a href="#" class="icon-ok">Одноклассники</a></li>
+							<li><a href="#" class="icon-instagram">Instagram</a></li>
+						</ul>
+					</div>
+					<div class="b-footer-column">
+						<ul>
+							<li><a href="#">Оплата</a></li>
+							<li><a href="#">Доставка</a></li>
+							<li><a href="#">Гарантия</a></li>
+							<li><a href="#">Как заказать?</a></li>
+						</ul>
+					</div>
+					<div class="b-footer-column">
+						<ul>
+							<li><a href="#">Корзина</a></li>
+							<li><a href="#">Вопрос-ответ</a></li>
+							<li><a href="#">О компании</a></li>
+							<li><a href="#">Контакты</a></li>
+						</ul>
+					</div>
+					<div class="b-footer-column b-footer-contacts">
+						<a href="tel:+338830" class="b-footer-phone icon-phone">33-88-30</a>
+						<p class="b-footer-address">г.&nbsp;Томск, ул.&nbsp;Красноармейская&nbsp;114а</p>
+						<ul class="b-social b-social-mobile">
+							<li><a href="#" class="icon-vk">Вконтакте</a></li>
+							<li><a href="#" class="icon-facebook">Facebook</a></li>
+							<li><a href="#" class="icon-ok">Одноклассники</a></li>
+							<li><a href="#" class="icon-instagram">Instagram</a></li>
+						</ul>
+						<form id="b-sub-form" class="b-sub-form" method="post" action="action.php">
+							<div class="b-inputs">
+								<input name="email" type="text" placeholder="Ваш e-mail" required>
+								<a href="#" class="b-btn b-btn-sub ajax">Подписаться</a>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="b-footer-down clearfix">
+					<div class="b-footer-down-left">
+						<div class="b-footer-copyright">© 2018 ООО «Мадам&nbsp;де&nbsp;Флёр»</div>
+						<a href="#" class="b-btn-dashed">Политика конфиденциальности</a>
+					</div>
+					<div class="b-redder">
+						<span>Разработка сайта:</span>
+						<a href="http://redder.pro/" class="b-redder-logo" target="_blank"></a>
+					</div>
 				</div>
 			</div>
 		</div>
+		<div class="b-menu-overlay" id="b-menu-overlay" style="display: none;"></div>
 	</div>
 
 	<div style="display:none;">
@@ -1482,6 +1540,7 @@
 	<script type="text/javascript" src="js/KitAnimate.js"></script>
 	<script type="text/javascript" src="js/KitSend.js"></script>
 	<script type="text/javascript" src="js/slick.js"></script>
+	<script type="text/javascript" src="js/slideout.min.js"></script>
 	<script type="text/javascript" src="https://api-maps.yandex.ru/2.1.41/?load=package.full&lang=ru-RU"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/AddressDeliveryClass.js"></script>

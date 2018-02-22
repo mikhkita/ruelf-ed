@@ -168,6 +168,74 @@ $(document).ready(function(){
     }
     $.fn.placeholder();
 
+    var slideoutLeft = new Slideout({
+        'panel': document.getElementById('panel-page'),
+        'menu': document.getElementById('mobile-menu'),
+        'side': 'left',
+        'padding': 300,
+        'touch': false
+    });
+
+    $('.burger-menu').click(function() {
+        slideoutLeft.open();
+        $('.basket-menu').addClass("hide");
+        $('.mobile-menu').removeClass("hide");
+        $('.b-menu-overlay').show();
+        return false;
+    });
+    $('.b-menu-overlay').click(function() {
+        slideoutLeft.close();
+        $('.b-menu-overlay').hide();
+        return false;
+    });
+
+    slideoutLeft.on('open', function() {
+        /*$('.burger-menu').addClass("menu-on");
+        $('.b-menu-overlay').show();*/
+    });
+
+    slideoutLeft.on('close', function() {
+        /*$('.burger-menu').removeClass("menu-on");
+        setTimeout(function(){
+            $("body").unbind("touchmove");
+            $(".b-menu-overlay").hide();
+        },100);*/
+    });
+
+    var slideoutRight = new Slideout({
+        'panel': document.getElementById('panel-page'),
+        'menu': document.getElementById('basket-menu'),
+        'side': 'right',
+        'padding': 300,
+        'touch': false
+    });
+
+    $('.b-top-basket-mobile').click(function() {
+        slideoutRight.open();
+        $('.basket-menu').removeClass("hide");
+        $('.mobile-menu').addClass("hide");
+        $('.b-menu-overlay').show();
+        return false;
+    });
+    $('.b-menu-overlay').click(function() {
+        slideoutRight.close();
+        $('.b-menu-overlay').hide();
+        return false;
+    });
+
+    slideoutRight.on('open', function() {
+        /*$('.burger-menu').addClass("menu-on");
+        $('.b-menu-overlay').show();*/
+    });
+
+    slideoutRight.on('close', function() {
+        /*$('.burger-menu').removeClass("menu-on");
+        setTimeout(function(){
+            $("body").unbind("touchmove");
+            $(".b-menu-overlay").hide();
+        },100);*/
+    });
+
     if(isRetina){
         $("*[data-retina]").each(function(){
             var $this = $(this),
@@ -390,11 +458,6 @@ $(document).ready(function(){
         $targetMain = $(".b-content"),
         $hMain = $targetMain.offset().top;
     });*/
-
-    $(".b-btn-pay").click(function(){
-        $("#pay").submit();
-        return false;
-    });
 
     $window.on('scroll', function() {
         // Как далеко вниз прокрутили страницу
