@@ -195,11 +195,9 @@ $(document).ready(function(){
     });
 
     slideoutLeft.on('close', function() {
-        /*$('.burger-menu').removeClass("menu-on");
         setTimeout(function(){
-            $("body").unbind("touchmove");
             $(".b-menu-overlay").hide();
-        },100);*/
+        },10);
     });
 
     var slideoutRight = new Slideout({
@@ -229,11 +227,9 @@ $(document).ready(function(){
     });
 
     slideoutRight.on('close', function() {
-        /*$('.burger-menu').removeClass("menu-on");
         setTimeout(function(){
-            $("body").unbind("touchmove");
             $(".b-menu-overlay").hide();
-        },100);*/
+        },10);
     });
 
     if(isRetina){
