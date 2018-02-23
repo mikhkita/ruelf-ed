@@ -1009,24 +1009,32 @@ strong, b{
 			color: #FFF;
 		}
 
-		.b-logo{
-			position: absolute;
-			float: left;
-			display: inline-block;
-			background-position: 50% 50%;
-		    background-repeat: no-repeat;
-		    background-image: url(../i/logo.svg);
-		    background-size: 280px;
-		    width: 280px;
-		    height: 47px;
+		.b-logo-cont{
+
 		}
-		.b-top .b-logo{
-			-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out;
-		    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out;
-		    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out;
-			-o-transition: opacity 200ms ease-out, visibility 200ms ease-out;
-		    transition: opacity 200ms ease-out, visibility 200ms ease-out;
-		}
+			.b-logo{
+				position: absolute;
+				float: left;
+				display: inline-block;
+				background-position: 50% 50%;
+			    background-repeat: no-repeat;
+			    background-image: url(../i/logo.svg);
+			    background-size: 280px;
+			    width: 280px;
+			    height: 47px;
+			}
+			.b-top .b-logo{
+				-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+			    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+			    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+				-o-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+			    transition: opacity 200ms ease-out, visibility 200ms ease-out;
+			}
+
+			.b-top-phone-mobile{
+				display: none;
+				margin-top: 6px;
+			}
 
 	.b-menu .top-hide{
 		opacity: 0;

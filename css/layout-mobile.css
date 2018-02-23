@@ -280,6 +280,20 @@ h1.b-title{
 	    line-height: 40px;
 	    margin-bottom: 28px;
 	}
+	h2.b-title{
+		font-size: 24px;
+		line-height: 36px;
+		margin-bottom: 32px;
+	}
+	h3 {
+	    font-size: 22px;
+	    line-height: 32px;
+	}
+
+	.b-content {
+	    padding-top: 26px;
+	    padding-bottom: 50px;
+	}
 
 	.b-block{
 		width: calc(100% - 48px);
@@ -357,11 +371,12 @@ h1.b-title{
 	.b-filter-price, .b-filter-flowers{
 		float: none;
 		width: 100%;
-		margin-bottom: 24px;
+		margin-bottom: 16px;
 		padding-top: 0;
 	}
 	.b-filter {
 	    margin-top: 0;
+	    margin-bottom: 30px;
 	}
 
 	.color-item {
@@ -370,7 +385,7 @@ h1.b-title{
 
 	.b-filter-colors ul {
 		margin-top: 8px;
-	    margin-bottom: 16px;
+	    margin-bottom: 12px;
 	}
 	.b-filter-flowers-list {
 	    width: 100%;
@@ -390,10 +405,6 @@ h1.b-title{
 		font-size: 14px;
 		line-height: 20px;
 	}
-	.b-header-title {
-	    padding-top: 105px;
-	    margin-bottom: 89px;
-	}
 	.b-catalog-menu-mobile {
 	    padding-bottom: 34px;
 	}
@@ -412,10 +423,34 @@ h1.b-title{
 	    height: 36px;
 	}
 	.burger-menu{
-		margin-right: 30px;
+		margin-right: 0;
 	}
 	.b-top.b-top-fixed{
 		padding-top: 18px;
+	}
+
+	.b-logo-cont{
+	    width: calc(100% - 50px);
+		display: inline-block;
+		text-align: center;
+	}
+	.b-top-phone-mobile {
+	    display: inline-block;
+	}
+	.b-logo{
+		float: none;
+		display: block;
+		margin: 0 auto;
+	}
+	.b-top{
+		padding-top: 28px;
+	}
+	.b-top.b-top-fixed .b-logo{
+		display: none;
+	}
+	.b-header-title {
+	    padding-top: 110px;
+	    margin-bottom: 76px;
 	}
 }
 
@@ -495,7 +530,7 @@ h1.b-title{
 	}
 	.b-review-item {
 	    position: relative;
-	    height: 154px;
+	    height: 182px;
 	    width: 100%;
 	    padding: 0 24px 24px 24px;
 	}
@@ -587,5 +622,9 @@ h1.b-title{
 	.b-popup-error .b-thanks-right,
 	.b-thanks-right{
 		width: 100%;
+	}
+
+	.b-review-item {
+	    height: 154px;
 	}
 }
