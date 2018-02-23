@@ -16,6 +16,7 @@ h1.b-title-temp{
 .b-catalog-item{
 	width: calc(100%/2 - 13px);
 	height: calc(100vw/2 - 13px + 82px);
+	margin-bottom: 40px;
 }
 .b-catalog-item:nth-child(3n){
 	margin-right: 24px;
@@ -206,8 +207,7 @@ h1.b-title{
 }
 
 .b-catalog {
-    padding-bottom: 0;
-    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .b-filter-price, .b-filter-flowers{
@@ -287,7 +287,6 @@ h1.b-title{
 
 	.b-catalog-item{
 		height: calc(100vw/2 - 13px + 118px);
-		margin-bottom: 32px;
 	}
 	.b-catalog-item-content{
 		text-align: center;

@@ -893,6 +893,7 @@ strong, b{
 .b-top-basket-mobile{
 	display: none;
 	margin-top: 6px;
+	cursor: pointer;
 }
 
 .b-top-basket-mobile.icon-basket:before{
@@ -923,6 +924,9 @@ strong, b{
 		.slideout-menu ul li{
 			padding: 0 24px;
 		}
+			.mobile-menu ul li.active a{
+				color: #6e58ac;
+			}
 			.mobile-menu ul li a{
 				display: block;
 				color: #434343;
@@ -945,6 +949,7 @@ strong, b{
 		    margin-bottom: 0;
 		    border-bottom: 0;
 		}
+
 			.basket-menu .b-basket ul li > div{
 				padding: 12px 0;
 				border-bottom: 1px solid #eaeaea;
@@ -1604,7 +1609,7 @@ strong, b{
 
 .b-filter{
 	margin-top: -16px;
-	margin-bottom: 5px;
+	margin-bottom: 60px;
 	font-size: 18px;
 	font-family: 'Geometria-Medium';
 }
@@ -2011,8 +2016,7 @@ strong, b{
 		}
 
 .b-catalog{
-	padding-bottom: 22px;
-	margin-top: 54px;
+	margin-bottom: 75px;
 }
 	.b-catalog-list{/* font-size: 0px; */}
 		.b-catalog-item{
