@@ -1031,7 +1031,7 @@ strong, b{
 
 			.b-top-phone-mobile{
 				display: none;
-				margin-top: 36px;
+				margin-top: 42px;
 				-webkit-transition: margin-top 200ms ease-out;
 			    -moz-transition: margin-top 200ms ease-out;
 			    -ms-transition: margin-top 200ms ease-out;
@@ -2676,7 +2676,7 @@ strong, b{
 
 .arrow-up{
 	position: fixed;
-	z-index: 201;
+	z-index: 199;
 	bottom: 24px;
 	left: calc(50% + 600px);
 	width: 80px;
