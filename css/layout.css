@@ -888,6 +888,98 @@ strong, b{
 			    border-radius: 4px;
 			}
 
+/*------Мобильное меню------*/
+
+.b-top-basket-mobile{
+	display: none;
+	margin-top: 6px;
+	cursor: pointer;
+}
+
+.b-top-basket-mobile.icon-basket:before{
+	font-size: 24px;
+  	margin-right: 0;
+}
+
+.slideout-menu{
+
+}
+	.slideout-menu-padding{
+		padding: 0 24px;
+	}
+	.slideout-menu h2{
+		color: #434343;
+		font-family: 'Geometria-Bold';
+		font-size: 24px;
+		line-height: 36px;
+		text-align: left;
+		padding: 20px 24px 26px 24px;
+		margin-bottom: 0;
+	}
+	.slideout-menu ul{
+		background-color: #f8f8f8;
+		padding: 8px 0;
+		margin-bottom: 24px;
+	}
+		.slideout-menu ul li{
+			padding: 0 24px;
+		}
+			.mobile-menu ul li.active a{
+				color: #6e58ac;
+			}
+			.mobile-menu ul li a{
+				display: block;
+				color: #434343;
+				font-family: 'Geometria-Medium';
+				font-size: 16px;
+				padding: 16px 0;
+				border-bottom: 1px solid #eaeaea;
+			}
+			.mobile-menu ul li:last-child a{
+				border-bottom: 0;
+			}
+	.slideout-menu .b-btn-buy{
+		text-align: center;
+		width: 100%;
+		padding: 11px 34px 12px;
+	}
+
+		.basket-menu .b-basket ul li{
+			padding: 0 24px;
+		    margin-bottom: 0;
+		    border-bottom: 0;
+		}
+
+			.basket-menu .b-basket ul li > div{
+				padding: 12px 0;
+				border-bottom: 1px solid #eaeaea;
+			}
+
+			.basket-menu .b-basket ul li:last-child > div{
+				border-bottom: 0;
+			}
+
+			.basket-menu .b-basket-down{
+				margin-bottom: 20px;
+			}
+				.basket-menu .b-basket-down span{
+					display: inline-block;
+	    			vertical-align: bottom;
+					font-size: 18px;
+				}
+				.basket-menu .b-basket-down h3{
+					padding-top: 0;
+					margin-left: 7px;
+				}
+
+				.basket-menu .b-basket ul li:first-child a.icon-close:before {
+				    top: 0;
+				}
+				.basket-menu .b-basket ul li a.icon-close:before {
+				    top: 0;
+				    right: 12px;
+				}
+
 /*------Главная------*/
 
 .b-header{
@@ -917,24 +1009,32 @@ strong, b{
 			color: #FFF;
 		}
 
-		.b-logo{
-			position: absolute;
-			float: left;
-			display: inline-block;
-			background-position: 50% 50%;
-		    background-repeat: no-repeat;
-		    background-image: url(../i/logo.svg);
-		    background-size: 280px;
-		    width: 280px;
-		    height: 47px;
+		.b-logo-cont{
+
 		}
-		.b-top .b-logo{
-			-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out;
-		    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out;
-		    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out;
-			-o-transition: opacity 200ms ease-out, visibility 200ms ease-out;
-		    transition: opacity 200ms ease-out, visibility 200ms ease-out;
-		}
+			.b-logo{
+				position: absolute;
+				float: left;
+				display: inline-block;
+				background-position: 50% 50%;
+			    background-repeat: no-repeat;
+			    background-image: url(../i/logo.svg);
+			    background-size: 280px;
+			    width: 280px;
+			    height: 47px;
+			}
+			.b-top .b-logo{
+				-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+			    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+			    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+				-o-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+			    transition: opacity 200ms ease-out, visibility 200ms ease-out;
+			}
+
+			.b-top-phone-mobile{
+				display: none;
+				margin-top: 6px;
+			}
 
 	.b-menu .top-hide{
 		opacity: 0;
@@ -1231,7 +1331,7 @@ strong, b{
 					display: inline-block;
 				}
 
-				.b-basket {
+				.b-top .b-basket {
 				    position: absolute;
 				    z-index: 2;
 				    right: 0;
@@ -1257,7 +1357,7 @@ strong, b{
 				    transform: translateY(-10px);
 				}
 
-				.b-basket:before {
+				.b-top .b-basket:before {
 				    position: absolute;
 				    content: "s";
 				    font-size: 0px;
@@ -1270,7 +1370,7 @@ strong, b{
 				    border-bottom: 9px solid #FFF;
 				    border-left: 10px solid transparent;
 				}
-				.b-basket:after{
+				.b-top .b-basket:after{
 				    content: "s";
 				    font-size: 0px;
 				    position: absolute;
@@ -1280,8 +1380,8 @@ strong, b{
 				    height: 21px;
 				}
 
-				.b-basket-btn-cont:hover .b-basket,
-				.b-basket-btn-cont.show .b-basket{
+				.b-top .b-basket-btn-cont:hover .b-basket,
+				.b-top .b-basket-btn-cont.show .b-basket{
 					visibility: visible;
 				    opacity: 1;
 				    -webkit-transform: translateY(0px);
@@ -1517,7 +1617,7 @@ strong, b{
 
 .b-filter{
 	margin-top: -16px;
-	margin-bottom: 5px;
+	margin-bottom: 60px;
 	font-size: 18px;
 	font-family: 'Geometria-Medium';
 }
@@ -1559,7 +1659,7 @@ strong, b{
 			}
 
 		ul.b-filter-price-list{
-		    z-index: 101;
+		    z-index: 106;
 		    min-width: 232px;
 		    padding: 22px 24px 30px;
 		    position: absolute;
@@ -1623,7 +1723,7 @@ strong, b{
 	}
 		.b-filter-flowers-list{
 			max-width: 860px;
-			z-index: 101;
+			z-index: 105;
 			padding: 26px 18px 30px 26px;
 			position: absolute;
 			left: 0px;
@@ -1924,8 +2024,7 @@ strong, b{
 		}
 
 .b-catalog{
-	padding-bottom: 22px;
-	margin-top: 54px;
+	margin-bottom: 75px;
 }
 	.b-catalog-list{/* font-size: 0px; */}
 		.b-catalog-item{
@@ -2673,16 +2772,19 @@ strong, b{
 /*-------Детальная-------*/
 
 .b-detail{
-
+	margin-bottom: 50px;
 }
 	.b-detail-left{
 		float: left;
 		width: 49%;
 	}
-		.b-detail-left img{
-			width: 100%;
-			height: 100%;
+		.b-detail-left .fancy-img{
+			display: block;
 		}
+			.b-detail-left img{
+				width: 100%;
+				height: 100%;
+			}
 	.b-detail-right{
 		float: right;
     	width: 51%;
@@ -4146,6 +4248,63 @@ strong, b{
 }
 
 /*--------------------*/
+
+/*-----------Slideout-----------*/
+
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  min-height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  background-color: #FFF; /* A background-color is required */
+  min-height: 100vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+.b-menu-overlay{
+	display: none;
+    /*-webkit-transition: opacity 150ms ease-out;
+    -moz-transition: opacity 150ms ease-out;
+    -ms-transition: opacity 150ms ease-out;
+    -o-transition: opacity 150ms ease-out;
+    transition: opacity 150ms ease-out;*/
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 205;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+/*-----------------------*/
 
 @media (-webkit-min-device-pixel-ratio: 1.5) {
 	/*.b-redder-logo {

@@ -168,6 +168,60 @@ $(document).ready(function(){
     }
     $.fn.placeholder();
 
+    var slideoutLeft = new Slideout({
+        'panel': document.getElementById('panel-page'),
+        'menu': document.getElementById('mobile-menu'),
+        'side': 'left',
+        'padding': 300,
+        'touch': false
+    });
+
+    $('.burger-menu').click(function() {
+        slideoutLeft.open();
+        $('.basket-menu').addClass("hide");
+        $('.mobile-menu').removeClass("hide");
+        $('.b-menu-overlay').show();
+        return false;
+    });
+    $('.b-menu-overlay').click(function() {
+        slideoutLeft.close();
+        $('.b-menu-overlay').hide();
+        return false;
+    });
+
+    slideoutLeft.on('close', function() {
+        setTimeout(function(){
+            $(".b-menu-overlay").hide();
+        },10);
+    });
+
+    var slideoutRight = new Slideout({
+        'panel': document.getElementById('panel-page'),
+        'menu': document.getElementById('basket-menu'),
+        'side': 'right',
+        'padding': 300,
+        'touch': false
+    });
+
+    $('.b-top-basket-mobile').click(function() {
+        slideoutRight.open();
+        $('.basket-menu').removeClass("hide");
+        $('.mobile-menu').addClass("hide");
+        $('.b-menu-overlay').show();
+        return false;
+    });
+    $('.b-menu-overlay').click(function() {
+        slideoutRight.close();
+        $('.b-menu-overlay').hide();
+        return false;
+    });
+
+    slideoutRight.on('close', function() {
+        setTimeout(function(){
+            $(".b-menu-overlay").hide();
+        },10);
+    });
+
     if(isRetina){
         $("*[data-retina]").each(function(){
             var $this = $(this),
@@ -264,7 +318,14 @@ $(document).ready(function(){
     var arrowOffset = 0,
         footerOffset = 0;
     $(window).scroll(function (){
-        if ($(this).scrollTop() > 550){
+        var headerHeight = 0;
+        if($('.b-header').length){
+            headerHeight = $('.b-header').outerHeight(true);
+        }else{
+            headerHeight = $('.b-header-inner').outerHeight(true);
+        }
+
+        if ($(this).scrollTop() > headerHeight){
             $('.arrow-up').removeClass("hide-opacity");
         } else{
             $('.arrow-up').addClass("hide-opacity");
@@ -390,11 +451,6 @@ $(document).ready(function(){
         $targetMain = $(".b-content"),
         $hMain = $targetMain.offset().top;
     });*/
-
-    $(".b-btn-pay").click(function(){
-        $("#pay").submit();
-        return false;
-    });
 
     $window.on('scroll', function() {
         // Как далеко вниз прокрутили страницу

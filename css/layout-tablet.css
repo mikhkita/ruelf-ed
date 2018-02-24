@@ -113,6 +113,23 @@ ul.b-catalog-sections li{
 	display: block;
 }
 
+.b-filter-flowers-list{
+	width: 100%;
+}
+	.b-filter-flowers-list ul{
+		float: left;
+		width: 50%;
+		display: block;
+	}
+	.b-filter-flowers-list ul li:last-child label {
+	    margin-bottom: 17px;
+	}
+
+	.b-filter-flowers-list ul:nth-last-child(1) li:last-child label,
+	.b-filter-flowers-list ul:nth-last-child(2) li:last-child label{
+		margin-bottom: 0;
+	}
+
 @media screen and (max-width: 1024px){
 
 	.b-questions{
@@ -136,6 +153,45 @@ ul.b-catalog-sections li{
 	    margin-right: 40px;
 	}
 
+	.b-filter-flowers-list ul{
+		float: none;
+		width: 100%;
+	}
+
+	.b-detail-right .b-advantage-item {
+	    display: block;
+	    margin-right: 0;
+	    margin-bottom: 16px;
+	}
+
+	.b-detail-right .b-advantage-item:last-child{
+	    margin-bottom: 0;
+	}
+
+	.b-payment {
+	    margin-bottom: 24px;
+	}
+	.b-btn-add-basket {
+	    width: 100%;
+	    min-width: 0;
+	}
+
+	.b-btn-add-basket.icon-basket:before{
+		display: none;
+	}
+
+	.b-btn-add-basket.icon-basket:hover .b-btn-more-text{
+		-webkit-transform: none;
+	    -moz-transform: none;
+	    -ms-transform: none;
+	    -o-transform: none;
+	    transform: none;
+	}
+
+	.b-map {
+	    height: 300px;
+	}
+
 }
 
 @media screen and (max-width: 850px){
@@ -143,6 +199,7 @@ ul.b-catalog-sections li{
 	.b-catalog-item{
 		width: calc(100%/2 - 13px);
 		height: calc(100vw/2 - 13px + 82px);
+		margin-bottom: 40px;
 	}
 	.b-catalog-item:nth-child(3n){
 		margin-right: 24px;
@@ -191,5 +248,12 @@ ul.b-catalog-sections li{
 	}
 	.b-redder{
 		padding-top: 12px;
+	}
+
+	.b-btn-add-basket {
+	    border: 2px solid #f43d84;
+	    padding: 15px 30px 16px;
+	    border-radius: 100px;
+	    font-size: 22px;
 	}
 }
