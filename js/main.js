@@ -189,11 +189,32 @@ $(document).ready(function(){
         return false;
     });
 
+    /*var fixed = document.querySelector('.b-top');
+
+    slideoutLeft.on('translate', function(translated) {
+      fixed.style.transform = 'translateX(' + translated + 'px)';
+    });
+
+    slideoutLeft.on('beforeopen', function () {
+      fixed.style.transition = 'transform 300ms ease';
+      fixed.style.transform = 'translateX(300px)';
+    });
+
+    slideoutLeft.on('beforeclose', function () {
+      fixed.style.transition = 'transform 300ms ease';
+      fixed.style.transform = 'translateX(0px)';
+    });
+
+    slideoutLeft.on('open', function () {
+      fixed.style.transition = '';
+    });
+
     slideoutLeft.on('close', function() {
         setTimeout(function(){
             $(".b-menu-overlay").hide();
         },10);
-    });
+        fixed.style.transition = '';
+    });*/
 
     var slideoutRight = new Slideout({
         'panel': document.getElementById('panel-page'),

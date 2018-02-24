@@ -514,6 +514,15 @@ h1.b-title{
 		font-size: 15px;
 	}
 
+	.b-header {
+	    background-image: url(../i/header-mobile-h.svg);
+	    background-size: 665px;
+	}
+
+	.b-header h1.b-title{
+		max-width: 350px;
+	}
+
 }
 
 @media screen and (max-width: 570px){
