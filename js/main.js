@@ -49,6 +49,19 @@ $(document).ready(function(){
             $('.b-filter').removeClass("hide");
         }
 
+        if(isMobile){
+            var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
+            $('.b-call').before($moveEl.parent());
+
+            $("body").on("touchstart", ".b-slideout-not-touch", function(){
+                $("html").addClass("touch-locked");
+            });
+
+            $("body").on("touchend", function(){
+                $("html").removeClass("touch-locked");
+            });
+        }
+
         /*if(!isDesktop){
             if(!$('.b-catalog-sections').hasClass("slick-initialized")){
                 $('.b-catalog-sections').not('.slick-initialized').slick({

@@ -36,8 +36,7 @@ h1.b-title-temp{
 }
 
 .arrow-up, .arrow-hide{
-	left: auto;
-	right: 24px;
+	display: none;
 }
 
 .b-questions{
@@ -92,7 +91,8 @@ h1.b-title-temp{
 	float: none;
     width: 100%;
     clear: both;
-    margin-bottom: 30px;
+    margin-bottom: 0;
+    margin-top: 50px;
 }
 
 .b-addition-item {
@@ -173,7 +173,7 @@ h1.b-title{
 	margin-bottom: 32px;
 }
 .b-header{
-	background-image: url(../i/header-mobile.svg);
+	background-image: url(../i/header-mobile@2x.svg);
     background-size: 768px;
 }
 .b-header-title {
@@ -309,6 +309,10 @@ h1.b-title{
     height: 400px;
 }
 
+.b-review-slider-cont{
+	display: none;
+}
+
 @media screen and (max-width: 665px){
 
 	h1.b-title {
@@ -323,7 +327,13 @@ h1.b-title{
 	}
 	h3 {
 	    font-size: 22px;
-	    line-height: 32px;
+	    line-height: 30px;
+	}
+
+	.b-text h2{
+		font-size: 24px;
+		line-height: 32px;
+		margin-bottom: 24px;
 	}
 
 	.b-content {
@@ -453,7 +463,7 @@ h1.b-title{
 	}
 
 	.b-logo {
-		position: static;
+    	left: calc(50% - 110px);
 	    background-size: 220px;
 	    width: 220px;
 	    height: 36px;
@@ -462,7 +472,8 @@ h1.b-title{
 		margin-right: 0;
 	}
 	.b-top.b-top-fixed{
-		padding-top: 18px;
+		padding-top: 10px;
+		padding-bottom: 12px;
 	}
 
 	.b-logo-cont{
@@ -480,9 +491,6 @@ h1.b-title{
 	}
 	.b-top{
 		padding-top: 28px;
-	}
-	.b-top.b-top-fixed .b-logo{
-		display: none;
 	}
 	.b-header-title {
 	    padding-top: 110px;
@@ -515,12 +523,44 @@ h1.b-title{
 	}
 
 	.b-header {
-	    background-image: url(../i/header-mobile-h.svg);
+	    background-image: url(../i/header-mobile-v@2x.svg);
 	    background-size: 665px;
 	}
 
 	.b-header h1.b-title{
 		max-width: 350px;
+	}
+
+	.b-top.b-top-fixed .b-logo{
+		position: absolute;
+	    left: 0;
+	    right: 0;
+		-webkit-transform: translateY(-10px);
+	    -moz-transform: translateY(-10px);
+	    -ms-transform: translateY(-10px);
+	    -o-transform: translateY(-10px);
+	    transform: translateY(-10px);
+	    opacity: 0;
+	    visibility: hidden;
+	}
+
+	.b-top.b-top-fixed .b-top-phone-mobile{
+	    margin-top: 6px;
+	}
+
+	.b-call p, .b-call .p {
+	    font-size: 16px;
+	    line-height: 24px;
+	}
+
+	.b-popup.b-popup-question h3{
+		font-size: 20px;
+		line-height: 28px;
+		margin-bottom: 0;
+	}
+	.b-popup.b-popup-question h4{
+		font-size: 18px;
+		line-height: 26px;
 	}
 
 }
@@ -652,7 +692,7 @@ h1.b-title{
 	    float: left;
 	    width: 55px;
 	    height: 55px;
-	    margin-right: 24px;
+	    margin-right: 20px;
 	}
 	.icon-thanks-error:before {
 	    font-size: 55px;
@@ -660,7 +700,7 @@ h1.b-title{
 
 	.b-popup-success .b-thanks-right,
 	.b-popup-error .b-thanks-right{
-	    width: calc(100% - 82px);
+	    width: calc(100% - 78px);
 	    padding-top: 0;
 	}
 
@@ -669,8 +709,9 @@ h1.b-title{
 	}
 
 	.b-popup h3 {
-		font-size: 26px;
-	    margin-bottom: 24px;
+		font-size: 20px;
+		line-height: 28px;
+	    margin-bottom: 18px;
 	}
 
 	.icon-thanks-success {
@@ -702,7 +743,7 @@ h1.b-title{
 
 }
 
-@media screen and (max-width: 374px){
+@media screen and (max-width: 350px){
 	.b-catalog-item{
 		width: 100%;
 		height: calc(100vw + 98px);
