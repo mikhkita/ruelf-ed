@@ -181,7 +181,7 @@ $(document).ready(function(){
 	});
 
 	var open = false;
-    $("body").on("mouseup", ".b-popup *, .b-popup", function(){
+    $("body").on("mouseup", ".b-popup *, .b-popup, .b-filter-flowers-list, .b-filter-price-list", function(){
         open = true;
     });
     $("body").on("mousedown", ".fancybox-slide", function() {

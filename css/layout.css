@@ -211,15 +211,16 @@ strong, b{
     color: #434343;
     border: 2px solid #434343;
     padding: 8px 29px;
-    -webkit-transition: background-color 50ms ease-out, color 50ms ease-out;
-    -moz-transition: background-color 50ms ease-out, color 50ms ease-out;
-    -ms-transition: background-color 50ms ease-out, color 50ms ease-out;
-    -o-transition: background-color 50ms ease-out, color 50ms ease-out;
-    transition: background-color 50ms ease-out, color 50ms ease-out;
+    -webkit-transition: background-color 50ms ease-out, color 50ms ease-out, border color 50ms ease-out;
+    -moz-transition: background-color 50ms ease-out, color 50ms ease-out, border color 50ms ease-out;
+    -ms-transition: background-color 50ms ease-out, color 50ms ease-out, border color 50ms ease-out;
+    -o-transition: background-color 50ms ease-out, color 50ms ease-out, border color 50ms ease-out;
+    transition: background-color 50ms ease-out, color 50ms ease-out, border color 50ms ease-out;
 }
 	.b-btn-black:active{
 		color: #FFF;
-		background-color: #434343;
+		background-color: #6e58ac;
+		border: 2px solid #6e58ac;
 	}
 
 .b-btn-white{
@@ -1661,7 +1662,7 @@ strong, b{
 				color: #434343;
 			}
 
-		ul.b-filter-price-list{
+		.b-filter-price-list{
 		    z-index: 106;
 		    min-width: 232px;
 		    padding: 22px 24px 30px;
@@ -1686,7 +1687,7 @@ strong, b{
 		    -o-transform: translateY(-10px);
 		    transform: translateY(-10px);
 		}
-		ul.b-filter-price-list:before{
+		.b-filter-price-list:before{
 			position: absolute;
 		    content: "s";
 		    font-size: 0px;
@@ -1700,7 +1701,7 @@ strong, b{
 		    border-left: 10px solid transparent;
 		}
 
-		.b-filter-select-wrap:hover ul.b-filter-price-list{
+		.b-filter-select-wrap:hover .b-filter-price-list{
 			opacity: 1;
 			visibility: visible;
 			-webkit-transform: translateY(0px);
@@ -1710,13 +1711,13 @@ strong, b{
 		    transform: translateY(0px);
 		}
 
-			ul.b-filter-price-list li{
+			.b-filter-price-list li{
 				font-size: 16px;
 				line-height: 24px;
 				font-family: 'Geometria-Regular';
 				margin-bottom: 16px;
 			}
-			ul.b-filter-price-list li:last-child{
+			.b-filter-price-list li:last-child{
 				margin-bottom: 0;
 			}
 
@@ -1765,7 +1766,7 @@ strong, b{
 		}
 
 		.b-filter-flowers-list:after,
-		ul.b-filter-price-list:after{
+		.b-filter-price-list:after{
 			position: absolute;
 			content: "s";
 			font-size: 0px;
@@ -1776,22 +1777,22 @@ strong, b{
 		}
 
 	.b-filter-select-wrap:hover .b-filter-flowers-list{
-			opacity: 1;
-			visibility: visible;
-			-webkit-transform: translateY(0px);
-			-moz-transform: translateY(0px);
-			-ms-transform: translateY(0px);
-			-o-transform: translateY(0px);
-			transform: translateY(0px);
+		opacity: 1;
+		visibility: visible;
+		-webkit-transform: translateY(0px);
+		-moz-transform: translateY(0px);
+		-ms-transform: translateY(0px);
+		-o-transform: translateY(0px);
+		transform: translateY(0px);
+	}
+		.b-filter-flowers-list ul{
+			width: 200px;
+			display: inline-block;
+			vertical-align: top;
 		}
-			.b-filter-flowers-list ul{
-				width: 200px;
-				display: inline-block;
-				vertical-align: top;
-			}
-			.b-filter-flowers-list ul li:last-child label{
-				margin-bottom: 0;
-			}
+		.b-filter-flowers-list ul li:last-child label{
+			margin-bottom: 0;
+		}
 
 	.b-filter-flowers-list .b-checkbox input[type="checkbox"] + span + label,
 	.b-filter-flowers-list .b-checkbox input[type="checkbox"] + label{
@@ -2575,6 +2576,7 @@ strong, b{
 
 				.b-sub-form input{
 					max-width: 166px;
+					box-shadow: none;
 					border-right: 0;
 					border-top-right-radius: 0;
 					border-bottom-right-radius: 0;
@@ -3011,8 +3013,8 @@ strong, b{
 			display: table-cell;
 			vertical-align: middle;
 		}
-			.b-basket-name a h4{
-				margin: 0 20px;
+			.b-basket-name h4{
+				margin: 0 24px;
 			}
 
 			.b-basket-name-img{
