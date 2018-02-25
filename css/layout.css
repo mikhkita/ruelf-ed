@@ -628,21 +628,25 @@ strong, b{
 	position: relative;
 }
 
-.b-selects select {
-	color: #c4c4c4;
-	font-size: 18px;
-    border: none;
-    width: 100%;
-    font-family: 'Geometria-Regular';
-    background-color: transparent;
-    vertical-align: top;
-    padding-bottom: 11px;
-    padding-right: 28px;
-    cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+.b-selects{
+	position: relative;
 }
+
+	.b-selects select {
+		color: #c4c4c4;
+		font-size: 18px;
+	    border: none;
+	    width: 100%;
+	    font-family: 'Geometria-Regular';
+	    background-color: transparent;
+	    vertical-align: top;
+	    padding-bottom: 11px;
+	    padding-right: 28px;
+	    cursor: pointer;
+	    -webkit-appearance: none;
+	    -moz-appearance: none;
+	    appearance: none;
+	}
 
 .b-inputs input{
 	display: inline-block;
@@ -1339,7 +1343,7 @@ strong, b{
 				    position: absolute;
 				    z-index: 2;
 				    right: 0;
-				    top: 56px;
+				    top: 55px;
 				    width: 345px;
 				    background-color: #FFF;
 				    padding: 16px;
@@ -2974,6 +2978,11 @@ strong, b{
 
 /*------Корзина------*/
 
+.b-basket-list h2.b-title{
+	display: none;
+	text-align: left;
+}
+
 .b-basket-table{
 	width: 100%;
 	margin-bottom: 50px;
@@ -3009,12 +3018,29 @@ strong, b{
 		.b-basket-name h4:hover{
 			text-decoration: underline;
 		}
-		.b-basket-name a{
+		.b-basket-name a,
+		.b-basket-name .b-name{
 			display: table-cell;
 			vertical-align: middle;
 		}
 			.b-basket-name h4{
 				margin: 0 24px;
+			}
+			.b-basket-name .b-selects{
+				display: none;
+				margin: 0 24px;
+				font-size: 16px;
+    			line-height: 24px;
+			}
+			.b-basket-name .b-selects select{
+				font-family: 'Geometria-Medium';
+				padding-bottom: 0;
+    			padding-right: 0;
+			}
+			.b-basket-name .b-selects.icon-arrow-down:after {
+			    left: 54px;
+			    top: 8px;
+			    color: #c4c4c4;
 			}
 
 			.b-basket-name-img{

@@ -671,7 +671,8 @@ h1.b-title{
 	    width: 60px;
 	    height: 60px;
 	}
-	.b-basket-name h4 {
+	.b-basket-name h4,
+	.b-basket-name .b-selects{
 	    font-size: 16px;
 	    line-height: 24px;
 	    margin: 0 16px;
@@ -687,6 +688,18 @@ h1.b-title{
 
 	.b-basket-name {
 	    width: 65%;
+	}
+
+	.b-basket-name .b-selects{
+		display: block;
+	}
+
+	.b-basket-list h2.b-title{
+		display: block;
+		margin-bottom: 10px;
+	}
+	.b-basket-table {
+	    margin-bottom: 28px;
 	}
 
 }
@@ -871,6 +884,10 @@ h1.b-title{
 
 	.b-order-right .b-btn-buy{
 		width: 100%;
+	}
+
+	.b-basket-table .b-tip-cont {
+	    margin-right: -12px;
 	}
 
 }

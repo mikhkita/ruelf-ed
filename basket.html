@@ -139,76 +139,108 @@
 	<div class="b b-content">
 
 		<div class="b-block">
-			<table class="b-basket-table">
-				<tr class="table-header">
-					<th class="header-name">Название</th>
-					<th class="header-price">Цена</th>
-					<th class="header-count">Количество</th>
-					<th class="header-sum">Сумма</th>
-					<th></th>
-				</tr>
-				<tr>
-					<td class="b-basket-name">
-						<a href="detail.html">
-							<div class="b-basket-name-img" style="background-image: url(i/basket-detail-1.jpg);"></div>
-						</a>
-						<div>
-							<a href="detail.html"><h4>Букет №12</h4></a>
-							<p class="b-basket-item-count">2 шт.</p>
-						</div>
-					</td>
-					<td class="b-basket-price">
-						<h4 class="icon-ruble-medium">4 500</h4>
-					</td>
-					<td class="b-basket-count">
-						<form id="b-basket-form" class="b-basket-form" method="post" action="action.php">
-							<div class="b input-cont">
-								<a href="#" onclick="return false;" class="icon-minus"></a>
-								<a href="#" onclick="return false;" class="icon-plus"></a>
-								<input name="count" type="text" maxlength="3" oninput="this.value = this.value.replace(/\D/g, '')" value="1">
+			<div class="b-basket-list">
+				<h2 class="b-title">Корзина</h2>
+				<table class="b-basket-table">
+					<tr class="table-header">
+						<th class="header-name">Название</th>
+						<th class="header-price">Цена</th>
+						<th class="header-count">Количество</th>
+						<th class="header-sum">Сумма</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td class="b-basket-name">
+							<a href="detail.html">
+								<div class="b-basket-name-img" style="background-image: url(i/basket-detail-1.jpg);"></div>
+							</a>
+							<div class="b-name">
+								<a href="detail.html"><h4>Букет № 12</h4></a>
+								<div class="b-selects icon-arrow-down">
+									<select name="basket-count" class="b-basket-item-count">
+										<option value="1">1 шт.</option>
+										<option value="2" selected>2 шт.</option>
+										<option value="3">3 шт.</option>
+										<option value="4">4 шт.</option>
+										<option value="5">5 шт.</option>
+										<option value="6">6 шт.</option>
+										<option value="7">7 шт.</option>
+										<option value="8">8 шт.</option>
+										<option value="9">9 шт.</option>
+										<option value="10">10 шт.</option>
+									</select>
+								</div>
 							</div>
-						</form>
-					</td>
-					<td class="b-basket-sum">
-						<h4 class="icon-ruble">9 000</h4>
-					</td>
-					<td class="b-basket-delete">
-						<div class="b-tip-cont">
-							<a href="#" class="icon-close b-tip-ref"></a>
-							<div class="b-tip">Удалить</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td class="b-basket-name">
-						<a href="detail.html">
-							<div class="b-basket-name-img" style="background-image: url(i/basket-detail-2.jpg);"></div>
-						</a>	
-						<a href="detail.html"><h4>Букет «Розовое вино»</h4></a>
-					</td>
-					<td class="b-basket-price">
-						<h4 class="icon-ruble-medium">5 400</h4>
-					</td>
-					<td class="b-basket-count">
-						<form id="b-basket-form" class="b-basket-form" method="post" action="action.php">
-							<div class="b input-cont">
-								<a href="#" onclick="return false;" class="icon-minus"></a>
-								<a href="#" onclick="return false;" class="icon-plus"></a>
-								<input name="count" type="text" maxlength="3" oninput="this.value = this.value.replace(/\D/g, '')" value="2">
+						</td>
+						<td class="b-basket-price">
+							<h4 class="icon-ruble-medium">4 500</h4>
+						</td>
+						<td class="b-basket-count">
+							<form id="b-basket-form" class="b-basket-form" method="post" action="action.php">
+								<div class="b input-cont">
+									<a href="#" onclick="return false;" class="icon-minus"></a>
+									<a href="#" onclick="return false;" class="icon-plus"></a>
+									<input name="count" type="text" maxlength="3" oninput="this.value = this.value.replace(/\D/g, '')" value="1">
+								</div>
+							</form>
+						</td>
+						<td class="b-basket-sum">
+							<h4 class="icon-ruble">9 000</h4>
+						</td>
+						<td class="b-basket-delete">
+							<div class="b-tip-cont">
+								<a href="#" class="icon-close b-tip-ref"></a>
+								<div class="b-tip">Удалить</div>
 							</div>
-						</form>
-					</td>
-					<td class="b-basket-sum">
-						<h4 class="icon-ruble">5 400</h4>
-					</td>
-					<td class="b-basket-delete">
-						<div class="b-tip-cont">
-							<a href="#" class="icon-close b-tip-ref"></a>
-							<div class="b-tip">Удалить</div>
-						</div>
-					</td>
-				</tr>
-			</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="b-basket-name">
+							<a href="detail.html">
+								<div class="b-basket-name-img" style="background-image: url(i/basket-detail-2.jpg);"></div>
+							</a>	
+							<div class="b-name">
+								<a href="detail.html"><h4>Букет № 456</h4></a>
+								<div class="b-selects icon-arrow-down">
+									<select name="basket-count" class="b-basket-item-count">
+										<option value="1">1 шт.</option>
+										<option value="2">2 шт.</option>
+										<option value="3" selected>3 шт.</option>
+										<option value="4">4 шт.</option>
+										<option value="5">5 шт.</option>
+										<option value="6">6 шт.</option>
+										<option value="7">7 шт.</option>
+										<option value="8">8 шт.</option>
+										<option value="9">9 шт.</option>
+										<option value="10">10 шт.</option>
+									</select>
+								</div>
+							</div>
+						</td>
+						<td class="b-basket-price">
+							<h4 class="icon-ruble-medium">5 400</h4>
+						</td>
+						<td class="b-basket-count">
+							<form id="b-basket-form" class="b-basket-form" method="post" action="action.php">
+								<div class="b input-cont">
+									<a href="#" onclick="return false;" class="icon-minus"></a>
+									<a href="#" onclick="return false;" class="icon-plus"></a>
+									<input name="count" type="text" maxlength="3" oninput="this.value = this.value.replace(/\D/g, '')" value="2">
+								</div>
+							</form>
+						</td>
+						<td class="b-basket-sum">
+							<h4 class="icon-ruble">5 400</h4>
+						</td>
+						<td class="b-basket-delete">
+							<div class="b-tip-cont">
+								<a href="#" class="icon-close b-tip-ref"></a>
+								<div class="b-tip">Удалить</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 
 
@@ -218,7 +250,7 @@
 					<h2 class="b-title">Данные к заказу</h2>
 					<div class="b b-addressee">
 						<a href="#" class="b-addressee-switch"></a>
-						<div class="b-btn-switch b-addressee-left active" data-payment="delivery">Нужна доставка</div>
+						<div class="b-btn-switch b-addressee-left active" data-payment="delivery" data-mobile="Доставка" data-desktop="Нужна доставка">Нужна доставка</div>
 						<div class="b-btn-switch b-addressee-right" data-payment="pickup">Самовывоз</div>
 						<div class="b-btn-addressee"></div>
 					</div>

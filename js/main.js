@@ -60,6 +60,10 @@ $(document).ready(function(){
             $("body").on("touchend", function(){
                 $("html").removeClass("touch-locked");
             });
+
+            /*if($('.b-data-order').length){
+                $('.b-addressee-left').text($('.b-addressee-left').attr("data-mobile"));
+            }*/
         }
 
         /*if(!isDesktop){
