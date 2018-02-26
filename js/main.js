@@ -43,6 +43,12 @@ $(document).ready(function(){
             isMobile = true;
         }
 
+        if((myWidth < 950 && myWidth > 768) || myWidth < 666){
+            $('.b-addressee-left').text($('.b-addressee-left').attr("data-short"));
+        }else{
+            $('.b-addressee-left').text($('.b-addressee-left').attr("data-long"));
+        }
+
         if(!isDesktop){
             $('.b-filter').addClass("hide");
         }else{
@@ -61,11 +67,10 @@ $(document).ready(function(){
                 $("html").removeClass("touch-locked");
             });
 
-            /*if($('.b-data-order').length){
-                $('.b-addressee-left').text($('.b-addressee-left').attr("data-mobile"));
-            }*/
+            $('.b-input-time').after($('.b-email-input'));
+        }else{
+            $('.b-input-move').prepend($('.b-email-input'));
         }
-
         /*if(!isDesktop){
             if(!$('.b-catalog-sections').hasClass("slick-initialized")){
                 $('.b-catalog-sections').not('.slick-initialized').slick({
@@ -347,7 +352,7 @@ $(document).ready(function(){
             {
               breakpoint: 768,
               settings: {
-                rows: 2,
+                rows: 3,
                 slidesPerRow: 1,
               }
             }]

@@ -375,6 +375,74 @@ h1.b-title{
 	border: 0;
 }
 
+.b-data-order h2 {
+	text-align: left;
+    float: none;
+    margin-bottom: 40px;
+    padding-top: 0;
+}
+
+.b-addressee {
+    float: none;
+    display: inline-block;
+}
+
+.b-input-row {
+    margin-bottom: 0;
+}
+.b-input:nth-child(2n) {
+	margin-right: 0;
+}
+.b-input {
+    position: relative;
+    float: left;
+    width: calc(50% - 12px);
+    margin-bottom: 40px;
+}
+
+.b-total-price{
+    text-align: left;
+    float: none;
+    margin-bottom: 40px;
+}
+
+.b-payment-method{
+	float: none;
+	margin-bottom: 12px;
+	clear: both;
+}
+
+.b-payment-method-list {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+}
+.b-payment-method-item{
+	width: 100%;
+}
+
+#b-popup-map {
+    width: calc(100% - 48px);
+}
+
+#b-popup-map .b-btn-address{
+	min-width: 0;
+}
+.number-room-input{
+	width: 50%;
+}
+
+.b-popup .ui-widget.ui-widget-content{
+	width: 100%;
+	margin-right: 0;
+	margin-bottom: 40px;
+}
+
+.b-popup .b-input.number-room{
+	width: 100%;
+	margin-bottom: 0;
+}
+
 @media screen and (max-width: 665px){
 
 	h1.b-title {
@@ -410,6 +478,10 @@ h1.b-title{
 		font-size: 24px;
 		line-height: 32px;
 		margin-bottom: 24px;
+	}
+
+	.b-input{
+		margin-bottom: 36px;
 	}
 
 	.b-content {
@@ -702,6 +774,36 @@ h1.b-title{
 	    margin-bottom: 28px;
 	}
 
+	.b-addressee {
+	    width: 327px;
+	    height: 50px;
+	}
+	.b-addressee-left {
+	    padding: 13px 42px;
+	    font-size: 16px;
+    	line-height: 24px;
+	}
+	.b-addressee-right {
+	    padding: 13px 42px;
+	    font-size: 16px;
+    	line-height: 24px;
+	}
+	.b-btn-addressee {
+	    width: 160px;
+	    height: 50px;
+	}
+	.b-addressee-right.active + .b-btn-addressee {
+	    left: 156px;
+    	width: 170px;
+	}
+	.b-data-order-top {
+	    padding-top: 30px;
+	    margin-bottom: 35px;
+	}
+	.b-total-price {
+	    margin-bottom: 32px;
+	}
+
 }
 
 @media screen and (max-width: 570px){
@@ -721,6 +823,11 @@ h1.b-title{
 
 	.b-popup .b-inputs .b-input:last-child{
 		margin-bottom: 0;
+	}
+
+	.b-popup.b-popup-map .b-inputs .b-input:last-child,
+	.number-room input{
+		margin-bottom: 40px;
 	}
 
 	.b-questions-item:last-child{
@@ -767,6 +874,27 @@ h1.b-title{
 	.buy-one-click {
 	    text-align: center;
 	    margin-left: 0;
+	}
+
+	.b-input {
+	    width: 100%;
+	    margin-bottom: 40px;
+	    margin-right: 0;
+	}
+
+	.b-address {
+	    line-height: 28px;
+	}
+	.delivery-price-value, .total-price-value {
+	    margin-left: 8px;
+	}
+
+	.number-room-input {
+	    width: 100%;
+	}
+	.b-popup .b-input.number-room .b-btn {
+	    float: none;
+	    width: 100%;
 	}
 
 }

@@ -1549,10 +1549,10 @@ strong, b{
 	}
 		.sections-mobile{
 			display: inline-block;
-			margin-right: 30px;
 		}
 		.b-btn-filter{
 			display: inline-block;
+			margin-left: 30px;
 		}
 
 	.b-catalog-menu{
@@ -3844,6 +3844,7 @@ strong, b{
 	}
 		.b-popup .b-input{
 			width: calc(50% - 12px);
+			margin-bottom: 0;
 		}
 		.b-popup .b-input:nth-child(2n){
 			margin-right: 0;
@@ -3852,6 +3853,10 @@ strong, b{
 	#b-popup-map{
 		width: 100%;
 		max-width: 1152px;
+	}
+
+	#b-popup-map h3{
+		padding-right: 0;
 	}
 
 	#b-popup-map h1,
