@@ -8,6 +8,16 @@ body {
 
 /*---------------------*/
 
+.b-menu {
+    margin-left: 120px;
+}
+.b-menu li {
+    margin-right: 6px;
+}
+.b-top-phone {
+    margin-right: 14px;
+}
+
 .b-catalog{
 
 }
@@ -74,27 +84,6 @@ ul.b-catalog-sections li{
 .b-catalog-menu .b-line{
 	display: none;
 }
-.burger-menu{
-	display: block;
-}
-.b-top.b-top-fixed{
-	padding-bottom: 18px;
-}
-.b-top.b-top-fixed .b-logo {
-    opacity: 1;
-    visibility: visible;
-}
-
-.b-top .b-menu{
-	display: none;
-}
-
-.b-logo {
-	top: -6px;
-    background-size: 270px;
-    width: 270px;
-    height: 45px;
-}
 
 .b-filter-price, .b-filter-flowers{
 	width: 50%;
@@ -142,6 +131,27 @@ ul.b-catalog-sections li{
 	}
 
 @media screen and (max-width: 1024px){
+
+	.b-top .b-menu{
+		display: none;
+	}
+	.burger-menu{
+		display: block;
+	}
+	.b-top.b-top-fixed{
+		padding-bottom: 18px;
+	}
+	.b-top.b-top-fixed .b-logo {
+	    opacity: 1;
+	    visibility: visible;
+	}
+
+	.b-logo {
+		top: -6px;
+	    background-size: 270px;
+	    width: 270px;
+	    height: 45px;
+	}
 
 	.b-questions{
 	}
@@ -259,6 +269,16 @@ ul.b-catalog-sections li{
 	    float: left;
 	    width: calc(50% - 12px);
 	    margin-bottom: 40px;
+	}
+
+	.b-time-list {
+	    width: 100%;
+	}
+	.b-time-list ul {
+	    width: calc(100%/3 - 15px);
+	}
+	.ui-datepicker {
+	    width: calc(50% - 44px);
 	}
 
 }

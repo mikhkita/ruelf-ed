@@ -44,9 +44,9 @@ $(document).ready(function(){
         }
 
         if((myWidth < 950 && myWidth > 768) || myWidth < 666){
-            $('.b-addressee-left').text($('.b-addressee-left').attr("data-short"));
+            $('.b-addressee-desktop .b-addressee-left').text($('.b-addressee-desktop .b-addressee-left').attr("data-short"));
         }else{
-            $('.b-addressee-left').text($('.b-addressee-left').attr("data-long"));
+            $('.b-addressee-desktop .b-addressee-left').text($('.b-addressee-desktop .b-addressee-left').attr("data-long"));
         }
 
         if(!isDesktop){
@@ -527,11 +527,11 @@ $(document).ready(function(){
         }
     });
 
-    $('.b-addressee-switch').on('click', function(){
-        if($('.b-addressee-left').hasClass("active")){//клик на самовывоз
+    $('.b-addressee-desktop .b-addressee-switch').on('click', function(){
+        if($('.b-addressee-desktop .b-addressee-left').hasClass("active")){//клик на самовывоз
             $("input[name='DELIVERY_ID']").val(3);
-            $('.b-addressee-left').removeClass("active");
-            $('.b-addressee-right').addClass("active");
+            $('.b-addressee-desktop .b-addressee-left').removeClass("active");
+            $('.b-addressee-desktop .b-addressee-right').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
             $('#address').prop({"disabled": true, "required": false}).removeClass("error");
             //$('.b-address').before($(".move-element")).addClass("hide").removeClass("error");;
@@ -547,10 +547,12 @@ $(document).ready(function(){
 
             $(".b-payment-method-item").addClass("hide");
             $("." + $('.b-addressee-right').attr("data-payment")).removeClass("hide");
+
+            $('.b-addressee-mobile').addClass("hide");
         }else{//клик на доставку
             $("input[name='DELIVERY_ID']").val(2);
-            $('.b-addressee-right').removeClass("active");
-            $('.b-addressee-left').addClass("active");
+            $('.b-addressee-desktop .b-addressee-right').removeClass("active");
+            $('.b-addressee-desktop .b-addressee-left').addClass("active");
             $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
             $('#address').prop({"disabled": false, "required": true});
             if(!$('#address').val()){
@@ -569,6 +571,8 @@ $(document).ready(function(){
 
             $(".b-payment-method-item").addClass("hide");
             $("." + $('.b-addressee-left').attr("data-payment")).removeClass("hide");
+
+            $('.b-addressee-mobile').removeClass("hide");
         }
         if( !$(".b-payment-method-item input:visible:checked").length ){
             $(".b-payment-method-item:not(.hide)").eq(0).find("input").prop("checked", true);
@@ -577,10 +581,19 @@ $(document).ready(function(){
         return false;
     });
 
-    if($('.b-addressee-switch').length){
+    if($('.b-addressee-desktop .b-addressee-switch').length){
         $(".b-payment-method-item").addClass("hide");
-        $("." + $('.b-addressee-left').attr("data-payment")).removeClass("hide");
+        $("." + $('.b-addressee-desktop .b-addressee-left').attr("data-payment")).removeClass("hide");
     }
+
+    $('.b-addressee-mobile .b-addressee-switch').on('click', function(){
+        if($('.b-addressee-mobile .b-addressee-left').hasClass("active")){//клик на "Доставить мне"
+
+        }else{//клик на "Получателю"
+
+        }
+        return false;
+    });
 
     if($('#date').length){
         $.datepicker.regional['ru'] = {
@@ -673,6 +686,10 @@ $(document).ready(function(){
                 $('.input-time').val($lastTime.siblings("label").text());
             }
         }
+        $('.b-time-list').removeClass("show");
+        if(!$('.input-time').val()){
+            $(".b-input-time").removeClass("focus not-empty");
+        }
     });
 
     $('body').on("click", ".b-filter-price-select, .b-filter-flowers-select", function(){
@@ -756,9 +773,8 @@ $(document).ready(function(){
       });
     });
 
-    $('.b-input-time').on('click', function(){
+    $('.b-input-time input').on('click focus', function(){
         $('.b-time-list').addClass("show");
-
     });
 
     $(".b-time-list input").change(function(){

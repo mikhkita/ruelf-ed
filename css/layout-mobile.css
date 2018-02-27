@@ -443,6 +443,24 @@ h1.b-title{
 	margin-bottom: 0;
 }
 
+.b-time-list {
+    width: 100%;
+}
+.b-time-list ul {
+    width: calc(100%/3 - 15px);
+}
+.ui-datepicker {
+    width: calc(50% - 44px);
+}
+
+.b-addressee-mobile{
+	display: block;
+}
+
+.b-address {
+    float: none;
+}
+
 @media screen and (max-width: 665px){
 
 	h1.b-title {
@@ -640,6 +658,7 @@ h1.b-title{
 	}
 	.b-top{
 		padding-top: 28px;
+		padding-bottom: 0;
 	}
 	.b-header-title {
 	    padding-top: 110px;
@@ -804,6 +823,10 @@ h1.b-title{
 	    margin-bottom: 32px;
 	}
 
+	.ui-datepicker {
+	    width: calc(50% - 36px);
+	}
+
 }
 
 @media screen and (max-width: 570px){
@@ -895,6 +918,10 @@ h1.b-title{
 	.b-popup .b-input.number-room .b-btn {
 	    float: none;
 	    width: 100%;
+	}
+
+	.ui-datepicker {
+	    width: calc(100% - 48px);
 	}
 
 }
