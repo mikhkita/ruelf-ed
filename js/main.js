@@ -43,12 +43,34 @@ $(document).ready(function(){
             isMobile = true;
         }
 
+        if((myWidth < 950 && myWidth > 768) || myWidth < 666){
+            $('.b-addressee-left').text($('.b-addressee-left').attr("data-short"));
+        }else{
+            $('.b-addressee-left').text($('.b-addressee-left').attr("data-long"));
+        }
+
         if(!isDesktop){
             $('.b-filter').addClass("hide");
         }else{
             $('.b-filter').removeClass("hide");
         }
 
+        if(isMobile){
+            var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
+            $('.b-call').before($moveEl.parent());
+
+            $("body").on("touchstart", ".b-slideout-not-touch", function(){
+                $("html").addClass("touch-locked");
+            });
+
+            $("body").on("touchend", function(){
+                $("html").removeClass("touch-locked");
+            });
+
+            $('.b-input-time').after($('.b-email-input'));
+        }else{
+            $('.b-input-move').prepend($('.b-email-input'));
+        }
         /*if(!isDesktop){
             if(!$('.b-catalog-sections').hasClass("slick-initialized")){
                 $('.b-catalog-sections').not('.slick-initialized').slick({
@@ -189,11 +211,32 @@ $(document).ready(function(){
         return false;
     });
 
+    /*var fixed = document.querySelector('.b-top');
+
+    slideoutLeft.on('translate', function(translated) {
+      fixed.style.transform = 'translateX(' + translated + 'px)';
+    });
+
+    slideoutLeft.on('beforeopen', function () {
+      fixed.style.transition = 'transform 300ms ease';
+      fixed.style.transform = 'translateX(300px)';
+    });
+
+    slideoutLeft.on('beforeclose', function () {
+      fixed.style.transition = 'transform 300ms ease';
+      fixed.style.transform = 'translateX(0px)';
+    });
+
+    slideoutLeft.on('open', function () {
+      fixed.style.transition = '';
+    });
+
     slideoutLeft.on('close', function() {
         setTimeout(function(){
             $(".b-menu-overlay").hide();
         },10);
-    });
+        fixed.style.transition = '';
+    });*/
 
     var slideoutRight = new Slideout({
         'panel': document.getElementById('panel-page'),
@@ -309,7 +352,7 @@ $(document).ready(function(){
             {
               breakpoint: 768,
               settings: {
-                rows: 2,
+                rows: 3,
                 slidesPerRow: 1,
               }
             }]

@@ -211,15 +211,16 @@ strong, b{
     color: #434343;
     border: 2px solid #434343;
     padding: 8px 29px;
-    -webkit-transition: background-color 50ms ease-out, color 50ms ease-out;
-    -moz-transition: background-color 50ms ease-out, color 50ms ease-out;
-    -ms-transition: background-color 50ms ease-out, color 50ms ease-out;
-    -o-transition: background-color 50ms ease-out, color 50ms ease-out;
-    transition: background-color 50ms ease-out, color 50ms ease-out;
+    -webkit-transition: background-color 50ms ease-out, color 50ms ease-out, border color 50ms ease-out;
+    -moz-transition: background-color 50ms ease-out, color 50ms ease-out, border color 50ms ease-out;
+    -ms-transition: background-color 50ms ease-out, color 50ms ease-out, border color 50ms ease-out;
+    -o-transition: background-color 50ms ease-out, color 50ms ease-out, border color 50ms ease-out;
+    transition: background-color 50ms ease-out, color 50ms ease-out, border color 50ms ease-out;
 }
 	.b-btn-black:active{
 		color: #FFF;
-		background-color: #434343;
+		background-color: #6e58ac;
+		border: 2px solid #6e58ac;
 	}
 
 .b-btn-white{
@@ -627,21 +628,25 @@ strong, b{
 	position: relative;
 }
 
-.b-selects select {
-	color: #c4c4c4;
-	font-size: 18px;
-    border: none;
-    width: 100%;
-    font-family: 'Geometria-Regular';
-    background-color: transparent;
-    vertical-align: top;
-    padding-bottom: 11px;
-    padding-right: 28px;
-    cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+.b-selects{
+	position: relative;
 }
+
+	.b-selects select {
+		color: #c4c4c4;
+		font-size: 18px;
+	    border: none;
+	    width: 100%;
+	    font-family: 'Geometria-Regular';
+	    background-color: transparent;
+	    vertical-align: top;
+	    padding-bottom: 11px;
+	    padding-right: 28px;
+	    cursor: pointer;
+	    -webkit-appearance: none;
+	    -moz-appearance: none;
+	    appearance: none;
+	}
 
 .b-inputs input{
 	display: inline-block;
@@ -905,7 +910,7 @@ strong, b{
 
 }
 	.slideout-menu-padding{
-		padding: 0 24px;
+		padding: 24px 24px 26px 24px;
 	}
 	.slideout-menu h2{
 		color: #434343;
@@ -913,13 +918,11 @@ strong, b{
 		font-size: 24px;
 		line-height: 36px;
 		text-align: left;
-		padding: 20px 24px 26px 24px;
 		margin-bottom: 0;
 	}
 	.slideout-menu ul{
 		background-color: #f8f8f8;
 		padding: 8px 0;
-		margin-bottom: 24px;
 	}
 		.slideout-menu ul li{
 			padding: 0 24px;
@@ -1024,16 +1027,21 @@ strong, b{
 			    height: 47px;
 			}
 			.b-top .b-logo{
-				-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out;
-			    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out;
-			    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out;
-				-o-transition: opacity 200ms ease-out, visibility 200ms ease-out;
-			    transition: opacity 200ms ease-out, visibility 200ms ease-out;
+				-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
+			    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
+			    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
+				-o-transition: opacity 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
+			    transition: opacity 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
 			}
 
 			.b-top-phone-mobile{
 				display: none;
-				margin-top: 6px;
+				margin-top: 42px;
+				-webkit-transition: margin-top 200ms ease-out;
+			    -moz-transition: margin-top 200ms ease-out;
+			    -ms-transition: margin-top 200ms ease-out;
+				-o-transition: margin-top 200ms ease-out;
+			    transition: margin-top 200ms ease-out;
 			}
 
 	.b-menu .top-hide{
@@ -1335,7 +1343,7 @@ strong, b{
 				    position: absolute;
 				    z-index: 2;
 				    right: 0;
-				    top: 56px;
+				    top: 55px;
 				    width: 345px;
 				    background-color: #FFF;
 				    padding: 16px;
@@ -1541,10 +1549,10 @@ strong, b{
 	}
 		.sections-mobile{
 			display: inline-block;
-			margin-right: 30px;
 		}
 		.b-btn-filter{
 			display: inline-block;
+			margin-left: 30px;
 		}
 
 	.b-catalog-menu{
@@ -1658,7 +1666,7 @@ strong, b{
 				color: #434343;
 			}
 
-		ul.b-filter-price-list{
+		.b-filter-price-list{
 		    z-index: 106;
 		    min-width: 232px;
 		    padding: 22px 24px 30px;
@@ -1683,7 +1691,7 @@ strong, b{
 		    -o-transform: translateY(-10px);
 		    transform: translateY(-10px);
 		}
-		ul.b-filter-price-list:before{
+		.b-filter-price-list:before{
 			position: absolute;
 		    content: "s";
 		    font-size: 0px;
@@ -1697,7 +1705,7 @@ strong, b{
 		    border-left: 10px solid transparent;
 		}
 
-		.b-filter-select-wrap:hover ul.b-filter-price-list{
+		.b-filter-select-wrap:hover .b-filter-price-list{
 			opacity: 1;
 			visibility: visible;
 			-webkit-transform: translateY(0px);
@@ -1707,13 +1715,13 @@ strong, b{
 		    transform: translateY(0px);
 		}
 
-			ul.b-filter-price-list li{
+			.b-filter-price-list li{
 				font-size: 16px;
 				line-height: 24px;
 				font-family: 'Geometria-Regular';
 				margin-bottom: 16px;
 			}
-			ul.b-filter-price-list li:last-child{
+			.b-filter-price-list li:last-child{
 				margin-bottom: 0;
 			}
 
@@ -1762,7 +1770,7 @@ strong, b{
 		}
 
 		.b-filter-flowers-list:after,
-		ul.b-filter-price-list:after{
+		.b-filter-price-list:after{
 			position: absolute;
 			content: "s";
 			font-size: 0px;
@@ -1773,22 +1781,22 @@ strong, b{
 		}
 
 	.b-filter-select-wrap:hover .b-filter-flowers-list{
-			opacity: 1;
-			visibility: visible;
-			-webkit-transform: translateY(0px);
-			-moz-transform: translateY(0px);
-			-ms-transform: translateY(0px);
-			-o-transform: translateY(0px);
-			transform: translateY(0px);
+		opacity: 1;
+		visibility: visible;
+		-webkit-transform: translateY(0px);
+		-moz-transform: translateY(0px);
+		-ms-transform: translateY(0px);
+		-o-transform: translateY(0px);
+		transform: translateY(0px);
+	}
+		.b-filter-flowers-list ul{
+			width: 200px;
+			display: inline-block;
+			vertical-align: top;
 		}
-			.b-filter-flowers-list ul{
-				width: 200px;
-				display: inline-block;
-				vertical-align: top;
-			}
-			.b-filter-flowers-list ul li:last-child label{
-				margin-bottom: 0;
-			}
+		.b-filter-flowers-list ul li:last-child label{
+			margin-bottom: 0;
+		}
 
 	.b-filter-flowers-list .b-checkbox input[type="checkbox"] + span + label,
 	.b-filter-flowers-list .b-checkbox input[type="checkbox"] + label{
@@ -2572,6 +2580,7 @@ strong, b{
 
 				.b-sub-form input{
 					max-width: 166px;
+					box-shadow: none;
 					border-right: 0;
 					border-top-right-radius: 0;
 					border-bottom-right-radius: 0;
@@ -2673,7 +2682,7 @@ strong, b{
 
 .arrow-up{
 	position: fixed;
-	z-index: 201;
+	z-index: 199;
 	bottom: 24px;
 	left: calc(50% + 600px);
 	width: 80px;
@@ -2970,6 +2979,11 @@ strong, b{
 
 /*------Корзина------*/
 
+.b-basket-list h2.b-title{
+	display: none;
+	text-align: left;
+}
+
 .b-basket-table{
 	width: 100%;
 	margin-bottom: 50px;
@@ -3005,12 +3019,29 @@ strong, b{
 		.b-basket-name h4:hover{
 			text-decoration: underline;
 		}
-		.b-basket-name a{
+		.b-basket-name a,
+		.b-basket-name .b-name{
 			display: table-cell;
 			vertical-align: middle;
 		}
-			.b-basket-name a h4{
-				margin: 0 20px;
+			.b-basket-name h4{
+				margin: 0 24px;
+			}
+			.b-basket-name .b-selects{
+				display: none;
+				margin: 0 24px;
+				font-size: 16px;
+    			line-height: 24px;
+			}
+			.b-basket-name .b-selects select{
+				font-family: 'Geometria-Medium';
+				padding-bottom: 0;
+    			padding-right: 0;
+			}
+			.b-basket-name .b-selects.icon-arrow-down:after {
+			    left: 54px;
+			    top: 8px;
+			    color: #c4c4c4;
 			}
 
 			.b-basket-name-img{
@@ -3760,7 +3791,7 @@ strong, b{
 		width: 100%;
 		height: 309px;
 		background-image: url(../i/gift.jpg);
-		background-position: 50% 50%;
+		background-position: 50% 0;
 		background-repeat: no-repeat;
 		background-size: contain;
 	}
@@ -3814,6 +3845,7 @@ strong, b{
 	}
 		.b-popup .b-input{
 			width: calc(50% - 12px);
+			margin-bottom: 0;
 		}
 		.b-popup .b-input:nth-child(2n){
 			margin-right: 0;
@@ -3822,6 +3854,10 @@ strong, b{
 	#b-popup-map{
 		width: 100%;
 		max-width: 1152px;
+	}
+
+	#b-popup-map h3{
+		padding-right: 0;
 	}
 
 	#b-popup-map h1,
@@ -4272,6 +4308,7 @@ strong, b{
 }
 
 .slideout-panel {
+  overflow-x: hidden;
   position: relative;
   z-index: 1;
   background-color: #FFF; /* A background-color is required */
