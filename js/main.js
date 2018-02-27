@@ -613,9 +613,18 @@ $(document).ready(function(){
         $(function(){
             $("#date").datepicker({
                 minDate: 0,
-                beforeShow: function() {
+                beforeShow: function(input, inst) {
+                    var calendar = inst.dpDiv;
                     setTimeout(function(){
                         $('.ui-datepicker').css('z-index', 100);
+                        if(isMobile){
+                            calendar.position({
+                                my: 'left top',
+                                at: 'left bottom',
+                                collision: 'none',
+                                of: input
+                            });
+                        }
                     }, 10);
                 },
                 onClose: function(){
@@ -670,6 +679,9 @@ $(document).ready(function(){
         });
     }
 
+    /*if(isMobile)
+        $.datepicker._checkOffset = function(_, offset){ return offset; };*/
+
     //проверить, валидно ли время
     $('.input-time').blur(function(){
         if(!!$(this).val()){
@@ -691,6 +703,10 @@ $(document).ready(function(){
         if(!$('.input-time').val()){
             $(".b-input-time").removeClass("focus not-empty");
         }
+    });
+
+    $('#date').blur(function(){
+       $("#date").datepicker("hide");
     });
 
     $('body').on("click", ".b-filter-price-select, .b-filter-flowers-select", function(){
