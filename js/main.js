@@ -70,6 +70,8 @@ $(document).ready(function(){
             $('.b-input-time').after($('.b-email-input'));
         }else{
             $('.b-input-move').prepend($('.b-email-input'));
+            
+            $('.fancy-filter').unbind('click.fb-start');
         }
         /*if(!isDesktop){
             if(!$('.b-catalog-sections').hasClass("slick-initialized")){
@@ -265,6 +267,10 @@ $(document).ready(function(){
         },10);
     });
 
+    if(isMobile){
+        new FastClick(document.body);
+    }
+
     if(isRetina){
         $("*[data-retina]").each(function(){
             var $this = $(this),
@@ -401,7 +407,7 @@ $(document).ready(function(){
         $('.b-filter').toggleClass("hide");
         if(!$('.b-filter').hasClass("hide")){
             $('body,html').animate({
-               scrollTop: $('.b-filter').offset().top - $('.b-top').outerHeight(true) - 10
+               scrollTop: $('.b-filter').offset().top - 40 - 53
             }, 300);
         }
         return false;
@@ -573,6 +579,11 @@ $(document).ready(function(){
             $("." + $('.b-addressee-left').attr("data-payment")).removeClass("hide");
 
             $('.b-addressee-mobile').removeClass("hide");
+            if($('.b-addressee-mobile .b-addressee-left').hasClass("active")){
+                $('.b-addressee-mobile .b-addressee-right').removeClass("active");
+                $('.b-addressee-mobile .b-addressee-left').addClass("active");
+                $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
+            };
         }
         if( !$(".b-payment-method-item input:visible:checked").length ){
             $(".b-payment-method-item:not(.hide)").eq(0).find("input").prop("checked", true);
@@ -587,10 +598,14 @@ $(document).ready(function(){
     }
 
     $('.b-addressee-mobile .b-addressee-switch').on('click', function(){
-        if($('.b-addressee-mobile .b-addressee-left').hasClass("active")){//клик на "Доставить мне"
-
-        }else{//клик на "Получателю"
-
+        if($('.b-addressee-mobile .b-addressee-left').hasClass("active")){//клик на "Получателю"
+            $('.b-addressee-mobile .b-addressee-left').removeClass("active");
+            $('.b-addressee-mobile .b-addressee-right').addClass("active");
+            $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
+        }else{//клик на "Доставить мне"
+            $('.b-addressee-mobile .b-addressee-right').removeClass("active");
+            $('.b-addressee-mobile .b-addressee-left').addClass("active");
+            $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
         }
         return false;
     });

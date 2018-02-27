@@ -236,6 +236,10 @@ ul.b-catalog-sections li{
 	    margin-bottom: 40px;
 	}
 
+	.delivery-page .ui-widget.ui-widget-content{
+		margin-bottom: 40px;
+	}
+
 }
 
 @media screen and (max-width: 950px){

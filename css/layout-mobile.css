@@ -459,6 +459,26 @@ h1.b-title{
 
 .b-address {
     float: none;
+    margin-bottom: 36px;
+}
+
+.b-checkbox input[type="checkbox"] + span + label:hover:after,
+.b-checkbox input[type="checkbox"] + label:hover:after{
+	border-bottom: 0;
+    border-right: 0;
+}
+
+.b-addressee-switch:hover {
+    background-color: transparent;
+    border: 2px solid #e4e4e4
+}
+.b-addressee-switch:hover ~ .b-addressee-left:not(.active),
+.b-addressee-switch:hover ~ .b-addressee-right:not(.active){
+    color: #434343;
+}
+
+.delivery-page .ui-widget.ui-widget-content{
+	margin-bottom: 40px;
 }
 
 @media screen and (max-width: 665px){
@@ -629,7 +649,7 @@ h1.b-title{
 	}
 
 	.b-logo {
-		top: -3px;
+		top: -1px;
     	left: calc(50% - 110px);
 	    background-size: 220px;
 	    width: 220px;
@@ -827,6 +847,24 @@ h1.b-title{
 	    width: calc(50% - 36px);
 	}
 
+	.b-addressee-mobile .b-addressee-left {
+	    padding: 13px 30px;
+	}
+
+	.b-addressee-mobile .b-addressee-right {
+	    padding: 13px 30px;
+	}
+
+	.b-addressee-mobile .b-btn-addressee {
+	    width: 178px;
+	    height: 50px;
+	}
+
+	.b-addressee-mobile .b-addressee-right.active + .b-btn-addressee{
+		left: 170px;
+		width: 156px;
+	}
+
 }
 
 @media screen and (max-width: 570px){
@@ -881,11 +919,17 @@ h1.b-title{
 	    min-width: 0;
 	}
 
+	.b-btn-more.icon-arrow-right-bold:before,
 	.b-btn-add-basket.icon-basket:before,
+	.b-btn-buy.icon-success:before,
+	.b-btn-more.icon-close-btn:before,
 	.b-btn-buy.icon-card:before{
 		display: none;
 	}
 
+	.b-btn-more:hover .b-btn-more-text,
+	.b-btn-buy.icon-success:hover .b-btn-more-text,
+	.b-btn-more.icon-close-btn:hover .b-btn-more-text,
 	.b-btn-add-basket.icon-basket:hover .b-btn-more-text,
 	.b-btn-buy.icon-card:hover .b-btn-more-text{
 		-webkit-transform: none;
@@ -901,7 +945,6 @@ h1.b-title{
 
 	.b-input {
 	    width: 100%;
-	    margin-bottom: 40px;
 	    margin-right: 0;
 	}
 

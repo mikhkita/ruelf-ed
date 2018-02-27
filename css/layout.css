@@ -3253,24 +3253,7 @@ strong, b{
 
 		.b-addressee-mobile{
 			display: none;
-		}
-
-		.b-addressee-mobile .b-addressee-left {
-		    padding: 13px 30px;
-		}
-
-		.b-addressee-mobile .b-addressee-right {
-		    padding: 13px 30px;
-		}
-
-		.b-addressee-mobile .b-btn-addressee {
-		    width: 178px;
-		    height: 50px;
-		}
-
-		.b-addressee-mobile .b-addressee-right.active + .b-btn-addressee{
-			left: 170px;
-    		width: 156px;
+			margin-bottom: 36px;
 		}
 
 	.b-input-time{
@@ -4317,7 +4300,7 @@ strong, b{
   bottom: 0;
   width: 300px;
   min-height: 100vh;
-  overflow-y: auto;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   z-index: 0;
   display: none;
