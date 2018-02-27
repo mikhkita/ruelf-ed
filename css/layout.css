@@ -2801,7 +2801,8 @@ strong, b{
     	padding-top: 8px;
     	padding-left: 36px;
 	}
-		.b-detail-right h2{
+		.b-detail-right h2,
+		.b-detail-right h1{
 			font-family: 'Geometria-Bold';
 			color: #434343;
 			font-size: 36px;
@@ -3579,7 +3580,7 @@ strong, b{
 			}
 				.b-addition-item-content .b-addition-item-name{
 					margin-bottom: 10px;
-					font-family: 'Geometria-Bold';
+					font-family: 'Geometria-Regular';
 				}
 				.b-addition-item-name:hover{
 					/*text-decoration: underline;*/
