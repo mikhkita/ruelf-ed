@@ -29,7 +29,7 @@ $(document).ready(function(){
             $('.b-catalog-item-back').css("transform", "scale("+scaleX+","+scaleY+")");
         }*/
 
-        if( myWidth > 1199 ){
+        if( myWidth > 1023 ){
             isDesktop = true;
             isTablet = false;
             isMobile = false;
@@ -50,14 +50,14 @@ $(document).ready(function(){
         }
 
         if(!isDesktop){
-            $('.b-filter').addClass("hide");
+            var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
+            $('.b-call').before($moveEl.parent());
         }else{
-            $('.b-filter').removeClass("hide");
+
         }
 
         if(isMobile){
-            var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
-            $('.b-call').before($moveEl.parent());
+            $('.b-filter').addClass("hide");
 
             $("body").on("touchstart", ".b-slideout-not-touch", function(){
                 $("html").addClass("touch-locked");
@@ -69,11 +69,12 @@ $(document).ready(function(){
 
             $('.b-input-time').after($('.b-email-input'));
         }else{
+            $('.b-filter').removeClass("hide");
             $('.b-input-move').prepend($('.b-email-input'));
-            
             $('.fancy-filter').unbind('click.fb-start');
         }
-        /*if(!isDesktop){
+
+        if(isTablet){
             if(!$('.b-catalog-sections').hasClass("slick-initialized")){
                 $('.b-catalog-sections').not('.slick-initialized').slick({
                     dots: false,
@@ -94,20 +95,6 @@ $(document).ready(function(){
                             slidesToScroll: 1
                           }
                         },
-                        {
-                          breakpoint: 665,
-                          settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                          }
-                        },
-                        {
-                          breakpoint: 400,
-                          settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                          }
-                        }
                     ]
                 });
             }
@@ -115,9 +102,9 @@ $(document).ready(function(){
             if($('.b-catalog-sections').hasClass("slick-initialized")){
                 setTimeout(function(){
                     $('.b-catalog-sections').slick('unslick');
-                },100);
+                },10);
             }
-        }*/
+        }
         
         checkMenu();
         $(window).scroll();

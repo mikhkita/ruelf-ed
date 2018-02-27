@@ -3404,6 +3404,7 @@ strong, b{
 				font-size: 16px;
 				line-height: 20px;
 				font-family: 'Geometria-Regular';
+	    		-webkit-appearance: none;
 			}
 			.b-input textarea{
 				float: left;
@@ -3865,6 +3866,9 @@ strong, b{
 
 	#b-popup-map h3{
 		padding-right: 0;
+	}
+	.b-popup-map .short-header{
+		display: none;
 	}
 
 	#b-popup-map h1,

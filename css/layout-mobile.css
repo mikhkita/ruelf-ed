@@ -373,6 +373,14 @@ h1.b-title{
 
 .color-item:hover{
 	border: 0;
+	box-shadow: none;
+}
+.color-all:hover .color-all-img {
+    width: 36px;
+    height: 36px;
+}
+.color-white:hover{
+	border: 1px solid #e5e2e2;
 }
 
 .b-data-order h2 {
@@ -479,6 +487,11 @@ h1.b-title{
 
 .delivery-page .ui-widget.ui-widget-content{
 	margin-bottom: 40px;
+}
+
+a.b-tip-ref:hover + .b-tip{
+	opacity: 0;
+	visibility: hidden;
 }
 
 @media screen and (max-width: 665px){
@@ -1086,6 +1099,21 @@ h1.b-title{
 
 	.b-basket-table .b-tip-cont {
 	    margin-right: -12px;
+	}
+
+	.b-popup-padding-header {
+	    padding: 32px;
+	}
+
+	.b-popup-map .short-header{
+		display: block;
+	}
+	.b-popup-map .full-header{
+		display: none;
+	}
+	#b-popup-map .b-price-delivery{
+		font-size: 16px;
+		line-height: 24px;
 	}
 
 }
