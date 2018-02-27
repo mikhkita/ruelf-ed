@@ -190,12 +190,12 @@ $(document).ready(function(){
         slideoutLeft.open();
         $('.basket-menu').addClass("hide");
         $('.mobile-menu').removeClass("hide");
-        $('.b-menu-overlay').show();
+        $('.b-menu-overlay').show();slideout.enableTouch();
         return false;
     });
     $('.b-menu-overlay').click(function() {
         slideoutLeft.close();
-        $('.b-menu-overlay').hide();
+        $('.b-menu-overlay').hide();slideout.disableTouch();
         return false;
     });
 
