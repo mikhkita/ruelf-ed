@@ -911,7 +911,7 @@ strong, b{
 
 }
 	.slideout-menu-padding{
-		padding: 24px 24px 26px 24px;
+		margin: 24px 24px 26px 24px;
 	}
 	.slideout-menu h2{
 		color: #434343;
@@ -4270,26 +4270,26 @@ strong, b{
 .icon-slider-left {
     position: absolute;
     left: -8px;
-    top: -4px;
+    top: -5px;
     cursor: pointer;
     z-index: 1;
     padding: 8px;
 }
 .icon-slider-left:before {
-    content: "\e90e";
+    content: "\e91d";
     font-size: 15px;
     color: #434343;
 }
 .icon-slider-right {
     position: absolute;
     right: -8px;
-    top: -4px;
+    top: -5px;
     cursor: pointer;
     z-index: 1;
     padding: 8px;
 }
 .icon-slider-right:before {
-    content: "\e90e";
+    content: "\e91e";
     font-size: 15px;
     color: #434343;
 }
@@ -4304,7 +4304,7 @@ strong, b{
   bottom: 0;
   width: 300px;
   min-height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   z-index: 0;
   display: none;

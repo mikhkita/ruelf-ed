@@ -332,6 +332,10 @@ h1.b-title{
     visibility: visible;
 }
 
+.fancybox-container .b-filter-price-list{
+	max-width: 400px;
+}
+
 .b-filter-flowers-list{
 	width: 100%;
 }
@@ -492,6 +496,10 @@ h1.b-title{
 a.b-tip-ref:hover + .b-tip{
 	opacity: 0;
 	visibility: hidden;
+}
+
+.b-catalog-menu-mobile {
+    padding-bottom: 40px;
 }
 
 @media screen and (max-width: 665px){

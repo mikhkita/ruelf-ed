@@ -53,7 +53,7 @@ $(document).ready(function(){
             var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
             $('.b-call').before($moveEl.parent());
         }else{
-
+            $('.fancy-filter').unbind('click.fb-start');
         }
 
         if(isMobile){
@@ -71,7 +71,6 @@ $(document).ready(function(){
         }else{
             $('.b-filter').removeClass("hide");
             $('.b-input-move').prepend($('.b-email-input'));
-            $('.fancy-filter').unbind('click.fb-start');
         }
 
         if(isTablet){

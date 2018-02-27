@@ -81,9 +81,6 @@ ul.b-catalog-sections li{
 	text-align: center;
 	padding: 0 10px;
 }
-.b-catalog-menu .b-line{
-	display: none;
-}
 
 .b-filter-price, .b-filter-flowers{
 	width: 50%;
@@ -154,6 +151,10 @@ ul.b-catalog-sections li a{
 	    background-size: 270px;
 	    width: 270px;
 	    height: 45px;
+	}
+
+	.b-catalog-menu .b-line{
+		display: none;
 	}
 
 	.b-questions{
@@ -241,6 +242,46 @@ ul.b-catalog-sections li a{
 
 	.delivery-page .ui-widget.ui-widget-content{
 		margin-bottom: 40px;
+	}
+
+	.b-filter-select-wrap:hover .b-filter-flowers-list,
+	.b-filter-select-wrap:hover .b-filter-price-list{
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.fancybox-container .b-filter-flowers-list,
+	.fancybox-container .b-filter-price-list{
+		width: calc(100% - 48px);
+		position: relative;
+	    top: 0;
+	    -webkit-transform: none;
+	    -moz-transform: none;
+	    -ms-transform: none;
+	    -o-transform: none;
+	    transform: none;
+	    opacity: 1;
+	    visibility: visible;
+	}
+	.fancybox-container .b-filter-price-list{
+		max-width: 400px;
+	}
+
+	.b-filter-flowers-list{
+		width: 100%;
+	}
+	.b-filter-flowers-list ul{
+		float: left;
+		width: 50%;
+		display: block;
+	}
+	.b-filter-flowers-list ul li:last-child label {
+	    margin-bottom: 17px;
+	}
+
+	.b-filter-flowers-list ul:nth-last-of-type(1) li:last-child label,
+	.b-filter-flowers-list ul:nth-last-of-type(2) li:last-child label{
+		margin-bottom: 0;
 	}
 
 }
