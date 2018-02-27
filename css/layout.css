@@ -658,6 +658,7 @@ strong, b{
 	padding: 11px 24px;
 	font-family: 'Geometria-Regular';
 	background-color: transparent;
+	-webkit-appearance: none;
 }
 
 /*------type=radio------*/
