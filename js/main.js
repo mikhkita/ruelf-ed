@@ -3,6 +3,7 @@ $(document).ready(function(){
         isDesktop = false,
         isTablet = false,
         isMobile = false,
+        timerAdvantage,
         countQueue = {};
 
     function resize(){
@@ -49,28 +50,11 @@ $(document).ready(function(){
             $('.b-addressee-desktop .b-addressee-left').text($('.b-addressee-desktop .b-addressee-left').attr("data-long"));
         }
 
-        if(!isDesktop){
-            var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
-            $('.b-call').before($moveEl.parent());
-        }else{
+        if(isDesktop){
             $('.fancy-filter').unbind('click.fb-start');
-        }
-
-        if(isMobile){
-            $('.b-filter').addClass("hide");
-
-            $("body").on("touchstart", ".b-slideout-not-touch", function(){
-                $("html").addClass("touch-locked");
-            });
-
-            $("body").on("touchend", function(){
-                $("html").removeClass("touch-locked");
-            });
-
-            $('.b-input-time').after($('.b-email-input'));
         }else{
-            $('.b-filter').removeClass("hide");
-            $('.b-input-move').prepend($('.b-email-input'));
+            var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
+            $('.b-call').before($moveEl.parent()); 
         }
 
         if(isTablet){
@@ -84,8 +68,6 @@ $(document).ready(function(){
                     slidesToShow: 4,
                     slidesToScroll: 1,
                     speed: 600,
-                    //autoplay: true,
-                    //autoplaySpeed: 3000,
                     responsive: [
                         {
                           breakpoint: 920,
@@ -104,10 +86,52 @@ $(document).ready(function(){
                 },10);
             }
         }
+
+        if(isMobile){
+            $('.b-filter').addClass("hide");
+
+            $("body").on("touchstart", ".b-slideout-not-touch", function(){
+                $("html").addClass("touch-locked");
+            });
+
+            $("body").on("touchend", function(){
+                $("html").removeClass("touch-locked");
+            });
+
+            $('.b-input-time').after($('.b-email-input'));
+
+            if(timerAdvantage){
+                clearInterval(timerAdvantage);
+            }else{
+                $('.b-header-title-list .b-advantage-item').first().addClass("advantage-show");
+            }
+            timerAdvantage = setInterval(function() {
+                changeItem();
+            }, 3000);
+        }else{
+            $('.b-filter').removeClass("hide");
+            $('.b-input-move').prepend($('.b-email-input'));
+            if(timerAdvantage){
+                $('.b-header-title-list .advantage-show').removeClass("advantage-show");
+                clearInterval(timerAdvantage);
+            }
+        }
         
         checkMenu();
         $(window).scroll();
         footerToBottom();
+    }
+
+    function changeItem(){
+        var $next = $('.b-header-title-list .advantage-show').next();
+        $('.b-header-title-list .advantage-show').removeClass("advantage-show");
+        setTimeout(function(){
+            if ($next.length){
+                $next.addClass("advantage-show");
+            }else{
+                $('.b-header-title-list .b-advantage-item').first().addClass("advantage-show");
+            }
+        }, 500);
     }
 
     function retina(){
@@ -252,6 +276,17 @@ $(document).ready(function(){
             $(".b-menu-overlay").hide();
         },10);
     });
+
+    //скрыть лишние блоки из каталога
+    if(isTablet && $('.b-catalog').length){
+        $('.b-catalog').each(function(){
+            var count = $(this).find(".b-catalog-item").length;
+            var mod = count % 3;
+            if(mod !== 0){
+                $(this).find(".b-catalog-item").slice(count - mod).addClass("hide");
+            }
+        });
+    }
 
     if(isMobile){
         new FastClick(document.body);

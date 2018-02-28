@@ -533,6 +533,29 @@ a.b-tip-ref:hover + .b-tip{
    	 	margin-bottom: 80px;
 	}
 
+	.b-header-title-list{
+		position: relative;
+		min-height: 46px;
+	}
+
+	.b-header-title-list .b-advantage-item{
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+		-webkit-transition: opacity 500ms ease-out, visibility 500ms ease-out;
+	    -moz-transition: opacity 500ms ease-out, visibility 500ms ease-out;
+	    -ms-transition: opacity 500ms ease-out, visibility 500ms ease-out;
+		-o-transition: opacity 500ms ease-out, visibility 500ms ease-out;
+	    transition: opacity 500ms ease-out, visibility 500ms ease-out;
+	}
+
+	.b-header-title-list .b-advantage-item.advantage-show{
+		opacity: 1;
+		visibility: visible;
+	}
+
 	.b-text h2{
 		font-size: 24px;
 		line-height: 32px;
@@ -645,9 +668,6 @@ a.b-tip-ref:hover + .b-tip{
 	    padding: 24px;
 	}
 
-	.b-header-title-list .b-advantage-item:not(:first-child){
-		display: none;
-	}
 	.b-header-title-list .b-advantage-item img {
 		width: 32px;
     	height: 34px;
