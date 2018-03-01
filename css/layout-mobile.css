@@ -370,7 +370,7 @@ h1.b-title{
     width: 24%;
 }
 
-.b-catalog-item .b-catalog-item-back {
+.b-catalog-item:hover .b-catalog-item-back {
     -webkit-transform: none;
     -moz-transform: none;
     -ms-transform: none;
@@ -379,6 +379,12 @@ h1.b-title{
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+}
+
+.b-catalog-item:hover,
+.b-catalog-item:hover .b-catalog-item-back,
+.b-catalog-item:hover .b-catalog-item-content{
+	z-index: 0;
 }
 
 .color-item:hover{
