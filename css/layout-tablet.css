@@ -149,6 +149,12 @@ body {
 
 @media screen and (max-width: 1020px){
 
+	.b-catalog-menu-tablet{
+		display: block;
+	}
+	.b-catalog-menu-desktop{
+		display: none;
+	}
 	.b-top .b-menu{
 		display: none;
 	}
@@ -170,7 +176,7 @@ body {
 	    height: 45px;
 	}
 
-	.b-catalog-menu .b-line{
+	.b-catalog-menu-desktop .b-line{
 		display: none;
 	}
 

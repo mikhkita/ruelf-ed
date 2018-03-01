@@ -1581,10 +1581,9 @@ strong, b{
 			margin-left: 30px;
 		}
 
-	.b-catalog-menu{
+	.b-catalog-menu-desktop{
 		position: relative;
 	}
-
 		ul.b-catalog-sections{
 			text-align: justify;
 			font-family: 'Geometria-Medium';
@@ -1616,7 +1615,7 @@ strong, b{
 
 				}
 
-		.b-catalog-menu .b-line{
+		.b-catalog-menu-desktop .b-line{
 			-webkit-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
 			-moz-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
 			-ms-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
@@ -1636,7 +1635,7 @@ strong, b{
 			transform: scaleX(0);
 		}
 
-		.b-catalog-menu .b-line.show{
+		.b-catalog-menu-desktop .b-line.show{
 			visibility: visible;
 			-webkit-transform: scaleX(1);
 			   -moz-transform: scaleX(1);
@@ -1647,6 +1646,13 @@ strong, b{
 
 		.b-line.b-line-color{
 			background-color: #6e58ac;
+		}
+
+	.b-catalog-menu-tablet{
+		display: none;
+	}
+		ul.b-catalog-sections-tablet{
+			padding: 0 20px 20px 20px;
 		}
 
 .b-filter{
