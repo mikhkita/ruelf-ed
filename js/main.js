@@ -5,7 +5,8 @@ $(document).ready(function(){
         isMobile = false,
         timerAdvantage,
         prevWidth = 0,
-        countQueue = {};
+        countQueue = {},
+        maxBasketCount = 20;
 
     function resize(){
        if( typeof( window.innerWidth ) == 'number' ) {
@@ -1005,6 +1006,11 @@ $(document).ready(function(){
                 alert("Ошибка добавления в корзину");
             }
         });
+
+        if( $(".b-top-basket-mobile:visible").length ){
+            $(".b-top-basket-mobile").click();
+        }
+
         return false;
     });
 
@@ -1052,6 +1058,7 @@ $(document).ready(function(){
                 $(".b-basket-table").show();
             }
         });
+
         return false;
     });
 
@@ -1061,7 +1068,7 @@ $(document).ready(function(){
             quantity = $input.val()*1,
             side = $(this).attr("data-side");
 
-        if( (quantity == 1 && side == "-") || (quantity == 100 && side == "+") ){
+        if( (quantity == 1 && side == "-") || (quantity == maxBasketCount && side == "+") ){
             return false;
         }
 
@@ -1080,18 +1087,31 @@ $(document).ready(function(){
             quantity = $input.val()*1;
 
         quantity = ( quantity < 1 )?1:quantity;
-        quantity = ( quantity > 100 )?100:quantity;
+        quantity = ( quantity > maxBasketCount )?maxBasketCount:quantity;
         
         $input.val(quantity);
-        $item.find(".b-basket-item-count").text(quantity+" шт.");
+        $item.find("p.b-basket-item-count").text(quantity+" шт.");
+        $item.find("select.b-basket-item-count").val(quantity);
 
         updateMiniCartSum();
 
         ajaxChangeQuantity(url, quantity);
     });
 
+    // Изменение количества в мобильной корзине
+    $("body").on("change", "select.b-basket-item-count", function(e, tog){
+        var $item = $(this).parents(".b-cart-item"),
+            $select = $(this),
+            quantity = $select.val()*1,
+            $input = $item.find(".b-quantity-input");
+        
+        $input.val(quantity).change();
+    });
+
     $("#b-filter-form input").change(function(){
         History.replaceState(null , null, "?"+$("#b-filter-form").serialize());
+
+
 
         ajaxFilter();
         // console.log();
@@ -1109,7 +1129,7 @@ $(document).ready(function(){
         var sum = 0;
         $(".b-basket li:not(.hidden)").each(function(){
             var price = $(this).find(".b-basket-item-price").text().replace(/[^0-9\.]+/g,"")*1,
-                count = $(this).find(".b-basket-item-count").text().replace(/[^0-9\.]+/g,"")*1;
+                count = $(this).find("p.b-basket-item-count").text().replace(/[^0-9\.]+/g,"")*1;
 
             sum += (price*count);
         });
@@ -1154,12 +1174,12 @@ $(document).ready(function(){
                     if( countQueue[url] == 0 ){
                         // console.log([json.id, json.quantity]);
                         $(".b-cart-item[data-id='"+json.id+"'] input").val(json.quantity);
-                        $(".b-cart-item[data-id='"+json.id+"'] .b-basket-item-count").text(json.quantity+" шт.");
+                        $(".b-cart-item[data-id='"+json.id+"'] p.b-basket-item-count").text(json.quantity+" шт.");
 
                         updateMiniCartSum();
                     }
                 }else{
-                    alert("Ошибка изменения количества, пожалуйста, обновите страницу");
+                    alert("Ошибка изменения количеста, пожалуйста, обновите страницу");
                 }
             },
             error: function(){
