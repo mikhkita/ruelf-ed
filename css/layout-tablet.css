@@ -345,6 +345,18 @@ body {
 	    visibility: visible;
 	}
 
+	.slideout-menu-padding{
+		padding: 24px 24px 26px 24px;
+	}
+
+	.b-basket-sum-text,
+	.b-basket-btn-mobile{
+		display: inline-block;
+	}
+	.b-basket-btn-desktop{
+		display: none;
+	}
+
 }
 
 @media screen and (max-width: 950px){
