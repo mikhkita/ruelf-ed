@@ -910,9 +910,6 @@ strong, b{
 .slideout-menu{
 
 }
-	.slideout-menu-padding{
-		padding: 24px 24px 26px 24px;
-	}
 	.slideout-menu h2{
 		color: #434343;
 		font-family: 'Geometria-Bold';
@@ -942,7 +939,9 @@ strong, b{
 			.mobile-menu ul li:last-child a{
 				border-bottom: 0;
 			}
-	.slideout-menu .b-btn-buy{
+	.slideout-menu .b-btn-buy,
+	.slideout-menu .b-basket-down .b-btn-buy{
+		float: none;
 		text-align: center;
 		width: 100%;
 		padding: 11px 34px 12px;
@@ -966,9 +965,9 @@ strong, b{
 			.basket-menu .b-basket-down{
 				margin-bottom: 20px;
 			}
-				.basket-menu .b-basket-down span{
+				.basket-menu .b-basket-sum-text{
 					display: inline-block;
-	    			vertical-align: bottom;
+					vertical-align: bottom;
 					font-size: 18px;
 				}
 				.basket-menu .b-basket-down h3{
@@ -983,6 +982,15 @@ strong, b{
 				    top: 0;
 				    right: 12px;
 				}
+
+	.b-basket-sum-text,
+	.b-basket-btn-mobile{
+		display: none;
+	}
+
+	.basket-menu .b-basket-sum{
+		margin-bottom: 16px;
+	}
 
 /*------Главная------*/
 
@@ -3138,11 +3146,15 @@ strong, b{
 	    font-size: 18px;
 	}
 
-	.b-basket-sum .icon-ruble:after,
-	.b-basket-price .icon-ruble-medium:after{
-		font-size: 14px;
-		color: #434343;
+	.b-basket-sum{
+		display: inline-block;
 	}
+
+		.b-basket-sum .icon-ruble:after,
+		.b-basket-price .icon-ruble-medium:after{
+			font-size: 14px;
+			color: #434343;
+		}
 
 	.b-basket-table .b-tip-cont{
 		display: table-cell;
