@@ -3830,6 +3830,13 @@ strong, b{
 .blocked .ajax.b-btn-sub{
 	display: inline-block !important;
 }
+.b-preload-cart{
+	padding: 50px !important;
+	text-align: center;
+}
+.b-preload-cart .b-svg-preload-popup{
+	display: inline-block !important;
+}
 
 
 
