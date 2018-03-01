@@ -54,9 +54,15 @@ $(document).ready(function(){
 
         if(isDesktop){
             $('.fancy-filter').unbind('click.fb-start');
+            //вынести корзину из меню
+            if($('.b-basket-desktop .b-basket').length === 0)
+                $('.b-basket-desktop').append($('.b-basket'));
         }else{
             var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
-            $('.b-call').before($moveEl.parent()); 
+            $('.b-call').before($moveEl.parent());
+            //перенести корзину в меню
+            if($('.basket-menu .b-basket').length === 0)
+                $('.basket-menu').append($('.b-basket'));
         }
 
         if(isTablet){
