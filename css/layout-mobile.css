@@ -622,6 +622,9 @@ div.slideout-menu-padding{
 	.b-catalog-item{
 		height: calc(100vw/2 - 13px + 118px);
 	}
+	.b-catalog-item:nth-child(n+5){
+		display: none;
+	}
 	.b-catalog-item-content{
 		text-align: center;
 	}
@@ -1299,5 +1302,12 @@ div.slideout-menu-padding{
 
 	.b-catalog-menu-mobile{
 		font-size: 15px;
+	}
+
+	.b-logo {
+	    left: calc(50% - 100px);
+	    background-size: 200px;
+	    width: 200px;
+	    height: 36px;
 	}
 }

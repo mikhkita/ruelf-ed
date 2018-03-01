@@ -58,7 +58,7 @@ $(document).ready(function(){
             if($('.b-basket-desktop .b-basket').length === 0)
                 $('.b-basket-desktop').append($('.b-basket'));
         }else{
-            //fancyFilterInit();
+            fancyFilterInit();
             var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
             $('.b-call').before($moveEl.parent());
             //перенести корзину в меню
@@ -124,7 +124,7 @@ $(document).ready(function(){
         }, 500);
     }
 
-    /*function fancyFilterInit(){
+    function fancyFilterInit(){
         $(".fancy-filter").each(function(){
             var $popup = $($(this).attr("href")),
                 $this = $(this);
@@ -143,7 +143,7 @@ $(document).ready(function(){
                 },
             });
         });
-    }*/
+    }
 
     function retina(){
         var mediaQuery = "(-webkit-min-device-pixel-ratio: 1.5),\
@@ -1128,10 +1128,9 @@ $(document).ready(function(){
     });
 
     $("#b-filter-form input").change(function(){
-        if( $(this).parents(".fancybox-slide").length )
-            return false;
-
         History.replaceState(null , null, "?"+$("#b-filter-form").serialize());
+
+
 
         ajaxFilter();
         // console.log();
@@ -1207,72 +1206,4 @@ $(document).ready(function(){
             }
         });
     }
-
-    var isFilter = false;
-    $(".fancy").each(function(){
-        var $popup = $($(this).attr("href")),
-            $this = $(this);
-        $this.fancybox({
-            padding : 0,
-            content : $popup,
-            touch: false,
-            autoFocus : true,
-            helpers: {
-                overlay: {
-                    locked: true 
-                }
-            },
-            btnTpl : {
-                smallBtn   : '<button data-fancybox-close class="fancybox-close-small" title="Закрыть"></button>',
-            },
-            beforeShow: function(){
-                $(".fancybox-wrap").addClass("beforeShow");
-                $popup.find(".custom-field").remove();
-                if( $this.attr("data-value") ){
-                    var name = getNextField($popup.find("form"));
-                    $popup.find("form").append("<input type='hidden' class='custom-field' name='"+name+"' value='"+$this.attr("data-value")+"'/><input type='hidden' class='custom-field' name='"+name+"-name' value='"+$this.attr("data-name")+"'/>");
-                }
-                if( $this.attr("data-beforeShow") && customHandlers[$this.attr("data-beforeShow")] ){
-                    customHandlers[$this.attr("data-beforeShow")]($this);
-                }
-                $popup.find(".error").removeClass("error");
-                $popup.find(".b-input").each(function(){
-                    $this = $(this);
-                    if(!$this.children("input").val())
-                        $this.removeClass("not-empty");
-                });
-                $popup.find(".b-input input + span").remove();
-            },
-            afterShow: function(){
-                $(".fancybox-wrap").removeClass("beforeShow");
-                $(".fancybox-wrap").addClass("afterShow");
-                if( $this.attr("data-afterShow") && customHandlers[$this.attr("data-afterShow")] ){
-                    customHandlers[$this.attr("data-afterShow")]($this);
-                }
-                $popup.find("input[type='text'], input[type='number'],textarea").eq(0).focus();
-            },
-            beforeClose: function(){
-                $(".fancybox-wrap").removeClass("afterShow");
-                $(".fancybox-wrap").addClass("beforeClose");
-                if( $this.attr("data-beforeClose") && customHandlers[$this.attr("data-beforeClose")] ){
-                    customHandlers[$this.attr("data-beforeClose")]($this);
-                }
-
-                if( $(".fancybox-slide .b-filter-price-list, .fancybox-slide .b-filter-flowers-list").length )
-                    isFilter = true;
-            },
-            afterClose: function(){
-                $(".fancybox-wrap").removeClass("beforeClose");
-                $(".fancybox-wrap").addClass("afterClose");
-                if( $this.attr("data-afterClose") && customHandlers[$this.attr("data-afterClose")] ){
-                    customHandlers[$this.attr("data-afterClose")]($this);
-                }
-                if( isFilter ){
-                    $(".any-flowers").change();
-                }
-
-                isFilter = false;
-            }
-        });
-    });
 });
