@@ -517,6 +517,12 @@ a.b-tip-ref:hover + .b-tip{
 .b-catalog-menu-mobile {
     padding-bottom: 40px;
 }
+.b-footer-copyright{
+	margin-right: 0px;
+}
+ul.b-breadcrumbs li:nth-child(3)>span{
+	display: none;
+}
 
 @media screen and (max-width: 665px){
 
@@ -525,8 +531,9 @@ a.b-tip-ref:hover + .b-tip{
 	    line-height: 40px;
 	    margin-bottom: 28px;
 	}
-	.b-header-inner h1.b-title{
-		font-size: 24px;
+	.b-header-inner h1.b-title,
+	.b-header-inner h3.b-title{
+		font-size: 28px;
 		line-height: 36px;
 	}
 	h2.b-title, h2{

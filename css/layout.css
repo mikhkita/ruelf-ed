@@ -928,7 +928,8 @@ strong, b{
 		.slideout-menu ul li{
 			padding: 0 24px;
 		}
-			.mobile-menu ul li.active a{
+			.mobile-menu ul li.active a,
+			.mobile-menu ul li a.active{
 				color: #6e58ac;
 			}
 			.mobile-menu ul li a{
@@ -4016,6 +4017,7 @@ strong, b{
 		.b-popup-sections .b-catalog-sections li{
 			display: block;
 			margin-bottom: 16px;
+			text-align: left;
 		}
 		.b-popup-sections .b-catalog-sections li:last-child{
 			margin-bottom: 0;
