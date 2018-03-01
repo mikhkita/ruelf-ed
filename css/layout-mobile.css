@@ -1083,7 +1083,10 @@ ul.b-breadcrumbs li:after{
 	.b-call .b-btn {
 	    margin-top: 19px;
 	}
-
+	.b-data-order .b-btn-buy{
+		width: 100%;
+    	max-width: 330px;
+	}
 	.b-review-slider-cont{
 		padding: 20px 0;
 	}

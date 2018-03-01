@@ -973,7 +973,7 @@ strong, b{
 				}
 				.basket-menu .b-basket-down h3{
 					padding-top: 0;
-					margin-left: 7px;
+					margin-left: 6px;
 				}
 
 				.basket-menu .b-basket ul li:first-child a.icon-close:before {
@@ -991,6 +991,7 @@ strong, b{
 
 	.basket-menu .b-basket-sum{
 		margin-bottom: 16px;
+		margin-right: -6px;
 	}
 
 /*------Главная------*/
