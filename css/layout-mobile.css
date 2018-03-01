@@ -945,6 +945,17 @@ ul.b-breadcrumbs li:after{
 		width: 156px;
 	}
 
+	.b-addition {
+	    padding-top: 30px;
+	}
+	.b-addition-item-content h3.icon-ruble:after{
+		font-size: 16px;
+	}
+
+	.b-addition-item-content h3{
+		margin-bottom: 16px;
+	}
+
 }
 
 @media screen and (max-width: 570px){
@@ -1198,6 +1209,21 @@ ul.b-breadcrumbs li:after{
 	}
 	.js-order-adress-map-price.icon-ruble:after{
 		font-size: 12px;
+	}
+
+}
+
+@media screen and (max-width: 374px){
+
+	.b-addition-item img {
+	    width: 105px;
+	    height: 105px;
+	}
+	.b-addition-item-content{
+		padding-top: 0;
+	}
+	.b-addition-item-content .b-btn-buy{
+		padding: 8px 25px 9px;
 	}
 
 }

@@ -65,6 +65,14 @@ $(document).ready(function(){
                 $('.basket-menu').append($('.b-basket'));
         }
 
+        if(isTablet){
+            $('.b-basket-btn-cont').on('click', function(){
+                $('.b-top-basket-mobile').click();
+            });
+        }else{
+            $('.b-basket-btn-cont').off('click');
+        }
+
         if(isMobile){
             if(prevWidth !== myWidth)
                 $('.b-filter').addClass("hide");
@@ -76,8 +84,8 @@ $(document).ready(function(){
             $("body").on("touchend", function(){
                 $("html").removeClass("touch-locked");
             });
-
-            $('.b-input-time').after($('.b-email-input'));
+            if(prevWidth === myWidth)
+                $('.b-input-time').after($('.b-email-input'));
 
             if(timerAdvantage){
                 clearInterval(timerAdvantage);
