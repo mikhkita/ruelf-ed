@@ -4,6 +4,7 @@ $(document).ready(function(){
         isTablet = false,
         isMobile = false,
         timerAdvantage,
+        prevWidth = 0,
         countQueue = {};
 
     function resize(){
@@ -88,7 +89,8 @@ $(document).ready(function(){
         }
 
         if(isMobile){
-            $('.b-filter').addClass("hide");
+            if(prevWidth !== myWidth)
+                $('.b-filter').addClass("hide");
 
             $("body").on("touchstart", ".b-slideout-not-touch", function(){
                 $("html").addClass("touch-locked");
@@ -120,6 +122,8 @@ $(document).ready(function(){
         checkMenu();
         $(window).scroll();
         footerToBottom();
+
+        prevWidth = myWidth;
     }
 
     function changeItem(){
