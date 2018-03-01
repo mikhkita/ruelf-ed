@@ -1201,6 +1201,10 @@ ul.b-breadcrumbs li:after{
 }
 
 @media screen and (max-width: 350px){
+	.b-header-inner h1.b-title, 
+	.b-header-inner h3.b-title{
+		font-size: 24px;
+	}
 	.b-catalog-item{
 		width: 100%;
 		height: calc(100vw + 98px);
