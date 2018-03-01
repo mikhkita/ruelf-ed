@@ -702,7 +702,7 @@ strong, b{
 
 .b-radio input[type="radio"]:checked + span + label:after,
 .b-radio input[type="radio"]:checked + label:after {
-   background-color: #6e58ac;
+   background-color: #6e58ac !important;
 }
 
 .b-radio input[type="radio"]:checked + span + label,
@@ -813,8 +813,8 @@ strong, b{
 }
 .b-checkbox input[type="checkbox"]:checked + span + label:after,
 .b-checkbox input[type="checkbox"]:checked + label:after{
-	border-bottom: 2px solid #6e58ac;
-    border-right: 2px solid #6e58ac;
+	border-bottom: 2px solid #6e58ac !important;
+    border-right: 2px solid #6e58ac !important;
 	display: block;
 }
 
@@ -993,6 +993,10 @@ strong, b{
     background-repeat: no-repeat;
     background-image: url(../i/header.svg);
     background-size: 2560px;
+}
+
+.b-header.header-retina{
+	background-image: url(../i/header@2x.svg);
 }
 	.b-top{
 		position: absolute;
@@ -1550,8 +1554,14 @@ strong, b{
 		padding-bottom: 47px;
 	}
 		.sections-mobile{
+			position: relative;
 			display: inline-block;
+			padding-right: 30px;
 		}
+			.sections-mobile.icon-arrow-down:after{
+				top: 10px;
+				color: #434343;
+			}
 		.b-btn-filter{
 			display: inline-block;
 			margin-left: 30px;
@@ -1780,6 +1790,12 @@ strong, b{
 			height: 10px;
 			left: 0px;
 			top: -10px;
+		}
+
+		.b-filter-flowers-list .b-btn,
+		.b-filter-price-list .b-btn{
+			display: none;
+			margin-top: 24px;
 		}
 
 	.b-filter-select-wrap:hover .b-filter-flowers-list{
@@ -2735,6 +2751,10 @@ strong, b{
     background-repeat: no-repeat;
     background-image: url(../i/header-inner.svg);
     background-size: 2560px;
+}
+
+.b-header-inner.header-retina{
+	background-image: url(../i/header-inner@2x.svg);
 }
 
 .b-header-title-inner{
@@ -3982,6 +4002,30 @@ strong, b{
 	#b-popup-call h3{
 		margin-bottom: 0;
 	}
+
+.b-popup-sections{
+	max-width: 450px;
+}
+	.b-popup-sections .b-catalog-sections{
+		padding: 32px 32px 40px 32px;
+		text-align: center;
+	}
+		.b-popup-sections .b-catalog-sections:after{
+			display: none;
+		}
+		.b-popup-sections .b-catalog-sections li{
+			display: block;
+			margin-bottom: 16px;
+		}
+		.b-popup-sections .b-catalog-sections li:last-child{
+			margin-bottom: 0;
+		}
+		ul.b-catalog-sections li:active a{
+			color: #434343;
+		}
+		.b-popup-sections .b-catalog-sections li a:active{
+			color: #6e58ac;
+		}
 
 .b-popup .ui-widget.ui-widget-content{
 	border: 0;

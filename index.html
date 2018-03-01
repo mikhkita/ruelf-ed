@@ -88,7 +88,7 @@
 					<span>Сумма заказа:</span>
 					<h3 class="b-basket-total icon-ruble">20 910</h3>
 				</div>
-				<a href="#" class="b-btn b-btn-buy">Оформить заказ</a>
+				<a href="basket.html" class="b-btn b-btn-buy">Оформить заказ</a>
 			</div>
 		</div>
 	</div>
@@ -207,7 +207,7 @@
 					</ul>
 				</div>
 				<div class="b-catalog-menu-mobile">
-					<div class="sections-mobile">Авторские букеты</div>
+					<a href="#b-popup-sections" class="fancy sections-mobile icon-arrow-down">Авторские букеты</a>
 					<a href="#" class="b-btn-filter icon-params">Фильтр</a>
 				</div>
 			</div>
@@ -244,6 +244,9 @@
 											<label for="over-4000">От 4 000</label>
 										</li>
 									</ul>
+									<div class="b-center">
+										<a href="#" class="b-btn b-btn-more" onclick="$.fancybox.close(); return false;">Выбрать</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -380,6 +383,9 @@
 											<label for="flowers-29">Хризантемы</label>
 										</li>
 									</ul>
+									<div class="b-center">
+										<a href="#" class="b-btn b-btn-more" onclick="$.fancybox.close(); return false;">Выбрать</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1535,6 +1541,16 @@
 				<input type="submit" value="Заказать" style="display:none;">
 				<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
 			</form>
+		</div>
+		<div class="b-popup b-popup-sections" id="b-popup-sections">
+			<ul class="b-catalog-sections clearfix">
+				<li><a href="catalog.html">Классика</a></li>
+				<li><a href="catalog.html">По случаю</a></li>
+				<li><a href="catalog.html">Авторские букеты</a></li>
+				<li><a href="catalog.html">Цветы в коробке</a></li>
+				<li><a href="catalog.html">Корзины цветов</a></li>
+				<li><a href="catalog.html">Мужские букеты</a></li>
+			</ul>
 		</div>
 	</div>
 

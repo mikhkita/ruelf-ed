@@ -303,17 +303,16 @@ $(document).ready(function(){
             };
             img.src = src;
         });
-        if(!isMobile){
-            $("*[data-back]").each(function(){
-                var $this = $(this),
-                    img = new Image(),
-                    src = $this.attr("data-back");
-                img.onload = function(){
-                    $this.css("background-image", 'url(' + $this.attr("data-back") + ')');
-                };
-                img.src = src;
-            });
-        }
+        $("*[data-back]").each(function(){
+            var $this = $(this),
+                img = new Image(),
+                src = $this.attr("data-back");
+            img.onload = function(){
+                //$this.css("background-image", 'url(' + $this.attr("data-back") + ')');
+                $this.addClass("header-retina");
+            };
+            img.src = src;
+        });
     }
 
     function updateCatalog(){
@@ -833,6 +832,15 @@ $(document).ready(function(){
          $('.input-time').val($(this).siblings("label").text());
          $('.b-time-list').removeClass("show");
     });
+
+    if(isMobile){
+        $(".b-time-list label").on('click', function(){
+            if(!$(this).siblings("input").hasClass("no-active")){
+                $('.input-time').val($(this).text());
+                $('.b-time-list').removeClass("show");
+            }
+        });
+    }
 
     var workDay = {
         from : 8,
