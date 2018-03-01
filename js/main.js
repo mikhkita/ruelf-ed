@@ -376,6 +376,7 @@ $(document).ready(function(){
         speed: 600,
         autoplay: true,
         autoplaySpeed: 3000,
+        adaptiveHeight: true,
         rows: 2,
         slidesPerRow: 3,
         responsive: [
@@ -1008,6 +1009,8 @@ $(document).ready(function(){
         });
 
         if( $(".b-top-basket-mobile:visible").length ){
+            $(".b-basket ul").html("<li class='b-preload-cart'><img src=\"/bitrix/templates/main/html/i/preload.svg\" alt=\"\" class=\"b-svg-preload b-svg-preload-popup\"></li>");
+
             $(".b-top-basket-mobile").click();
         }
 
@@ -1029,6 +1032,10 @@ $(document).ready(function(){
             $(".b-basket-table, .b-data-order, .b-addition").hide();
         }
 
+        if( $(".b-top-basket-mobile:visible").length && !$(".b-basket li:not(.hidden)").length ){
+            $(".b-basket ul").append("<li class=\"b-preload-cart\">Ваша корзина пуста.</li>");
+        }
+
         $.ajax({
             type: "GET",
             url: url,
@@ -1046,6 +1053,7 @@ $(document).ready(function(){
                     $item.show().removeClass("hidden");
                     $(".b-cart-empty").hide();
                     $(".b-basket-table").show();
+                    $(".b-basket").find(".b-preload-cart").remove();
                 }
             },
             complete: function(){
@@ -1056,6 +1064,7 @@ $(document).ready(function(){
                 $item.show().removeClass("hidden");
                 $(".b-cart-empty").hide();
                 $(".b-basket-table").show();
+                $(".b-basket").find(".b-preload-cart").remove();
             }
         });
 
