@@ -531,6 +531,9 @@ ul.b-breadcrumbs li:after{
 .slideout-menu-padding{
 	padding: 24px 24px 26px 24px;
 }
+div.slideout-menu-padding{
+	padding-bottom: 94px;
+}
 
 .b-basket-sum-text,
 .b-basket-btn-mobile{
@@ -541,6 +544,9 @@ ul.b-breadcrumbs li:after{
 }
 .b-catalog-menu-tablet{
 	display: none;
+}
+.inner .b-catalog{
+	margin-bottom: -40px;
 }
 
 @media screen and (max-width: 665px){
