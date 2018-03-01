@@ -58,7 +58,7 @@ $(document).ready(function(){
             if($('.b-basket-desktop .b-basket').length === 0)
                 $('.b-basket-desktop').append($('.b-basket'));
         }else{
-            fancyFilterInit();
+            //fancyFilterInit();
             var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
             $('.b-call').before($moveEl.parent());
             //перенести корзину в меню
