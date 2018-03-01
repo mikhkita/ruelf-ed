@@ -1261,6 +1261,13 @@ div.slideout-menu-padding{
 	.b-catalog-item:nth-child(2n){
 		margin-right: 0;
 	}
+	.b-btn-add-basket {
+	    font-size: 20px;
+	}
+
+	.b-btn-filter {
+	    margin-left: 6px;
+	}
 
 	.b-catalog-item .b-btn-buy {
 	    width: auto;
