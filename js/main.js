@@ -58,6 +58,7 @@ $(document).ready(function(){
             if($('.b-basket-desktop .b-basket').length === 0)
                 $('.b-basket-desktop').append($('.b-basket'));
         }else{
+            //fancyFilterInit();
             var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
             $('.b-call').before($moveEl.parent());
             //перенести корзину в меню
@@ -122,6 +123,27 @@ $(document).ready(function(){
             }
         }, 500);
     }
+
+    /*function fancyFilterInit(){
+        $(".fancy-filter").each(function(){
+            var $popup = $($(this).attr("href")),
+                $this = $(this);
+            $this.fancybox({
+                padding : 0,
+                content : $popup,
+                touch: false,
+                autoFocus : true,
+                helpers: {
+                    overlay: {
+                        locked: true 
+                    }
+                },
+                btnTpl : {
+                    smallBtn   : '<button data-fancybox-close class="fancybox-close-small" title="Закрыть"></button>',
+                },
+            });
+        });
+    }*/
 
     function retina(){
         var mediaQuery = "(-webkit-min-device-pixel-ratio: 1.5),\
