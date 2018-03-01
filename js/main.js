@@ -65,36 +65,6 @@ $(document).ready(function(){
                 $('.basket-menu').append($('.b-basket'));
         }
 
-        if(isTablet){
-            if(!$('.b-catalog-sections').hasClass("slick-initialized")){
-                $('.b-catalog-sections').not('.slick-initialized').slick({
-                    dots: false,
-                    arrows: true,
-                    nextArrow: '<div class="icon-slider-right b-slider-arrows" aria-hidden="true"></div>',
-                    prevArrow: '<div class="icon-slider-left b-slider-arrows" aria-hidden="true"></div>',
-                    infinite: true,
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    speed: 600,
-                    responsive: [
-                        {
-                          breakpoint: 920,
-                          settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 1
-                          }
-                        },
-                    ]
-                });
-            }
-        }else{
-            if($('.b-catalog-sections').hasClass("slick-initialized")){
-                setTimeout(function(){
-                    $('.b-catalog-sections').slick('unslick');
-                },10);
-            }
-        }
-
         if(isMobile){
             if(prevWidth !== myWidth)
                 $('.b-filter').addClass("hide");
@@ -392,8 +362,29 @@ $(document).ready(function(){
                 rows: 3,
                 slidesPerRow: 1,
               }
-            }]
-        });
+            }
+        ]
+    });
+
+    $('.b-catalog-sections-tablet').slick({
+        dots: false,
+        arrows: true,
+        nextArrow: '<div class="icon-slider-right b-slider-arrows" aria-hidden="true"></div>',
+        prevArrow: '<div class="icon-slider-left b-slider-arrows" aria-hidden="true"></div>',
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        speed: 600,
+        responsive: [
+            {
+              breakpoint: 920,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+              }
+            },
+        ]
+    });
 
     var arrowOffset = 0,
         footerOffset = 0;
@@ -453,11 +444,11 @@ $(document).ready(function(){
     });
 
     var menuTimer = null;
-    $(".b-catalog-menu ul > li > a").hover(function(){
+    $(".b-catalog-menu-desktop ul > li > a").hover(function(){
         if($(this).parent().hasClass("active")){
-            $(".b-catalog-menu .b-line").addClass("b-line-color");
+            $(".b-catalog-menu-desktop .b-line").addClass("b-line-color");
         }else
-            $(".b-catalog-menu .b-line").removeClass("b-line-color");
+            $(".b-catalog-menu-desktop .b-line").removeClass("b-line-color");
         clearTimeout(menuTimer);
         moveLine($(this));
     }, function(){
@@ -466,16 +457,16 @@ $(document).ready(function(){
     });
 
     function checkMenu(){
-        if( $(".b-catalog-menu ul > li.active > a").length ){
-            moveLine($(".b-catalog-menu ul > li.active > a"));
-            $(".b-catalog-menu .b-line").addClass("b-line-color");
+        if( $(".b-catalog-menu-desktop ul > li.active > a").length ){
+            moveLine($(".b-catalog-menu-desktop ul > li.active > a"));
+            $(".b-catalog-menu-desktop .b-line").addClass("b-line-color");
         }else{
-            $(".b-catalog-menu .b-line").removeClass("show");
+            $(".b-catalog-menu-desktop .b-line").removeClass("show");
         }
     }
 
     function moveLine($el){
-        $(".b-catalog-menu .b-line").addClass("show").css({
+        $(".b-catalog-menu-desktop .b-line").addClass("show").css({
             "left" : $el.position().left + parseInt($el.css("padding-left").replace(/\D+/g,"")),
             "width" : $el.width()
         });
@@ -483,11 +474,11 @@ $(document).ready(function(){
 
     checkMenu();
 
-    $('.b-catalog-menu ul > li').mousedown(function(eventObject){
-        $(".b-catalog-menu .b-line").addClass("b-line-color");
+    $('.b-catalog-menu-desktop ul > li').mousedown(function(eventObject){
+        $(".b-catalog-menu-desktop .b-line").addClass("b-line-color");
     });
-    $('.b-catalog-menu ul > li').mouseup(function(eventObject){
-        $(".b-catalog-menu .b-line").removeClass("b-line-color");
+    $('.b-catalog-menu-desktop ul > li').mouseup(function(eventObject){
+        $(".b-catalog-menu-desktop .b-line").removeClass("b-line-color");
     });
 
     var $window = $(window),

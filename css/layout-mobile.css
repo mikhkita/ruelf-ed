@@ -120,7 +120,7 @@ h1.b-title-temp{
 	padding: 0 10px;
 }
 
-.b-catalog-menu{
+.b-catalog-menu-desktop{
 	display: none;
 }
 .b-catalog-menu-mobile{
@@ -537,6 +537,9 @@ ul.b-breadcrumbs li:after{
 	display: inline-block;
 }
 .b-basket-btn-desktop{
+	display: none;
+}
+.b-catalog-menu-tablet{
 	display: none;
 }
 
