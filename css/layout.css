@@ -2073,6 +2073,9 @@ strong, b{
 .b-catalog{
 	margin-bottom: 75px;
 }
+.inner .b-catalog{
+	margin-bottom: 0px;
+}
 	.b-catalog-list{/* font-size: 0px; */}
 		.b-catalog-item{
 			display: inline-block;
