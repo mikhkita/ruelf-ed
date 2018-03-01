@@ -984,12 +984,16 @@ strong, b{
 				    right: 12px;
 				}
 
+	.b-basket-sum-cont{
+		display: inline-block;
+	}
+
 	.b-basket-sum-text,
 	.b-basket-btn-mobile{
 		display: none;
 	}
 
-	.basket-menu .b-basket-sum{
+	.basket-menu .b-basket-sum-cont{
 		margin-bottom: 16px;
 		margin-right: -6px;
 	}
@@ -3148,15 +3152,11 @@ strong, b{
 	    font-size: 18px;
 	}
 
-	.b-basket-sum{
-		display: inline-block;
+	.b-basket-sum .icon-ruble:after,
+	.b-basket-price .icon-ruble-medium:after{
+		font-size: 14px;
+		color: #434343;
 	}
-
-		.b-basket-sum .icon-ruble:after,
-		.b-basket-price .icon-ruble-medium:after{
-			font-size: 14px;
-			color: #434343;
-		}
 
 	.b-basket-table .b-tip-cont{
 		display: table-cell;
