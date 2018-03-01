@@ -70,13 +70,19 @@ body {
 .b-addition-item:nth-child(2n){
 	margin-right: 0;
 }
-ul.b-catalog-sections{
+.b-catalog-sections{
 	width: 100%;
-	padding: 0 16px 16px 16px;
+	padding: 0 0 16px 0;
 }
-ul.b-catalog-sections li{
+.b-catalog-sections li{
 	text-align: center;
 	padding: 0 10px;
+}
+.b-catalog-sections li:first-child{
+	padding-left: 0;
+}
+.b-catalog-sections li:last-child{
+	padding-right: 0;
 }
 
 .b-filter-price, .b-filter-flowers{
@@ -123,7 +129,7 @@ ul.b-catalog-sections li{
 	.number-room-input{
 		width: 50%;
 	}
-ul.b-catalog-sections li a{
+.b-catalog-sections li a{
 	font-size: 18px;
 }
 
@@ -139,13 +145,9 @@ ul.b-catalog-sections li a{
 	    margin-right: 12px;
 	}
 
-	ul.b-catalog-sections li a{
-		font-size: 16px;
-	}
-
 }
 
-@media screen and (max-width: 1023px){
+@media screen and (max-width: 1020px){
 
 	.b-top .b-menu{
 		display: none;
@@ -170,10 +172,6 @@ ul.b-catalog-sections li a{
 
 	.b-catalog-menu .b-line{
 		display: none;
-	}
-
-	ul.b-catalog-sections li a{
-		font-size: 18px;
 	}
 
 	.b-questions{
@@ -303,6 +301,50 @@ ul.b-catalog-sections li a{
 		margin-bottom: 0;
 	}
 
+	.b-catalog-item:hover .b-catalog-item-back {
+	    -webkit-transform: none;
+	    -moz-transform: none;
+	    -ms-transform: none;
+	    -o-transform: none;
+	    transform: none;
+	    -webkit-box-shadow: none;
+	    -moz-box-shadow: none;
+	    box-shadow: none;
+	}
+
+	.b-catalog-item:hover,
+	.b-catalog-item:hover .b-catalog-item-back,
+	.b-catalog-item:hover .b-catalog-item-content{
+		z-index: 0;
+	}
+	.b-catalog-item:hover .b-catalog-item-price .current-price,
+	.b-catalog-item:hover .b-catalog-item-price .old-price,
+	.b-catalog-item:hover .b-catalog-item-price .new-price{
+		-webkit-transform: none;
+	    -moz-transform: none;
+	    -ms-transform: none;
+	    -o-transform: none;
+	    transform: none;
+	}
+	.b-catalog-item-price .current-price{
+		margin-top: 22px;
+	}
+	.b-catalog-item-price .old-price,
+	.b-catalog-item-price .new-price{
+		margin-top: 3px;
+	}
+
+	.b-catalog-item-hover{
+		display: none;
+	}
+
+	.b-catalog-item .b-btn-buy {
+	    bottom: 10px;
+	    min-width: 164px;
+	    opacity: 1;
+	    visibility: visible;
+	}
+
 }
 
 @media screen and (max-width: 950px){
@@ -346,6 +388,10 @@ ul.b-catalog-sections li a{
 	}
 	.ui-datepicker {
 	    width: calc(50% - 44px);
+	}
+
+	.b-catalog-item .b-btn-buy {
+	    min-width: 120px;
 	}
 
 }

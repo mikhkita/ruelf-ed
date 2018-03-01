@@ -1811,6 +1811,7 @@ strong, b{
 			width: 200px;
 			display: inline-block;
 			vertical-align: top;
+			white-space: normal;
 		}
 		.b-filter-flowers-list ul li:last-child label{
 			margin-bottom: 0;
@@ -4020,7 +4021,7 @@ strong, b{
 		.b-popup-sections .b-catalog-sections li:last-child{
 			margin-bottom: 0;
 		}
-		ul.b-catalog-sections li:active a{
+		.b-popup-sections ul.b-catalog-sections li:active a{
 			color: #434343;
 		}
 		.b-popup-sections .b-catalog-sections li a:active{

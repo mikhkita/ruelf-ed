@@ -111,11 +111,11 @@ h1.b-title-temp{
 .b-review-slider .slick-dots {
     bottom: -74px;
 }
-ul.b-catalog-sections{
+.b-catalog-sections{
 	width: 100%;
 	padding: 0 16px;
 }
-ul.b-catalog-sections li{
+.b-catalog-sections li{
 	text-align: center;
 	padding: 0 10px;
 }
