@@ -65,6 +65,14 @@ $(document).ready(function(){
                 $('.basket-menu').append($('.b-basket'));
         }
 
+        if(isTablet){
+            $('.b-basket-btn-cont').on('click', function(){
+                $('.b-top-basket-mobile').click();
+            });
+        }else{
+            $('.b-basket-btn-cont').off('click');
+        }
+
         if(isMobile){
             if(prevWidth !== myWidth)
                 $('.b-filter').addClass("hide");
@@ -76,8 +84,8 @@ $(document).ready(function(){
             $("body").on("touchend", function(){
                 $("html").removeClass("touch-locked");
             });
-
-            $('.b-input-time').after($('.b-email-input'));
+            if(prevWidth === myWidth)
+                $('.b-input-time').after($('.b-email-input'));
 
             if(timerAdvantage){
                 clearInterval(timerAdvantage);
@@ -257,17 +265,6 @@ $(document).ready(function(){
             $(".b-menu-overlay").hide();
         },10);
     });
-
-    //скрыть лишние блоки из каталога
-    if(isTablet && $('.b-catalog').length){
-        $('.b-catalog').each(function(){
-            var count = $(this).find(".b-catalog-item").length;
-            var mod = count % 3;
-            if(mod !== 0){
-                $(this).find(".b-catalog-item").slice(count - mod).addClass("hide");
-            }
-        });
-    }
 
     if(isMobile){
         new FastClick(document.body);

@@ -1652,7 +1652,11 @@ strong, b{
 		display: none;
 	}
 		ul.b-catalog-sections-tablet{
+			text-align: center;
 			padding: 0 20px 20px 20px;
+		}
+		.b-catalog-sections-tablet .slick-slide{
+			display: inline-block;
 		}
 
 .b-filter{
