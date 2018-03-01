@@ -258,17 +258,6 @@ $(document).ready(function(){
         },10);
     });
 
-    //скрыть лишние блоки из каталога
-    if(isTablet && $('.b-catalog').length){
-        $('.b-catalog').each(function(){
-            var count = $(this).find(".b-catalog-item").length;
-            var mod = count % 3;
-            if(mod !== 0){
-                $(this).find(".b-catalog-item").slice(count - mod).addClass("hide");
-            }
-        });
-    }
-
     if(isMobile){
         new FastClick(document.body);
     }

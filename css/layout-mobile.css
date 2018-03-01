@@ -743,6 +743,7 @@ ul.b-breadcrumbs li:after{
 	}
 
 	.b-logo-cont{
+		float: left;
 	    width: calc(100% - 50px);
 		display: inline-block;
 		text-align: center;
@@ -1192,16 +1193,11 @@ ul.b-breadcrumbs li:after{
 		line-height: 24px;
 		text-align: left;
 	}
+	#b-popup-map h3 {
+	    text-align: left;
+	}
 	.js-order-adress-map-price.icon-ruble:after{
 		font-size: 12px;
-	}
-
-	.b-catalog-menu-mobile{
-		text-align: left;
-	}
-	.b-btn-filter {
-	    float: right;
-	    margin-left: 10px;
 	}
 
 }

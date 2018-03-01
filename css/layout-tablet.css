@@ -24,6 +24,7 @@ body {
 		.b-catalog-item{
 			width: calc(100%/3 - 17px);
 			height: calc(100vw/3 - 17px + 94px);
+			margin-bottom: 32px;
 		}
 		.b-catalog-item:nth-child(4n){
 			margin-right: 24px;
@@ -37,6 +38,10 @@ body {
 				.flowers-img{
 					background-position: 50% 0%;
 				}
+
+		.b-catalog-item:nth-child(n+7){
+			display: none;
+		}
 
 .b-review-slider-cont {
     float: none;
@@ -426,6 +431,9 @@ body {
 	}
 	.b-catalog-item:nth-child(2n){
 		margin-right: 0;
+	}
+	.b-catalog-item:nth-child(n+7){
+		display: inline-block;
 	}
 		.flowers-img-cont{
 
