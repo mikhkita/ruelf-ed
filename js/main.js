@@ -310,7 +310,9 @@ $(document).ready(function(){
     });
 
     slideoutRight.on('close', function() {
+        console.log("slideoutRight1");
         setTimeout(function(){
+            console.log("slideoutRight2");
             $(".b-menu-overlay").hide();
         },10);
     });
@@ -324,6 +326,7 @@ $(document).ready(function(){
     var touchBasket = $('.b-menu-overlay, .basket-menu');
     touchBasket.touch();
     touchBasket.on('swipeRight', function(event) {
+        console.log("swipeRight");
         slideoutRight.close();
     });
 
