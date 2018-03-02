@@ -318,12 +318,14 @@ $(document).ready(function(){
     e.on('swipeLeft', function(event) {
         if(slideoutLeft.isOpen()){
             slideoutLeft.close();
+            $(".b-menu-overlay").hide();
         }
             
     });
     e.on('swipeRight', function(event) {
         if(slideoutRight.isOpen()){
             slideoutRight.close();
+            $(".b-menu-overlay").hide();
         }
     });
 

@@ -436,8 +436,8 @@ body {
 	.b-catalog-item:nth-child(2n){
 		margin-right: 0;
 	}
-	.b-catalog-item:nth-child(n+7){
-		display: inline-block;
+	.b-limit .b-catalog-item:nth-child(n+5){
+		display: none;
 	}
 		.flowers-img-cont{
 
