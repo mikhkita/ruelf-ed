@@ -52,16 +52,22 @@ $(document).ready(function(){
             $('.b-addressee-desktop .b-addressee-left').text($('.b-addressee-desktop .b-addressee-left').attr("data-long"));
         }
 
+        //менять положение кнопки над блоком/под блоком
+        var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
+        if(myWidth < 1200){
+            $('.b-call').before($moveEl.parent());
+        }else{
+            $('.b-call').parents(".b-catalog-list").after($moveEl.parent());
+        }
+
         if(isDesktop){
             $('.fancy-filter').unbind('click.fb-start');
-            $('.b-filter-flowers-list, .b-filter-price-list').css("display", "block")
+            $('.b-filter-flowers-list, .b-filter-price-list').css("display", "block");
             //вынести корзину из меню
             if($('.b-basket-desktop .b-basket').length === 0)
                 $('.b-basket-desktop').append($('.b-basket'));
         }else{
             fancyFilterInit();
-            var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
-            $('.b-call').before($moveEl.parent());
             //перенести корзину в меню
             if($('.basket-menu .b-basket').length === 0)
                 $('.basket-menu').append($('.b-basket'));
@@ -76,18 +82,25 @@ $(document).ready(function(){
         }
 
         if(isMobile){
-            if(prevWidth !== myWidth)
+            if(prevWidth !== myWidth){
+                $('.b-input-time').after($('.b-email-input'));
                 $('.b-filter').addClass("hide");
+            }
 
             $("body").on("touchstart", ".b-slideout-not-touch", function(){
                 $("html").addClass("touch-locked");
             });
-
             $("body").on("touchend", function(){
                 $("html").removeClass("touch-locked");
             });
-            if(prevWidth === myWidth)
-                $('.b-input-time').after($('.b-email-input'));
+
+            if($('.b-addressee').length){
+                if($('.b-addressee-mobile .b-addressee-left').hasClass("active")){
+                    $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
+                }else{
+                    $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
+                }
+            }
 
             if(timerAdvantage){
                 clearInterval(timerAdvantage);
@@ -103,6 +116,13 @@ $(document).ready(function(){
             if(timerAdvantage){
                 $('.b-header-title-list .advantage-show').removeClass("advantage-show");
                 clearInterval(timerAdvantage);
+            }
+            if($('.b-addressee').length){
+                if($('.b-addressee-desktop .b-addressee-left').hasClass("active")){
+                    $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
+                }else{
+                    $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
+                }
             }
         }
         
@@ -229,10 +249,11 @@ $(document).ready(function(){
         $('.b-menu-overlay').show();
         return false;
     });
-    $('.b-menu-overlay').click(function() {
-        slideoutLeft.close();
-        $('.b-menu-overlay').hide();
-        return false;
+
+    slideoutLeft.on('close', function() {
+        setTimeout(function(){
+            $(".b-menu-overlay").hide();
+        },10);
     });
 
     /*var fixed = document.querySelector('.b-top');
@@ -277,21 +298,42 @@ $(document).ready(function(){
         $('.b-menu-overlay').show();
         return false;
     });
-    $('.b-menu-overlay').click(function() {
-        slideoutRight.close();
-        $('.b-menu-overlay').hide();
-        return false;
-    });
 
     slideoutRight.on('close', function() {
+        console.log("slideoutRight1");
         setTimeout(function(){
+            console.log("slideoutRight2");
             $(".b-menu-overlay").hide();
         },10);
     });
 
-    if(isMobile){
-        new FastClick(document.body);
-    }
+    $('.b-menu-overlay').click(function() {
+        console.log("overlay-close");
+        if(slideoutLeft.isOpen())
+            slideoutLeft.close();
+        if(slideoutRight.isOpen())
+            slideoutRight.close();
+        $('.b-menu-overlay').hide();
+        return false;
+    });
+
+    var touch = $('.b-menu-overlay, .mobile-menu, .basket-menu');
+    touch.touch();
+    touch.on('swipeLeft', function(event) {
+        if(slideoutLeft.isOpen())
+            slideoutLeft.close();
+    });
+    touch.on('swipeRight', function(event) {
+        if(slideoutRight.isOpen())
+            slideoutRight.close();
+    });
+
+    /*var touchBasket = $('.b-menu-overlay, .basket-menu');
+    touchBasket.touch();
+    touchBasket.on('swipeRight', function(event) {
+        console.log("swipeRight");
+        slideoutRight.close();
+    });*/
 
     if(isRetina){
         $("*[data-retina]").each(function(){
@@ -387,6 +429,14 @@ $(document).ready(function(){
         ]
     });
 
+    var $sectionActive = $('.b-catalog-sections-tablet li.active');
+    $('.b-catalog-sections-tablet').on('init', function(event, slick){
+        setTimeout(function(){
+            console.log($('.b-catalog-sections-tablet li.active'));
+            $('.b-catalog-sections-tablet').slick('slickGoTo', $sectionActive.attr("data-slick-index"), true);
+        },10);
+    });
+
     $('.b-catalog-sections-tablet').slick({
         dots: false,
         arrows: true,
@@ -395,6 +445,8 @@ $(document).ready(function(){
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '0px',
         speed: 600,
         responsive: [
             {
@@ -622,7 +674,7 @@ $(document).ready(function(){
             $("." + $('.b-addressee-left').attr("data-payment")).removeClass("hide");
 
             $('.b-addressee-mobile').removeClass("hide");
-            if($('.b-addressee-mobile .b-addressee-left').hasClass("active")){
+            if(isMobile && $('.b-addressee-mobile .b-addressee-left').hasClass("active")){
                 $('.b-addressee-mobile .b-addressee-right').removeClass("active");
                 $('.b-addressee-mobile .b-addressee-left').addClass("active");
                 $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
@@ -763,7 +815,10 @@ $(document).ready(function(){
     });
 
     $('#date').blur(function(){
-       $("#date").datepicker("hide");
+       //$("#date").datepicker("hide");
+        if(!$("#date").val()){
+            $("#date").parent().removeClass("focus not-empty");
+        }
     });
 
     $('body').on("click", ".b-filter-price-select, .b-filter-flowers-select", function(){
@@ -857,6 +912,7 @@ $(document).ready(function(){
     });
 
     if(isMobile){
+        new FastClick(document.body);
         $(".b-time-list label").on('click', function(){
             if(!$(this).siblings("input").hasClass("no-active")){
                 $('.input-time').val($(this).text());

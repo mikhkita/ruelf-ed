@@ -138,6 +138,10 @@ body {
 	font-size: 18px;
 }
 
+.b-call{
+	margin-bottom: 0;
+}
+
 @media screen and (max-width: 1100px){
 
 	.b-menu {
