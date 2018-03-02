@@ -622,7 +622,7 @@ div.slideout-menu-padding{
 	.b-catalog-item{
 		height: calc(100vw/2 - 13px + 118px);
 	}
-	.main .b-catalog-item:nth-child(n+5){
+	.b-limit .b-catalog-item:nth-child(n+5){
 		display: none;
 	}
 	.b-catalog-item-content{

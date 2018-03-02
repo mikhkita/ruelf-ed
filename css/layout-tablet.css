@@ -39,7 +39,7 @@ body {
 					background-position: 50% 0%;
 				}
 
-		.main .b-catalog-item:nth-child(n+7){
+		.b-limit .b-catalog-item:nth-child(n+7){
 			display: none;
 		}
 

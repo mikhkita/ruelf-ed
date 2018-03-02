@@ -3441,6 +3441,8 @@ strong, b{
 				color: #f43d84 !important;
 			}
 			.b-input input[type="text"],
+			.b-input input[type="tel"],
+			.b-input input[type="date"],
 			.b-input textarea{
 				padding: 16px 22px 17px 22px;
 				-webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
