@@ -100,7 +100,7 @@ $(document).ready(function(){
                 }
             }
 
-            if(prevWidth === myWidth)
+            if(prevWidth === myWidth || prevWidth === 0)
                 $('.b-input-time').after($('.b-email-input'));
 
             if(timerAdvantage){

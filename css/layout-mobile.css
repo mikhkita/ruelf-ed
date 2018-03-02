@@ -1229,6 +1229,9 @@ div.slideout-menu-padding{
 	.b-catalog-menu-mobile{
 		font-size: 16px;
 	}
+	.sections-mobile.icon-arrow-down:after{
+		font-size: 8px;
+	}
 
 	.b-addressee {
 	    width: 100%;
