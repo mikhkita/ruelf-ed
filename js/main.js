@@ -82,8 +82,10 @@ $(document).ready(function(){
         }
 
         if(isMobile){
-            if(prevWidth !== myWidth)
+            if(prevWidth !== myWidth){
+                $('.b-input-time').after($('.b-email-input'));
                 $('.b-filter').addClass("hide");
+            }
 
             $("body").on("touchstart", ".b-slideout-not-touch", function(){
                 $("html").addClass("touch-locked");
@@ -99,9 +101,6 @@ $(document).ready(function(){
                     $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
                 }
             }
-
-            if(prevWidth === myWidth || prevWidth === 0)
-                $('.b-input-time').after($('.b-email-input'));
 
             if(timerAdvantage){
                 clearInterval(timerAdvantage);
