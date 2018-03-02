@@ -779,9 +779,9 @@ $(document).ready(function(){
         }
     });
 
-    $('#date').blur(function(){
+    /*$('#date').blur(function(){
        $("#date").datepicker("hide");
-    });
+    });*/
 
     $('body').on("click", ".b-filter-price-select, .b-filter-flowers-select", function(){
         return false;
