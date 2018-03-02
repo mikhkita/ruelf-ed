@@ -54,6 +54,7 @@ $(document).ready(function(){
 
         if(isDesktop){
             $('.fancy-filter').unbind('click.fb-start');
+            $('.b-filter-flowers-list, .b-filter-price-list').css("display", "block")
             //вынести корзину из меню
             if($('.b-basket-desktop .b-basket').length === 0)
                 $('.b-basket-desktop').append($('.b-basket'));
