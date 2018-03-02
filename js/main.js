@@ -255,6 +255,12 @@ $(document).ready(function(){
         return false;
     });
 
+    slideoutLeft.on('close', function() {
+        setTimeout(function(){
+            $(".b-menu-overlay").hide();
+        },10);
+    });
+
     /*var fixed = document.querySelector('.b-top');
 
     slideoutLeft.on('translate', function(translated) {
@@ -307,6 +313,18 @@ $(document).ready(function(){
         setTimeout(function(){
             $(".b-menu-overlay").hide();
         },10);
+    });
+
+    var touchMenu = $('.b-menu-overlay, .mobile-menu');
+    touchMenu.touch();
+    touchMenu.on('swipeLeft', function(event) {
+        slideoutLeft.close();
+    });
+
+    var touchBasket = $('.b-menu-overlay, .basket-menu');
+    touchBasket.touch();
+    touchBasket.on('swipeRight', function(event) {
+        slideoutRight.close();
     });
 
     if(isRetina){
