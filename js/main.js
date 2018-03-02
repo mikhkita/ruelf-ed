@@ -52,16 +52,22 @@ $(document).ready(function(){
             $('.b-addressee-desktop .b-addressee-left').text($('.b-addressee-desktop .b-addressee-left').attr("data-long"));
         }
 
+        //менять положение кнопки над блоком/под блоком
+        var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
+        if(myWidth < 1200){
+            $('.b-call').before($moveEl.parent());
+        }else{
+            $('.b-call').parents(".b-catalog-list").after($moveEl.parent());
+        }
+
         if(isDesktop){
             $('.fancy-filter').unbind('click.fb-start');
-            $('.b-filter-flowers-list, .b-filter-price-list').css("display", "block")
+            $('.b-filter-flowers-list, .b-filter-price-list').css("display", "block");
             //вынести корзину из меню
             if($('.b-basket-desktop .b-basket').length === 0)
                 $('.b-basket-desktop').append($('.b-basket'));
         }else{
             fancyFilterInit();
-            var $moveEl = $('.b-call').parents(".b-catalog").find(".b-btn-more");
-            $('.b-call').before($moveEl.parent());
             //перенести корзину в меню
             if($('.basket-menu .b-basket').length === 0)
                 $('.basket-menu').append($('.b-basket'));
@@ -82,10 +88,18 @@ $(document).ready(function(){
             $("body").on("touchstart", ".b-slideout-not-touch", function(){
                 $("html").addClass("touch-locked");
             });
-
             $("body").on("touchend", function(){
                 $("html").removeClass("touch-locked");
             });
+
+            if($('.b-addressee').length){
+                if($('.b-addressee-mobile .b-addressee-left').hasClass("active")){
+                    $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
+                }else{
+                    $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
+                }
+            }
+
             if(prevWidth === myWidth)
                 $('.b-input-time').after($('.b-email-input'));
 
@@ -103,6 +117,13 @@ $(document).ready(function(){
             if(timerAdvantage){
                 $('.b-header-title-list .advantage-show').removeClass("advantage-show");
                 clearInterval(timerAdvantage);
+            }
+            if($('.b-addressee').length){
+                if($('.b-addressee-desktop .b-addressee-left').hasClass("active")){
+                    $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
+                }else{
+                    $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
+                }
             }
         }
         
@@ -288,10 +309,6 @@ $(document).ready(function(){
             $(".b-menu-overlay").hide();
         },10);
     });
-
-    if(isMobile){
-        new FastClick(document.body);
-    }
 
     if(isRetina){
         $("*[data-retina]").each(function(){
@@ -622,7 +639,7 @@ $(document).ready(function(){
             $("." + $('.b-addressee-left').attr("data-payment")).removeClass("hide");
 
             $('.b-addressee-mobile').removeClass("hide");
-            if($('.b-addressee-mobile .b-addressee-left').hasClass("active")){
+            if(isMobile && $('.b-addressee-mobile .b-addressee-left').hasClass("active")){
                 $('.b-addressee-mobile .b-addressee-right').removeClass("active");
                 $('.b-addressee-mobile .b-addressee-left').addClass("active");
                 $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
@@ -857,6 +874,7 @@ $(document).ready(function(){
     });
 
     if(isMobile){
+        new FastClick(document.body);
         $(".b-time-list label").on('click', function(){
             if(!$(this).siblings("input").hasClass("no-active")){
                 $('.input-time').val($(this).text());
