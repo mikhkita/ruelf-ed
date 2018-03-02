@@ -403,6 +403,14 @@ $(document).ready(function(){
         ]
     });
 
+    var $sectionActive = $('.b-catalog-sections-tablet li.active');
+    $('.b-catalog-sections-tablet').on('init', function(event, slick){
+        setTimeout(function(){
+            console.log($('.b-catalog-sections-tablet li.active'));
+            $('.b-catalog-sections-tablet').slick('slickGoTo', $sectionActive.attr("data-slick-index"), true);
+        },10);
+    });
+
     $('.b-catalog-sections-tablet').slick({
         dots: false,
         arrows: true,
@@ -411,6 +419,8 @@ $(document).ready(function(){
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '0px',
         speed: 600,
         responsive: [
             {
@@ -778,9 +788,12 @@ $(document).ready(function(){
         }
     });
 
-    /*$('#date').blur(function(){
-       $("#date").datepicker("hide");
-    });*/
+    $('#date').blur(function(){
+       //$("#date").datepicker("hide");
+        if(!$("#date").val()){
+            $("#date").parent().removeClass("focus not-empty");
+        }
+    });
 
     $('body').on("click", ".b-filter-price-select, .b-filter-flowers-select", function(){
         return false;

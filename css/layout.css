@@ -1808,6 +1808,10 @@ strong, b{
 			margin-top: 24px;
 		}
 
+		.b-filter-flowers-list .b-center{
+			clear: both;
+		}
+
 	.b-filter-select-wrap:hover .b-filter-flowers-list{
 		opacity: 1;
 		visibility: visible;
