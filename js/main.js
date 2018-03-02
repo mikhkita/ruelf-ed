@@ -300,32 +300,33 @@ $(document).ready(function(){
     });
 
     slideoutRight.on('close', function() {
-        console.log("slideoutRight1");
         setTimeout(function(){
-            console.log("slideoutRight2");
             $(".b-menu-overlay").hide();
         },10);
     });
 
-    $('.b-menu-overlay').click(function() {
-        console.log("overlay-close");
+    $('.b-menu-overlay').on('click', function() {
         if(slideoutLeft.isOpen())
             slideoutLeft.close();
         if(slideoutRight.isOpen())
             slideoutRight.close();
-        $('.b-menu-overlay').hide();
         return false;
     });
 
-    var touch = $('.b-menu-overlay, .mobile-menu, .basket-menu');
-    touch.touch();
-    touch.on('swipeLeft', function(event) {
-        if(slideoutLeft.isOpen())
+    var e = $('.b-menu-overlay');
+    e.touch();
+    e.on('swipeLeft', function(event) {
+        if(slideoutLeft.isOpen()){
             slideoutLeft.close();
+            $(".b-menu-overlay").hide();
+        }
+            
     });
-    touch.on('swipeRight', function(event) {
-        if(slideoutRight.isOpen())
+    e.on('swipeRight', function(event) {
+        if(slideoutRight.isOpen()){
             slideoutRight.close();
+            $(".b-menu-overlay").hide();
+        }
     });
 
     /*var touchBasket = $('.b-menu-overlay, .basket-menu');
