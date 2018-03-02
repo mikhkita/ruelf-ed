@@ -74,6 +74,9 @@ $(document).ready(function(){
         }
 
         if(isTablet){
+            if($('.b-catalog-sections-tablet').hasClass("slick-initialized")){
+                $('.b-catalog-sections-tablet').slick('setPosition');
+            }
             $('.b-basket-btn-cont').on('click', function(){
                 $('.b-top-basket-mobile').click();
             });
