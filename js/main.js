@@ -253,7 +253,7 @@ $(document).ready(function(){
         return false;
     });
 
-    slideoutLeft.on('beforeClose', function() {
+    slideoutLeft.on('close', function() {
         console.log("close1");
         setTimeout(function(){
             console.log("close2");
@@ -278,7 +278,7 @@ $(document).ready(function(){
         return false;
     });
 
-    slideoutRight.on('beforeClose', function() {
+    slideoutRight.on('close', function() {
         setTimeout(function(){
             $("body").unbind("touchmove");
             $(".b-menu-overlay").hide();
@@ -286,6 +286,7 @@ $(document).ready(function(){
     });
 
     $('.b-menu-overlay').on('click', function() {
+        console.log("overlay");
         if(slideoutLeft.isOpen())
             slideoutLeft.close();
         if(slideoutRight.isOpen())
@@ -294,15 +295,15 @@ $(document).ready(function(){
         return false;
     });
 
-    var e = $('body');
+    var e = $('.b-menu-overlay, .mobile-menu, .basket-menu');
     e.touch();
     e.on('swipeLeft', function(event) {
         console.log("swipeLeft");
-        $("body").bind("touchmove", function(e){
+        /*$("body").bind("touchmove", function(e){
             console.log("touchmove");
             e.preventDefault();
             return false;
-        });
+        });*/
         if(slideoutLeft.isOpen()){
             console.log("slideoutLeft.isOpen");
             slideoutLeft.close();
@@ -312,11 +313,11 @@ $(document).ready(function(){
     });
     e.on('swipeRight', function(event) {
         console.log("swipeRight");
-        $("body").bind("touchmove", function(e){
+        /*$("body").bind("touchmove", function(e){
             console.log("touchmove");
             e.preventDefault();
             return false;
-        });
+        });*/
         if(slideoutRight.isOpen()){
             slideoutRight.close();
             $(".b-menu-overlay").hide();
@@ -891,9 +892,7 @@ $(document).ready(function(){
     });
 
     $('.b-input-time input').on('click focus', function(){
-        setTimeout(function(){
-            $('.b-time-list').addClass("show");
-        }, 10);
+        $('.b-time-list').addClass("show");
     });
 
     $(".b-time-list input").change(function(){
