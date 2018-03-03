@@ -316,7 +316,7 @@ $(document).ready(function(){
         return false;
     });
 
-    var e = $('.b-menu-overlay');
+    var e = $('body');
     e.touch();
     e.on('swipeLeft', function(event) {
         if(slideoutLeft.isOpen()){
