@@ -290,6 +290,7 @@ $(document).ready(function(){
             slideoutLeft.close();
         if(slideoutRight.isOpen())
             slideoutRight.close();
+        $(".b-menu-overlay").hide();
         return false;
     });
 
