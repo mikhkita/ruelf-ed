@@ -424,6 +424,9 @@ h1.b-title{
 	margin-bottom: 12px;
 	clear: both;
 }
+.b-input-move .b-payment-method{
+	padding-top: 0px;
+}
 
 .b-payment-method-list {
     display: block;

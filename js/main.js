@@ -295,34 +295,34 @@ $(document).ready(function(){
         return false;
     });
 
-    var e = $('.b-menu-overlay, .mobile-menu, .basket-menu');
-    e.touch();
-    e.on('swipeLeft', function(event) {
-        console.log("swipeLeft");
-        /*$("body").bind("touchmove", function(e){
-            console.log("touchmove");
-            e.preventDefault();
-            return false;
-        });*/
-        if(slideoutLeft.isOpen()){
-            console.log("slideoutLeft.isOpen");
-            slideoutLeft.close();
-            $(".b-menu-overlay").hide();
-        }
+    // var e = $('.b-menu-overlay, .mobile-menu, .basket-menu');
+    // e.touch();
+    // e.on('swipeLeft', function(event) {
+    //     console.log("swipeLeft");
+    //     /*$("body").bind("touchmove", function(e){
+    //         console.log("touchmove");
+    //         e.preventDefault();
+    //         return false;
+    //     });*/
+    //     if(slideoutLeft.isOpen()){
+    //         console.log("slideoutLeft.isOpen");
+    //         slideoutLeft.close();
+    //         $(".b-menu-overlay").hide();
+    //     }
             
-    });
-    e.on('swipeRight', function(event) {
-        console.log("swipeRight");
-        /*$("body").bind("touchmove", function(e){
-            console.log("touchmove");
-            e.preventDefault();
-            return false;
-        });*/
-        if(slideoutRight.isOpen()){
-            slideoutRight.close();
-            $(".b-menu-overlay").hide();
-        }
-    });
+    // });
+    // e.on('swipeRight', function(event) {
+    //     console.log("swipeRight");
+    //     /*$("body").bind("touchmove", function(e){
+    //         console.log("touchmove");
+    //         e.preventDefault();
+    //         return false;
+    //     });*/
+    //     if(slideoutRight.isOpen()){
+    //         slideoutRight.close();
+    //         $(".b-menu-overlay").hide();
+    //     }
+    // });
 
     if(isRetina){
         $("*[data-retina]").each(function(){

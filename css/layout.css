@@ -825,8 +825,13 @@ strong, b{
 /*------b-text-----*/
 
 .b-text{
-
+	line-height: 26px;
 }
+	.b-text p span{
+		/*margin: 0px 2px;*/
+		margin-right: 4px;
+		/*display: inline-block;*/
+	}
 	.b-text h2{
 		color: #434343;
 		font-family: 'Geometria-Medium';
@@ -3473,6 +3478,9 @@ strong, b{
 	.b-payment-method{
 		float: left;
 	}	
+	.b-input-move .b-payment-method{
+		padding-top: 16px;
+	}
 		.b-payment-method p{
 			display: inline-block;
 			margin-right: 30px;
