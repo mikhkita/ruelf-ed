@@ -891,7 +891,9 @@ $(document).ready(function(){
     });
 
     $('.b-input-time input').on('click focus', function(){
-        $('.b-time-list').addClass("show");
+        setTimeout(function(){
+            $('.b-time-list').addClass("show");
+        }, 10);
     });
 
     $(".b-time-list input").change(function(){
