@@ -13,6 +13,10 @@ h1.b-title-temp{
 
 /*---------------------*/
 
+.b-filter-mobile{
+	display: none;
+}
+
 .b-catalog-item{
 	width: calc(100%/2 - 13px);
 	height: calc(100vw/2 - 13px + 82px);
