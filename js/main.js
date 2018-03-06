@@ -256,15 +256,13 @@ $(document).ready(function(){
     slideoutLeft.disableTouch();
 
     slideoutLeft.on('beforeopen', function() {
-        this.panel.classList.add('panel-open');
-        this.menu.classList.add('menu-active');
         slideoutLeft.enableTouch();
-        $(".b-menu-overlay").show();
     }).on('beforeclose', function() {
-        this.panel.classList.remove('panel-open');
-        this.menu.classList.remove('menu-active');
         slideoutLeft.disableTouch();
         $(".b-menu-overlay").hide();
+    }).on('close', function() {
+        console.log("slideoutLeft");
+        $(window).scroll();
     });
 
     var slideoutRight = new Slideout({
@@ -286,15 +284,13 @@ $(document).ready(function(){
     slideoutRight.disableTouch();
 
     slideoutRight.on('beforeopen', function() {
-        this.panel.classList.add('panel-open');
-        this.menu.classList.add('menu-active');
         slideoutRight.enableTouch();
-        $(".b-menu-overlay").show();
     }).on('beforeclose', function() {
-        this.panel.classList.remove('panel-open');
-        this.menu.classList.remove('menu-active');
         slideoutRight.disableTouch();
         $(".b-menu-overlay").hide();
+    }).on('close', function() {
+        console.log("slideoutRight");
+        $(window).scroll();
     });
 
     $('.b-menu-overlay').on('click', function() {
