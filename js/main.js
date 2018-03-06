@@ -236,7 +236,7 @@ $(document).ready(function(){
         }
     }
     $.fn.placeholder();
-    
+
     var slideoutLeft = new Slideout({
         'panel': document.getElementById('panel-page'),
         'menu': document.getElementById('mobile-menu'),
@@ -298,7 +298,6 @@ $(document).ready(function(){
     });
 
     $('.b-menu-overlay').on('click', function() {
-        console.log("overlay");
         if(slideoutLeft.isOpen())
             slideoutLeft.close();
         if(slideoutRight.isOpen())
