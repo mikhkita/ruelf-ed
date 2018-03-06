@@ -236,13 +236,13 @@ $(document).ready(function(){
         }
     }
     $.fn.placeholder();
-
+    
     var slideoutLeft = new Slideout({
         'panel': document.getElementById('panel-page'),
         'menu': document.getElementById('mobile-menu'),
         'side': 'left',
         'padding': 300,
-        'touch': false
+        'tolerance': 70
     });
 
     $('.burger-menu').click(function() {
@@ -253,13 +253,18 @@ $(document).ready(function(){
         return false;
     });
 
-    slideoutLeft.on('close', function() {
-        console.log("close1");
-        setTimeout(function(){
-            console.log("close2");
-            $("body").unbind("touchmove");
-            $(".b-menu-overlay").hide();
-        },10);
+    slideoutLeft.disableTouch();
+
+    slideoutLeft.on('beforeopen', function() {
+        this.panel.classList.add('panel-open');
+        this.menu.classList.add('menu-active');
+        slideoutLeft.enableTouch();
+        $(".b-menu-overlay").show();
+    }).on('beforeclose', function() {
+        this.panel.classList.remove('panel-open');
+        this.menu.classList.remove('menu-active');
+        slideoutLeft.disableTouch();
+        $(".b-menu-overlay").hide();
     });
 
     var slideoutRight = new Slideout({
@@ -267,7 +272,7 @@ $(document).ready(function(){
         'menu': document.getElementById('basket-menu'),
         'side': 'right',
         'padding': 300,
-        'touch': false
+        'tolerance': 70
     });
 
     $('.b-top-basket-mobile').click(function() {
@@ -278,11 +283,18 @@ $(document).ready(function(){
         return false;
     });
 
-    slideoutRight.on('close', function() {
-        setTimeout(function(){
-            $("body").unbind("touchmove");
-            $(".b-menu-overlay").hide();
-        },10);
+    slideoutRight.disableTouch();
+
+    slideoutRight.on('beforeopen', function() {
+        this.panel.classList.add('panel-open');
+        this.menu.classList.add('menu-active');
+        slideoutRight.enableTouch();
+        $(".b-menu-overlay").show();
+    }).on('beforeclose', function() {
+        this.panel.classList.remove('panel-open');
+        this.menu.classList.remove('menu-active');
+        slideoutRight.disableTouch();
+        $(".b-menu-overlay").hide();
     });
 
     $('.b-menu-overlay').on('click', function() {
