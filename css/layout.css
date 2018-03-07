@@ -827,6 +827,9 @@ strong, b{
 .b-text{
 	line-height: 26px;
 }
+	.b-text .b-payment{
+		margin: 0px !important
+	}
 	.b-text p span{
 		/*margin: 0px 2px;*/
 		margin-right: 4px;
@@ -2809,7 +2812,7 @@ strong, b{
 
 .b-catalog-similar{
 	padding-top: 10px;
-	margin-bottom: -22px;
+	margin-bottom: -20px !important;
 }
 
 /*-------Детальная-------*/
