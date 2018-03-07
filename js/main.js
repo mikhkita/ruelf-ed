@@ -687,7 +687,9 @@ $(document).ready(function(){
             $(".b-payment-method-item:not(.hide)").eq(0).find("input").prop("checked", true);
         }
         updateMiniCartSum();
-        $("#date").change();
+        if(!!$("#date").val()){
+            $("#date").change();
+        }
         return false;
     });
 
@@ -799,7 +801,7 @@ $(document).ready(function(){
         });
     }
 
-    function isMarch8 () {
+    function isMarch8(){
         var date = $("#date").datepicker("getDate");
         if(date){
             if(date.getDate() === 8 &&
@@ -809,7 +811,6 @@ $(document).ready(function(){
             }else{
                 march8 = false;
             }
-            console.log("march8 = " + march8);
         }
     }
 
