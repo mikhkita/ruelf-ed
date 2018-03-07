@@ -508,7 +508,8 @@ $(document).ready(function(){
         $('.b-filter-colors input[type="checkbox"]').prop("checked", false);
         $(".any-prices").prop("checked", true);
         checkPrices();
-        $(".any-flowers").prop("checked", true).change();
+        $(".any-flowers").prop("checked", true);
+        $(".any-prices").prop("checked", true).change();
         return false;
     });
 
@@ -542,6 +543,12 @@ $(document).ready(function(){
     }
 
     checkMenu();
+
+    $(".b-btn-pay").click(function(){
+        $("#pay").submit();
+
+        return false;
+    });
 
     $('.b-catalog-menu-desktop ul > li').mousedown(function(eventObject){
         $(".b-catalog-menu-desktop .b-line").addClass("b-line-color");
