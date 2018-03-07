@@ -689,6 +689,9 @@ $(document).ready(function(){
             $(".b-payment-method-item:not(.hide)").eq(0).find("input").prop("checked", true);
         }
         updateMiniCartSum();
+        if(!!$("#date").val()){
+            $("#date").change();
+        }
         return false;
     });
 
@@ -710,6 +713,7 @@ $(document).ready(function(){
         return false;
     });
 
+    var march8 = false;
     if($('#date').length){
         $.datepicker.regional['ru'] = {
             closeText: 'Готово', // set a close button text
@@ -757,6 +761,7 @@ $(document).ready(function(){
                 resetTime();
 
                 if(dateSelect){
+                    isMarch8();
                     if(dateToday.getDate() === dateSelect.getDate() &&
                         dateToday.getMonth() === dateSelect.getMonth() &&
                         dateToday.getFullYear() === dateSelect.getFullYear())
@@ -767,6 +772,11 @@ $(document).ready(function(){
                         dateToday.getFullYear() === dateSelect.getFullYear())
                     {
                         checkDeliveryTime(false);
+                    }
+
+                    if(march8 && $('.b-addressee-desktop .b-addressee-left').hasClass("active")){
+                        $('#hour-8, #hour-9, #hour-10, #hour-11, #hour-12, #hour-13')
+                            .addClass("no-active").prop("disabled", true);
                     }
 
                     //проверить доступно ли время для этой даты
@@ -791,6 +801,19 @@ $(document).ready(function(){
         $('input[name="time-select"]').each(function(){
             $(this).removeClass("no-active").prop("disabled", false);
         });
+    }
+
+    function isMarch8(){
+        var date = $("#date").datepicker("getDate");
+        if(date){
+            if(date.getDate() === 8 &&
+                date.getMonth() === 2 && 
+                date.getFullYear() === 2018){
+                march8 = true;
+            }else{
+                march8 = false;
+            }
+        }
     }
 
     /*if(isMobile)
