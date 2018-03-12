@@ -4372,7 +4372,7 @@ strong, b{
   bottom: 0;
   width: 300px;
   min-height: 100vh;
-  overflow-y: auto;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   z-index: 0;
   display: none;
@@ -4387,13 +4387,14 @@ strong, b{
 }
 
 .slideout-panel {
-  overflow-x: hidden;
   position: relative;
   z-index: 1;
+  will-change: transform;
   background-color: #FFF; /* A background-color is required */
   min-height: 100vh;
 }
 
+.slideout-open,
 .slideout-open body,
 .slideout-open .slideout-panel {
   overflow: hidden;
