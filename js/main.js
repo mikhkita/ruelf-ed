@@ -476,8 +476,10 @@ $(document).ready(function(){
             //если стрелка над футером
             if(arrowOffset + 84 > footerOffset){
                 $('.arrow-up').css("position", "absolute");
+                $("#lb_button-wrapper").addClass("absolute").removeClass("fixed");
             }else{
                 $('.arrow-up').css("position", "fixed");
+                $("#lb_button-wrapper").addClass("fixed").removeClass("absolute");
             }
         }
     });

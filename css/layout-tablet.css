@@ -7,6 +7,10 @@ body {
 }
 
 /*---------------------*/
+#lb_button-wrapper{
+    margin-right: 0px !important;
+    right: 120px !important;
+}
 
 .b-menu {
     margin-left: 160px;
