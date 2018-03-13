@@ -4374,7 +4374,11 @@ strong, b{
     color: #434343;
 }
 
-/*--------------------*/
+/*----------date-mobile----------*/
+
+.b-input-date-mobile{
+	display: none;
+}
 
 /*-----------Slideout-----------*/
 
