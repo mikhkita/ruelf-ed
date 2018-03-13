@@ -984,6 +984,10 @@ $(document).ready(function(){
             display: 'bottom',
             lang: 'ru',
             minDate: new Date(dateToday.getFullYear(), dateToday.getMonth(), dayDelivery, hoursDelivery),
+            invalid: [
+                { start: '00:00', end: '07:59' },
+                { start: '22:30', end: '23:59' },
+            ],
             stepMinute: 30,
             dateOrder: 'ddMyy',
         });
