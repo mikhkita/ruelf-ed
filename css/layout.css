@@ -1118,7 +1118,7 @@ strong, b{
 	.b-menu{
 		float: left;
 		margin-top: 3px;
-		margin-left: 170px;
+		margin-left: 150px;
 		-webkit-transition: margin-left 200ms ease-out;
 	    -moz-transition: margin-left 200ms ease-out;
 	    -ms-transition: margin-left 200ms ease-out;
@@ -1126,7 +1126,7 @@ strong, b{
 	    transition: margin-left 200ms ease-out;
 	}
 	.b-top.basket-null .b-menu{
-		margin-left: 180px;
+		margin-left: 165px;
 	}
 	.b-top-fixed .b-menu,
 	.b-top-fixed.basket-null .b-menu{
@@ -1145,7 +1145,7 @@ strong, b{
 			position: relative;
 			border-radius: 20px;
 			margin-bottom: 7px;
-			margin-right: 24px;
+			margin-right: 14px;
 			-webkit-transition: background-color 100ms ease-out, border 100ms ease-out;
 		    -moz-transition: background-color 100ms ease-out, border 100ms ease-out;
 		    -ms-transition: background-color 100ms ease-out, border 100ms ease-out;
@@ -1259,10 +1259,13 @@ strong, b{
 	.b-top-right{
 		float: right;
 	}
-
+		.phone-tip{
+			display: none;
+		}
 		.b-top-phone{
+			position: relative;
 			display: inline-block;
-			margin-right: 32px;
+			margin-right: 28px;
 		}
 
 			.icon-phone:before{
@@ -1271,28 +1274,85 @@ strong, b{
 				padding-top: 2px;
 			}
 
+		.b-search{
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			padding-top: 6px;
+		    margin-right: 20px;
+		    cursor: pointer;
+		}
+			.icon-search{
+				display: block;
+			}
+			.icon-search:before{
+				content: "\e91f";
+			   	color: #FFF;
+			    font-size: 24px;
+			    line-height: 24px;
+			}
+			.b-input-search{
+				position: absolute;
+				top: 50px;
+				left: -155px;
+				-webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+			    -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+			    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+				opacity: 0;
+				visibility: hidden;
+				-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+			    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+			    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+				-o-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+			    transition: opacity 200ms ease-out, visibility 200ms ease-out;
+			}
+			.b-input-search.show{
+				opacity: 1;
+				visibility: visible;
+			}
+			.b-input-search:before{
+				position: absolute;
+			    content: "s";
+			    font-size: 0px;
+			    width: 0px;
+			    height: 0px;
+			    left: 158px;
+			    top: -18px;
+			    border-top: 9px solid transparent;
+			    border-right: 10px solid transparent;
+			    border-bottom: 9px solid #FFF;
+			    border-left: 10px solid transparent;
+			}
+				.b-input-search .b-input{
+				    float: none;
+				    width: 330px;
+				    margin-right: 0;
+				}
+					.b-input-search .b-input input[type="text"]{
+					    width: 100%;
+					    border: 0;
+					    padding: 17px 22px 19px 22px;
+					}
+
 		.b-favorites{
 			position: relative;
 			display: inline-block;
+			vertical-align: top;
+			margin-top: 6px;
 			margin-right: 20px;
 			width: 25px;
 			height: 23px;
-			display: none;
 		}
-
 			.icon-favorites{
 				z-index: 2;
 				position: absolute;
-			    display: inline-block;
-			    vertical-align: top;
-			    padding-top: 6px;
+				top: 0;
+				left: 0;
 			}
 			.icon-favorites-back{
 				position: absolute;
-			    display: inline-block;
-			    vertical-align: top;
-			    padding-top: 6px;
-
+				top: 0;
+				left: 0;
 			}
 				.icon-favorites-back:before{
 					color: transparent;
@@ -4374,7 +4434,11 @@ strong, b{
     color: #434343;
 }
 
-/*--------------------*/
+/*----------date-mobile----------*/
+
+.b-input-date-mobile{
+	display: none;
+}
 
 /*-----------Slideout-----------*/
 
@@ -4384,7 +4448,7 @@ strong, b{
   bottom: 0;
   width: 300px;
   min-height: 100vh;
-  overflow-y: auto;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   z-index: 0;
   display: none;
@@ -4399,13 +4463,13 @@ strong, b{
 }
 
 .slideout-panel {
-  overflow-x: hidden;
   position: relative;
   z-index: 1;
   background-color: #FFF; /* A background-color is required */
   min-height: 100vh;
 }
 
+.slideout-open,
 .slideout-open body,
 .slideout-open .slideout-panel {
   overflow: hidden;

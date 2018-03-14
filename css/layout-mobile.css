@@ -546,6 +546,14 @@ div.slideout-menu-padding{
 	margin-bottom: 0;
 }
 
+.b-input-date-mobile{
+	display: block;
+}
+
+.b-search, .b-favorites{
+	display: none;
+}
+
 @media screen and (max-width: 665px){
 
 	h1.b-title {

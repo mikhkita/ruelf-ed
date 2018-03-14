@@ -146,10 +146,71 @@ body {
 	margin-bottom: 0;
 }
 
+.b-top-phone{
+	margin-right: 20px;
+}
+	.b-top-phone .icon-phone:before{
+		margin-right: 0;
+	}
+.b-top-phone span{
+	display: none;
+}
+.b-top-phone .phone-tip{
+	display: block;
+	position: absolute;
+	top: 44px;
+	left: -48px;
+	text-align: center;
+	min-width: 114px;
+	padding: 12px 18px;
+	border-radius: 3px;
+	color: #434343;
+	background-color: #FFF;
+	z-index: 5;
+	-webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+    -moz-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+    -ms-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+	-o-transition: opacity 200ms ease-out, visibility 200ms ease-out;
+    transition: opacity 200ms ease-out, visibility 200ms ease-out;
+}
+
+.b-top-phone:hover .phone-tip{
+	opacity: 1;
+	visibility: visible;
+}
+
+.b-top-phone .phone-tip:before{
+    position: absolute;
+    content: "s";
+    font-size: 0px;
+    width: 0px;
+    height: 0px;
+    left: 47px;
+    top: -18px;
+    border-top: 9px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 9px solid #FFF;
+    border-left: 10px solid transparent;
+}
+.b-top-phone .phone-tip:after{
+    content: "s";
+    font-size: 0px;
+    position: absolute;
+    left: 0px;
+    top: -21px;
+    width: 100%;
+    height: 21px;
+}
+
 @media screen and (max-width: 1100px){
 
 	.b-menu {
-	    margin-left: 124px;
+	    margin-left: 106px;
 	}
 	.b-menu li {
 	    margin-right: 4px;
@@ -158,22 +219,35 @@ body {
 	    margin-right: 12px;
 	}
 
+	.b-top-phone, .b-search, .b-favorites{
+		margin-right: 16px;
+	}
+	.b-logo{
+	    background-size: 255px;
+	    width: 255px;
+	    height: 44px;
+	}
+
 }
 
 @media screen and (max-width: 1020px){
 
-	.b-catalog-menu-tablet{
-		display: block;
-	}
-	.b-catalog-menu-desktop{
-		display: none;
-	}
+	.b-top-phone .phone-tip,
+	.b-catalog-menu-desktop,
 	.b-top .b-menu{
 		display: none;
 	}
+	.b-catalog-menu-tablet,
 	.burger-menu{
 		display: block;
 	}
+	.b-top-phone span{
+		display: inline-block;
+	}
+	.b-top-phone .icon-phone:before{
+		margin-right: 8px;
+	}
+
 	.b-top.b-top-fixed{
 		padding-bottom: 18px;
 	}
@@ -181,12 +255,11 @@ body {
 	    opacity: 1;
 	    visibility: visible;
 	}
-
-	.b-logo {
-		top: -6px;
+	.b-logo{
+	    top: -6px;
 	    background-size: 270px;
 	    width: 270px;
-	    height: 45px;
+	    height: 46px;
 	}
 
 	.b-catalog-menu-desktop .b-line{

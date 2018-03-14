@@ -16,6 +16,16 @@
 	<link rel="stylesheet" href="css/slick-theme.css" type="text/css">
 	<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
 	<link rel="stylesheet" href="css/jquery-ui.theme.min.css" type="text/css">
+	
+	<link href="css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.icons.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.frame.ios-classic.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.frame.ios.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.scroller.ios-classic.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.scroller.ios.css" rel="stylesheet" type="text/css" />
+
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
 
 	<link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 1199px)" href="css/layout-tablet.css">
@@ -120,7 +130,18 @@
 				</ul>
 				<div class="b-top-right">
 					<div class="b-top-phone">
-						<a href="tel:+338830" class="icon-phone">33-88-30</a>
+						<a href="tel:+338830" class="icon-phone">
+							<span>33-88-30</span>
+							<div class="phone-tip">33-88-30</div>
+						</a>
+					</div>
+					<div class="b-search">
+						<a href="#" class="icon-search"></a>
+						<form id="b-input-search" class="b-input-search" method="post" action="">
+							<div class="b-input">
+								<input type="text" id="search" placeholder="Поиск по названию" name="search">
+							</div>
+						</form>
 					</div>
 					<a href="#" class="b-favorites">
 						<div class="icon-favorites"></div>
@@ -413,6 +434,10 @@
 									</li>
 								</ul>
 							</div>
+						</div>
+						<div class="b-input b-input-date-mobile">
+							<input type="text" id="date-mobile" name="date-mobile">
+							<label for="date-mobile">Мобильная дата</label>
 						</div>
 					</div>
 					<div class="b-address b-table">
@@ -771,6 +796,18 @@
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/AddressDeliveryClass.js"></script>
 	<script type="text/javascript" src="js/address.js"></script>
+
+	<script type="text/javascript" src="js/mobiscroll.core.js"></script>
+    <script type="text/javascript" src="js/mobiscroll.frame.js"></script>
+    <script type="text/javascript" src="js/mobiscroll.scroller.js"></script>
+    <script type="text/javascript" src="js/mobiscroll.util.datetime.js"></script>
+    <script type="text/javascript" src="js/mobiscroll.datetimebase.js"></script>
+    <script type="text/javascript" src="js/mobiscroll.datetime.js"></script>
+    <script type="text/javascript" src="js/mobiscroll.select.js"></script>
+    <script type="text/javascript" src="js/mobiscroll.frame.ios-classic.js"></script>
+    <script type="text/javascript" src="js/mobiscroll.frame.ios.js"></script>
+	<script type="text/javascript" src="js/mobiscroll.i18n.ru.js"></script>
+
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

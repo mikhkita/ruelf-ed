@@ -496,6 +496,16 @@ $(document).ready(function(){
         return false;
     });
 
+     $('.icon-search').on('click', function(){
+        $(".b-input-search").toggleClass("show");
+        if($(".b-input-search").hasClass("show")){
+            setTimeout(function() {
+                $(".b-input-search input").focus();
+            }, 210);
+        }
+        return false;
+    });
+
     $('.b-btn-filter').on('click', function(){
         $('.b-filter').toggleClass("hide");
         if(!$('.b-filter').hasClass("hide")){
@@ -689,9 +699,9 @@ $(document).ready(function(){
             $(".b-payment-method-item:not(.hide)").eq(0).find("input").prop("checked", true);
         }
         updateMiniCartSum();
-        if(!!$("#date").val()){
-            $("#date").change();
-        }
+        //if(!!$("#date").val()){
+        //    $("#date").change();
+        //}
         return false;
     });
 
@@ -713,7 +723,7 @@ $(document).ready(function(){
         return false;
     });
 
-    var march8 = false;
+    var dateToday = new Date();
     if($('#date').length){
         $.datepicker.regional['ru'] = {
             closeText: 'Готово', // set a close button text
@@ -755,13 +765,9 @@ $(document).ready(function(){
             }).on("change", function(){
                 $(this).parents(".b-input").addClass("not-empty");
 
-                var dateToday = new Date();
                 var dateSelect = $("#date").datepicker("getDate");
-
                 resetTime();
-
                 if(dateSelect){
-                    isMarch8();
                     if(dateToday.getDate() === dateSelect.getDate() &&
                         dateToday.getMonth() === dateSelect.getMonth() &&
                         dateToday.getFullYear() === dateSelect.getFullYear())
@@ -772,11 +778,6 @@ $(document).ready(function(){
                         dateToday.getFullYear() === dateSelect.getFullYear())
                     {
                         checkDeliveryTime(false);
-                    }
-
-                    if(march8 && $('.b-addressee-desktop .b-addressee-left').hasClass("active")){
-                        $('#hour-8, #hour-9, #hour-10, #hour-11, #hour-12, #hour-13')
-                            .addClass("no-active").prop("disabled", true);
                     }
 
                     //проверить доступно ли время для этой даты
@@ -801,19 +802,6 @@ $(document).ready(function(){
         $('input[name="time-select"]').each(function(){
             $(this).removeClass("no-active").prop("disabled", false);
         });
-    }
-
-    function isMarch8(){
-        var date = $("#date").datepicker("getDate");
-        if(date){
-            if(date.getDate() === 8 &&
-                date.getMonth() === 2 && 
-                date.getFullYear() === 2018){
-                march8 = true;
-            }else{
-                march8 = false;
-            }
-        }
     }
 
     /*if(isMobile)
@@ -926,6 +914,11 @@ $(document).ready(function(){
                 $(".b-input-time").removeClass("focus not-empty");
             }
         }
+        if ($(event.target).closest(".b-input-search").length) 
+            return;
+        else{
+            $('.b-input-search').removeClass("show");
+        }
         event.stopPropagation();
       });
     });
@@ -953,12 +946,14 @@ $(document).ready(function(){
         from : 8,
         to : 22,
     };
+    var hoursDelivery = 0,
+        dayDelivery;
 
     function checkDeliveryTime (isToday) {
         var bouquetTime = parseInt($('.input-time').attr("data-hour"));//время сбора букета (в часах)
-            date = new Date(),
-            hours = date.getHours(),
-            minutes = date.getMinutes();
+            dayDelivery = dateToday.getDate(),
+            hours = dateToday.getHours(),
+            minutes = dateToday.getMinutes();
 
         if(minutes > 20){
             hours++;
@@ -968,12 +963,13 @@ $(document).ready(function(){
             if(hours + bouquetTime > workDay.to){
                 //заблочить сегодняшний день
                 $("#date").datepicker({minDate: '1'});
+                dayDelivery++;
                 //пересчитываем время на следующий день
-                var hoursDelivery = hours - workDay.to + workDay.from + bouquetTime;
+                hoursDelivery = hours - workDay.to + workDay.from + bouquetTime;
             }else if( hours < workDay.from ){
-                var hoursDelivery =  workDay.from + bouquetTime;
+                hoursDelivery =  workDay.from + bouquetTime;
             }else{
-                var hoursDelivery =  hours + bouquetTime;
+                hoursDelivery =  hours + bouquetTime;
             }
 
             $('input[name="time-select"]').each(function(){
@@ -983,7 +979,7 @@ $(document).ready(function(){
                 }
             });
         }else{
-            var hoursDelivery = hours - workDay.to + workDay.from + bouquetTime;
+            hoursDelivery = hours - workDay.to + workDay.from + bouquetTime;
             $('input[name="time-select"]').each(function(){
                 $this = $(this);
                 if(parseInt($this.attr("data-hour")) < hoursDelivery){
@@ -995,6 +991,21 @@ $(document).ready(function(){
 
     if($('.b-input-time').length){
         checkDeliveryTime(true);
+    }
+
+    if($('#date-mobile').length && isMobile){
+        $('#date-mobile').mobiscroll().datetime({
+            theme: 'ios',
+            display: 'bottom',
+            lang: 'ru',
+            minDate: new Date(dateToday.getFullYear(), dateToday.getMonth(), dayDelivery, hoursDelivery),
+            invalid: [
+                { start: '00:00', end: '07:59' },
+                { start: '22:30', end: '23:59' },
+            ],
+            stepMinute: 30,
+            dateOrder: 'ddMyy',
+        });
     }
 
     $('.b-btn-address').on('click', function(){
