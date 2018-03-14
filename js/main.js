@@ -1130,7 +1130,8 @@ $(document).ready(function(){
     });
 
     // Удаление из корзины
-    var cartTimeout = 0;
+    var cartTimeout = 0,
+        deleteCount = 0;
     $("body").on("click",".b-btn-remove-from-cart",function(){
         var url = $(this).attr("href"),
             $item = $(".b-cart-item[data-id='"+$(this).parents("li, tr").attr("data-id")+"']");
@@ -1148,6 +1149,8 @@ $(document).ready(function(){
             $(".b-basket ul").append("<li class=\"b-preload-cart\">Ваша корзина пуста.</li>");
         }
 
+        deleteCount++;
+
         $.ajax({
             type: "GET",
             url: url,
@@ -1156,10 +1159,13 @@ $(document).ready(function(){
                 msg = msg.replace(reg, "");
                 var json = JSON.parse(msg);
 
+                deleteCount--;
+
                 if( json.result == "success" ){
                     $item.remove();
                     
-                    $(".b-basket-btn-total, .b-basket-total").text( json.sum );
+                    if( deleteCount == 0 )
+                        $(".b-basket-btn-total, .b-basket-total").text( json.sum );
                 }else{
                     alert("Ошибка удаления из корзины");
                     $item.show().removeClass("hidden");
@@ -1167,6 +1173,7 @@ $(document).ready(function(){
                     $(".b-basket-table").show();
                     $(".b-basket").find(".b-preload-cart").remove();
                 }
+                console.log(json);
             },
             complete: function(){
                 setTimeout(checkMiniCart, 10);

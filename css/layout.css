@@ -2146,7 +2146,7 @@ strong, b{
 			width: calc(100%/4 - 18px);
 			float: left;
 			margin-right: 24px;
-			margin-bottom: 4px;
+			margin-bottom: 12px;
 			-webkit-transition: z-index 200ms ease-out;
 			-moz-transition: z-index 200ms ease-out;
 			-ms-transition: z-index 200ms ease-out;
