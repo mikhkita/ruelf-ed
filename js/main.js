@@ -496,6 +496,16 @@ $(document).ready(function(){
         return false;
     });
 
+     $('.icon-search').on('click', function(){
+        $(".b-input-search").toggleClass("show");
+        if($(".b-input-search").hasClass("show")){
+            setTimeout(function() {
+                $(".b-input-search input").focus();
+            }, 210);
+        }
+        return false;
+    });
+
     $('.b-btn-filter').on('click', function(){
         $('.b-filter').toggleClass("hide");
         if(!$('.b-filter').hasClass("hide")){
@@ -903,6 +913,11 @@ $(document).ready(function(){
             if(!$('.input-time').val()){
                 $(".b-input-time").removeClass("focus not-empty");
             }
+        }
+        if ($(event.target).closest(".b-input-search").length) 
+            return;
+        else{
+            $('.b-input-search').removeClass("show");
         }
         event.stopPropagation();
       });
