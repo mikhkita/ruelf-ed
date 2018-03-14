@@ -554,6 +554,10 @@ div.slideout-menu-padding{
 	display: none;
 }
 
+.b-textarea{
+	width: 100%;
+}
+
 @media screen and (max-width: 665px){
 
 	h1.b-title {

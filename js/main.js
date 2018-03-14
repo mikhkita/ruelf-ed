@@ -86,7 +86,7 @@ $(document).ready(function(){
 
         if(isMobile){
             if(prevWidth !== myWidth){
-                $('.b-input-time').after($('.b-email-input'));
+                //$('.b-input-time').after($('.b-email-input'));
                 $('.b-filter').addClass("hide").removeClass("b-filter-mobile");
             }
 
@@ -115,7 +115,7 @@ $(document).ready(function(){
             }, 3000);
         }else{
             $('.b-filter').removeClass("hide b-filter-mobile");
-            $('.b-input-move').prepend($('.b-email-input'));
+            //$('.b-input-move').prepend($('.b-email-input'));
             if(timerAdvantage){
                 $('.b-header-title-list .advantage-show').removeClass("advantage-show");
                 clearInterval(timerAdvantage);
@@ -236,6 +236,9 @@ $(document).ready(function(){
         }
     }
     $.fn.placeholder();
+
+    if( typeof autosize == "function" )
+        autosize(document.querySelectorAll('textarea'));
 
     var slideoutLeft = new Slideout({
         'panel': document.getElementById('panel-page'),
@@ -501,9 +504,14 @@ $(document).ready(function(){
         if($(".b-input-search").hasClass("show")){
             setTimeout(function() {
                 $(".b-input-search input").focus();
-            }, 210);
+            }, 310);
         }
         return false;
+    });
+
+    $(document).keyup(function(e){
+        if(e.keyCode === 27)
+            $(".b-input-search").removeClass("show");
     });
 
     $('.b-btn-filter').on('click', function(){
@@ -648,17 +656,16 @@ $(document).ready(function(){
             $("input[name='DELIVERY_ID']").val(3);
             $('.b-addressee-desktop .b-addressee-left').removeClass("active");
             $('.b-addressee-desktop .b-addressee-right').addClass("active");
+
             $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
             $('#address').prop({"disabled": true, "required": false}).removeClass("error");
-            //$('.b-address').before($(".move-element")).addClass("hide").removeClass("error");;
-            //$('.b-input-move').addClass("hide");
             $('.b-address').addClass("hide");
+
             $("label[for='date']").text("Дата самовывоза");
             $("label[for='time']").text("Время самовывоза");
 
-            $(".b-email-input").after($(".b-payment-method"));
+            //$(".b-email-input").after($(".b-payment-method"));
             $("#delivery-price").prop("disabled", true);
-
             $(".delivery-price").addClass("s-hide");
 
             $(".b-payment-method-item").addClass("hide");
@@ -669,12 +676,12 @@ $(document).ready(function(){
             $("input[name='DELIVERY_ID']").val(2);
             $('.b-addressee-desktop .b-addressee-right').removeClass("active");
             $('.b-addressee-desktop .b-addressee-left').addClass("active");
+
             $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
             $('#address').prop({"disabled": false, "required": true});
             if(!$('#address').val()){
                 $('#address').addClass("error");
             }
-            //$('.b-input-move').prepend($(".move-element")).removeClass("hide");
             $('.b-address').removeClass("hide");
 
             $("label[for='date']").text("Дата доставки");
@@ -682,7 +689,6 @@ $(document).ready(function(){
 
             $(".b-for-payment").prepend($(".b-payment-method"));
             $("#delivery-price").prop("disabled", false);
-
             $(".delivery-price").removeClass("s-hide");
 
             $(".b-payment-method-item").addClass("hide");

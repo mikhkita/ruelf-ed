@@ -356,9 +356,17 @@
 							<input type="text" id="phone" name="phone" required>
 							<label for="phone">Ваш телефон <span class="required">*</span></label>
 						</div>
-						<div class="b-input move-element">
+						<div class="b-input b-email-input">
+							<input type="text" id="email" name="email" required>
+							<label for="email">Ваш E-mail <span class="required">*</span></label>
+						</div>
+						<div class="b-input b-input-time">
+							<input type="text" class="date-time" id="date-time" name="date-time">
+							<label for="date-time">Дата и время</label>
+							<div class="icon-clock"></div>
+						</div>
+						<!--<div class="b-input move-element">
 							<input type="text" id="date" name="date">
-							<!--<a href="#b-popup-date" class="fancy"></a>-->
 							<label for="date">Дата доставки</label>
 							<div class="icon-calendar"></div>
 						</div>
@@ -438,7 +446,7 @@
 						<div class="b-input b-input-date-mobile">
 							<input type="text" id="date-mobile" name="date-mobile">
 							<label for="date-mobile">Мобильная дата</label>
-						</div>
+						</div>-->
 					</div>
 					<div class="b-address b-table">
 						<div class="b-table-cell">
@@ -458,18 +466,18 @@
 						<div class="b-btn-switch b-addressee-right">Получателю</div>
 						<div class="b-btn-addressee"></div>
 					</div>
-					<div class="b-inputs b-input-row b-input-move clearfix">
-						<div class="b-input b-email-input">
-							<input type="text" id="email" name="email" required>
-							<label for="email">Ваш E-mail <span class="required">*</span></label>
-						</div>
+					<div class="b-inputs b-input-row b-pickup clearfix">
 						<div class="b-input b-addressee-input">
-							<input type="text" id="addressee-name" name="addressee-name" disabled>
+							<input type="text" id="addressee-name" name="addressee-name">
 							<label for="addressee-name">Имя получателя</label>
 						</div>
 						<div class="b-input">
-							<input type="text" id="addressee-phone" name="addressee-phone" disabled>
+							<input type="text" id="addressee-phone" name="addressee-phone">
 							<label for="addressee-phone">Телефон получателя</label>
+						</div>
+						<div class="b-input b-textarea">
+							<textarea id="comment" name="comment" rows="1"></textarea>
+							<label for="comment">Комментарий или пожелание</label>
 						</div>
 					</div>
 					<div class="b-inputs b-input-row b-for-payment clearfix">
@@ -796,6 +804,7 @@
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/AddressDeliveryClass.js"></script>
 	<script type="text/javascript" src="js/address.js"></script>
+	<script type="text/javascript" src="js/autosize.min.js"></script>
 
 	<script type="text/javascript" src="js/mobiscroll.core.js"></script>
     <script type="text/javascript" src="js/mobiscroll.frame.js"></script>
