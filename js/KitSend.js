@@ -330,9 +330,7 @@ $(document).ready(function(){
 	$(".fancy-img").fancybox({
 		padding : 0,
 		hash : false,
-		touch : {
-            vertical : false
-        },
+		touch : false,
 		clickContent : false,
 		buttons : [
 	        'fullScreen',
