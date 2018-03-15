@@ -302,6 +302,10 @@ $(document).ready(function(){
         return false;
     });
 
+    $(".b-input-search").submit(function(){
+        return false;
+    });
+
     // var e = $('.b-menu-overlay, .mobile-menu, .basket-menu');
     // e.touch();
     // e.on('swipeLeft', function(event) {
