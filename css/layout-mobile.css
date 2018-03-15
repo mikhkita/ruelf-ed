@@ -548,6 +548,7 @@ div.slideout-menu-padding{
 
 .b-input-date-mobile{
 	display: block;
+	margin-right: 0;
 }
 
 .b-search, .b-favorites{
@@ -559,7 +560,7 @@ div.slideout-menu-padding{
 }
 
 .b-date-time{
-	width: calc(50% - 12px);
+	display: none;
 }	
 
 @media screen and (max-width: 665px){
@@ -1080,10 +1081,6 @@ div.slideout-menu-padding{
 
 	.ui-datepicker {
 	    width: calc(100% - 48px);
-	}
-
-	.b-date-time{
-		width: 100%;
 	}
 
 }

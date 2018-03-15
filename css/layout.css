@@ -3619,8 +3619,8 @@ strong, b{
 		.b-date-time .b-time{
 			position: absolute;
 			top: 1px;
-			left: 114px;
-			width: 100px;
+			left: 112px;
+			width: 50px;
 			z-index: 1;
 		}
 			.b-date-time .b-time input[type="text"]{

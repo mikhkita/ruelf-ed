@@ -74,9 +74,9 @@ $(document).ready(function(){
         }
 
         if(isTablet){
-            /*if($('.b-catalog-sections-tablet').hasClass("slick-initialized")){
+            if($('.b-catalog-sections-tablet').hasClass("slick-initialized")){
                 $('.b-catalog-sections-tablet').slick('setPosition');
-            }*/
+            }
             $('.b-basket-btn-cont').on('click', function(){
                 $('.b-top-basket-mobile').click();
             });
@@ -89,6 +89,8 @@ $(document).ready(function(){
                 //$('.b-time').after($('.b-email-input'));
                 $('.b-filter').addClass("hide").removeClass("b-filter-mobile");
             }
+            $('#date, #time').prop("disabled", true);
+            $('#date-mobile').prop("disabled", false);
 
             $("body").on("touchstart", ".b-slideout-not-touch", function(){
                 $("html").addClass("touch-locked");
@@ -114,6 +116,8 @@ $(document).ready(function(){
                 changeItem();
             }, 3000);
         }else{
+            $('#date, #time').prop("disabled", false);
+            $('#date-mobile').prop("disabled", true);
             $('.b-filter').removeClass("hide b-filter-mobile");
             //$('.b-input-move').prepend($('.b-email-input'));
             if(timerAdvantage){
@@ -305,35 +309,6 @@ $(document).ready(function(){
         return false;
     });
 
-    // var e = $('.b-menu-overlay, .mobile-menu, .basket-menu');
-    // e.touch();
-    // e.on('swipeLeft', function(event) {
-    //     console.log("swipeLeft");
-    //     /*$("body").bind("touchmove", function(e){
-    //         console.log("touchmove");
-    //         e.preventDefault();
-    //         return false;
-    //     });*/
-    //     if(slideoutLeft.isOpen()){
-    //         console.log("slideoutLeft.isOpen");
-    //         slideoutLeft.close();
-    //         $(".b-menu-overlay").hide();
-    //     }
-            
-    // });
-    // e.on('swipeRight', function(event) {
-    //     console.log("swipeRight");
-    //     /*$("body").bind("touchmove", function(e){
-    //         console.log("touchmove");
-    //         e.preventDefault();
-    //         return false;
-    //     });*/
-    //     if(slideoutRight.isOpen()){
-    //         slideoutRight.close();
-    //         $(".b-menu-overlay").hide();
-    //     }
-    // });
-
     if(isRetina){
         $("*[data-retina]").each(function(){
             var $this = $(this),
@@ -428,7 +403,7 @@ $(document).ready(function(){
         ]
     });
 
-    /*var $sectionActive = $('.b-catalog-sections-tablet li.active');
+    var $sectionActive = $('.b-catalog-sections-tablet li.active');
     $('.b-catalog-sections-tablet').on('init', function(event, slick){
         setTimeout(function(){
             console.log($('.b-catalog-sections-tablet li.active'));
@@ -456,7 +431,7 @@ $(document).ready(function(){
               }
             },
         ]
-    });*/
+    });
 
     var arrowOffset = 0,
         footerOffset = 0;
@@ -846,19 +821,6 @@ $(document).ready(function(){
         }
     });
 
-    $('.color-all').on('click', function(){
-        console.log("color-all - click");
-    });
-    $('.color-white').on('click', function(){
-        console.log("color-white - click");
-    });
-    $('#label-all').change(function(){
-        console.log("#label-all - change");
-    });
-    $('#label-white').change(function(){
-        console.log("#label-white - change");
-    });
-
     $('body').on("click", ".b-filter-price-select, .b-filter-flowers-select", function(){
         return false;
     });
@@ -964,21 +926,17 @@ $(document).ready(function(){
             //влево
             if(code == 37 || code == 38) {
                 //получить положение каретки, если она в начале time, то передвинуть фокус на дату
-                if($('#time:focus').length){
-                    if(getCaret(document.getElementById("time")) === 0){
-                        $('#time').blur();
-                        $('#date').focus();
-                    }
+                if($('#time:focus').length && getCaret(document.getElementById("time")) === 0){
+                    $('#time').blur();
+                    $('#date').focus();
                 }
             }
             //вправо
             if(code == 39 || code == 40) {
                  //получить положение каретки, если она в конце date, то передвинуть фокус на время
-                if($('#date:focus').length){
-                    if(getCaret(document.getElementById("date")) === $('#date').val().length){
-                        $('#date').datepicker("hide").blur();
-                        $('#time').focus();
-                    }
+                if($('#date:focus').length && getCaret(document.getElementById("date")) === $('#date').val().length){
+                    $('#date').datepicker("hide").blur();
+                    $('#time').focus();
                 }
             }
         });
@@ -1076,7 +1034,7 @@ $(document).ready(function(){
         checkDeliveryTime(true);
     }
 
-    if($('#date-mobile').length && isMobile){
+    if($('#date-mobile').length){
         $('#date-mobile').mobiscroll().datetime({
             theme: 'ios',
             display: 'bottom',
