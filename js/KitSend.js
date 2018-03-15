@@ -193,9 +193,9 @@ $(document).ready(function(){
 				// }
 			});
 		}
-		if( $(this).find("#time").length ){
-			$(this).find("#time").mask(teTime,{placeholder:"_"});
-		}
+		// if( $(this).find("#time").length ){
+		// 	$(this).find("#time").mask(teTime,{placeholder:"_"});
+		// }
 		if( !$(this).hasClass("b-sub-form") ){
 			$(this).find("input[type='text'], input[type='email'], textarea, select").blur(function(){
 			   $(this).valid();
