@@ -197,11 +197,14 @@ $(document).ready(function(){
 			var timeMask = new IMask($(this).find("#time")[0], {
 	        	mask: '00:00',
 	        	prepare: function(value, masked){
-			    	if( value > 1 && masked._value.length == 0 ){
-			    		return "0"+value;
+			    	if( value > 2 && masked._value.length == 0 ){
+			    		return "0"+value+":";
 			    	}
-			    	if( value > 5 && (masked._value.length == 2 || masked._value.indexOf(":") > 0)){
+			    	if((value > 5 && masked._value.length == 3) || (value > 3 && masked._value == "2")){
 			    		return "";
+			    	}
+			    	if(masked._value.length == 1){
+			    		return value+":";	
 			    	}
 			    	return value;
 			    }
