@@ -661,8 +661,8 @@ $(document).ready(function(){
             $('#address').prop({"disabled": true, "required": false}).removeClass("error");
             $('.b-address').addClass("hide");
 
-            $("label[for='date']").text("Дата самовывоза");
-            $("label[for='time']").text("Время самовывоза");
+            //$("label[for='date']").text("Дата самовывоза");
+            //$("label[for='time']").text("Время самовывоза");
 
             //$(".b-email-input").after($(".b-payment-method"));
             $("#delivery-price").prop("disabled", true);
@@ -684,8 +684,8 @@ $(document).ready(function(){
             }
             $('.b-address').removeClass("hide");
 
-            $("label[for='date']").text("Дата доставки");
-            $("label[for='time']").text("Время доставки");
+            //$("label[for='date']").text("Дата доставки");
+            //$("label[for='time']").text("Время доставки");
 
             $(".b-for-payment").prepend($(".b-payment-method"));
             $("#delivery-price").prop("disabled", false);
@@ -792,6 +792,7 @@ $(document).ready(function(){
                         $('input[name="time-select"]:checked').prop("checked", false);
                         setFirstTime();
                     }
+                    $('#time').focus();
                 }
             });
         });
@@ -834,10 +835,12 @@ $(document).ready(function(){
         if(!$('.input-time').val()){
             $(".b-time").removeClass("focus not-empty");
         }
+        $('.icon-clock').addClass("hide");
+        $('.icon-calendar').removeClass("hide");
     });
 
     $('#date').blur(function(){
-       //$("#date").datepicker("hide");
+        //$("#date").datepicker("hide");
         if(!$("#date").val()){
             $("#date").parent().removeClass("focus not-empty");
         }
@@ -943,12 +946,16 @@ $(document).ready(function(){
     });
 
     if($('.b-date-time').length){
-        $('.b-time input').on('click focus', function(){
+        $('#time').on('click focus', function(){
             //если дата выбрана
             if(!!$('#date').val()){
                 $('.b-time-list').addClass("show");
+                $('.icon-clock').removeClass("hide");
+                $('.icon-calendar').addClass("hide");
             }else{
                 $('#date').datepicker("show");
+                $('.icon-clock').addClass("hide");
+                $('.icon-calendar').removeClass("hide");
             }
         });
 
@@ -977,26 +984,31 @@ $(document).ready(function(){
         });
     }
 
-function getCaret(el) { 
-  if (el.selectionStart) { 
-    return el.selectionStart; 
-  } else if (document.selection) { 
-    el.focus(); 
- 
-    var r = document.selection.createRange(); 
-    if (r == null) { 
+    function getCaret(el) { 
+      if (el.selectionStart) { 
+        return el.selectionStart; 
+      } else if (document.selection) { 
+        el.focus(); 
+     
+        var r = document.selection.createRange(); 
+        if (r == null) { 
+          return 0; 
+        } 
+     
+        var re = el.createTextRange(), 
+            rc = re.duplicate(); 
+        re.moveToBookmark(r.getBookmark()); 
+        rc.setEndPoint('EndToStart', re); 
+     
+        return rc.text.length; 
+      }  
       return 0; 
-    } 
- 
-    var re = el.createTextRange(), 
-        rc = re.duplicate(); 
-    re.moveToBookmark(r.getBookmark()); 
-    rc.setEndPoint('EndToStart', re); 
- 
-    return rc.text.length; 
-  }  
-  return 0; 
-}
+    }
+
+    $('#date').on('click focus', function(){
+        $('.icon-clock').addClass("hide");
+        $('.icon-calendar').removeClass("hide");
+    });
 
     $(".b-time-list input").change(function(){
          $('.input-time').val($(this).siblings("label").text());
