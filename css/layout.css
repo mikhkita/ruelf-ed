@@ -3383,7 +3383,8 @@ strong, b{
 			z-index: 101;
 			padding: 18px 20px 22px;
 			position: absolute;
-			left: -114px;
+			/*left: -114px;*/
+			right: 0;
    			top: 53px;
 			background-color: #FFF;
 			border-radius: 3px;
