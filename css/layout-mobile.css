@@ -548,11 +548,20 @@ div.slideout-menu-padding{
 
 .b-input-date-mobile{
 	display: block;
+	margin-right: 0;
 }
 
 .b-search, .b-favorites{
 	display: none;
 }
+
+.b-textarea{
+	width: 100%;
+}
+
+.b-date-time{
+	display: none;
+}	
 
 @media screen and (max-width: 665px){
 

@@ -194,7 +194,7 @@ $(document).ready(function(){
 			});
 		}
 		if( $(this).find("#time").length ){
-			// $(this).find("#time").mask(teTime,{placeholder:"_"});
+			$(this).find("#time").mask(teTime,{placeholder:"_"});
 		}
 		if( !$(this).hasClass("b-sub-form") ){
 			$(this).find("input[type='text'], input[type='email'], textarea, select").blur(function(){
@@ -330,7 +330,6 @@ $(document).ready(function(){
 	$(".fancy-img").fancybox({
 		padding : 0,
 		hash : false,
-		touch : false,
 		clickContent : false,
 		buttons : [
 	        'fullScreen',

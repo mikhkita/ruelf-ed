@@ -86,9 +86,11 @@ $(document).ready(function(){
 
         if(isMobile){
             if(prevWidth !== myWidth){
-                $('.b-input-time').after($('.b-email-input'));
+                //$('.b-time').after($('.b-email-input'));
                 $('.b-filter').addClass("hide").removeClass("b-filter-mobile");
             }
+            $('#date, #time').prop("disabled", true);
+            $('#date-mobile').prop("disabled", false);
 
             $("body").on("touchstart", ".b-slideout-not-touch", function(){
                 $("html").addClass("touch-locked");
@@ -114,8 +116,10 @@ $(document).ready(function(){
                 changeItem();
             }, 3000);
         }else{
+            $('#date, #time').prop("disabled", false);
+            $('#date-mobile').prop("disabled", true);
             $('.b-filter').removeClass("hide b-filter-mobile");
-            $('.b-input-move').prepend($('.b-email-input'));
+            //$('.b-input-move').prepend($('.b-email-input'));
             if(timerAdvantage){
                 $('.b-header-title-list .advantage-show').removeClass("advantage-show");
                 clearInterval(timerAdvantage);
@@ -236,6 +240,9 @@ $(document).ready(function(){
         }
     }
     $.fn.placeholder();
+
+    if( typeof autosize == "function" )
+        autosize(document.querySelectorAll('textarea'));
 
     var slideoutLeft = new Slideout({
         'panel': document.getElementById('panel-page'),
@@ -505,9 +512,14 @@ $(document).ready(function(){
         if($(".b-input-search").hasClass("show")){
             setTimeout(function() {
                 $(".b-input-search input").focus();
-            }, 210);
+            }, 310);
         }
         return false;
+    });
+
+    $(document).keyup(function(e){
+        if(e.keyCode === 27)
+            $(".b-input-search").removeClass("show");
     });
 
     $('.b-btn-filter').on('click', function(){
@@ -652,17 +664,16 @@ $(document).ready(function(){
             $("input[name='DELIVERY_ID']").val(3);
             $('.b-addressee-desktop .b-addressee-left').removeClass("active");
             $('.b-addressee-desktop .b-addressee-right').addClass("active");
+
             $('#addressee-name, #addressee-phone').prop("disabled", true).parent().addClass("hide");
             $('#address').prop({"disabled": true, "required": false}).removeClass("error");
-            //$('.b-address').before($(".move-element")).addClass("hide").removeClass("error");;
-            //$('.b-input-move').addClass("hide");
             $('.b-address').addClass("hide");
-            $("label[for='date']").text("Дата самовывоза");
-            $("label[for='time']").text("Время самовывоза");
 
-            $(".b-email-input").after($(".b-payment-method"));
+            //$("label[for='date']").text("Дата самовывоза");
+            //$("label[for='time']").text("Время самовывоза");
+
+            //$(".b-email-input").after($(".b-payment-method"));
             $("#delivery-price").prop("disabled", true);
-
             $(".delivery-price").addClass("s-hide");
 
             $(".b-payment-method-item").addClass("hide");
@@ -673,20 +684,19 @@ $(document).ready(function(){
             $("input[name='DELIVERY_ID']").val(2);
             $('.b-addressee-desktop .b-addressee-right').removeClass("active");
             $('.b-addressee-desktop .b-addressee-left').addClass("active");
+
             $('#addressee-name, #addressee-phone').prop("disabled", false).parent().removeClass("hide");
             $('#address').prop({"disabled": false, "required": true});
             if(!$('#address').val()){
                 $('#address').addClass("error");
             }
-            //$('.b-input-move').prepend($(".move-element")).removeClass("hide");
             $('.b-address').removeClass("hide");
 
-            $("label[for='date']").text("Дата доставки");
-            $("label[for='time']").text("Время доставки");
+            //$("label[for='date']").text("Дата доставки");
+            //$("label[for='time']").text("Время доставки");
 
             $(".b-for-payment").prepend($(".b-payment-method"));
             $("#delivery-price").prop("disabled", false);
-
             $(".delivery-price").removeClass("s-hide");
 
             $(".b-payment-method-item").addClass("hide");
@@ -790,6 +800,7 @@ $(document).ready(function(){
                         $('input[name="time-select"]:checked').prop("checked", false);
                         setFirstTime();
                     }
+                    $('#time').focus();
                 }
             });
         });
@@ -830,12 +841,14 @@ $(document).ready(function(){
         }
         $('.b-time-list').removeClass("show");
         if(!$('.input-time').val()){
-            $(".b-input-time").removeClass("focus not-empty");
+            $(".b-time").removeClass("focus not-empty");
         }
+        $('.icon-clock').addClass("hide");
+        $('.icon-calendar').removeClass("hide");
     });
 
     $('#date').blur(function(){
-       //$("#date").datepicker("hide");
+        //$("#date").datepicker("hide");
         if(!$("#date").val()){
             $("#date").parent().removeClass("focus not-empty");
         }
@@ -910,13 +923,13 @@ $(document).ready(function(){
             $('.b-filter-flowers-list').removeClass("show");
             $('.b-filter-flowers-select.icon-arrow-down').removeClass("arrow-rotate");
         }
-        if ($(event.target).closest(".b-input-time").length) 
+        if ($(event.target).closest(".b-time").length) 
             return;
         else{
             $('.b-time-list').removeClass("show");
-            if(!$('.input-time').val()){
-                $(".b-input-time").removeClass("focus not-empty");
-            }
+            //if(!$('.input-time').val()){
+            //    $(".b-time").removeClass("focus not-empty");
+            //}
         }
         if ($(event.target).closest(".b-input-search").length) 
             return;
@@ -927,8 +940,65 @@ $(document).ready(function(){
       });
     });
 
-    $('.b-input-time input').on('click focus', function(){
-        $('.b-time-list').addClass("show");
+    if($('.b-date-time').length){
+        $('#time').on('click focus', function(){
+            //если дата выбрана
+            if(!!$('#date').val()){
+                $('.b-time-list').addClass("show");
+                $('.icon-clock').removeClass("hide");
+                $('.icon-calendar').addClass("hide");
+            }else{
+                $('#date').datepicker("show");
+                $('.icon-clock').addClass("hide");
+                $('.icon-calendar').removeClass("hide");
+            }
+        });
+
+        $(document).on('keydown', function(e){
+            var code = (e.keyCode || e.which);
+            //влево
+            if(code == 37 || code == 38) {
+                //получить положение каретки, если она в начале time, то передвинуть фокус на дату
+                if($('#time:focus').length && getCaret(document.getElementById("time")) === 0){
+                    $('#time').blur();
+                    $('#date').focus();
+                }
+            }
+            //вправо
+            if(code == 39 || code == 40) {
+                 //получить положение каретки, если она в конце date, то передвинуть фокус на время
+                if($('#date:focus').length && getCaret(document.getElementById("date")) === $('#date').val().length){
+                    $('#date').datepicker("hide").blur();
+                    $('#time').focus();
+                }
+            }
+        });
+    }
+
+    function getCaret(el) { 
+      if (el.selectionStart) { 
+        return el.selectionStart; 
+      } else if (document.selection) { 
+        el.focus(); 
+     
+        var r = document.selection.createRange(); 
+        if (r == null) { 
+          return 0; 
+        } 
+     
+        var re = el.createTextRange(), 
+            rc = re.duplicate(); 
+        re.moveToBookmark(r.getBookmark()); 
+        rc.setEndPoint('EndToStart', re); 
+     
+        return rc.text.length; 
+      }  
+      return 0; 
+    }
+
+    $('#date').on('click focus', function(){
+        $('.icon-clock').addClass("hide");
+        $('.icon-calendar').removeClass("hide");
     });
 
     $(".b-time-list input").change(function(){
@@ -993,11 +1063,11 @@ $(document).ready(function(){
         }
     }
 
-    if($('.b-input-time').length){
+    if($('.b-time').length){
         checkDeliveryTime(true);
     }
 
-    if($('#date-mobile').length && isMobile){
+    if($('#date-mobile').length){
         $('#date-mobile').mobiscroll().datetime({
             theme: 'ios',
             display: 'bottom',
@@ -1235,7 +1305,7 @@ $(document).ready(function(){
     });
 
     $("#b-filter-form input").change(function(){
-        History.replaceState(null , null, "?"+$("#b-filter-form").serialize());
+        //History.replaceState(null , null, "?"+$("#b-filter-form").serialize());
 
 
 
