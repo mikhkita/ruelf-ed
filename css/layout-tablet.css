@@ -466,6 +466,9 @@ body {
 	.b-basket-btn-desktop{
 		display: none;
 	}
+	.b-date-time .b-input {
+	    margin-bottom: 0;
+	}
 
 }
 
