@@ -170,16 +170,20 @@ $(document).ready(function(){
 			    // placeholderChar: "_",
 			    prepare: function(value, masked){
 			    	var numbers = masked._value.replace(/[^0-9]+/g,"");
-
-			    	console.log(value);
 			    	if( value > 3 && masked._value.length == 0 || value > 1 && numbers.length == 2 ){
 			    		return "0"+value+".";
 			    	}
-
 			    	if( masked._value.length == 1 || masked._value.length == 4 ){
-			    		return value+".";	
+			    		var val = value+".";
+			    		if(masked._value.length == 4){
+			    			val += "2018";
+				    		setTimeout(function(){
+					    		$('#date').datepicker("hide").blur();
+		                    	$('#time').focus();
+		                    },10);
+			    		}
+			    		return val;	
 			    	}
-
 			    	return value;
 			    }
 				// validate: function(value, masked){

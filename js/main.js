@@ -495,19 +495,6 @@ $(document).ready(function(){
         }
     });
 
-    $('.color-all').on('click', function(){
-        console.log("color-all - click");
-    });
-    $('.color-white').on('click', function(){
-        console.log("color-white - click");
-    });
-    $('#label-all').change(function(){
-        console.log("#label-all - change");
-    });
-    $('#label-white').change(function(){
-        console.log("#label-white - change");
-    });
-
     $('.arrow-up').on('click', function(){
         $("body,html").animate({
             scrollTop: 0
@@ -788,7 +775,10 @@ $(document).ready(function(){
                             $("#date").parent().removeClass("focus not-empty");
                         }
                     }, 10);
-                }
+                },
+                onSelect: function(){
+                    console.log("123");
+                },
             }).on("change", function(){
                 $(this).parents(".b-input").addClass("not-empty");
 
@@ -814,6 +804,7 @@ $(document).ready(function(){
                         setFirstTime();
                     }
                     $('#time').focus();
+                    $('.b-date-time .b-time').css("left", $('#date').css("width"));
                 }
             });
         });
@@ -956,8 +947,6 @@ $(document).ready(function(){
     if($('.b-date-time').length){
         Plugins.AutosizeInput.getDefaultOptions().space = 0;
         $('#date').autosizeInput();
-        //const autosizeInput = require('autosize-input');
-        //autosizeInput(document.querySelector('#date'));
         $('#time').on('click focus', function(){
             //если дата выбрана
             if(!!$('#date').val()){
@@ -1017,6 +1006,10 @@ $(document).ready(function(){
         console.log("date-focus");
         $('.icon-clock').addClass("hide");
         $('.icon-calendar').removeClass("hide");
+    });
+
+    $('#date').on('input', function(){
+        $('.b-date-time .b-time').css("left", $('#date').css("width"));
     });
 
     $(".b-time-list input").change(function(){
