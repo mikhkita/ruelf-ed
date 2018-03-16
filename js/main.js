@@ -495,6 +495,19 @@ $(document).ready(function(){
         }
     });
 
+    $('.color-all').on('click', function(){
+        console.log("color-all - click");
+    });
+    $('.color-white').on('click', function(){
+        console.log("color-white - click");
+    });
+    $('#label-all').change(function(){
+        console.log("#label-all - change");
+    });
+    $('#label-white').change(function(){
+        console.log("#label-white - change");
+    });
+
     $('.arrow-up').on('click', function(){
         $("body,html").animate({
             scrollTop: 0
@@ -941,6 +954,10 @@ $(document).ready(function(){
     });
 
     if($('.b-date-time').length){
+        Plugins.AutosizeInput.getDefaultOptions().space = 0;
+        $('#date').autosizeInput();
+        //const autosizeInput = require('autosize-input');
+        //autosizeInput(document.querySelector('#date'));
         $('#time').on('click focus', function(){
             //если дата выбрана
             if(!!$('#date').val()){
@@ -997,6 +1014,7 @@ $(document).ready(function(){
     }
 
     $('#date').on('click focus', function(){
+        console.log("date-focus");
         $('.icon-clock').addClass("hide");
         $('.icon-calendar').removeClass("hide");
     });

@@ -1126,7 +1126,7 @@ strong, b{
 	    transition: margin-left 200ms ease-out;
 	}
 	.b-top.basket-null .b-menu{
-		margin-left: 185px;
+		margin-left: 172px;
 	}
 	.b-top-fixed .b-menu,
 	.b-top-fixed.basket-null .b-menu{
@@ -3699,6 +3699,7 @@ strong, b{
 			width: 50px;
 			z-index: 1;
 		}
+			.b-date-time .b-date input[type="text"],
 			.b-date-time .b-time input[type="text"]{
 				padding: 16px 0 17px 0;
 				box-shadow: none;

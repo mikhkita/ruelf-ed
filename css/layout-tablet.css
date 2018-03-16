@@ -238,6 +238,10 @@ body {
 	    height: 44px;
 	}
 
+	.b-top.basket-null .b-menu {
+	    margin-left: 125px;
+	}
+
 }
 
 @media screen and (max-width: 1020px){
