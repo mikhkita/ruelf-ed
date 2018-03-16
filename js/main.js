@@ -775,10 +775,7 @@ $(document).ready(function(){
                             $("#date").parent().removeClass("focus not-empty");
                         }
                     }, 10);
-                },
-                onSelect: function(){
-                    console.log("123");
-                },
+                }
             }).on("change", function(){
                 $(this).parents(".b-input").addClass("not-empty");
 
@@ -1009,6 +1006,9 @@ $(document).ready(function(){
     });
 
     $('#date').on('input', function(){
+        if(!$(this).val()){
+            $("#time").val("");
+        }
         $('.b-date-time .b-time').css("left", $('#date').css("width"));
     });
 

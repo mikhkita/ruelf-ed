@@ -1463,9 +1463,10 @@ class InputMask {
   }
   set cursorPos(pos) {
     if (this.el !== document.activeElement) return;
-
-    this.el.setSelectionRange(pos, pos);
-    this._saveSelection();
+    if(pos > 0){
+      this.el.setSelectionRange(pos, pos);
+      this._saveSelection();
+    }
   }
 
   /**
