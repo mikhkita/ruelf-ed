@@ -237,10 +237,7 @@ h1.b-title{
     height: 36px;
     margin-right: 21px;
 }
-.color-all {
-    margin-right: 0;
-}
-.color-all .color-all-img{
+.color-all:before{
 	width: 36px;
     height: 36px;
     margin-right: 0;
