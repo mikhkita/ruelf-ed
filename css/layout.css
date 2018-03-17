@@ -49,11 +49,11 @@
 
 html,
 body {
-	overflow-x: hidden;
 	height: 100%;
 	position: relative;
 }
 body {
+	overflow-x: hidden;
 	min-width: 1200px;
 	text-align: left;
 	font-family: 'Geometria-Regular';
@@ -4602,6 +4602,10 @@ strong, b{
 }
 
 /*-----------Slideout-----------*/
+
+.slideout-open{
+	overflow-x: hidden;
+}
 
 .slideout-menu {
   position: fixed;
