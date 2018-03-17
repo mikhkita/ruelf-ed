@@ -4604,7 +4604,7 @@ strong, b{
 /*-----------Slideout-----------*/
 
 .slideout-open{
-	overflow-x: hidden;
+	/*overflow-x: hidden;*/
 }
 
 .slideout-menu {
