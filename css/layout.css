@@ -3456,6 +3456,59 @@ strong, b{
 			margin-bottom: 36px;
 		}
 
+	.b-address-tip{
+		display: block;
+		position: absolute;
+		top: -11px;
+		right: -256px;
+		text-align: center;
+		width: 238px;
+		padding: 12px 18px;
+		border-radius: 3px;
+		color: #434343;
+		background-color: #FFF;
+		z-index: 5;
+		-webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	    -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+		opacity: 0;
+		visibility: hidden;
+		-webkit-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+	    -moz-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+	    -ms-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+	    -o-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+	    transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
+	    -webkit-transform: translateX(10px);
+	    -moz-transform: translateX(10px);
+	    -ms-transform: translateX(10px);
+	    -o-transform: translateX(10px);
+	    transform: translateX(10px);
+	}
+
+	.b-choose-address.error .b-address-tip{
+		opacity: 1;
+		visibility: visible;
+		-webkit-transform: translateY(0px);
+	    -moz-transform: translateY(0px);
+	    -ms-transform: translateY(0px);
+	    -o-transform: translateY(0px);
+	    transform: translateY(0px);
+	}
+
+	.b-address-tip:before{
+	    position: absolute;
+	    content: "s";
+	    font-size: 0px;
+	    width: 0px;
+	    height: 0px;
+	    left: -20px;
+	    top: 14px;
+	    border-top: 9px solid transparent;
+	    border-right: 10px solid #FFF;
+	    border-bottom: 9px solid transparent;
+	    border-left: 10px solid transparent;
+	}
+
 	.b-input-time{
 		position: relative;
 	}
@@ -3645,6 +3698,10 @@ strong, b{
 				display: inline-block;
 				font-size: 16px;
 			}
+				.choose-address-change-cont{
+					display: inline-block;
+					position: relative;
+				}
 				.choose-address-change{
 					margin-left: 8px;
 				}
