@@ -788,8 +788,16 @@ div.slideout-menu-padding{
 		line-height: 36px;
 	}
 
+	.b-detail-price .current-price{
+		font-size: 36px;
+	}
+
+	.b-detail-price .new-price {
+	    font-size: 32px;
+	    line-height: 40px;
+	}
 	.b-detail-price .new-price.icon-ruble:after{
-		font-size: 20px;
+		font-size: 24px;
 	}
 
 	.b-catalog-similar h2.b-title, .b-addition h2.b-title{
