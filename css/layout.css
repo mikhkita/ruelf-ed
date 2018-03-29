@@ -2012,7 +2012,7 @@ strong, b{
 		margin-right: 8px;
 	}
 
-	.b-filter-colors{position: relative;z-index: 102;}
+	.b-filter-colors{position: relative;z-index: 106;}
 		.b-filter-colors ul{padding-bottom: 10px;}
 			.b-filter-colors ul li{
 				display: inline-block;

@@ -148,6 +148,14 @@ $(document).ready(function(){
 				    		return "";
 				    	}
 
+				    	tmp = value.match(/[\d\+]*/g);
+				    	// console.log(tmp);
+				    	if( tmp && tmp.length ){
+				    		value = tmp.join("");
+				    	}else{
+				    		value = "";
+				    	}
+				    	// console.log(value);
 				    	return value;
 				    }
 		        });
