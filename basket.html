@@ -481,21 +481,27 @@
 						</div>
 					</div>
 					<div class="b-inputs b-input-row b-for-payment clearfix">
-						<div class="b-radio b-payment-method">
-							<p>Способ оплаты:</p>
-							<div class="b-payment-method-list">
-								<div class="b-payment-method-item delivery pickup">
-									<input id="card" type="radio" class="payment-card" name="payment-method" checked required>
-									<label for="card">Онлайн-оплата картой</label>
+						<div class="b-for-payment-left">
+							<div class="b-radio b-payment-method">
+								<p>Способ оплаты:</p>
+								<div class="b-payment-method-list">
+									<div class="b-payment-method-item delivery pickup">
+										<input id="card" type="radio" class="payment-card" name="payment-method" checked required>
+										<label for="card">Онлайн-оплата картой</label>
+									</div>
+									<div class="b-payment-method-item delivery pickup">
+										<input id="cash" type="radio" class="payment-cash" name="payment-method" required>
+										<label for="cash">Наличными курьеру</label>
+									</div>
+									<div class="b-payment-method-item pickup">
+										<input id="test" type="radio" class="payment-test" name="payment-method" required>
+										<label for="test">Тестовая запись</label>
+									</div>
 								</div>
-								<div class="b-payment-method-item delivery pickup">
-									<input id="cash" type="radio" class="payment-cash" name="payment-method" required>
-									<label for="cash">Наличными курьеру</label>
-								</div>
-								<div class="b-payment-method-item pickup">
-									<input id="test" type="radio" class="payment-test" name="payment-method" required>
-									<label for="test">Тестовая запись</label>
-								</div>
+							</div>
+							<div class="b-checkbox b-basket-checkbox">
+								<input id="politics" class="" type="checkbox" name="politics" checked required>
+								<label for="politics">Настоящим подтверждаю, что я ознакомлен и согласен с условиями <a href="/politics/">политики конфиденциальности</a></label>
 							</div>
 						</div>
 						<div class="b-total-price">

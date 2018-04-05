@@ -724,10 +724,11 @@ strong, b{
 
 /*------Чекбоксы------*/
 
-/*input[type="checkbox"].error + span + label:before{
-	border: 1px solid #F00;
-	box-shadow: 0px 0px 0px 2px #F00;
-}*/
+.b-checkbox input[type="checkbox"].error + span + label:before,
+.b-checkbox input[type="checkbox"].error + label:before{
+	border: 1px solid #f43d84;
+	/*box-shadow: 0px 0px 0px 2px #F00;*/
+}
 
 .b-checkbox input[type="checkbox"],
 .b-checkbox input[type="radio"]{
@@ -804,6 +805,21 @@ strong, b{
     border-right: 2px solid #6e58ac !important;
 	display: block;
 }
+
+.b-checkbox label a{
+	color: #6e58ac;
+}
+
+.b-popup .b-checkbox{
+	padding-top: 28px;
+}
+	.b-popup .b-checkbox input[type="checkbox"] + span + label,
+	.b-popup .b-checkbox input[type="checkbox"] + label{
+		margin-bottom: 0;
+	}
+	.b-popup .b-checkbox label:before{
+		background-color: #FFF;
+	}
 
 /*--------------------*/
 
@@ -3712,7 +3728,7 @@ strong, b{
 		.b-address.b-address-margin{
 			margin-top: 18px;
 		}
-	.b-payment-method{
+	.b-for-payment-left{
 		float: left;
 	}	
 	.b-input-move .b-payment-method{
@@ -3816,6 +3832,17 @@ strong, b{
 			font-size: 18px;
 			margin-left: 6px;
 		}
+
+	.b-basket-checkbox{
+		padding-top: 1px;
+	}
+	.b-basket-checkbox input[type="checkbox"] + span + label,
+	.b-basket-checkbox input[type="checkbox"] + label{
+		margin-bottom: 0;
+	}
+	.b-basket-checkbox label:before{
+		background-color: #FFF;
+	}
 
 	.b-data-order .b-btn-buy{
 		padding: 13px 50px;

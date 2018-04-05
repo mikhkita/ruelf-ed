@@ -217,6 +217,10 @@ body {
     height: 21px;
 }
 
+.b-basket-checkbox{
+	max-width: 650px;
+}
+
 @media screen and (max-width: 1100px){
 
 	.b-menu {
@@ -470,6 +474,14 @@ body {
 	    margin-bottom: 0;
 	}
 
+	.b-for-payment-left{
+		max-width: 100%;
+		float: none;
+		margin-bottom: 30px;
+	}
+	.b-basket-checkbox{
+		max-width: 100%;
+	}
 }
 
 @media screen and (max-width: 950px){
