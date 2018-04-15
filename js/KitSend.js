@@ -424,6 +424,12 @@ $(document).ready(function(){
 			});
   		}else{
   			$(this).find("input.error,select.error,textarea.error").eq(0).focus();
+
+  			if( $(this).find("input.error,select.error,textarea.error").eq(0).attr("id") == "address" ){
+  				$("body, html").animate({
+					scrollTop : $(".b-address").offset().top-150
+				}, 300);
+  			}
   		}
   		return false;
   	});
