@@ -1322,12 +1322,16 @@ $(document).ready(function(){
     });
 
     $("#b-filter-form input").change(function(){
-        History.replaceState(null , null, "?"+$("#b-filter-form").serialize());
-
-
+        History.replaceState(null , null, (($(".b-content.main").length)?"/catalog/":"")+"?"+$("#b-filter-flowers-list input, #b-filter-price-list input, .b-filter-colors input, .b-filter-other input").serialize());
 
         ajaxFilter();
-        // console.log();
+    });
+
+    $(".b-mobile-filter").click(function(){
+        // ajaxFilter();
+
+        $.fancybox.close();
+        return false;
     });
 
     function checkMiniCart(){

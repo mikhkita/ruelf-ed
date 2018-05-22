@@ -397,6 +397,11 @@ body {
 	.fancybox-container .b-filter-price-list{
 		max-width: 400px;
 	}
+	.fancybox-container .b-filter-flowers-list .b-btn,
+	.fancybox-container .b-filter-price-list .b-btn{
+		clear: both;
+		display: inline-block;
+	}
 
 	.b-filter-flowers-list{
 		width: 100%;
